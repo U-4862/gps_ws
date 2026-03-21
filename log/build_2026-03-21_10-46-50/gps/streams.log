@@ -1,0 +1,29 @@
+[0.007s] Invoking command in '/home/w/projects/projects/gps_ws/build/gps': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/w/projects/projects/gps_ws/build/gps -- -j32 -l32
+[0.034s] [ 50%] [32mBuilding CXX object CMakeFiles/gps_node.dir/src/gps_node.cpp.o[0m
+[1.736s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:[m[K In member function ‘[01m[Kvirtual BT::NodeStatus DetectFront::onRunning()[m[K’:
+[1.736s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:177:1:[m[K [01;35m[Kwarning: [m[Kno return statement in function returning non-void [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreturn-type-Wreturn-type]8;;[m[K]
+[1.736s]   177 | [01;35m[K}[m[K
+[1.736s]       | [01;35m[K^[m[K
+[5.421s] [100%] [1m[32mLinking CXX executable gps_node[0m
+[5.712s] [100%] Built target gps_node
+[5.717s] Invoked command in '/home/w/projects/projects/gps_ws/build/gps' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/w/projects/projects/gps_ws/build/gps -- -j32 -l32
+[5.722s] Invoking command in '/home/w/projects/projects/gps_ws/build/gps': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/w/projects/projects/gps_ws/build/gps
+[5.725s] -- Install configuration: ""
+[5.726s] -- Installing: /home/w/projects/projects/gps_ws/install/gps/lib/gps/gps_node
+[5.730s] -- Set non-toolchain portion of runtime path of "/home/w/projects/projects/gps_ws/install/gps/lib/gps/gps_node" to ""
+[5.730s] -- Up-to-date: /home/w/projects/projects/gps_ws/install/gps/share/ament_index/resource_index/package_run_dependencies/gps
+[5.730s] -- Up-to-date: /home/w/projects/projects/gps_ws/install/gps/share/ament_index/resource_index/parent_prefix_path/gps
+[5.730s] -- Up-to-date: /home/w/projects/projects/gps_ws/install/gps/share/gps/environment/ament_prefix_path.sh
+[5.730s] -- Up-to-date: /home/w/projects/projects/gps_ws/install/gps/share/gps/environment/ament_prefix_path.dsv
+[5.730s] -- Up-to-date: /home/w/projects/projects/gps_ws/install/gps/share/gps/environment/path.sh
+[5.730s] -- Up-to-date: /home/w/projects/projects/gps_ws/install/gps/share/gps/environment/path.dsv
+[5.730s] -- Up-to-date: /home/w/projects/projects/gps_ws/install/gps/share/gps/local_setup.bash
+[5.730s] -- Up-to-date: /home/w/projects/projects/gps_ws/install/gps/share/gps/local_setup.sh
+[5.730s] -- Up-to-date: /home/w/projects/projects/gps_ws/install/gps/share/gps/local_setup.zsh
+[5.730s] -- Up-to-date: /home/w/projects/projects/gps_ws/install/gps/share/gps/local_setup.dsv
+[5.730s] -- Installing: /home/w/projects/projects/gps_ws/install/gps/share/gps/package.dsv
+[5.730s] -- Up-to-date: /home/w/projects/projects/gps_ws/install/gps/share/ament_index/resource_index/packages/gps
+[5.730s] -- Up-to-date: /home/w/projects/projects/gps_ws/install/gps/share/gps/cmake/gpsConfig.cmake
+[5.730s] -- Up-to-date: /home/w/projects/projects/gps_ws/install/gps/share/gps/cmake/gpsConfig-version.cmake
+[5.730s] -- Up-to-date: /home/w/projects/projects/gps_ws/install/gps/share/gps/package.xml
+[5.731s] Invoked command in '/home/w/projects/projects/gps_ws/build/gps' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/w/projects/projects/gps_ws/build/gps

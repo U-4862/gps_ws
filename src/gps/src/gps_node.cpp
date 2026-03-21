@@ -1,6 +1,6 @@
 #include <rclcpp/rclcpp.hpp>
 #include <tf2_msgs/msg/tf_message.hpp>
-
+#include <chrono>
 #include <behaviortree_cpp/bt_factory.h>
 using std::placeholders::_1;
 
@@ -84,14 +84,25 @@ class Serial_1
         //让输出也变成完全原始的字节流，不被内核“帮忙”加工。
         tty.c_oflag &= ~OPOST;
 
-        tty.c_cc[VMIN] = 1;
-        tty.c_cc[VTIME] = 0;
+        tty.c_cc[VMIN] = 0;
+        tty.c_cc[VTIME] = 2;
+
+        // 行为解释：
+        // 1. 调用 read 时，如果有数据，立即返回（不等待 200ms）。
+        // 2. 如果没数据，内核会等待最多 200ms。
+        //    - 期间来了数据：立即返回。
+        //    - 200ms 到了还没数据：返回 0。
+        // ==========================================
 
         if (tcsetattr(fd, TCSANOW, &tty) != 0)
         {
-        std::cerr << "Error setting serial port attributes." << std::endl;
-        close(fd);
+            std::cerr << "Error setting serial port attributes: " << strerror(errno) << std::endl;
+            close(fd);
+            fd = -1;
         }
+
+        // 清空旧数据，避免一上来就读到之前的残留
+        tcflush(fd, TCIFLUSH);
     }
 
     ~Serial_1()
@@ -121,10 +132,93 @@ class Serial_1
 
         return written;
     }
+
+    ssize_t receive_with_timeout(void* out_buffer, size_t max_len)
+    {
+        if (fd == -1) return -1;
+
+        ssize_t n = read(fd, out_buffer, max_len);
+
+        if (n < 0)
+        {
+            // 如果配置正确 (VMIN=0, VTIME=2)，通常不会遇到 EAGAIN，除非 open 用了 O_NONBLOCK
+            if (errno == EAGAIN || errno == EWOULDBLOCK)
+            {
+                // 这种情况视为“超时/无数据”
+                return 0;
+            }
+            std::cerr << "read error: " << strerror(errno) << std::endl;
+            return -1;
+        }
+
+        // n == 0 表示超时 (VTIME 到期且无数据)
+        // n > 0 表示读到了数据 (可能少于 max_len，因为只要有一个字节就会立即返回)
+        return n;
+    }
+
+    
+
 };
 
 Serial_1 serial_1;
 
+struct Pose2D
+{
+    double x, y, theta;
+};
+
+namespace chr = std::chrono;
+
+class DetectFront : public BT::StatefulActionNode
+{
+  public:
+    
+    DetectFront(const std::string& name, const BT::NodeConfig& config)
+      : StatefulActionNode(name, config)
+    {}
+
+      
+    static BT::PortsList providedPorts()
+    {
+        
+        return{ };
+    }
+
+    // 节点开始时唤醒一次
+    BT::NodeStatus onStart() override;
+
+    // If onStart() returned RUNNING, we will keep calling
+    // this method until it return something different from RUNNING
+    BT::NodeStatus onRunning() override;
+
+    // callback to execute if the action was aborted by another node
+    void onHalted() override;
+
+  private:
+    Pose2D _goal;
+    chr::system_clock::time_point _completion_time;
+};
+
+//-------------------------
+
+BT::NodeStatus DetectFront::onStart()
+{
+ 
+  _completion_time = chr::system_clock::now() + chr::milliseconds(220);
+
+  return BT::NodeStatus::RUNNING;
+}
+
+BT::NodeStatus DetectFront::onRunning()
+{
+    
+    return BT::NodeStatus::RUNNING;
+}
+
+void DetectFront::onHalted()
+{
+  printf("视觉信息传输失败");
+}
 
 class TFListener : public rclcpp::Node 
 {

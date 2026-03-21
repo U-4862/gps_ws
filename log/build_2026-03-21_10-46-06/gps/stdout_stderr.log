@@ -1,0 +1,12 @@
+[ 50%] [32mBuilding CXX object CMakeFiles/gps_node.dir/src/gps_node.cpp.o[0m
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:[m[K In member function ‘[01m[Kvirtual BT::NodeStatus DetectFront::onRunning()[m[K’:
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:177:1:[m[K [01;35m[Kwarning: [m[Kno return statement in function returning non-void [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreturn-type-Wreturn-type]8;;[m[K]
+  177 | [01;35m[K}[m[K
+      | [01;35m[K^[m[K
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:[m[K At global scope:
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:179:6:[m[K [01;31m[Kerror: [m[K‘[01m[KMoveBaseAction[m[K’ has not been declared
+  179 | void [01;31m[KMoveBaseAction[m[K::onHalted()
+      |      [01;31m[K^~~~~~~~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/gps_node.dir/build.make:79: CMakeFiles/gps_node.dir/src/gps_node.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:153: CMakeFiles/gps_node.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2
