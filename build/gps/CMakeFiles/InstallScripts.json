@@ -1,0 +1,7 @@
+{
+	"InstallScripts" : 
+	[
+		"/home/w/projects/projects/gps_ws/build/gps/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

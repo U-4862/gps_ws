@@ -1,0 +1,13 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "${default}",
+                "/opt/ros/${ROS_DISTRO}/include/**"
+            ],
+            "defines": []
+        }
+    ],
+    "version": 4
+}

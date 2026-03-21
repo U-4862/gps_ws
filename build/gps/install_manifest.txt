@@ -1,0 +1,16 @@
+/home/w/projects/projects/gps_ws/install/gps/lib/gps/gps_node
+/home/w/projects/projects/gps_ws/install/gps/share/ament_index/resource_index/package_run_dependencies/gps
+/home/w/projects/projects/gps_ws/install/gps/share/ament_index/resource_index/parent_prefix_path/gps
+/home/w/projects/projects/gps_ws/install/gps/share/gps/environment/ament_prefix_path.sh
+/home/w/projects/projects/gps_ws/install/gps/share/gps/environment/ament_prefix_path.dsv
+/home/w/projects/projects/gps_ws/install/gps/share/gps/environment/path.sh
+/home/w/projects/projects/gps_ws/install/gps/share/gps/environment/path.dsv
+/home/w/projects/projects/gps_ws/install/gps/share/gps/local_setup.bash
+/home/w/projects/projects/gps_ws/install/gps/share/gps/local_setup.sh
+/home/w/projects/projects/gps_ws/install/gps/share/gps/local_setup.zsh
+/home/w/projects/projects/gps_ws/install/gps/share/gps/local_setup.dsv
+/home/w/projects/projects/gps_ws/install/gps/share/gps/package.dsv
+/home/w/projects/projects/gps_ws/install/gps/share/ament_index/resource_index/packages/gps
+/home/w/projects/projects/gps_ws/install/gps/share/gps/cmake/gpsConfig.cmake
+/home/w/projects/projects/gps_ws/install/gps/share/gps/cmake/gpsConfig-version.cmake
+/home/w/projects/projects/gps_ws/install/gps/share/gps/package.xml
