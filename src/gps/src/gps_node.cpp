@@ -11,11 +11,7 @@ using std::placeholders::_1;
 #include <unistd.h>
 #include <string>
 
-enum POS_X{
-    A =1,
-    B,
-    C
-};
+
 
 struct pos{
     uint8_t start;
@@ -23,6 +19,13 @@ struct pos{
     float y;
     float z;
     uint8_t end;
+};
+
+struct Pose2D
+{
+    float x;
+    float y;
+    float z;
 };
 
 enum FACING_DIRECTION{
@@ -162,10 +165,7 @@ class Serial_1
 
 Serial_1 serial_1;
 
-struct Pose2D
-{
-    double x, y, theta;
-};
+
 
 namespace chr = std::chrono;
 
@@ -291,28 +291,51 @@ class ToPos : public BT::SyncActionNode
     }
 };
 
-class Turn_left : public BT::SyncActionNode
+class TurnLeft : public BT::StatefulActionNode
 {
     public:
-    Turn_left(const std::string& name , const BT::NodeConfig& config )
-    : BT::SyncActionNode(name, config){}
+
+    TurnLeft(const std::string& name,const, BT::NodeConfig& config)
+        :StatefulActionNode(name,config)
+    {
+    }
 
     static BT::PortsList providedPorts()
     {
-        return {BT::InputPort<std::string>("message")}; 
+        return {};
     }
 
-    BT::NodeStatus tick() override
+    BT::NodeStatus onStart() override;
+
+    BT::NodeStatus onRunning() override;
+
+    void onHalted() override;
+
+    private:
+    Pose2D message;
+    chr::system_clock::time_point _completion_time;
+
+}
+
+BT::NodeStatus TurnLeft::onStart()
+{
+    _completion_time = chr::system_clock::now() + chr::milliseconds(220);
+    return BT::NodeStatus::RUNNING;
+}
+
+BT::NodeStatus TurnLeft::onRunning()
+{
+    current_time = chr::system_clock.now();
+    if(current_time < _completion_time)
     {
-        BT::Expected<std::string> msg = getInput<std::string>("message");
-        if(!msg)
-        {
-            throw BT::RuntimeError("missing required input [message]: ", msg.error());
-        }
-        std::cout << "Robot says: " << msg.value() << std::endl;
+        Pose2D msg = {0.1, 0.0, 0.1};
+        serial_1.send(&msg,sizeof(msg));
+        return BT::NodeStatus::RUNNING;
+    }
+    else{
         return BT::NodeStatus::SUCCESS;
     }
-};
+}
 
 class Turn_right : public BT::SyncActionNode
 {
@@ -368,7 +391,10 @@ class Detect_front : public BT::SyncActionNode
 
     static BT::PortsList providedPorts()
     {
-        return {BT::InputPort<std::string>("message")}; 
+        uint8_t return_status = 0;
+
+        serial_1.receive_with_timeout();
+        return {BT::InputPort<std::string>("message")};
     }
 
     BT::NodeStatus tick() override
