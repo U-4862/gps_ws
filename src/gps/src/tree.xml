@@ -1,29 +1,15 @@
 <root main_tree_to_execute = "MainTree">
     <BehaviorTree ID="MainTree">
-        <!-- 
-        选择一种控制流：
-        1. Sequence: 顺序执行（全绿才通过）
-        2. ReactiveSequence: 实时顺序（会不断重试前面的）
-        3. Fallback: 选择执行（遇到绿的就停）
-        -->
-        
+      
         <ReactiveSequence name="Root_Sequence">
-            <!-- 节点 1: 前进 -->
-            <!-- 注意：name 属性是给这个实例起个名字，ID 必须和 C++ 注册的名字一样 -->
             <MoveForward name="Move_Step_1" />
 
-            <!-- 节点 2: 左转 -->
             <TurnLeft name="Turn_Left_A" />
-
-            <!-- 节点 3: 检测 -->
-            <!-- 
-            注意：你的 Detect_front 节点定义了需要一个输入端口 "message"
-            所以这里必须传入一个值，格式是：message="你要说的话"
-            -->
             <Detect_front name="Check_Target" message="Looking for object" />
 
-            <!-- 节点 4: 抓取 -->
             
         </ReactiveSequence>
     </BehaviorTree>
 </root>
+
+<
