@@ -1,0 +1,2 @@
+Invoking command in '/home/w/Projects/gps_ws/build/gps': CMAKE_PREFIX_PATH=/opt/ros/humble CONDA_PROMPT_MODIFIER=(base) /usr/bin/cmake /home/w/Projects/gps_ws/src/gps -DCMAKE_INSTALL_PREFIX=/home/w/Projects/gps_ws/install/gps
+Invoked command in '/home/w/Projects/gps_ws/build/gps' returned '-2': CMAKE_PREFIX_PATH=/opt/ros/humble CONDA_PROMPT_MODIFIER=(base) /usr/bin/cmake /home/w/Projects/gps_ws/src/gps -DCMAKE_INSTALL_PREFIX=/home/w/Projects/gps_ws/install/gps

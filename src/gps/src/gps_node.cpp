@@ -411,7 +411,7 @@ public:
         const std::string& name,
         const BT::NodeConfig& config,
         std::shared_ptr<AppContext> context)
-        : TimedVelocityAction(name, config, std::move(context), Pose2D {0.1F, 0.0F, 0.0F})
+        : TimedVelocityAction(name, config, std::move(context), Pose2D {0.1F, 0.0F, 00F})
     {
     }
 };

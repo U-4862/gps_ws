@@ -1,0 +1,55 @@
+[0.014s] Invoking command in '/home/w/Projects/gps_ws/build/gps': CMAKE_PREFIX_PATH=/opt/ros/humble CONDA_PROMPT_MODIFIER=(base) /usr/bin/cmake /home/w/Projects/gps_ws/src/gps -DCMAKE_INSTALL_PREFIX=/home/w/Projects/gps_ws/install/gps
+[0.372s] -- The C compiler identification is GNU 11.4.0
+[1.893s] -- The CXX compiler identification is GNU 11.4.0
+[3.055s] -- Detecting C compiler ABI info
+[3.442s] -- Detecting C compiler ABI info - done
+[3.448s] -- Check for working C compiler: /usr/bin/cc - skipped
+[3.448s] -- Detecting C compile features
+[3.450s] -- Detecting C compile features - done
+[3.455s] -- Detecting CXX compiler ABI info
+[3.843s] -- Detecting CXX compiler ABI info - done
+[3.849s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[3.849s] -- Detecting CXX compile features
+[3.849s] -- Detecting CXX compile features - done
+[3.874s] -- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)
+[4.376s] -- Found Python3: /home/w/anaconda3/bin/python3 (found version "3.13.9") found components: Interpreter 
+[4.528s] -- Found rclcpp: 16.0.15 (/opt/ros/humble/share/rclcpp/cmake)
+[4.965s] -- Found rosidl_generator_c: 3.1.7 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[4.975s] -- Found rosidl_adapter: 3.1.7 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[4.991s] -- Found rosidl_generator_cpp: 3.1.7 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[5.019s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[5.049s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[5.138s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[5.144s] -- Found rmw_fastrtps_cpp: 6.2.8 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[8.867s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[12.662s] -- Found FastRTPS: /opt/ros/humble/include  
+[19.867s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[19.893s] -- Looking for pthread.h
+[20.345s] -- Looking for pthread.h - found
+[20.346s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[20.799s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[20.800s] -- Found Threads: TRUE  
+[20.904s] -- Found tf2_msgs: 0.25.16 (/opt/ros/humble/share/tf2_msgs/cmake)
+[21.019s] -- Found behaviortree_cpp: 4.9.0 (/opt/ros/humble/share/behaviortree_cpp/cmake)
+[21.030s] -- Found ament_lint_auto: 0.12.14 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[21.203s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[21.203s] -- Configured cppcheck include dirs: 
+[21.203s] -- Configured cppcheck exclude dirs and/or files: 
+[21.205s] -- Added test 'lint_cmake' to check CMake code style
+[21.208s] -- Added test 'uncrustify' to check C / C++ code style
+[21.208s] -- Configured uncrustify additional arguments: 
+[21.210s] -- Added test 'xmllint' to check XML markup files
+[21.214s] -- Configuring done
+[21.238s] -- Generating done
+[21.244s] -- Build files have been written to: /home/w/Projects/gps_ws/build/gps
+[21.262s] Invoked command in '/home/w/Projects/gps_ws/build/gps' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble CONDA_PROMPT_MODIFIER=(base) /usr/bin/cmake /home/w/Projects/gps_ws/src/gps -DCMAKE_INSTALL_PREFIX=/home/w/Projects/gps_ws/install/gps
+[21.268s] Invoking command in '/home/w/Projects/gps_ws/build/gps': CMAKE_PREFIX_PATH=/opt/ros/humble CONDA_PROMPT_MODIFIER=(base) /usr/bin/cmake --build /home/w/Projects/gps_ws/build/gps -- -j32 -l32
+[21.358s] [ 50%] [32mBuilding CXX object CMakeFiles/gps_node.dir/src/gps_node.cpp.o[0m
+[21.788s] [01m[K/home/w/Projects/gps_ws/src/gps/src/gps_node.cpp:2:10:[m[K [01;31m[Kfatal error: [m[Kbehaviortree_cpp/tree.h: No such file or directory
+[21.789s]     2 | #include [01;31m[K<behaviortree_cpp/tree.h>[m[K
+[21.789s]       |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[21.789s] compilation terminated.
+[21.795s] gmake[2]: *** [CMakeFiles/gps_node.dir/build.make:76: CMakeFiles/gps_node.dir/src/gps_node.cpp.o] Error 1
+[21.795s] gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/gps_node.dir/all] Error 2
+[21.796s] gmake: *** [Makefile:146: all] Error 2
+[21.801s] Invoked command in '/home/w/Projects/gps_ws/build/gps' returned '2': CMAKE_PREFIX_PATH=/opt/ros/humble CONDA_PROMPT_MODIFIER=(base) /usr/bin/cmake --build /home/w/Projects/gps_ws/build/gps -- -j32 -l32

@@ -1,0 +1,277 @@
+[0.000000] (-) TimerEvent: {}
+[0.000719] (gps) JobQueued: {'identifier': 'gps', 'dependencies': OrderedDict()}
+[0.000840] (gps) JobStarted: {'identifier': 'gps'}
+[0.009871] (gps) JobProgress: {'identifier': 'gps', 'progress': 'cmake'}
+[0.010462] (gps) Command: {'cmd': ['/usr/bin/cmake', '/home/w/Projects/gps_ws/src/gps', '-DCMAKE_INSTALL_PREFIX=/home/w/Projects/gps_ws/install/gps'], 'cwd': '/home/w/Projects/gps_ws/build/gps', 'env': OrderedDict([('PYTHON_BASIC_REPL', '1'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('CONDA_PROMPT_MODIFIER', '(base)'), ('__EGL_VENDOR_LIBRARY_DIRS', '/home/w/anaconda3/share/glvnd/egl_vendor.d'), ('USER', 'w'), ('GIT_ASKPASS', '/home/w/.vscode-server/bin/10c8e557c8b9f9ed0a87f61f1c9a44bde731c409/extensions/git/dist/askpass.sh'), ('SHLVL', '2'), ('LD_LIBRARY_PATH', '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('WT_PROFILE_ID', '{4ff56d04-d9cf-57ea-bae2-ad396374e7e3}'), ('MOTD_SHOWN', 'update-motd'), ('HOME', '/home/w'), ('CONDA_SHLVL', '1'), ('TERM_PROGRAM_VERSION', '1.117.0'), ('NVM_BIN', '/home/w/.nvm/versions/node/v22.22.2/bin'), ('VSCODE_IPC_HOOK_CLI', '/run/user/1000/vscode-ipc-6fcd3feb-5496-4dc8-95c2-d6fef300b8ff.sock'), ('NVM_INC', '/home/w/.nvm/versions/node/v22.22.2/include/node'), ('ROS_PYTHON_VERSION', '3'), ('VSCODE_GIT_ASKPASS_MAIN', '/home/w/.vscode-server/bin/10c8e557c8b9f9ed0a87f61f1c9a44bde731c409/extensions/git/dist/askpass-main.js'), ('VSCODE_GIT_ASKPASS_NODE', '/home/w/.vscode-server/bin/10c8e557c8b9f9ed0a87f61f1c9a44bde731c409/node'), ('VSCODE_PYTHON_AUTOACTIVATE_GUARD', '1'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('_CE_M', ''), ('WSL_DISTRO_NAME', 'Ubuntu-22.04'), ('_CONDA_ROOT', '/home/w/anaconda3'), ('NVM_DIR', '/home/w/.nvm'), ('WAYLAND_DISPLAY', 'wayland-0'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'w'), ('NAME', 'Code'), ('WSL_INTEROP', '/run/WSL/2158_interop'), ('PULSE_SERVER', 'unix:/mnt/wslg/PulseServer'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('CLAUDE_CODE_SSE_PORT', '64468'), ('TERM', 'xterm-256color'), ('_CE_CONDA', ''), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/home/w/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand:/home/w/.vscode-server/data/User/globalStorage/github.copilot-chat/copilotCli:/home/w/.vscode-server/bin/10c8e557c8b9f9ed0a87f61f1c9a44bde731c409/bin/remote-cli:/home/w/.local/bin:/home/w/.nvm/versions/node/v22.22.2/bin:/home/w/anaconda3/bin:/home/w/anaconda3/condabin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Python313/Scripts:/mnt/c/Python313:/mnt/c/Program Files (x86)/VMware/VMware Workstation/bin:/mnt/c/Program Files (x86)/Razer Chroma SDK/bin:/mnt/c/Program Files/Razer Chroma SDK/bin:/mnt/c/Program Files/Common Files/Oracle/Java/javapath:/mnt/c/Program Files (x86)/Common Files/Oracle/Java/java8path:/mnt/c/Program Files (x86)/Common Files/Oracle/Java/javapath:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0:/mnt/c/Windows/System32/OpenSSH:/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/mnt/c/Program Files/dotnet:/mnt/c/Program Files/Calibre2:/mnt/c/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR:/mnt/c/Program Files (x86)/NetSarang/Xshell 8:/mnt/c/Program Files (x86)/NetSarang/Xftp 8:/mnt/c/Windows/system32/config/systemprofile/AppData/Local/Microsoft/WindowsApps:/mnt/c/Program Files (x86)/Razer/ChromaBroadcast/bin:/mnt/c/Program Files/Razer/ChromaBroadcast/bin:/mnt/c/Users/z1256/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/z1256/.dotnet/tools:/mnt/c/Users/z1256/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/mingw64/bin:/mnt/c/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files/nodejs:/mnt/c/ProgramData/chocolatey/bin:/mnt/c/Program Files (x86)/Windows Kits/8.1/Windows Performance Toolkit:/mnt/c/Program Files/Bandizip:/mnt/c/Program Files (x86)/STMicroelectronics/STM32 ST-LINK Utility/ST-LINK Utility:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0:/mnt/c/Windows/System32/OpenSSH:/mnt/c/Program Files/CMake/bin:/mnt/c/ffmpeg-8.0-essentials_build/bin:/mnt/c/Program Files/Docker/Docker/resources/bin:/mnt/c/ProgramData/anaconda3:/mnt/c/ProgramData/anaconda3/Scripts:/mnt/c/ProgramData/anaconda3/Library/bin:/mnt/c/Users/z1256/scoop/shims:/mnt/c/Users/z1256/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/z1256/.dotnet/tools:/mnt/c/Users/z1256/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Users/z1256/AppData/Roaming/npm:/mnt/c/Program Files/JetBrains/PyCharm 2025.2.1.1/bin:/mnt/c/users/z1256/.local/bin:/mnt/c/users/z1256/appdata/roaming/python/python313/scripts:/mnt/c/Users/z1256/AppData/Roaming/Programs/Zero Install:/mnt/c/Users/z1256/AppData/Local/Microsoft/WindowsApps:/mnt/c/Program Files/JetBrains/CLion 2025.2.3/bin:/mnt/c/Users/z1256/.dotnet/tools:/mnt/c/Users/z1256/AppData/Local/Microsoft/WinGet/Packages/Justsenger.ExHyperV_Microsoft.Winget.Source_8wekyb3d8bbwe:/mnt/c/Users/z1256/AppData/Local/PowerToys/DSCModules:/mnt/c/Users/z1256/AppData/Local/Programs/Ollama:/snap/bin:/home/w/.dotnet/tools'), ('WT_SESSION', 'e5b685b9-20bb-40c6-bc70-94bf3424df99'), ('XDG_RUNTIME_DIR', '/run/user/1000/'), ('DISPLAY', ':0'), ('LANG', 'C.UTF-8'), ('PYTHONSTARTUP', '/home/w/.vscode-server/data/User/workspaceStorage/3940b5fd33f4a566081912416db79aa7/ms-python.python/pythonrc.py'), ('DOTNET_BUNDLE_EXTRACT_BASE_DIR', '/home/w/.cache/dotnet_bundle_extract'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1000/vscode-git-ad350a6442.sock'), ('TERM_PROGRAM', 'vscode'), ('GSETTINGS_SCHEMA_DIR', '/home/w/anaconda3/share/glib-2.0/schemas'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('CONDA_PYTHON_EXE', '/home/w/anaconda3/bin/python'), ('SHELL', '/bin/bash'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('CONDA_DEFAULT_ENV', 'base'), ('_CONDA_EXE', '/home/w/anaconda3/bin/conda'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('PWD', '/home/w/Projects/gps_ws/build/gps'), ('CONDA_EXE', '/home/w/anaconda3/bin/conda'), ('NVM_CD_FLAGS', ''), ('XDG_DATA_DIRS', '/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('CONDA_PREFIX', '/home/w/anaconda3'), ('GSETTINGS_SCHEMA_DIR_CONDA_BACKUP', ''), ('COLCON', '1'), ('WSL2_GUI_APPS_ENABLED', '1'), ('HOSTTYPE', 'x86_64'), ('WSLENV', 'ELECTRON_RUN_AS_NODE/w:WT_SESSION:WT_PROFILE_ID:'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[0.098998] (-) TimerEvent: {}
+[0.200151] (-) TimerEvent: {}
+[0.303794] (-) TimerEvent: {}
+[0.372745] (gps) StdoutLine: {'line': b'-- The C compiler identification is GNU 11.4.0\n'}
+[0.404941] (-) TimerEvent: {}
+[0.505606] (-) TimerEvent: {}
+[0.607967] (-) TimerEvent: {}
+[0.711540] (-) TimerEvent: {}
+[0.813070] (-) TimerEvent: {}
+[0.916662] (-) TimerEvent: {}
+[1.020238] (-) TimerEvent: {}
+[1.120830] (-) TimerEvent: {}
+[1.223506] (-) TimerEvent: {}
+[1.327087] (-) TimerEvent: {}
+[1.430690] (-) TimerEvent: {}
+[1.531222] (-) TimerEvent: {}
+[1.632002] (-) TimerEvent: {}
+[1.732626] (-) TimerEvent: {}
+[1.836210] (-) TimerEvent: {}
+[1.893698] (gps) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 11.4.0\n'}
+[1.937743] (-) TimerEvent: {}
+[2.038315] (-) TimerEvent: {}
+[2.140179] (-) TimerEvent: {}
+[2.240752] (-) TimerEvent: {}
+[2.341373] (-) TimerEvent: {}
+[2.444903] (-) TimerEvent: {}
+[2.545689] (-) TimerEvent: {}
+[2.646335] (-) TimerEvent: {}
+[2.750133] (-) TimerEvent: {}
+[2.851379] (-) TimerEvent: {}
+[2.955098] (-) TimerEvent: {}
+[3.055953] (gps) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[3.056167] (-) TimerEvent: {}
+[3.159538] (-) TimerEvent: {}
+[3.263231] (-) TimerEvent: {}
+[3.365319] (-) TimerEvent: {}
+[3.442893] (gps) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[3.448521] (gps) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[3.449090] (gps) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[3.450399] (gps) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[3.455476] (gps) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[3.465804] (-) TimerEvent: {}
+[3.567438] (-) TimerEvent: {}
+[3.668317] (-) TimerEvent: {}
+[3.771878] (-) TimerEvent: {}
+[3.843920] (gps) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[3.849350] (gps) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[3.849802] (gps) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[3.850011] (gps) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[3.872698] (-) TimerEvent: {}
+[3.875126] (gps) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[3.972957] (-) TimerEvent: {}
+[4.073552] (-) TimerEvent: {}
+[4.174278] (-) TimerEvent: {}
+[4.274871] (-) TimerEvent: {}
+[4.375928] (-) TimerEvent: {}
+[4.376659] (gps) StdoutLine: {'line': b'-- Found Python3: /home/w/anaconda3/bin/python3 (found version "3.13.9") found components: Interpreter \n'}
+[4.479170] (-) TimerEvent: {}
+[4.528787] (gps) StdoutLine: {'line': b'-- Found rclcpp: 16.0.15 (/opt/ros/humble/share/rclcpp/cmake)\n'}
+[4.580938] (-) TimerEvent: {}
+[4.684667] (-) TimerEvent: {}
+[4.787186] (-) TimerEvent: {}
+[4.890658] (-) TimerEvent: {}
+[4.965598] (gps) StdoutLine: {'line': b'-- Found rosidl_generator_c: 3.1.7 (/opt/ros/humble/share/rosidl_generator_c/cmake)\n'}
+[4.975351] (gps) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.7 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[4.990880] (-) TimerEvent: {}
+[4.991661] (gps) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 3.1.7 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)\n'}
+[5.020081] (gps) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[5.049499] (gps) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[5.091056] (-) TimerEvent: {}
+[5.138437] (gps) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)\n'}
+[5.144440] (gps) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 6.2.8 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)\n'}
+[5.191324] (-) TimerEvent: {}
+[5.291963] (-) TimerEvent: {}
+[5.394371] (-) TimerEvent: {}
+[5.495198] (-) TimerEvent: {}
+[5.597204] (-) TimerEvent: {}
+[5.698942] (-) TimerEvent: {}
+[5.799792] (-) TimerEvent: {}
+[5.900669] (-) TimerEvent: {}
+[6.001323] (-) TimerEvent: {}
+[6.103138] (-) TimerEvent: {}
+[6.204517] (-) TimerEvent: {}
+[6.306114] (-) TimerEvent: {}
+[6.406700] (-) TimerEvent: {}
+[6.507346] (-) TimerEvent: {}
+[6.608631] (-) TimerEvent: {}
+[6.710704] (-) TimerEvent: {}
+[6.812704] (-) TimerEvent: {}
+[6.914709] (-) TimerEvent: {}
+[7.015599] (-) TimerEvent: {}
+[7.116496] (-) TimerEvent: {}
+[7.217325] (-) TimerEvent: {}
+[7.318160] (-) TimerEvent: {}
+[7.418915] (-) TimerEvent: {}
+[7.519645] (-) TimerEvent: {}
+[7.620551] (-) TimerEvent: {}
+[7.721327] (-) TimerEvent: {}
+[7.822244] (-) TimerEvent: {}
+[7.923236] (-) TimerEvent: {}
+[8.023971] (-) TimerEvent: {}
+[8.124902] (-) TimerEvent: {}
+[8.225624] (-) TimerEvent: {}
+[8.326465] (-) TimerEvent: {}
+[8.427088] (-) TimerEvent: {}
+[8.527864] (-) TimerEvent: {}
+[8.628569] (-) TimerEvent: {}
+[8.729385] (-) TimerEvent: {}
+[8.830024] (-) TimerEvent: {}
+[8.867797] (gps) StdoutLine: {'line': b'-- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  \n'}
+[8.930284] (-) TimerEvent: {}
+[9.031070] (-) TimerEvent: {}
+[9.131964] (-) TimerEvent: {}
+[9.232666] (-) TimerEvent: {}
+[9.333332] (-) TimerEvent: {}
+[9.434109] (-) TimerEvent: {}
+[9.534944] (-) TimerEvent: {}
+[9.635950] (-) TimerEvent: {}
+[9.736939] (-) TimerEvent: {}
+[9.837607] (-) TimerEvent: {}
+[9.938357] (-) TimerEvent: {}
+[10.038909] (-) TimerEvent: {}
+[10.139483] (-) TimerEvent: {}
+[10.240030] (-) TimerEvent: {}
+[10.340600] (-) TimerEvent: {}
+[10.441112] (-) TimerEvent: {}
+[10.541574] (-) TimerEvent: {}
+[10.642219] (-) TimerEvent: {}
+[10.742694] (-) TimerEvent: {}
+[10.843162] (-) TimerEvent: {}
+[10.943619] (-) TimerEvent: {}
+[11.044125] (-) TimerEvent: {}
+[11.144572] (-) TimerEvent: {}
+[11.245031] (-) TimerEvent: {}
+[11.345491] (-) TimerEvent: {}
+[11.446016] (-) TimerEvent: {}
+[11.546521] (-) TimerEvent: {}
+[11.647037] (-) TimerEvent: {}
+[11.747538] (-) TimerEvent: {}
+[11.848059] (-) TimerEvent: {}
+[11.948584] (-) TimerEvent: {}
+[12.049768] (-) TimerEvent: {}
+[12.150675] (-) TimerEvent: {}
+[12.251134] (-) TimerEvent: {}
+[12.351646] (-) TimerEvent: {}
+[12.452107] (-) TimerEvent: {}
+[12.552611] (-) TimerEvent: {}
+[12.653340] (-) TimerEvent: {}
+[12.661981] (gps) StdoutLine: {'line': b'-- Found FastRTPS: /opt/ros/humble/include  \n'}
+[12.754802] (-) TimerEvent: {}
+[12.857014] (-) TimerEvent: {}
+[12.957542] (-) TimerEvent: {}
+[13.058109] (-) TimerEvent: {}
+[13.158662] (-) TimerEvent: {}
+[13.259468] (-) TimerEvent: {}
+[13.359935] (-) TimerEvent: {}
+[13.460444] (-) TimerEvent: {}
+[13.561122] (-) TimerEvent: {}
+[13.661704] (-) TimerEvent: {}
+[13.762247] (-) TimerEvent: {}
+[13.863317] (-) TimerEvent: {}
+[13.963978] (-) TimerEvent: {}
+[14.066137] (-) TimerEvent: {}
+[14.168256] (-) TimerEvent: {}
+[14.268793] (-) TimerEvent: {}
+[14.370072] (-) TimerEvent: {}
+[14.470514] (-) TimerEvent: {}
+[14.571073] (-) TimerEvent: {}
+[14.671785] (-) TimerEvent: {}
+[14.772552] (-) TimerEvent: {}
+[14.873197] (-) TimerEvent: {}
+[14.973830] (-) TimerEvent: {}
+[15.075896] (-) TimerEvent: {}
+[15.176446] (-) TimerEvent: {}
+[15.277876] (-) TimerEvent: {}
+[15.380226] (-) TimerEvent: {}
+[15.482543] (-) TimerEvent: {}
+[15.584722] (-) TimerEvent: {}
+[15.686885] (-) TimerEvent: {}
+[15.789044] (-) TimerEvent: {}
+[15.889810] (-) TimerEvent: {}
+[15.992100] (-) TimerEvent: {}
+[16.094265] (-) TimerEvent: {}
+[16.195155] (-) TimerEvent: {}
+[16.297375] (-) TimerEvent: {}
+[16.399575] (-) TimerEvent: {}
+[16.501750] (-) TimerEvent: {}
+[16.604090] (-) TimerEvent: {}
+[16.706320] (-) TimerEvent: {}
+[16.808585] (-) TimerEvent: {}
+[16.909291] (-) TimerEvent: {}
+[17.009938] (-) TimerEvent: {}
+[17.110506] (-) TimerEvent: {}
+[17.212819] (-) TimerEvent: {}
+[17.315074] (-) TimerEvent: {}
+[17.417602] (-) TimerEvent: {}
+[17.520031] (-) TimerEvent: {}
+[17.622230] (-) TimerEvent: {}
+[17.724416] (-) TimerEvent: {}
+[17.826590] (-) TimerEvent: {}
+[17.928771] (-) TimerEvent: {}
+[18.030975] (-) TimerEvent: {}
+[18.133158] (-) TimerEvent: {}
+[18.233777] (-) TimerEvent: {}
+[18.336212] (-) TimerEvent: {}
+[18.437012] (-) TimerEvent: {}
+[18.537575] (-) TimerEvent: {}
+[18.638243] (-) TimerEvent: {}
+[18.738821] (-) TimerEvent: {}
+[18.840566] (-) TimerEvent: {}
+[18.943411] (-) TimerEvent: {}
+[19.043968] (-) TimerEvent: {}
+[19.144639] (-) TimerEvent: {}
+[19.246741] (-) TimerEvent: {}
+[19.347312] (-) TimerEvent: {}
+[19.447992] (-) TimerEvent: {}
+[19.548800] (-) TimerEvent: {}
+[19.649418] (-) TimerEvent: {}
+[19.750420] (-) TimerEvent: {}
+[19.854637] (-) TimerEvent: {}
+[19.868118] (gps) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[19.893200] (gps) StdoutLine: {'line': b'-- Looking for pthread.h\n'}
+[19.956378] (-) TimerEvent: {}
+[20.057752] (-) TimerEvent: {}
+[20.158307] (-) TimerEvent: {}
+[20.258825] (-) TimerEvent: {}
+[20.345496] (gps) StdoutLine: {'line': b'-- Looking for pthread.h - found\n'}
+[20.346360] (gps) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD\n'}
+[20.359001] (-) TimerEvent: {}
+[20.459605] (-) TimerEvent: {}
+[20.560298] (-) TimerEvent: {}
+[20.661075] (-) TimerEvent: {}
+[20.761702] (-) TimerEvent: {}
+[20.799221] (gps) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success\n'}
+[20.800609] (gps) StdoutLine: {'line': b'-- Found Threads: TRUE  \n'}
+[20.862266] (-) TimerEvent: {}
+[20.905011] (gps) StdoutLine: {'line': b'-- Found tf2_msgs: 0.25.16 (/opt/ros/humble/share/tf2_msgs/cmake)\n'}
+[20.962778] (-) TimerEvent: {}
+[21.019371] (gps) StdoutLine: {'line': b'-- Found behaviortree_cpp: 4.9.0 (/opt/ros/humble/share/behaviortree_cpp/cmake)\n'}
+[21.030285] (gps) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.12.14 (/opt/ros/humble/share/ament_lint_auto/cmake)\n'}
+[21.063637] (-) TimerEvent: {}
+[21.164974] (-) TimerEvent: {}
+[21.203394] (gps) StdoutLine: {'line': b"-- Added test 'cppcheck' to perform static code analysis on C / C++ code\n"}
+[21.203833] (gps) StdoutLine: {'line': b'-- Configured cppcheck include dirs: \n'}
+[21.204071] (gps) StdoutLine: {'line': b'-- Configured cppcheck exclude dirs and/or files: \n'}
+[21.205900] (gps) StdoutLine: {'line': b"-- Added test 'lint_cmake' to check CMake code style\n"}
+[21.208947] (gps) StdoutLine: {'line': b"-- Added test 'uncrustify' to check C / C++ code style\n"}
+[21.209129] (gps) StdoutLine: {'line': b'-- Configured uncrustify additional arguments: \n'}
+[21.210748] (gps) StdoutLine: {'line': b"-- Added test 'xmllint' to check XML markup files\n"}
+[21.214907] (gps) StdoutLine: {'line': b'-- Configuring done\n'}
+[21.238413] (gps) StdoutLine: {'line': b'-- Generating done\n'}
+[21.244633] (gps) StdoutLine: {'line': b'-- Build files have been written to: /home/w/Projects/gps_ws/build/gps\n'}
+[21.261630] (gps) CommandEnded: {'returncode': 0}
+[21.263799] (gps) JobProgress: {'identifier': 'gps', 'progress': 'build'}
+[21.266473] (-) TimerEvent: {}
+[21.267505] (gps) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/w/Projects/gps_ws/build/gps', '--', '-j32', '-l32'], 'cwd': '/home/w/Projects/gps_ws/build/gps', 'env': OrderedDict([('PYTHON_BASIC_REPL', '1'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('CONDA_PROMPT_MODIFIER', '(base)'), ('__EGL_VENDOR_LIBRARY_DIRS', '/home/w/anaconda3/share/glvnd/egl_vendor.d'), ('USER', 'w'), ('GIT_ASKPASS', '/home/w/.vscode-server/bin/10c8e557c8b9f9ed0a87f61f1c9a44bde731c409/extensions/git/dist/askpass.sh'), ('SHLVL', '2'), ('LD_LIBRARY_PATH', '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('WT_PROFILE_ID', '{4ff56d04-d9cf-57ea-bae2-ad396374e7e3}'), ('MOTD_SHOWN', 'update-motd'), ('HOME', '/home/w'), ('CONDA_SHLVL', '1'), ('TERM_PROGRAM_VERSION', '1.117.0'), ('NVM_BIN', '/home/w/.nvm/versions/node/v22.22.2/bin'), ('VSCODE_IPC_HOOK_CLI', '/run/user/1000/vscode-ipc-6fcd3feb-5496-4dc8-95c2-d6fef300b8ff.sock'), ('NVM_INC', '/home/w/.nvm/versions/node/v22.22.2/include/node'), ('ROS_PYTHON_VERSION', '3'), ('VSCODE_GIT_ASKPASS_MAIN', '/home/w/.vscode-server/bin/10c8e557c8b9f9ed0a87f61f1c9a44bde731c409/extensions/git/dist/askpass-main.js'), ('VSCODE_GIT_ASKPASS_NODE', '/home/w/.vscode-server/bin/10c8e557c8b9f9ed0a87f61f1c9a44bde731c409/node'), ('VSCODE_PYTHON_AUTOACTIVATE_GUARD', '1'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('_CE_M', ''), ('WSL_DISTRO_NAME', 'Ubuntu-22.04'), ('_CONDA_ROOT', '/home/w/anaconda3'), ('NVM_DIR', '/home/w/.nvm'), ('WAYLAND_DISPLAY', 'wayland-0'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'w'), ('NAME', 'Code'), ('WSL_INTEROP', '/run/WSL/2158_interop'), ('PULSE_SERVER', 'unix:/mnt/wslg/PulseServer'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('CLAUDE_CODE_SSE_PORT', '64468'), ('TERM', 'xterm-256color'), ('_CE_CONDA', ''), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/home/w/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand:/home/w/.vscode-server/data/User/globalStorage/github.copilot-chat/copilotCli:/home/w/.vscode-server/bin/10c8e557c8b9f9ed0a87f61f1c9a44bde731c409/bin/remote-cli:/home/w/.local/bin:/home/w/.nvm/versions/node/v22.22.2/bin:/home/w/anaconda3/bin:/home/w/anaconda3/condabin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Python313/Scripts:/mnt/c/Python313:/mnt/c/Program Files (x86)/VMware/VMware Workstation/bin:/mnt/c/Program Files (x86)/Razer Chroma SDK/bin:/mnt/c/Program Files/Razer Chroma SDK/bin:/mnt/c/Program Files/Common Files/Oracle/Java/javapath:/mnt/c/Program Files (x86)/Common Files/Oracle/Java/java8path:/mnt/c/Program Files (x86)/Common Files/Oracle/Java/javapath:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0:/mnt/c/Windows/System32/OpenSSH:/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/mnt/c/Program Files/dotnet:/mnt/c/Program Files/Calibre2:/mnt/c/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR:/mnt/c/Program Files (x86)/NetSarang/Xshell 8:/mnt/c/Program Files (x86)/NetSarang/Xftp 8:/mnt/c/Windows/system32/config/systemprofile/AppData/Local/Microsoft/WindowsApps:/mnt/c/Program Files (x86)/Razer/ChromaBroadcast/bin:/mnt/c/Program Files/Razer/ChromaBroadcast/bin:/mnt/c/Users/z1256/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/z1256/.dotnet/tools:/mnt/c/Users/z1256/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/mingw64/bin:/mnt/c/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files/nodejs:/mnt/c/ProgramData/chocolatey/bin:/mnt/c/Program Files (x86)/Windows Kits/8.1/Windows Performance Toolkit:/mnt/c/Program Files/Bandizip:/mnt/c/Program Files (x86)/STMicroelectronics/STM32 ST-LINK Utility/ST-LINK Utility:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0:/mnt/c/Windows/System32/OpenSSH:/mnt/c/Program Files/CMake/bin:/mnt/c/ffmpeg-8.0-essentials_build/bin:/mnt/c/Program Files/Docker/Docker/resources/bin:/mnt/c/ProgramData/anaconda3:/mnt/c/ProgramData/anaconda3/Scripts:/mnt/c/ProgramData/anaconda3/Library/bin:/mnt/c/Users/z1256/scoop/shims:/mnt/c/Users/z1256/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/z1256/.dotnet/tools:/mnt/c/Users/z1256/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Users/z1256/AppData/Roaming/npm:/mnt/c/Program Files/JetBrains/PyCharm 2025.2.1.1/bin:/mnt/c/users/z1256/.local/bin:/mnt/c/users/z1256/appdata/roaming/python/python313/scripts:/mnt/c/Users/z1256/AppData/Roaming/Programs/Zero Install:/mnt/c/Users/z1256/AppData/Local/Microsoft/WindowsApps:/mnt/c/Program Files/JetBrains/CLion 2025.2.3/bin:/mnt/c/Users/z1256/.dotnet/tools:/mnt/c/Users/z1256/AppData/Local/Microsoft/WinGet/Packages/Justsenger.ExHyperV_Microsoft.Winget.Source_8wekyb3d8bbwe:/mnt/c/Users/z1256/AppData/Local/PowerToys/DSCModules:/mnt/c/Users/z1256/AppData/Local/Programs/Ollama:/snap/bin:/home/w/.dotnet/tools'), ('WT_SESSION', 'e5b685b9-20bb-40c6-bc70-94bf3424df99'), ('XDG_RUNTIME_DIR', '/run/user/1000/'), ('DISPLAY', ':0'), ('LANG', 'C.UTF-8'), ('PYTHONSTARTUP', '/home/w/.vscode-server/data/User/workspaceStorage/3940b5fd33f4a566081912416db79aa7/ms-python.python/pythonrc.py'), ('DOTNET_BUNDLE_EXTRACT_BASE_DIR', '/home/w/.cache/dotnet_bundle_extract'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1000/vscode-git-ad350a6442.sock'), ('TERM_PROGRAM', 'vscode'), ('GSETTINGS_SCHEMA_DIR', '/home/w/anaconda3/share/glib-2.0/schemas'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('CONDA_PYTHON_EXE', '/home/w/anaconda3/bin/python'), ('SHELL', '/bin/bash'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('CONDA_DEFAULT_ENV', 'base'), ('_CONDA_EXE', '/home/w/anaconda3/bin/conda'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('PWD', '/home/w/Projects/gps_ws/build/gps'), ('CONDA_EXE', '/home/w/anaconda3/bin/conda'), ('NVM_CD_FLAGS', ''), ('XDG_DATA_DIRS', '/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('CONDA_PREFIX', '/home/w/anaconda3'), ('GSETTINGS_SCHEMA_DIR_CONDA_BACKUP', ''), ('COLCON', '1'), ('WSL2_GUI_APPS_ENABLED', '1'), ('HOSTTYPE', 'x86_64'), ('WSLENV', 'ELECTRON_RUN_AS_NODE/w:WT_SESSION:WT_PROFILE_ID:'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[21.358979] (gps) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/gps_node.dir/src/gps_node.cpp.o\x1b[0m\n'}
+[21.366708] (-) TimerEvent: {}
+[21.467611] (-) TimerEvent: {}
+[21.568400] (-) TimerEvent: {}
+[21.668999] (-) TimerEvent: {}
+[21.769737] (-) TimerEvent: {}
+[21.789126] (gps) StderrLine: {'line': b'\x1b[01m\x1b[K/home/w/Projects/gps_ws/src/gps/src/gps_node.cpp:2:10:\x1b[m\x1b[K \x1b[01;31m\x1b[Kfatal error: \x1b[m\x1b[Kbehaviortree_cpp/tree.h: No such file or directory\n'}
+[21.789423] (gps) StderrLine: {'line': b'    2 | #include \x1b[01;31m\x1b[K<behaviortree_cpp/tree.h>\x1b[m\x1b[K\n'}
+[21.789544] (gps) StderrLine: {'line': b'      |          \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[21.789601] (gps) StderrLine: {'line': b'compilation terminated.\n'}
+[21.795791] (gps) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/gps_node.dir/build.make:76: CMakeFiles/gps_node.dir/src/gps_node.cpp.o] Error 1\n'}
+[21.796217] (gps) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/gps_node.dir/all] Error 2\n'}
+[21.796548] (gps) StderrLine: {'line': b'gmake: *** [Makefile:146: all] Error 2\n'}
+[21.801293] (gps) CommandEnded: {'returncode': 2}
+[21.812247] (gps) JobEnded: {'identifier': 'gps', 'rc': 2}
+[21.823197] (-) EventReactorShutdown: {}

@@ -1,0 +1,10 @@
+[0.024s] Invoking command in '/home/w/Projects/gps_ws/build/gps': CMAKE_PREFIX_PATH=/opt/ros/humble CONDA_PROMPT_MODIFIER=(base) /usr/bin/cmake --build /home/w/Projects/gps_ws/build/gps -- -j32 -l32
+[0.123s] [ 50%] [32mBuilding CXX object CMakeFiles/gps_node.dir/src/gps_node.cpp.o[0m
+[0.663s] [01m[K/home/w/Projects/gps_ws/src/gps/src/gps_node.cpp:2:10:[m[K [01;31m[Kfatal error: [m[Kbehaviortree_cpp/tree.h: No such file or directory
+[0.663s]     2 | #include [01;31m[K<behaviortree_cpp/tree.h>[m[K
+[0.664s]       |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[0.664s] compilation terminated.
+[0.672s] gmake[2]: *** [CMakeFiles/gps_node.dir/build.make:76: CMakeFiles/gps_node.dir/src/gps_node.cpp.o] Error 1
+[0.673s] gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/gps_node.dir/all] Error 2
+[0.673s] gmake: *** [Makefile:146: all] Error 2
+[0.679s] Invoked command in '/home/w/Projects/gps_ws/build/gps' returned '2': CMAKE_PREFIX_PATH=/opt/ros/humble CONDA_PROMPT_MODIFIER=(base) /usr/bin/cmake --build /home/w/Projects/gps_ws/build/gps -- -j32 -l32

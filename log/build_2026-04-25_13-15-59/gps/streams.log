@@ -1,0 +1,3 @@
+[0.027s] Invoking command in '/home/w/Projects/gps_ws/build/gps': CMAKE_PREFIX_PATH=/opt/ros/humble CONDA_PROMPT_MODIFIER=(base) /usr/bin/cmake /home/w/Projects/gps_ws/src/gps -DCMAKE_INSTALL_PREFIX=/home/w/Projects/gps_ws/install/gps
+[0.750s] -- The C compiler identification is GNU 11.4.0
+[1.090s] Invoked command in '/home/w/Projects/gps_ws/build/gps' returned '-2': CMAKE_PREFIX_PATH=/opt/ros/humble CONDA_PROMPT_MODIFIER=(base) /usr/bin/cmake /home/w/Projects/gps_ws/src/gps -DCMAKE_INSTALL_PREFIX=/home/w/Projects/gps_ws/install/gps
