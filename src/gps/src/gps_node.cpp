@@ -1,5 +1,5 @@
 #include <behaviortree_cpp/bt_factory.h>
-#include <behaviortree_cpp/tree.h>
+#include <behaviortree_cpp/behavior_tree.h>
 #include <rclcpp/rclcpp.hpp>
 #include <tf2_msgs/msg/tf_message.hpp>
 
@@ -24,9 +24,9 @@ namespace chr = std::chrono;
 
 struct Pose2D
 {
-    int8_t x {0};
-    int8_t y {0};
-    int8_t z {0};
+    float x {0};
+    float y {0};
+    float z {0};
 };
 
 class SerialPort
@@ -411,7 +411,7 @@ public:
         const std::string& name,
         const BT::NodeConfig& config,
         std::shared_ptr<AppContext> context)
-        : TimedVelocityAction(name, config, std::move(context), Pose2D {0.1F, 0.0F, 00F})
+        : TimedVelocityAction(name, config, std::move(context), Pose2D {0.1F, 0.0F, 0.0F})
     {
     }
 };
@@ -661,7 +661,7 @@ int main(int argc, char** argv)
 
     RCLCPP_INFO(app_node->get_logger(), "Behavior tree started: %s", tree_xml.c_str());
 
-    const auto sleep_duration = chr::milliseconds(std::max(1, tick_period_ms));
+    const auto sleep_duration = chr::milliseconds(std::max<long>(1, tick_period_ms));
 
     while (rclcpp::ok())
     {

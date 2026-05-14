@@ -17,7 +17,7 @@ ament_target_dependencies(gps_node
   tf2_msgs
   behaviortree_cpp
 )
-
+target_link_libraries(gps_node behaviortree_cpp)
 install(TARGETS
   gps_node
   DESTINATION lib/${PROJECT_NAME}
