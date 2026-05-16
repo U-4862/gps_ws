@@ -1,0 +1,162 @@
+[0.012s] Invoking command in '/home/w/projects/projects/gps_ws/build/gps': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/w/projects/projects/gps_ws/src/gps -DCMAKE_INSTALL_PREFIX=/home/w/projects/projects/gps_ws/install/gps
+[0.023s] [0mCMake Deprecation Warning at CMakeLists.txt:1 (cmake_minimum_required):
+[0.023s]   Compatibility with CMake < 3.10 will be removed from a future version of
+[0.023s]   CMake.
+[0.023s] 
+[0.023s]   Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+[0.023s]   to tell CMake that the project requires at least <min> but has been updated
+[0.023s]   to work with policies introduced by <max> or earlier.
+[0.023s] 
+[0.023s] [0m
+[0.118s] -- The C compiler identification is GNU 11.4.0
+[0.221s] -- The CXX compiler identification is GNU 11.4.0
+[0.233s] -- Detecting C compiler ABI info
+[0.290s] -- Detecting C compiler ABI info - done
+[0.300s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.300s] -- Detecting C compile features
+[0.301s] -- Detecting C compile features - done
+[0.313s] -- Detecting CXX compiler ABI info
+[0.377s] -- Detecting CXX compiler ABI info - done
+[0.386s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.387s] -- Detecting CXX compile features
+[0.387s] -- Detecting CXX compile features - done
+[0.401s] -- Found ament_cmake: 1.3.14 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.529s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter
+[0.610s] -- Found rclcpp: 16.0.19 (/opt/ros/humble/share/rclcpp/cmake)
+[0.665s] -- Found rosidl_generator_c: 3.1.8 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.671s] -- Found rosidl_adapter: 3.1.8 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.681s] -- Found rosidl_generator_cpp: 3.1.8 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.694s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.709s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.751s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.753s] -- Found rmw_fastrtps_cpp: 6.2.10 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[0.832s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")
+[0.860s] -- Found FastRTPS: /opt/ros/humble/include
+[0.899s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.909s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[0.965s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[0.966s] -- Found Threads: TRUE
+[1.018s] -- Found tf2_msgs: 0.25.20 (/opt/ros/humble/share/tf2_msgs/cmake)
+[1.079s] -- Found behaviortree_cpp: 4.9.0 (/opt/ros/humble/share/behaviortree_cpp/cmake)
+[1.083s] -- Found ament_lint_auto: 0.12.15 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[1.157s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[1.157s] -- Configured cppcheck include dirs: /home/w/projects/projects/gps_ws/src/gps/src/SerialPort
+[1.157s] -- Configured cppcheck exclude dirs and/or files: 
+[1.158s] -- Added test 'lint_cmake' to check CMake code style
+[1.159s] -- Added test 'uncrustify' to check C / C++ code style
+[1.159s] -- Configured uncrustify additional arguments: 
+[1.160s] -- Added test 'xmllint' to check XML markup files
+[1.161s] -- Configuring done (1.1s)
+[1.172s] -- Generating done (0.0s)
+[1.190s] -- Build files have been written to: /home/w/projects/projects/gps_ws/build/gps
+[1.200s] Invoked command in '/home/w/projects/projects/gps_ws/build/gps' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/w/projects/projects/gps_ws/src/gps -DCMAKE_INSTALL_PREFIX=/home/w/projects/projects/gps_ws/install/gps
+[1.201s] Invoking command in '/home/w/projects/projects/gps_ws/build/gps': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/w/projects/projects/gps_ws/build/gps -- -j16 -l16
+[1.228s] [ 25%] [32mBuilding CXX object CMakeFiles/SerialPort.dir/src/SerialPort/usart.cpp.o[0m
+[1.427s] [ 50%] [1m[32mLinking CXX static library libSerialPort.a[0m
+[1.443s] [ 50%] Built target SerialPort
+[1.455s] [ 75%] [32mBuilding CXX object CMakeFiles/gps_node.dir/src/gps_node.cpp.o[0m
+[3.664s] In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24[m[K,
+[3.664s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+[3.664s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+[3.664s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+[3.664s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+[3.664s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+[3.664s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+[3.664s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+[3.664s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+[3.664s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+[3.664s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+[3.664s]                  from [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3[m[K:
+[3.664s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:[m[K In member function ‘[01m[Kvirtual BT::NodeStatus TimedVelocityAction::onStart()[m[K’:
+[3.664s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:157:13:[m[K [01;35m[Kwarning: [m[Kformat ‘[01m[K%f[m[K’ expects argument of type ‘[01m[Kdouble[m[K’, but argument 6 has type ‘[01m[Kint[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wformat=-Wformat=]8;;[m[K]
+[3.664s]   157 |             [01;35m[K"[%s] started: x=%.3f y=%.3f z=%.3f"[m[K,
+[3.664s]       |             [01;35m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[3.664s]   158 |             name().c_str(),
+[3.664s]   159 |             [32m[Kcommand_.x[m[K,
+[3.664s]       |             [32m[K~~~~~~~~~~[m[K
+[3.665s]       |                      [32m[K|[m[K
+[3.665s]       |                      [32m[Kint[m[K
+[3.665s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:157:33:[m[K [01;36m[Knote: [m[Kformat string is defined here
+[3.665s]   157 |             "[%s] started: x=[01;36m[K%.3f[m[K y=%.3f z=%.3f",
+[3.665s]       |                              [01;36m[K~~~^[m[K
+[3.665s]       |                                 [01;36m[K|[m[K
+[3.665s]       |                                 [01;36m[Kdouble[m[K
+[3.665s]       |                              [32m[K%.3d[m[K
+[3.665s] In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24[m[K,
+[3.665s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+[3.665s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+[3.665s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+[3.665s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+[3.665s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+[3.665s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+[3.665s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+[3.665s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+[3.665s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+[3.665s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+[3.665s]                  from [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3[m[K:
+[3.665s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:157:13:[m[K [01;35m[Kwarning: [m[Kformat ‘[01m[K%f[m[K’ expects argument of type ‘[01m[Kdouble[m[K’, but argument 7 has type ‘[01m[Kint[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wformat=-Wformat=]8;;[m[K]
+[3.665s]   157 |             [01;35m[K"[%s] started: x=%.3f y=%.3f z=%.3f"[m[K,
+[3.665s]       |             [01;35m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[3.665s] ......
+[3.665s]   160 |             [32m[Kcommand_.y[m[K,
+[3.665s]       |             [32m[K~~~~~~~~~~[m[K
+[3.665s]       |                      [32m[K|[m[K
+[3.665s]       |                      [32m[Kint[m[K
+[3.665s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:157:40:[m[K [01;36m[Knote: [m[Kformat string is defined here
+[3.665s]   157 |             "[%s] started: x=%.3f y=[01;36m[K%.3f[m[K z=%.3f",
+[3.665s]       |                                     [01;36m[K~~~^[m[K
+[3.665s]       |                                        [01;36m[K|[m[K
+[3.665s]       |                                        [01;36m[Kdouble[m[K
+[3.665s]       |                                     [32m[K%.3d[m[K
+[3.665s] In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24[m[K,
+[3.665s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+[3.665s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+[3.665s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+[3.665s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+[3.665s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+[3.665s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+[3.665s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+[3.665s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+[3.666s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+[3.666s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+[3.666s]                  from [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3[m[K:
+[3.666s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:157:13:[m[K [01;35m[Kwarning: [m[Kformat ‘[01m[K%f[m[K’ expects argument of type ‘[01m[Kdouble[m[K’, but argument 8 has type ‘[01m[Kint[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wformat=-Wformat=]8;;[m[K]
+[3.666s]   157 |             [01;35m[K"[%s] started: x=%.3f y=%.3f z=%.3f"[m[K,
+[3.666s]       |             [01;35m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[3.666s] ......
+[3.666s]   161 |             [32m[Kcommand_.z[m[K);
+[3.666s]       |             [32m[K~~~~~~~~~~[m[K
+[3.666s]       |                      [32m[K|[m[K
+[3.666s]       |                      [32m[Kint[m[K
+[3.666s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:157:47:[m[K [01;36m[Knote: [m[Kformat string is defined here
+[3.666s]   157 |             "[%s] started: x=%.3f y=%.3f z=[01;36m[K%.3f[m[K",
+[3.666s]       |                                            [01;36m[K~~~^[m[K
+[3.666s]       |                                               [01;36m[K|[m[K
+[3.666s]       |                                               [01;36m[Kdouble[m[K
+[3.666s]       |                                            [32m[K%.3d[m[K
+[3.667s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:[m[K In member function ‘[01m[Kvirtual BT::NodeStatus DetectFront::tick()[m[K’:
+[3.667s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:284:37:[m[K [01;31m[Kerror: [m[K‘[01m[Kusing element_type = struct AppContext[m[K’ {aka ‘[01m[Kstruct AppContext[m[K’} has no member named ‘[01m[Ksensor_port[m[K’
+[3.667s]   284 |         if (!context_ || !context_->[01;31m[Ksensor_port[m[K)
+[3.667s]       |                                     [01;31m[K^~~~~~~~~~~[m[K
+[3.667s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:308:37:[m[K [01;31m[Kerror: [m[K‘[01m[Kusing element_type = struct AppContext[m[K’ {aka ‘[01m[Kstruct AppContext[m[K’} has no member named ‘[01m[Ksensor_port[m[K’
+[3.668s]   308 |         const ssize_t n = context_->[01;31m[Ksensor_port[m[K->readSome(buffer.data(), buffer.size());
+[3.668s]       |                                     [01;31m[K^~~~~~~~~~~[m[K
+[3.668s] In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24[m[K,
+[3.668s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+[3.668s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+[3.668s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+[3.668s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+[3.668s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+[3.668s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+[3.668s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+[3.668s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+[3.669s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+[3.669s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+[3.669s]                  from [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3[m[K:
+[3.669s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:316:27:[m[K [01;31m[Kerror: [m[K‘[01m[Kusing element_type = struct AppContext[m[K’ {aka ‘[01m[Kstruct AppContext[m[K’} has no member named ‘[01m[Ksensor_port[m[K’
+[3.669s]   316 |                 context_->[01;31m[Ksensor_port[m[K->lastError().c_str());
+[3.669s]       |                           [01;31m[K^~~~~~~~~~~[m[K
+[5.790s] gmake[2]: *** [CMakeFiles/gps_node.dir/build.make:79: CMakeFiles/gps_node.dir/src/gps_node.cpp.o] Error 1
+[5.791s] gmake[1]: *** [CMakeFiles/Makefile2:188: CMakeFiles/gps_node.dir/all] Error 2
+[5.791s] gmake: *** [Makefile:146: all] Error 2
+[5.792s] Invoked command in '/home/w/projects/projects/gps_ws/build/gps' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/w/projects/projects/gps_ws/build/gps -- -j16 -l16

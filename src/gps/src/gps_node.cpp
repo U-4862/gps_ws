@@ -2,6 +2,7 @@
 #include <behaviortree_cpp/behavior_tree.h>
 #include <rclcpp/rclcpp.hpp>
 #include <tf2_msgs/msg/tf_message.hpp>
+#include "ament_index_cpp/get_package_share_directory.hpp"
 
 #include "SerialPort/usart.hpp"
 #include <chrono>
@@ -19,12 +20,16 @@ namespace chr = std::chrono;
 
 struct Pose2D
 {
-
-    float x {0};
-    float y {0};
-    float z {0};
+    uint8_t header {0x0F};
+    int8_t x {0};
+    int8_t y {0};
+    int8_t z {0};
 };
 
+/**
+ * @brief tf坐标监听器
+ * 
+ */
 
 class TFListenerNode : public rclcpp::Node
 {
@@ -77,20 +82,32 @@ private:
     double current_z_ {0.0};
 };
 
+/**
+ * @brief 应用程序上下文，包含共享资源如串口和tf监听器
+ * 
+ */
 struct AppContext
 {
     rclcpp::Logger logger {rclcpp::get_logger("gps_bt_app")};
     std::shared_ptr<SerialPort> motion_port;
-    std::shared_ptr<SerialPort> sensor_port;
     std::shared_ptr<TFListenerNode> tf_listener;
 };
+
+
+
+
+/**
+ * @brief A base class for timed velocity actions that send Pose2D commands to the robot's motion port.
+ * Derived classes can specify different velocity commands by providing different Pose2D values.
+ * The action will run for a specified duration, repeatedly sending the command until the duration expires.
+ * 
+ */
 
 class TimedVelocityAction : public BT::StatefulActionNode
 {
 public:
     TimedVelocityAction(
-        const std::string& name,
-        const BT::NodeConfig& config,
+        const std::string& name,const BT::NodeConfig& config,
         std::shared_ptr<AppContext> context,
         Pose2D command)
         : BT::StatefulActionNode(name, config),
@@ -102,7 +119,7 @@ public:
     static BT::PortsList providedPorts()
     {
         return {
-            BT::InputPort<int>("duration_ms", 220, "Action duration in milliseconds")
+            BT::InputPort<int>("duration_ms", 260, "Action duration in milliseconds")
         };
     }
 
@@ -113,7 +130,7 @@ public:
             throw BT::RuntimeError("motion serial port context is missing");
         }
 
-        int duration_ms = 220;
+        int duration_ms = 260;
         if (const auto value = getInput<int>("duration_ms"))
         {
             duration_ms = value.value();
@@ -138,7 +155,7 @@ public:
 
         RCLCPP_INFO(
             context_->logger,
-            "[%s] started: x=%.3f y=%.3f z=%.3f",
+            "[%s] started: x=%3d y=%3d z=%3d",
             name().c_str(),
             command_.x,
             command_.y,
@@ -163,6 +180,7 @@ public:
             }
             return BT::NodeStatus::RUNNING;
         }
+
 
         stopRobot();
         RCLCPP_INFO(context_->logger, "[%s] completed", name().c_str());
@@ -210,9 +228,8 @@ public:
         const std::string& name,
         const BT::NodeConfig& config,
         std::shared_ptr<AppContext> context)
-        : TimedVelocityAction(name, config, std::move(context), Pose2D {0.1F, 0.0F, 0.0F})
-    {
-    }
+        : TimedVelocityAction(name, config, std::move(context), Pose2D {0x0f,1, 0 ,0 })
+    {}
 };
 
 class TurnLeft final : public TimedVelocityAction
@@ -222,7 +239,7 @@ public:
         const std::string& name,
         const BT::NodeConfig& config,
         std::shared_ptr<AppContext> context)
-        : TimedVelocityAction(name, config, std::move(context), Pose2D {0.1F, 0.0F, 0.1F})
+        : TimedVelocityAction(name, config, std::move(context), Pose2D {0x0f,0, 0 ,1 })
     {
     }
 };
@@ -234,128 +251,103 @@ public:
         const std::string& name,
         const BT::NodeConfig& config,
         std::shared_ptr<AppContext> context)
-        : TimedVelocityAction(name, config, std::move(context), Pose2D {0.1F, 0.0F, -0.1F})
+        : TimedVelocityAction(name, config, std::move(context), Pose2D {0x0f,0, 0 ,-1})
     {
     }
 };
 
-class DetectFront final : public BT::ConditionNode
-{
-public:
-    DetectFront(
-        const std::string& name,
-        const BT::NodeConfig& config,
-        std::shared_ptr<AppContext> context)
-        : BT::ConditionNode(name, config),
-          context_(std::move(context))
-    {
-    }
+/**
+ * @brief 视觉代码（待完善
+ * 
+ */
+// class DetectFront final : public BT::ConditionNode
+// {
+// public:
+//     DetectFront(
+//         const std::string& name,
+//         const BT::NodeConfig& config,
+//         std::shared_ptr<AppContext> context)
+//         : BT::ConditionNode(name, config),
+//           context_(std::move(context))
+//     {
+//     }
 
-    static BT::PortsList providedPorts()
-    {
-        return {
-            BT::InputPort<int>("expected_value", 1, "Expected front sensor byte"),
-            BT::InputPort<int>("read_len", 1, "How many bytes to read")
-        };
-    }
+//     static BT::PortsList providedPorts()
+//     {
+//         return {
+//             BT::InputPort<int>("expected_value", 1, "Expected front sensor byte"),
+//             BT::InputPort<int>("read_len", 1, "How many bytes to read")
+//         };
+//     }
 
-    BT::NodeStatus tick() override
-    {
-        if (!context_ || !context_->sensor_port)
-        {
-            throw BT::RuntimeError("sensor serial port context is missing");
-        }
+//     BT::NodeStatus tick() override
+//     {
+//         if (!context_ || !context_->sensor_port)
+//         {
+//             throw BT::RuntimeError("sensor serial port context is missing");
+//         }
 
-        int expected_value = 1;
-        int read_len = 1;
+//         int expected_value = 1;
+//         int read_len = 1;
 
-        if (const auto value = getInput<int>("expected_value"))
-        {
-            expected_value = value.value();
-        }
+//         if (const auto value = getInput<int>("expected_value"))
+//         {
+//             expected_value = value.value();
+//         }
 
-        if (const auto value = getInput<int>("read_len"))
-        {
-            read_len = value.value();
-        }
+//         if (const auto value = getInput<int>("read_len"))
+//         {
+//             read_len = value.value();
+//         }
 
-        if (read_len <= 0 || read_len > 256)
-        {
-            throw BT::RuntimeError("read_len must be in range [1, 256]");
-        }
+//         if (read_len <= 0 || read_len > 256)
+//         {
+//             throw BT::RuntimeError("read_len must be in range [1, 256]");
+//         }
 
-        std::vector<std::uint8_t> buffer(static_cast<std::size_t>(read_len), 0U);
-        const ssize_t n = context_->sensor_port->readSome(buffer.data(), buffer.size());
+//         std::vector<std::uint8_t> buffer(static_cast<std::size_t>(read_len), 0U);
+//         const ssize_t n = context_->sensor_port->readSome(buffer.data(), buffer.size());
 
-        if (n < 0)
-        {
-            RCLCPP_ERROR(
-                context_->logger,
-                "[%s] sensor read failed: %s",
-                name().c_str(),
-                context_->sensor_port->lastError().c_str());
-            return BT::NodeStatus::FAILURE;
-        }
+//         if (n < 0)
+//         {
+//             RCLCPP_ERROR(
+//                 context_->logger,
+//                 "[%s] sensor read failed: %s",
+//                 name().c_str(),
+//                 context_->sensor_port->lastError().c_str());
+//             return BT::NodeStatus::FAILURE;
+//         }
 
-        if (n == 0)
-        {
-            RCLCPP_DEBUG(context_->logger, "[%s] no sensor data yet", name().c_str());
-            return BT::NodeStatus::FAILURE;
-        }
+//         if (n == 0)
+//         {
+//             RCLCPP_DEBUG(context_->logger, "[%s] no sensor data yet", name().c_str());
+//             return BT::NodeStatus::FAILURE;
+//         }
 
-        const auto actual_value = static_cast<int>(buffer.front());
-        const auto matched = (actual_value == expected_value);
+//         const auto actual_value = static_cast<int>(buffer.front());
+//         const auto matched = (actual_value == expected_value);
 
-        RCLCPP_INFO(
-            context_->logger,
-            "[%s] sensor=%d expected=%d result=%s",
-            name().c_str(),
-            actual_value,
-            expected_value,
-            matched ? "SUCCESS" : "FAILURE");
+//         RCLCPP_INFO(
+//             context_->logger,
+//             "[%s] sensor=%d expected=%d result=%s",
+//             name().c_str(),
+//             actual_value,
+//             expected_value,
+//             matched ? "SUCCESS" : "FAILURE");
 
-        return matched ? BT::NodeStatus::SUCCESS : BT::NodeStatus::FAILURE;
-    }
+//         return matched ? BT::NodeStatus::SUCCESS : BT::NodeStatus::FAILURE;
+//     }
 
-private:
-    std::shared_ptr<AppContext> context_;
-};
+// private:
+//     std::shared_ptr<AppContext> context_;
+// };
 
-class GrabDuantou final : public BT::SyncActionNode
-{
-public:
-    GrabDuantou(
-        const std::string& name,
-        const BT::NodeConfig& config,
-        std::shared_ptr<AppContext> context)
-        : BT::SyncActionNode(name, config),
-          context_(std::move(context))
-    {
-    }
-
-    static BT::PortsList providedPorts()
-    {
-        return {
-            BT::InputPort<std::string>("message", "grab", "Diagnostic message")
-        };
-    }
-
-    BT::NodeStatus tick() override
-    {
-        const auto msg = getInput<std::string>("message");
-        if (!msg)
-        {
-            throw BT::RuntimeError("missing input [message]: ", msg.error());
-        }
-
-        RCLCPP_INFO(context_->logger, "[%s] %s", name().c_str(), msg->c_str());
-        return BT::NodeStatus::SUCCESS;
-    }
-
-private:
-    std::shared_ptr<AppContext> context_;
-};
-
+/**
+ * @brief 节点注册函数
+ * 
+ * @param factory 
+ * @param context 
+ */
 static void registerNodes(BT::BehaviorTreeFactory& factory, const std::shared_ptr<AppContext>& context)
 {
     factory.registerBuilder<MoveForward>(
@@ -375,57 +367,34 @@ static void registerNodes(BT::BehaviorTreeFactory& factory, const std::shared_pt
         [context](const std::string& name, const BT::NodeConfig& config) {
             return std::make_unique<TurnRight>(name, config, context);
         });
-
-    factory.registerBuilder<DetectFront>(
-        "DetectFront",
-        [context](const std::string& name, const BT::NodeConfig& config) {
-            return std::make_unique<DetectFront>(name, config, context);
-        });
-
-    factory.registerBuilder<GrabDuantou>(
-        "GrabDuantou",
-        [context](const std::string& name, const BT::NodeConfig& config) {
-            return std::make_unique<GrabDuantou>(name, config, context);
-        });
 }
 
 int main(int argc, char** argv)
 {
+    /**
+     * @brief 程序初始化逻辑
+     * 
+     */
+
     rclcpp::init(argc, argv);
 
     auto app_node = std::make_shared<rclcpp::Node>("gps_bt_app");
     app_node->declare_parameter<std::string>("tree_xml", "tree.xml");
     app_node->declare_parameter<std::string>("motion_port", "/dev/ttyUSB0");
-    app_node->declare_parameter<std::string>("sensor_port", "/dev/ttyUSB1");
     app_node->declare_parameter<int>("tick_period_ms", 50);
 
     const auto tree_xml = app_node->get_parameter("tree_xml").as_string();
     const auto motion_port_path = app_node->get_parameter("motion_port").as_string();
-    const auto sensor_port_path = app_node->get_parameter("sensor_port").as_string();
     const auto tick_period_ms = app_node->get_parameter("tick_period_ms").as_int();
 
     auto tf_listener = std::make_shared<TFListenerNode>();
     auto motion_port = std::make_shared<SerialPort>(motion_port_path, B115200, 0, 2);
-    auto sensor_port = std::make_shared<SerialPort>(sensor_port_path, B115200, 0, 2);
 
     if (!motion_port->openPort())
     {
         RCLCPP_FATAL(
             app_node->get_logger(),
-            "Failed to open motion port %s: %s",
-            motion_port_path.c_str(),
-            motion_port->lastError().c_str());
-        rclcpp::shutdown();
-        return 1;
-    }
-
-    if (!sensor_port->openPort())
-    {
-        RCLCPP_FATAL(
-            app_node->get_logger(),
-            "Failed to open sensor port %s: %s",
-            sensor_port_path.c_str(),
-            sensor_port->lastError().c_str());
+            "Failed to open motion port %s: %s",motion_port_path.c_str(),motion_port->lastError().c_str());
         rclcpp::shutdown();
         return 1;
     }
@@ -433,7 +402,6 @@ int main(int argc, char** argv)
     auto context = std::make_shared<AppContext>();
     context->logger = app_node->get_logger();
     context->motion_port = motion_port;
-    context->sensor_port = sensor_port;
     context->tf_listener = tf_listener;
 
     BT::BehaviorTreeFactory factory;
@@ -441,11 +409,12 @@ int main(int argc, char** argv)
 
     auto blackboard = BT::Blackboard::create();
     blackboard->set("app_context", context);
-
+    std::string tree_path = ament_index_cpp::get_package_share_directory("gps") + "/tree.xml";
+    
     BT::Tree tree;
     try
     {
-        tree = factory.createTreeFromFile(tree_xml, blackboard);
+        tree = factory.createTreeFromFile(tree_path, blackboard);
     }
     catch (const std::exception& ex)
     {
@@ -453,6 +422,12 @@ int main(int argc, char** argv)
         rclcpp::shutdown();
         return 1;
     }
+
+
+    /**
+     * @brief 程序执行器逻辑
+     * 
+     */
 
     rclcpp::executors::SingleThreadedExecutor executor;
     executor.add_node(app_node);
@@ -467,7 +442,7 @@ int main(int argc, char** argv)
         executor.spin_some();
 
         const BT::NodeStatus status = tree.tickOnce();
-
+        
         if (status == BT::NodeStatus::SUCCESS)
         {
             RCLCPP_INFO(app_node->get_logger(), "Behavior tree completed with SUCCESS");

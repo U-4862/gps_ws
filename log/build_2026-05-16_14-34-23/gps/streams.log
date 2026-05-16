@@ -1,0 +1,105 @@
+[0.008s] Invoking command in '/home/w/projects/projects/gps_ws/build/gps': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/w/projects/projects/gps_ws/build/gps -- -j16 -l16
+[0.034s] [ 50%] Built target SerialPort
+[0.051s] [ 75%] [32mBuilding CXX object CMakeFiles/gps_node.dir/src/gps_node.cpp.o[0m
+[2.266s] In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24[m[K,
+[2.266s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+[2.266s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+[2.266s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+[2.266s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+[2.266s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+[2.266s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+[2.266s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+[2.266s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+[2.266s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+[2.266s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+[2.266s]                  from [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3[m[K:
+[2.266s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:[m[K In member function ‘[01m[Kvirtual BT::NodeStatus TimedVelocityAction::onStart()[m[K’:
+[2.266s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:157:13:[m[K [01;35m[Kwarning: [m[Kformat ‘[01m[K%f[m[K’ expects argument of type ‘[01m[Kdouble[m[K’, but argument 6 has type ‘[01m[Kint[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wformat=-Wformat=]8;;[m[K]
+[2.266s]   157 |             [01;35m[K"[%s] started: x=%.3f y=%.3f z=%.3f"[m[K,
+[2.266s]       |             [01;35m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[2.266s]   158 |             name().c_str(),
+[2.266s]   159 |             [32m[Kcommand_.x[m[K,
+[2.267s]       |             [32m[K~~~~~~~~~~[m[K
+[2.267s]       |                      [32m[K|[m[K
+[2.267s]       |                      [32m[Kint[m[K
+[2.267s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:157:33:[m[K [01;36m[Knote: [m[Kformat string is defined here
+[2.267s]   157 |             "[%s] started: x=[01;36m[K%.3f[m[K y=%.3f z=%.3f",
+[2.267s]       |                              [01;36m[K~~~^[m[K
+[2.267s]       |                                 [01;36m[K|[m[K
+[2.267s]       |                                 [01;36m[Kdouble[m[K
+[2.267s]       |                              [32m[K%.3d[m[K
+[2.267s] In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24[m[K,
+[2.267s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+[2.267s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+[2.267s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+[2.267s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+[2.267s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+[2.267s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+[2.267s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+[2.267s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+[2.267s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+[2.267s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+[2.267s]                  from [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3[m[K:
+[2.267s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:157:13:[m[K [01;35m[Kwarning: [m[Kformat ‘[01m[K%f[m[K’ expects argument of type ‘[01m[Kdouble[m[K’, but argument 7 has type ‘[01m[Kint[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wformat=-Wformat=]8;;[m[K]
+[2.267s]   157 |             [01;35m[K"[%s] started: x=%.3f y=%.3f z=%.3f"[m[K,
+[2.267s]       |             [01;35m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[2.267s] ......
+[2.267s]   160 |             [32m[Kcommand_.y[m[K,
+[2.267s]       |             [32m[K~~~~~~~~~~[m[K
+[2.267s]       |                      [32m[K|[m[K
+[2.267s]       |                      [32m[Kint[m[K
+[2.267s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:157:40:[m[K [01;36m[Knote: [m[Kformat string is defined here
+[2.267s]   157 |             "[%s] started: x=%.3f y=[01;36m[K%.3f[m[K z=%.3f",
+[2.267s]       |                                     [01;36m[K~~~^[m[K
+[2.267s]       |                                        [01;36m[K|[m[K
+[2.267s]       |                                        [01;36m[Kdouble[m[K
+[2.267s]       |                                     [32m[K%.3d[m[K
+[2.267s] In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24[m[K,
+[2.267s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+[2.267s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+[2.267s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+[2.267s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+[2.267s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+[2.267s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+[2.268s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+[2.268s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+[2.268s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+[2.268s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+[2.268s]                  from [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3[m[K:
+[2.268s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:157:13:[m[K [01;35m[Kwarning: [m[Kformat ‘[01m[K%f[m[K’ expects argument of type ‘[01m[Kdouble[m[K’, but argument 8 has type ‘[01m[Kint[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wformat=-Wformat=]8;;[m[K]
+[2.268s]   157 |             [01;35m[K"[%s] started: x=%.3f y=%.3f z=%.3f"[m[K,
+[2.268s]       |             [01;35m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[2.268s] ......
+[2.268s]   161 |             [32m[Kcommand_.z[m[K);
+[2.268s]       |             [32m[K~~~~~~~~~~[m[K
+[2.268s]       |                      [32m[K|[m[K
+[2.268s]       |                      [32m[Kint[m[K
+[2.268s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:157:47:[m[K [01;36m[Knote: [m[Kformat string is defined here
+[2.268s]   157 |             "[%s] started: x=%.3f y=%.3f z=[01;36m[K%.3f[m[K",
+[2.268s]       |                                            [01;36m[K~~~^[m[K
+[2.268s]       |                                               [01;36m[K|[m[K
+[2.268s]       |                                               [01;36m[Kdouble[m[K
+[2.268s]       |                                            [32m[K%.3d[m[K
+[6.830s] [100%] [1m[32mLinking CXX executable gps_node[0m
+[7.175s] [100%] Built target gps_node
+[7.181s] Invoked command in '/home/w/projects/projects/gps_ws/build/gps' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/w/projects/projects/gps_ws/build/gps -- -j16 -l16
+[7.186s] Invoking command in '/home/w/projects/projects/gps_ws/build/gps': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/w/projects/projects/gps_ws/build/gps
+[7.188s] -- Install configuration: ""
+[7.188s] -- Installing: /home/w/projects/projects/gps_ws/install/gps/lib/gps/gps_node
+[7.192s] -- Set non-toolchain portion of runtime path of "/home/w/projects/projects/gps_ws/install/gps/lib/gps/gps_node" to ""
+[7.192s] -- Installing: /home/w/projects/projects/gps_ws/install/gps/share/ament_index/resource_index/package_run_dependencies/gps
+[7.192s] -- Installing: /home/w/projects/projects/gps_ws/install/gps/share/ament_index/resource_index/parent_prefix_path/gps
+[7.192s] -- Installing: /home/w/projects/projects/gps_ws/install/gps/share/gps/environment/ament_prefix_path.sh
+[7.192s] -- Installing: /home/w/projects/projects/gps_ws/install/gps/share/gps/environment/ament_prefix_path.dsv
+[7.192s] -- Installing: /home/w/projects/projects/gps_ws/install/gps/share/gps/environment/path.sh
+[7.192s] -- Installing: /home/w/projects/projects/gps_ws/install/gps/share/gps/environment/path.dsv
+[7.192s] -- Installing: /home/w/projects/projects/gps_ws/install/gps/share/gps/local_setup.bash
+[7.192s] -- Installing: /home/w/projects/projects/gps_ws/install/gps/share/gps/local_setup.sh
+[7.192s] -- Installing: /home/w/projects/projects/gps_ws/install/gps/share/gps/local_setup.zsh
+[7.193s] -- Installing: /home/w/projects/projects/gps_ws/install/gps/share/gps/local_setup.dsv
+[7.193s] -- Installing: /home/w/projects/projects/gps_ws/install/gps/share/gps/package.dsv
+[7.193s] -- Installing: /home/w/projects/projects/gps_ws/install/gps/share/ament_index/resource_index/packages/gps
+[7.193s] -- Installing: /home/w/projects/projects/gps_ws/install/gps/share/gps/cmake/gpsConfig.cmake
+[7.193s] -- Installing: /home/w/projects/projects/gps_ws/install/gps/share/gps/cmake/gpsConfig-version.cmake
+[7.193s] -- Installing: /home/w/projects/projects/gps_ws/install/gps/share/gps/package.xml
+[7.195s] Invoked command in '/home/w/projects/projects/gps_ws/build/gps' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/w/projects/projects/gps_ws/build/gps

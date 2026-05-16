@@ -1,0 +1,80 @@
+[0.010s] Invoking command in '/home/w/projects/projects/gps_ws/build/gps': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/w/projects/projects/gps_ws/src/gps -DCMAKE_INSTALL_PREFIX=/home/w/projects/projects/gps_ws/install/gps
+[0.017s] [0mCMake Deprecation Warning at CMakeLists.txt:1 (cmake_minimum_required):
+[0.017s]   Compatibility with CMake < 3.10 will be removed from a future version of
+[0.017s]   CMake.
+[0.017s] 
+[0.017s]   Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+[0.018s]   to tell CMake that the project requires at least <min> but has been updated
+[0.018s]   to work with policies introduced by <max> or earlier.
+[0.018s] 
+[0.018s] [0m
+[0.062s] -- The C compiler identification is GNU 11.4.0
+[0.132s] -- The CXX compiler identification is GNU 11.4.0
+[0.140s] -- Detecting C compiler ABI info
+[0.204s] -- Detecting C compiler ABI info - done
+[0.218s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.218s] -- Detecting C compile features
+[0.219s] -- Detecting C compile features - done
+[0.233s] -- Detecting CXX compiler ABI info
+[0.292s] -- Detecting CXX compiler ABI info - done
+[0.301s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.301s] -- Detecting CXX compile features
+[0.302s] -- Detecting CXX compile features - done
+[0.309s] -- Found ament_cmake: 1.3.14 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.425s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter
+[0.488s] -- Found rclcpp: 16.0.19 (/opt/ros/humble/share/rclcpp/cmake)
+[0.517s] -- Found rosidl_generator_c: 3.1.8 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.521s] -- Found rosidl_adapter: 3.1.8 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.526s] -- Found rosidl_generator_cpp: 3.1.8 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.534s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.544s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.575s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.576s] -- Found rmw_fastrtps_cpp: 6.2.10 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[0.644s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")
+[0.669s] -- Found FastRTPS: /opt/ros/humble/include
+[0.703s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.709s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[0.761s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[0.761s] -- Found Threads: TRUE
+[0.798s] -- Found tf2_msgs: 0.25.20 (/opt/ros/humble/share/tf2_msgs/cmake)
+[0.842s] -- Found behaviortree_cpp: 4.9.0 (/opt/ros/humble/share/behaviortree_cpp/cmake)
+[0.845s] -- Found ament_lint_auto: 0.12.15 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[0.904s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[0.904s] -- Configured cppcheck include dirs: /home/w/projects/projects/gps_ws/src/gps/src/SerialPort
+[0.904s] -- Configured cppcheck exclude dirs and/or files: 
+[0.904s] -- Added test 'lint_cmake' to check CMake code style
+[0.905s] -- Added test 'uncrustify' to check C / C++ code style
+[0.906s] -- Configured uncrustify additional arguments: 
+[0.906s] -- Added test 'xmllint' to check XML markup files
+[0.907s] -- Configuring done (0.9s)
+[0.916s] -- Generating done (0.0s)
+[0.931s] -- Build files have been written to: /home/w/projects/projects/gps_ws/build/gps
+[0.939s] Invoked command in '/home/w/projects/projects/gps_ws/build/gps' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/w/projects/projects/gps_ws/src/gps -DCMAKE_INSTALL_PREFIX=/home/w/projects/projects/gps_ws/install/gps
+[0.942s] Invoking command in '/home/w/projects/projects/gps_ws/build/gps': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/w/projects/projects/gps_ws/build/gps -- -j16 -l16
+[0.967s] [ 25%] [32mBuilding CXX object CMakeFiles/SerialPort.dir/src/SerialPort/usart.cpp.o[0m
+[1.120s] [ 50%] [1m[32mLinking CXX static library libSerialPort.a[0m
+[1.136s] [ 50%] Built target SerialPort
+[1.145s] [ 75%] [32mBuilding CXX object CMakeFiles/gps_node.dir/src/gps_node.cpp.o[0m
+[8.066s] [100%] [1m[32mLinking CXX executable gps_node[0m
+[8.338s] [100%] Built target gps_node
+[8.344s] Invoked command in '/home/w/projects/projects/gps_ws/build/gps' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/w/projects/projects/gps_ws/build/gps -- -j16 -l16
+[8.349s] Invoking command in '/home/w/projects/projects/gps_ws/build/gps': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/w/projects/projects/gps_ws/build/gps
+[8.352s] -- Install configuration: ""
+[8.353s] -- Installing: /home/w/projects/projects/gps_ws/install/gps/lib/gps/gps_node
+[8.356s] -- Set non-toolchain portion of runtime path of "/home/w/projects/projects/gps_ws/install/gps/lib/gps/gps_node" to ""
+[8.356s] -- Installing: /home/w/projects/projects/gps_ws/install/gps/share/ament_index/resource_index/package_run_dependencies/gps
+[8.356s] -- Installing: /home/w/projects/projects/gps_ws/install/gps/share/ament_index/resource_index/parent_prefix_path/gps
+[8.356s] -- Installing: /home/w/projects/projects/gps_ws/install/gps/share/gps/environment/ament_prefix_path.sh
+[8.356s] -- Installing: /home/w/projects/projects/gps_ws/install/gps/share/gps/environment/ament_prefix_path.dsv
+[8.356s] -- Installing: /home/w/projects/projects/gps_ws/install/gps/share/gps/environment/path.sh
+[8.356s] -- Installing: /home/w/projects/projects/gps_ws/install/gps/share/gps/environment/path.dsv
+[8.356s] -- Installing: /home/w/projects/projects/gps_ws/install/gps/share/gps/local_setup.bash
+[8.356s] -- Installing: /home/w/projects/projects/gps_ws/install/gps/share/gps/local_setup.sh
+[8.357s] -- Installing: /home/w/projects/projects/gps_ws/install/gps/share/gps/local_setup.zsh
+[8.357s] -- Installing: /home/w/projects/projects/gps_ws/install/gps/share/gps/local_setup.dsv
+[8.357s] -- Installing: /home/w/projects/projects/gps_ws/install/gps/share/gps/package.dsv
+[8.357s] -- Installing: /home/w/projects/projects/gps_ws/install/gps/share/ament_index/resource_index/packages/gps
+[8.357s] -- Installing: /home/w/projects/projects/gps_ws/install/gps/share/gps/cmake/gpsConfig.cmake
+[8.357s] -- Installing: /home/w/projects/projects/gps_ws/install/gps/share/gps/cmake/gpsConfig-version.cmake
+[8.357s] -- Installing: /home/w/projects/projects/gps_ws/install/gps/share/gps/package.xml
+[8.359s] Invoked command in '/home/w/projects/projects/gps_ws/build/gps' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/w/projects/projects/gps_ws/build/gps
