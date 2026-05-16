@@ -3,6 +3,7 @@
 #include <rclcpp/rclcpp.hpp>
 #include <tf2_msgs/msg/tf_message.hpp>
 
+#include "SerialPort/usart.hpp"
 #include <chrono>
 #include <cmath>
 #include <cstdint>
