@@ -7,17 +7,11 @@
 #include <chrono>
 #include <cmath>
 #include <cstdint>
-#include <cstring>
-#include <cerrno>
-#include <fcntl.h>
 #include <memory>
-#include <mutex>
 #include <optional>
 #include <stdexcept>
 #include <string>
 #include <thread>
-#include <termios.h>
-#include <unistd.h>
 #include <vector>
 
 using std::placeholders::_1;
@@ -25,205 +19,12 @@ namespace chr = std::chrono;
 
 struct Pose2D
 {
+
     float x {0};
     float y {0};
     float z {0};
 };
 
-class SerialPort
-{
-public:
-    SerialPort(
-        std::string device,
-        speed_t baud_rate = B115200,
-        int vmin = 0,
-        int vtime_ds = 2)
-        : device_(std::move(device)),
-          baud_rate_(baud_rate),
-          vmin_(vmin),
-          vtime_ds_(vtime_ds)
-    {
-    }
-
-    ~SerialPort()
-    {
-        closePort();
-    }
-
-    SerialPort(const SerialPort&) = delete;
-    SerialPort& operator=(const SerialPort&) = delete;
-    SerialPort(SerialPort&&) = delete;
-    SerialPort& operator=(SerialPort&&) = delete;
-
-    bool openPort()
-    {
-        std::lock_guard<std::mutex> lock(mutex_);
-
-        if (fd_ >= 0)
-        {
-            return true;
-        }
-
-        fd_ = ::open(device_.c_str(), O_RDWR | O_NOCTTY | O_SYNC);
-        if (fd_ < 0)
-        {
-            last_error_ = "open(" + device_ + ") failed: " + std::string(std::strerror(errno));
-            return false;
-        }
-
-        termios tty {};
-        if (tcgetattr(fd_, &tty) != 0)
-        {
-            last_error_ = "tcgetattr(" + device_ + ") failed: " + std::string(std::strerror(errno));
-            closeUnlocked();
-            return false;
-        }
-
-        cfsetospeed(&tty, baud_rate_);
-        cfsetispeed(&tty, baud_rate_);
-
-        tty.c_cflag |= (CLOCAL | CREAD);
-        tty.c_cflag &= ~PARENB;
-        tty.c_cflag &= ~CSTOPB;
-        tty.c_cflag &= ~CSIZE;
-        tty.c_cflag |= CS8;
-        tty.c_cflag &= ~CRTSCTS;
-
-        tty.c_lflag &= ~(ICANON | ECHO | ECHOE | ISIG);
-        tty.c_iflag &= ~(IXON | IXOFF | IXANY);
-        tty.c_iflag &= ~(INLCR | ICRNL | IGNCR);
-        tty.c_iflag &= ~(INPCK | ISTRIP | PARMRK);
-        tty.c_oflag &= ~OPOST;
-
-        tty.c_cc[VMIN] = static_cast<cc_t>(vmin_);
-        tty.c_cc[VTIME] = static_cast<cc_t>(vtime_ds_);
-
-        if (tcsetattr(fd_, TCSANOW, &tty) != 0)
-        {
-            last_error_ = "tcsetattr(" + device_ + ") failed: " + std::string(std::strerror(errno));
-            closeUnlocked();
-            return false;
-        }
-
-        if (tcflush(fd_, TCIOFLUSH) != 0)
-        {
-            last_error_ = "tcflush(" + device_ + ") failed: " + std::string(std::strerror(errno));
-            closeUnlocked();
-            return false;
-        }
-
-        last_error_.clear();
-        return true;
-    }
-
-    void closePort()
-    {
-        std::lock_guard<std::mutex> lock(mutex_);
-        closeUnlocked();
-    }
-
-    bool isOpen() const
-    {
-        std::lock_guard<std::mutex> lock(mutex_);
-        return fd_ >= 0;
-    }
-
-    std::string lastError() const
-    {
-        std::lock_guard<std::mutex> lock(mutex_);
-        return last_error_;
-    }
-
-    bool writeExact(const void* data, std::size_t len)
-    {
-        std::lock_guard<std::mutex> lock(mutex_);
-
-        if (fd_ < 0)
-        {
-            last_error_ = "writeExact called on closed port: " + device_;
-            return false;
-        }
-
-        const auto* bytes = static_cast<const std::uint8_t*>(data);
-        std::size_t total_written = 0;
-
-        while (total_written < len)
-        {
-            const ssize_t written = ::write(fd_, bytes + total_written, len - total_written);
-            if (written < 0)
-            {
-                if (errno == EINTR)
-                {
-                    continue;
-                }
-
-                last_error_ = "write(" + device_ + ") failed: " + std::string(std::strerror(errno));
-                return false;
-            }
-
-            total_written += static_cast<std::size_t>(written);
-        }
-
-        if (tcdrain(fd_) != 0)
-        {
-            last_error_ = "tcdrain(" + device_ + ") failed: " + std::string(std::strerror(errno));
-            return false;
-        }
-
-        last_error_.clear();
-        return true;
-    }
-
-    ssize_t readSome(void* buffer, std::size_t max_len)
-    {
-        std::lock_guard<std::mutex> lock(mutex_);
-
-        if (fd_ < 0)
-        {
-            last_error_ = "readSome called on closed port: " + device_;
-            return -1;
-        }
-
-        const ssize_t n = ::read(fd_, buffer, max_len);
-        if (n < 0)
-        {
-            if (errno == EINTR)
-            {
-                return 0;
-            }
-
-            if (errno == EAGAIN || errno == EWOULDBLOCK)
-            {
-                return 0;
-            }
-
-            last_error_ = "read(" + device_ + ") failed: " + std::string(std::strerror(errno));
-            return -1;
-        }
-
-        last_error_.clear();
-        return n;
-    }
-
-private:
-    void closeUnlocked()
-    {
-        if (fd_ >= 0)
-        {
-            ::close(fd_);
-            fd_ = -1;
-        }
-    }
-
-    std::string device_;
-    speed_t baud_rate_ {B115200};
-    int vmin_ {0};
-    int vtime_ds_ {2};
-
-    mutable std::mutex mutex_;
-    int fd_ {-1};
-    std::string last_error_;
-};
 
 class TFListenerNode : public rclcpp::Node
 {
@@ -232,11 +33,8 @@ public:
         : rclcpp::Node("tf_listener")
     {
         const auto qos = rclcpp::QoS(rclcpp::KeepLast(50));
-        subscription_ = create_subscription<tf2_msgs::msg::TFMessage>(
-            "/tf",
-            qos,
+        subscription_ = create_subscription<tf2_msgs::msg::TFMessage>("/tf",qos,
             std::bind(&TFListenerNode::onTfReceived, this, _1));
-
         RCLCPP_INFO(get_logger(), "Listening on /tf");
     }
 

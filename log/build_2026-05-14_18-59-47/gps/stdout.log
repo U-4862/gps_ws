@@ -1,0 +1,21 @@
+[ 50%] [32mBuilding CXX object CMakeFiles/gps_node.dir/src/gps_node.cpp.o[0m
+[100%] [1m[32mLinking CXX executable gps_node[0m
+[100%] Built target gps_node
+-- Install configuration: ""
+-- Installing: /home/w/projects/projects/gps_ws/install/gps/lib/gps/gps_node
+-- Set non-toolchain portion of runtime path of "/home/w/projects/projects/gps_ws/install/gps/lib/gps/gps_node" to ""
+-- Installing: /home/w/projects/projects/gps_ws/install/gps/share/ament_index/resource_index/package_run_dependencies/gps
+-- Installing: /home/w/projects/projects/gps_ws/install/gps/share/ament_index/resource_index/parent_prefix_path/gps
+-- Installing: /home/w/projects/projects/gps_ws/install/gps/share/gps/environment/ament_prefix_path.sh
+-- Installing: /home/w/projects/projects/gps_ws/install/gps/share/gps/environment/ament_prefix_path.dsv
+-- Installing: /home/w/projects/projects/gps_ws/install/gps/share/gps/environment/path.sh
+-- Installing: /home/w/projects/projects/gps_ws/install/gps/share/gps/environment/path.dsv
+-- Installing: /home/w/projects/projects/gps_ws/install/gps/share/gps/local_setup.bash
+-- Installing: /home/w/projects/projects/gps_ws/install/gps/share/gps/local_setup.sh
+-- Installing: /home/w/projects/projects/gps_ws/install/gps/share/gps/local_setup.zsh
+-- Installing: /home/w/projects/projects/gps_ws/install/gps/share/gps/local_setup.dsv
+-- Installing: /home/w/projects/projects/gps_ws/install/gps/share/gps/package.dsv
+-- Installing: /home/w/projects/projects/gps_ws/install/gps/share/ament_index/resource_index/packages/gps
+-- Installing: /home/w/projects/projects/gps_ws/install/gps/share/gps/cmake/gpsConfig.cmake
+-- Installing: /home/w/projects/projects/gps_ws/install/gps/share/gps/cmake/gpsConfig-version.cmake
+-- Installing: /home/w/projects/projects/gps_ws/install/gps/share/gps/package.xml

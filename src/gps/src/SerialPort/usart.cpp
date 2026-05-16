@@ -1,8 +1,9 @@
 #include "usart.hpp"
 #include <fcntl.h>
-#include <termios.h>
 #include <cstring>
 #include <cerrno>
+#include <unistd.h>
+
 
 SerialPort::SerialPort(std::string device, speed_t baud_rate,
                int vmin, int vtime_ds) 

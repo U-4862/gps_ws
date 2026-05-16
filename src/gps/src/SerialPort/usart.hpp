@@ -3,13 +3,11 @@
  *  
  */
 
+#pragma once
+#include <fcntl.h>
+#include <termios.h>
+#include <mutex>
 
- struct Pose2D
-{
-    float x {0};
-    float y {0};
-    float z {0};
-};
 
 class SerialPort
 {

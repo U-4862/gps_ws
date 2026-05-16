@@ -1,0 +1,169 @@
+[ 25%] [32mBuilding CXX object CMakeFiles/SerialPort.dir/src/SerialPort/usart.cpp.o[0m
+In file included from [01m[K/home/w/projects/projects/gps_ws/src/gps/src/SerialPort/usart.cpp:1[m[K:
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/SerialPort/usart.hpp:9:27:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K)[m[K’ before ‘[01m[Kdevice[m[K’
+    9 |     SerialPort[34m[K([m[Kstd::string[01;31m[K [m[K[32m[Kdevice[m[K, speed_t baud_rate = B115200,
+      |               [34m[K~[m[K           [01;31m[K^[m[K[32m[K~~~~~~[m[K
+      |                           [32m[K)[m[K
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/SerialPort/usart.hpp:22:10:[m[K [01;31m[Kerror: [m[K‘[01m[Kstring[m[K’ in namespace ‘[01m[Kstd[m[K’ does not name a type
+   22 |     std::[01;31m[Kstring[m[K lastError() const;
+      |          [01;31m[K^~~~~~[m[K
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/SerialPort/usart.hpp:1:1:[m[K [01;36m[Knote: [m[K‘[01m[Kstd::string[m[K’ is defined in header ‘[01m[K<string>[m[K’; did you forget to ‘[01m[K#include <string>[m[K’?
+  +++ |+[32m[K#include <string>[m[K
+    1 | /**
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/SerialPort/usart.hpp:27:39:[m[K [01;31m[Kerror: [m[K‘[01m[Kstd::size_t[m[K’ has not been declared
+   27 |     bool writeExact(const void* data, [01;31m[Kstd[m[K::size_t len);
+      |                                       [01;31m[K^~~[m[K
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/SerialPort/usart.hpp:28:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kssize_t[m[K’ does not name a type
+   28 |     [01;31m[Kssize_t[m[K readSome(void* buffer, std::size_t max_len);
+      |     [01;31m[K^~~~~~~[m[K
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/SerialPort/usart.hpp:33:10:[m[K [01;31m[Kerror: [m[K‘[01m[Kstring[m[K’ in namespace ‘[01m[Kstd[m[K’ does not name a type
+   33 |     std::[01;31m[Kstring[m[K device_;
+      |          [01;31m[K^~~~~~[m[K
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/SerialPort/usart.hpp:33:5:[m[K [01;36m[Knote: [m[K‘[01m[Kstd::string[m[K’ is defined in header ‘[01m[K<string>[m[K’; did you forget to ‘[01m[K#include <string>[m[K’?
+   33 |     [01;36m[Kstd[m[K::string device_;
+      |     [01;36m[K^~~[m[K
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/SerialPort/usart.hpp:34:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kspeed_t[m[K’ does not name a type
+   34 |     [01;31m[Kspeed_t[m[K baud_rate_ {B115200};
+      |     [01;31m[K^~~~~~~[m[K
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/SerialPort/usart.hpp:34:33:[m[K [01;35m[Kwarning: [m[Kextra ‘[01m[K;[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wpedantic-Wpedantic]8;;[m[K]
+   34 |     speed_t baud_rate_ {B115200}[01;35m[K;[m[K
+      |                                 [01;35m[K^[m[K
+      |                                 [31m[K-[m[K
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/SerialPort/usart.hpp:38:18:[m[K [01;31m[Kerror: [m[K‘[01m[Kmutex[m[K’ in namespace ‘[01m[Kstd[m[K’ does not name a type
+   38 |     mutable std::[01;31m[Kmutex[m[K mutex_;
+      |                  [01;31m[K^~~~~[m[K
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/SerialPort/usart.hpp:1:1:[m[K [01;36m[Knote: [m[K‘[01m[Kstd::mutex[m[K’ is defined in header ‘[01m[K<mutex>[m[K’; did you forget to ‘[01m[K#include <mutex>[m[K’?
+  +++ |+[32m[K#include <mutex>[m[K
+    1 | /**
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/SerialPort/usart.hpp:40:10:[m[K [01;31m[Kerror: [m[K‘[01m[Kstring[m[K’ in namespace ‘[01m[Kstd[m[K’ does not name a type
+   40 |     std::[01;31m[Kstring[m[K last_error_;
+      |          [01;31m[K^~~~~~[m[K
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/SerialPort/usart.hpp:40:5:[m[K [01;36m[Knote: [m[K‘[01m[Kstd::string[m[K’ is defined in header ‘[01m[K<string>[m[K’; did you forget to ‘[01m[K#include <string>[m[K’?
+   40 |     [01;36m[Kstd[m[K::string last_error_;
+      |     [01;36m[K^~~[m[K
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/SerialPort/usart.cpp:9:23:[m[K [01;31m[Kerror: [m[Kexpected constructor, destructor, or type conversion before ‘[01m[K([m[K’ token
+    9 | SerialPort::SerialPort[01;31m[K([m[Kstd::string device, speed_t baud_rate,
+      |                       [01;31m[K^[m[K
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/SerialPort/usart.cpp:[m[K In member function ‘[01m[Kbool SerialPort::openPort()[m[K’:
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/SerialPort/usart.cpp:20:14:[m[K [01;31m[Kerror: [m[K‘[01m[Klock_guard[m[K’ is not a member of ‘[01m[Kstd[m[K’
+   20 |         std::[01;31m[Klock_guard[m[K<std::mutex> lock(mutex_);
+      |              [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/SerialPort/usart.cpp:7:1:[m[K [01;36m[Knote: [m[K‘[01m[Kstd::lock_guard[m[K’ is defined in header ‘[01m[K<mutex>[m[K’; did you forget to ‘[01m[K#include <mutex>[m[K’?
+    6 | #include <unistd.h>
+  +++ |+[32m[K#include <mutex>[m[K
+    7 | 
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/SerialPort/usart.cpp:20:30:[m[K [01;31m[Kerror: [m[K‘[01m[Kmutex[m[K’ is not a member of ‘[01m[Kstd[m[K’
+   20 |         std::lock_guard<std::[01;31m[Kmutex[m[K> lock(mutex_);
+      |                              [01;31m[K^~~~~[m[K
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/SerialPort/usart.cpp:20:30:[m[K [01;36m[Knote: [m[K‘[01m[Kstd::mutex[m[K’ is defined in header ‘[01m[K<mutex>[m[K’; did you forget to ‘[01m[K#include <mutex>[m[K’?
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/SerialPort/usart.cpp:20:42:[m[K [01;31m[Kerror: [m[K‘[01m[Kmutex_[m[K’ was not declared in this scope
+   20 |         std::lock_guard<std::mutex> lock([01;31m[Kmutex_[m[K);
+      |                                          [01;31m[K^~~~~~[m[K
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/SerialPort/usart.cpp:20:37:[m[K [01;31m[Kerror: [m[K‘[01m[Klock[m[K’ was not declared in this scope; did you mean ‘[01m[Klockf[m[K’?
+   20 |         std::lock_guard<std::mutex> [01;31m[Klock[m[K(mutex_);
+      |                                     [01;31m[K^~~~[m[K
+      |                                     [32m[Klockf[m[K
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/SerialPort/usart.cpp:27:22:[m[K [01;31m[Kerror: [m[K‘[01m[Kdevice_[m[K’ was not declared in this scope
+   27 |         fd_ = ::open([01;31m[Kdevice_[m[K.c_str(), O_RDWR | O_NOCTTY | O_SYNC);
+      |                      [01;31m[K^~~~~~~[m[K
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/SerialPort/usart.cpp:30:13:[m[K [01;31m[Kerror: [m[K‘[01m[Klast_error_[m[K’ was not declared in this scope
+   30 |             [01;31m[Klast_error_[m[K = "open(" + device_ + ") failed: " + std::string(std::strerror(errno));
+      |             [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/SerialPort/usart.cpp:30:67:[m[K [01;31m[Kerror: [m[K‘[01m[Kstring[m[K’ is not a member of ‘[01m[Kstd[m[K’
+   30 |  = "open(" + device_ + ") failed: " + std::[01;31m[Kstring[m[K(std::strerror(errno));
+      |                                            [01;31m[K^~~~~~[m[K
+
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/SerialPort/usart.cpp:7:1:[m[K [01;36m[Knote: [m[K‘[01m[Kstd::string[m[K’ is defined in header ‘[01m[K<string>[m[K’; did you forget to ‘[01m[K#include <string>[m[K’?
+    6 | #include <unistd.h>
+  +++ |+[32m[K#include <string>[m[K
+    7 | 
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/SerialPort/usart.cpp:37:13:[m[K [01;31m[Kerror: [m[K‘[01m[Klast_error_[m[K’ was not declared in this scope
+   37 |             [01;31m[Klast_error_[m[K = "tcgetattr(" + device_ + ") failed: " + std::string(std::strerror(errno));
+      |             [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/SerialPort/usart.cpp:37:72:[m[K [01;31m[Kerror: [m[K‘[01m[Kstring[m[K’ is not a member of ‘[01m[Kstd[m[K’
+   37 | cgetattr(" + device_ + ") failed: " + std::[01;31m[Kstring[m[K(std::strerror(errno));
+      |                                            [01;31m[K^~~~~~[m[K
+
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/SerialPort/usart.cpp:37:72:[m[K [01;36m[Knote: [m[K‘[01m[Kstd::string[m[K’ is defined in header ‘[01m[K<string>[m[K’; did you forget to ‘[01m[K#include <string>[m[K’?
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/SerialPort/usart.cpp:42:27:[m[K [01;31m[Kerror: [m[K‘[01m[Kbaud_rate_[m[K’ was not declared in this scope
+   42 |         cfsetospeed(&tty, [01;31m[Kbaud_rate_[m[K);
+      |                           [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/SerialPort/usart.cpp:63:13:[m[K [01;31m[Kerror: [m[K‘[01m[Klast_error_[m[K’ was not declared in this scope
+   63 |             [01;31m[Klast_error_[m[K = "tcsetattr(" + device_ + ") failed: " + std::string(std::strerror(errno));
+      |             [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/SerialPort/usart.cpp:63:72:[m[K [01;31m[Kerror: [m[K‘[01m[Kstring[m[K’ is not a member of ‘[01m[Kstd[m[K’
+   63 | csetattr(" + device_ + ") failed: " + std::[01;31m[Kstring[m[K(std::strerror(errno));
+      |                                            [01;31m[K^~~~~~[m[K
+
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/SerialPort/usart.cpp:63:72:[m[K [01;36m[Knote: [m[K‘[01m[Kstd::string[m[K’ is defined in header ‘[01m[K<string>[m[K’; did you forget to ‘[01m[K#include <string>[m[K’?
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/SerialPort/usart.cpp:70:13:[m[K [01;31m[Kerror: [m[K‘[01m[Klast_error_[m[K’ was not declared in this scope
+   70 |             [01;31m[Klast_error_[m[K = "tcflush(" + device_ + ") failed: " + std::string(std::strerror(errno));
+      |             [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/SerialPort/usart.cpp:70:70:[m[K [01;31m[Kerror: [m[K‘[01m[Kstring[m[K’ is not a member of ‘[01m[Kstd[m[K’
+   70 | "tcflush(" + device_ + ") failed: " + std::[01;31m[Kstring[m[K(std::strerror(errno));
+      |                                            [01;31m[K^~~~~~[m[K
+
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/SerialPort/usart.cpp:70:70:[m[K [01;36m[Knote: [m[K‘[01m[Kstd::string[m[K’ is defined in header ‘[01m[K<string>[m[K’; did you forget to ‘[01m[K#include <string>[m[K’?
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/SerialPort/usart.cpp:75:9:[m[K [01;31m[Kerror: [m[K‘[01m[Klast_error_[m[K’ was not declared in this scope
+   75 |         [01;31m[Klast_error_[m[K.clear();
+      |         [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/SerialPort/usart.cpp:[m[K In member function ‘[01m[Kvoid SerialPort::closePort()[m[K’:
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/SerialPort/usart.cpp:82:14:[m[K [01;31m[Kerror: [m[K‘[01m[Klock_guard[m[K’ is not a member of ‘[01m[Kstd[m[K’
+   82 |         std::[01;31m[Klock_guard[m[K<std::mutex> lock(mutex_);
+      |              [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/SerialPort/usart.cpp:82:14:[m[K [01;36m[Knote: [m[K‘[01m[Kstd::lock_guard[m[K’ is defined in header ‘[01m[K<mutex>[m[K’; did you forget to ‘[01m[K#include <mutex>[m[K’?
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/SerialPort/usart.cpp:82:30:[m[K [01;31m[Kerror: [m[K‘[01m[Kmutex[m[K’ is not a member of ‘[01m[Kstd[m[K’
+   82 |         std::lock_guard<std::[01;31m[Kmutex[m[K> lock(mutex_);
+      |                              [01;31m[K^~~~~[m[K
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/SerialPort/usart.cpp:82:30:[m[K [01;36m[Knote: [m[K‘[01m[Kstd::mutex[m[K’ is defined in header ‘[01m[K<mutex>[m[K’; did you forget to ‘[01m[K#include <mutex>[m[K’?
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/SerialPort/usart.cpp:82:42:[m[K [01;31m[Kerror: [m[K‘[01m[Kmutex_[m[K’ was not declared in this scope
+   82 |         std::lock_guard<std::mutex> lock([01;31m[Kmutex_[m[K);
+      |                                          [01;31m[K^~~~~~[m[K
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/SerialPort/usart.cpp:82:37:[m[K [01;31m[Kerror: [m[K‘[01m[Klock[m[K’ was not declared in this scope; did you mean ‘[01m[Klockf[m[K’?
+   82 |         std::lock_guard<std::mutex> [01;31m[Klock[m[K(mutex_);
+      |                                     [01;31m[K^~~~[m[K
+      |                                     [32m[Klockf[m[K
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/SerialPort/usart.cpp:[m[K In member function ‘[01m[Kbool SerialPort::isOpen() const[m[K’:
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/SerialPort/usart.cpp:88:14:[m[K [01;31m[Kerror: [m[K‘[01m[Klock_guard[m[K’ is not a member of ‘[01m[Kstd[m[K’
+   88 |         std::[01;31m[Klock_guard[m[K<std::mutex> lock(mutex_);
+      |              [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/SerialPort/usart.cpp:88:14:[m[K [01;36m[Knote: [m[K‘[01m[Kstd::lock_guard[m[K’ is defined in header ‘[01m[K<mutex>[m[K’; did you forget to ‘[01m[K#include <mutex>[m[K’?
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/SerialPort/usart.cpp:88:30:[m[K [01;31m[Kerror: [m[K‘[01m[Kmutex[m[K’ is not a member of ‘[01m[Kstd[m[K’
+   88 |         std::lock_guard<std::[01;31m[Kmutex[m[K> lock(mutex_);
+      |                              [01;31m[K^~~~~[m[K
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/SerialPort/usart.cpp:88:30:[m[K [01;36m[Knote: [m[K‘[01m[Kstd::mutex[m[K’ is defined in header ‘[01m[K<mutex>[m[K’; did you forget to ‘[01m[K#include <mutex>[m[K’?
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/SerialPort/usart.cpp:88:42:[m[K [01;31m[Kerror: [m[K‘[01m[Kmutex_[m[K’ was not declared in this scope
+   88 |         std::lock_guard<std::mutex> lock([01;31m[Kmutex_[m[K);
+      |                                          [01;31m[K^~~~~~[m[K
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/SerialPort/usart.cpp:88:37:[m[K [01;31m[Kerror: [m[K‘[01m[Klock[m[K’ was not declared in this scope; did you mean ‘[01m[Klockf[m[K’?
+   88 |         std::lock_guard<std::mutex> [01;31m[Klock[m[K(mutex_);
+      |                                     [01;31m[K^~~~[m[K
+      |                                     [32m[Klockf[m[K
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/SerialPort/usart.cpp:[m[K At global scope:
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/SerialPort/usart.cpp:92:6:[m[K [01;31m[Kerror: [m[K‘[01m[Kstring[m[K’ in namespace ‘[01m[Kstd[m[K’ does not name a type
+   92 | std::[01;31m[Kstring[m[K SerialPort::lastError() const
+      |      [01;31m[K^~~~~~[m[K
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/SerialPort/usart.cpp:92:1:[m[K [01;36m[Knote: [m[K‘[01m[Kstd::string[m[K’ is defined in header ‘[01m[K<string>[m[K’; did you forget to ‘[01m[K#include <string>[m[K’?
+   92 | [01;36m[Kstd[m[K::string SerialPort::lastError() const
+      | [01;36m[K^~~[m[K
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/SerialPort/usart.cpp:99:6:[m[K [01;31m[Kerror: [m[Kno declaration matches ‘[01m[Kbool SerialPort::writeExact(const void*, std::size_t)[m[K’
+   99 | bool [01;31m[KSerialPort[m[K::writeExact(const void* data, std::size_t len)
+      |      [01;31m[K^~~~~~~~~~[m[K
+In file included from [01m[K/home/w/projects/projects/gps_ws/src/gps/src/SerialPort/usart.cpp:1[m[K:
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/SerialPort/usart.hpp:27:10:[m[K [01;36m[Knote: [m[Kcandidate is: ‘[01m[Kbool SerialPort::writeExact(const void*, int)[m[K’
+   27 |     bool [01;36m[KwriteExact[m[K(const void* data, std::size_t len);
+      |          [01;36m[K^~~~~~~~~~[m[K
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/SerialPort/usart.hpp:6:7:[m[K [01;36m[Knote: [m[K‘[01m[Kclass SerialPort[m[K’ defined here
+    6 | class [01;36m[KSerialPort[m[K
+      |       [01;36m[K^~~~~~~~~~[m[K
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/SerialPort/usart.cpp:140:9:[m[K [01;31m[Kerror: [m[Kno declaration matches ‘[01m[Kssize_t SerialPort::readSome(void*, std::size_t)[m[K’
+  140 | ssize_t [01;31m[KSerialPort[m[K::readSome(void* buffer, std::size_t max_len)
+      |         [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/SerialPort/usart.cpp:140:9:[m[K [01;36m[Knote: [m[Kno functions named ‘[01m[Kssize_t SerialPort::readSome(void*, std::size_t)[m[K’
+In file included from [01m[K/home/w/projects/projects/gps_ws/src/gps/src/SerialPort/usart.cpp:1[m[K:
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/SerialPort/usart.hpp:6:7:[m[K [01;36m[Knote: [m[K‘[01m[Kclass SerialPort[m[K’ defined here
+    6 | class [01;36m[KSerialPort[m[K
+      |       [01;36m[K^~~~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/SerialPort.dir/build.make:79: CMakeFiles/SerialPort.dir/src/SerialPort/usart.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:92: CMakeFiles/SerialPort.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2
