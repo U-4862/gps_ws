@@ -2,6 +2,7 @@
 #include <behaviortree_cpp/behavior_tree.h>
 #include <rclcpp/rclcpp.hpp>
 #include <tf2_msgs/msg/tf_message.hpp>
+#include <sensor_msgs/msg/imu.hpp>
 #include "ament_index_cpp/get_package_share_directory.hpp"
 
 #include "SerialPort/usart.hpp"
@@ -24,48 +25,49 @@ struct Pose2D
     int8_t x {0};
     int8_t y {0};
     int8_t z {0};
+    Pose2D * nextPose1;
+    Pose2D * nextPose2;
 };
 
 /**
- * @brief tf坐标监听器
- * 
+ * @brief FastLIO IMU 完整数据结构
  */
+struct ImuData
+{
+    double ori_x {0.0}, ori_y {0.0}, ori_z {0.0}, ori_w {1.0};
+    double ang_vel_x {0.0}, ang_vel_y {0.0}, ang_vel_z {0.0};
+    double lin_acc_x {0.0}, lin_acc_y {0.0}, lin_acc_z {0.0};
+};
 
-class TFListenerNode : public rclcpp::Node
+/**
+ * @brief MID360 FastLIO 传感器监听器，同时订阅 /tf 和 IMU 话题
+ */
+class SensorNode : public rclcpp::Node
 {
 public:
-    TFListenerNode()
-        : rclcpp::Node("tf_listener")
+    explicit SensorNode(const std::string& imu_topic = "/livox/imu")
+        : rclcpp::Node("sensor_node")
     {
         const auto qos = rclcpp::QoS(rclcpp::KeepLast(50));
-        subscription_ = create_subscription<tf2_msgs::msg::TFMessage>("/tf",qos,
-            std::bind(&TFListenerNode::onTfReceived, this, _1));
-        RCLCPP_INFO(get_logger(), "Listening on /tf");
+        tf_sub_ = create_subscription<tf2_msgs::msg::TFMessage>("/tf", qos,
+            std::bind(&SensorNode::onTfReceived, this, _1));
+        imu_sub_ = create_subscription<sensor_msgs::msg::Imu>(imu_topic, qos,
+            std::bind(&SensorNode::onImuReceived, this, _1));
+        RCLCPP_INFO(get_logger(), "Listening on /tf and %s", imu_topic.c_str());
     }
 
-    double currentX() const
-    {
-        std::lock_guard<std::mutex> lock(mutex_);
-        return current_x_;
-    }
+    // TF
+    double currentX() const { std::lock_guard<std::mutex> lock(tf_mutex_); return current_x_; }
+    double currentY() const { std::lock_guard<std::mutex> lock(tf_mutex_); return current_y_; }
+    double currentZ() const { std::lock_guard<std::mutex> lock(tf_mutex_); return current_z_; }
 
-    double currentY() const
-    {
-        std::lock_guard<std::mutex> lock(mutex_);
-        return current_y_;
-    }
-
-    double currentZ() const
-    {
-        std::lock_guard<std::mutex> lock(mutex_);
-        return current_z_;
-    }
+    // IMU
+    ImuData imuData() const { std::lock_guard<std::mutex> lock(imu_mutex_); return imu_; }
 
 private:
     void onTfReceived(const tf2_msgs::msg::TFMessage::SharedPtr msg)
     {
-        std::lock_guard<std::mutex> lock(mutex_);
-
+        std::lock_guard<std::mutex> lock(tf_mutex_);
         for (const auto& transform_stamped : msg->transforms)
         {
             const auto& trans = transform_stamped.transform.translation;
@@ -75,11 +77,30 @@ private:
         }
     }
 
-    mutable std::mutex mutex_;
-    rclcpp::Subscription<tf2_msgs::msg::TFMessage>::SharedPtr subscription_;
-    double current_x_ {0.0};
-    double current_y_ {0.0};
-    double current_z_ {0.0};
+    void onImuReceived(const sensor_msgs::msg::Imu::SharedPtr msg)
+    {
+        std::lock_guard<std::mutex> lock(imu_mutex_);
+        imu_.ori_x = msg->orientation.x;
+        imu_.ori_y = msg->orientation.y;
+        imu_.ori_z = msg->orientation.z;
+        imu_.ori_w = msg->orientation.w;
+        imu_.ang_vel_x = msg->angular_velocity.x;
+        imu_.ang_vel_y = msg->angular_velocity.y;
+        imu_.ang_vel_z = msg->angular_velocity.z;
+        imu_.lin_acc_x = msg->linear_acceleration.x;
+        imu_.lin_acc_y = msg->linear_acceleration.y;
+        imu_.lin_acc_z = msg->linear_acceleration.z;
+    }
+
+    // TF
+    mutable std::mutex tf_mutex_;
+    rclcpp::Subscription<tf2_msgs::msg::TFMessage>::SharedPtr tf_sub_;
+    double current_x_ {0.0}, current_y_ {0.0}, current_z_ {0.0};
+
+    // IMU
+    mutable std::mutex imu_mutex_;
+    rclcpp::Subscription<sensor_msgs::msg::Imu>::SharedPtr imu_sub_;
+    ImuData imu_;
 };
 
 /**
@@ -90,7 +111,7 @@ struct AppContext
 {
     rclcpp::Logger logger {rclcpp::get_logger("gps_bt_app")};
     std::shared_ptr<SerialPort> motion_port;
-    std::shared_ptr<TFListenerNode> tf_listener;
+    std::shared_ptr<SensorNode> sensor_node;
 };
 
 
@@ -381,13 +402,15 @@ int main(int argc, char** argv)
     auto app_node = std::make_shared<rclcpp::Node>("gps_bt_app");
     app_node->declare_parameter<std::string>("tree_xml", "tree.xml");
     app_node->declare_parameter<std::string>("motion_port", "/dev/ttyUSB0");
+    app_node->declare_parameter<std::string>("imu_topic", "/livox/imu");
     app_node->declare_parameter<int>("tick_period_ms", 50);
 
     const auto tree_xml = app_node->get_parameter("tree_xml").as_string();
     const auto motion_port_path = app_node->get_parameter("motion_port").as_string();
+    const auto imu_topic = app_node->get_parameter("imu_topic").as_string();
     const auto tick_period_ms = app_node->get_parameter("tick_period_ms").as_int();
 
-    auto tf_listener = std::make_shared<TFListenerNode>();
+    auto sensor_node = std::make_shared<SensorNode>(imu_topic);
     auto motion_port = std::make_shared<SerialPort>(motion_port_path, B115200, 0, 2);
 
     if (!motion_port->openPort())
@@ -402,7 +425,7 @@ int main(int argc, char** argv)
     auto context = std::make_shared<AppContext>();
     context->logger = app_node->get_logger();
     context->motion_port = motion_port;
-    context->tf_listener = tf_listener;
+    context->sensor_node = sensor_node;
 
     BT::BehaviorTreeFactory factory;
     registerNodes(factory, context);
@@ -431,7 +454,7 @@ int main(int argc, char** argv)
 
     rclcpp::executors::SingleThreadedExecutor executor;
     executor.add_node(app_node);
-    executor.add_node(tf_listener);
+    executor.add_node(sensor_node);
 
     RCLCPP_INFO(app_node->get_logger(), "Behavior tree started: %s", tree_xml.c_str());
 

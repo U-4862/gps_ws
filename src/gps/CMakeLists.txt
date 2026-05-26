@@ -17,14 +17,16 @@ src/SerialPort
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(tf2_msgs REQUIRED)
+find_package(sensor_msgs REQUIRED)
 find_package(behaviortree_cpp REQUIRED)
 
 
 # 执行文件编译
 add_executable(gps_node src/gps_node.cpp)
-ament_target_dependencies(gps_node 
-  rclcpp 
+ament_target_dependencies(gps_node
+  rclcpp
   tf2_msgs
+  sensor_msgs
   behaviortree_cpp
 )
 
