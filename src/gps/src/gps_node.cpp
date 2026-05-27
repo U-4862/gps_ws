@@ -39,21 +39,34 @@ struct ImuData
     double lin_acc_x {0.0}, lin_acc_y {0.0}, lin_acc_z {0.0};
 };
 
+struct ImuDiff
+{
+    double ang_vel_diff {0.0};   // 角速度矢量差的模
+    double lin_acc_diff {0.0};   // 线加速度矢量差的模
+    bool valid {false};
+};
+
 /**
- * @brief MID360 FastLIO 传感器监听器，同时订阅 /tf 和 IMU 话题
+ * @brief 传感器监听器，同时订阅 /tf、雷达 IMU 和底盘 IMU，提供双 IMU 校验
  */
 class SensorNode : public rclcpp::Node
 {
 public:
-    explicit SensorNode(const std::string& imu_topic = "/livox/imu")
+    explicit SensorNode(
+            const std::string& radar_imu_topic = "/livox/imu",
+            const std::string& chassis_imu_topic = "/chassis/imu")
         : rclcpp::Node("sensor_node")
     {
-        const auto qos = rclcpp::QoS(rclcpp::KeepLast(50));
+        const auto qos = rclcpp::SensorDataQoS();
         tf_sub_ = create_subscription<tf2_msgs::msg::TFMessage>("/tf", qos,
             std::bind(&SensorNode::onTfReceived, this, _1));
-        imu_sub_ = create_subscription<sensor_msgs::msg::Imu>(imu_topic, qos,
-            std::bind(&SensorNode::onImuReceived, this, _1));
-        RCLCPP_INFO(get_logger(), "Listening on /tf and %s", imu_topic.c_str());
+        radar_imu_sub_ = create_subscription<sensor_msgs::msg::Imu>(radar_imu_topic, qos,
+            std::bind(&SensorNode::onRadarImuReceived, this, _1));
+        chassis_imu_sub_ = create_subscription<sensor_msgs::msg::Imu>(chassis_imu_topic, qos,
+            std::bind(&SensorNode::onChassisImuReceived, this, _1));
+        RCLCPP_INFO(get_logger(),
+            "Listening on /tf, radar IMU: %s, chassis IMU: %s",
+            radar_imu_topic.c_str(), chassis_imu_topic.c_str());
     }
 
     // TF
@@ -61,8 +74,32 @@ public:
     double currentY() const { std::lock_guard<std::mutex> lock(tf_mutex_); return current_y_; }
     double currentZ() const { std::lock_guard<std::mutex> lock(tf_mutex_); return current_z_; }
 
-    // IMU
-    ImuData imuData() const { std::lock_guard<std::mutex> lock(imu_mutex_); return imu_; }
+    // 雷达 IMU
+    ImuData imuData() const { std::lock_guard<std::mutex> lock(radar_imu_mutex_); return radar_imu_; }
+
+    // 底盘 IMU
+    ImuData chassisImuData() const { std::lock_guard<std::mutex> lock(chassis_imu_mutex_); return chassis_imu_; }
+
+    // 双 IMU 校验：计算雷达与底盘 IMU 在角速度和线加速度上的偏差
+    ImuDiff validateImu() const
+    {
+        ImuDiff diff;
+        const auto radar = imuData();
+        const auto chassis = chassisImuData();
+
+        double dang_x = radar.ang_vel_x - chassis.ang_vel_x;
+        double dang_y = radar.ang_vel_y - chassis.ang_vel_y;
+        double dang_z = radar.ang_vel_z - chassis.ang_vel_z;
+        diff.ang_vel_diff = std::sqrt(dang_x * dang_x + dang_y * dang_y + dang_z * dang_z);
+
+        double dlin_x = radar.lin_acc_x - chassis.lin_acc_x;
+        double dlin_y = radar.lin_acc_y - chassis.lin_acc_y;
+        double dlin_z = radar.lin_acc_z - chassis.lin_acc_z;
+        diff.lin_acc_diff = std::sqrt(dlin_x * dlin_x + dlin_y * dlin_y + dlin_z * dlin_z);
+
+        diff.valid = true;
+        return diff;
+    }
 
 private:
     void onTfReceived(const tf2_msgs::msg::TFMessage::SharedPtr msg)
@@ -77,19 +114,30 @@ private:
         }
     }
 
-    void onImuReceived(const sensor_msgs::msg::Imu::SharedPtr msg)
+    void onRadarImuReceived(const sensor_msgs::msg::Imu::SharedPtr msg)
     {
-        std::lock_guard<std::mutex> lock(imu_mutex_);
-        imu_.ori_x = msg->orientation.x;
-        imu_.ori_y = msg->orientation.y;
-        imu_.ori_z = msg->orientation.z;
-        imu_.ori_w = msg->orientation.w;
-        imu_.ang_vel_x = msg->angular_velocity.x;
-        imu_.ang_vel_y = msg->angular_velocity.y;
-        imu_.ang_vel_z = msg->angular_velocity.z;
-        imu_.lin_acc_x = msg->linear_acceleration.x;
-        imu_.lin_acc_y = msg->linear_acceleration.y;
-        imu_.lin_acc_z = msg->linear_acceleration.z;
+        std::lock_guard<std::mutex> lock(radar_imu_mutex_);
+        copyImu(*msg, radar_imu_);
+    }
+
+    void onChassisImuReceived(const sensor_msgs::msg::Imu::SharedPtr msg)
+    {
+        std::lock_guard<std::mutex> lock(chassis_imu_mutex_);
+        copyImu(*msg, chassis_imu_);
+    }
+
+    static void copyImu(const sensor_msgs::msg::Imu& src, ImuData& dst)
+    {
+        dst.ori_x = src.orientation.x;
+        dst.ori_y = src.orientation.y;
+        dst.ori_z = src.orientation.z;
+        dst.ori_w = src.orientation.w;
+        dst.ang_vel_x = src.angular_velocity.x;
+        dst.ang_vel_y = src.angular_velocity.y;
+        dst.ang_vel_z = src.angular_velocity.z;
+        dst.lin_acc_x = src.linear_acceleration.x;
+        dst.lin_acc_y = src.linear_acceleration.y;
+        dst.lin_acc_z = src.linear_acceleration.z;
     }
 
     // TF
@@ -97,10 +145,15 @@ private:
     rclcpp::Subscription<tf2_msgs::msg::TFMessage>::SharedPtr tf_sub_;
     double current_x_ {0.0}, current_y_ {0.0}, current_z_ {0.0};
 
-    // IMU
-    mutable std::mutex imu_mutex_;
-    rclcpp::Subscription<sensor_msgs::msg::Imu>::SharedPtr imu_sub_;
-    ImuData imu_;
+    // 雷达 IMU
+    mutable std::mutex radar_imu_mutex_;
+    rclcpp::Subscription<sensor_msgs::msg::Imu>::SharedPtr radar_imu_sub_;
+    ImuData radar_imu_;
+
+    // 底盘 IMU
+    mutable std::mutex chassis_imu_mutex_;
+    rclcpp::Subscription<sensor_msgs::msg::Imu>::SharedPtr chassis_imu_sub_;
+    ImuData chassis_imu_;
 };
 
 /**
@@ -403,14 +456,16 @@ int main(int argc, char** argv)
     app_node->declare_parameter<std::string>("tree_xml", "tree.xml");
     app_node->declare_parameter<std::string>("motion_port", "/dev/ttyUSB0");
     app_node->declare_parameter<std::string>("imu_topic", "/livox/imu");
+    app_node->declare_parameter<std::string>("chassis_imu_topic", "/chassis/imu");
     app_node->declare_parameter<int>("tick_period_ms", 50);
 
     const auto tree_xml = app_node->get_parameter("tree_xml").as_string();
     const auto motion_port_path = app_node->get_parameter("motion_port").as_string();
     const auto imu_topic = app_node->get_parameter("imu_topic").as_string();
+    const auto chassis_imu_topic = app_node->get_parameter("chassis_imu_topic").as_string();
     const auto tick_period_ms = app_node->get_parameter("tick_period_ms").as_int();
 
-    auto sensor_node = std::make_shared<SensorNode>(imu_topic);
+    auto sensor_node = std::make_shared<SensorNode>(imu_topic, chassis_imu_topic);
     auto motion_port = std::make_shared<SerialPort>(motion_port_path, B115200, 0, 2);
 
     if (!motion_port->openPort())

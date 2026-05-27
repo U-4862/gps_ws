@@ -12,6 +12,7 @@ colcon build --packages-select gps
 ros2 run gps gps_node --ros-args \
   -p motion_port:=/dev/ttyUSB0 \
   -p imu_topic:=/livox/imu \
+  -p chassis_imu_topic:=/chassis/imu \
   -p tick_period_ms:=50
 
 # 只做编译检查不完整构建
@@ -51,10 +52,12 @@ int8_t  z       // 左转/右转角速度(正=左转,负=右转)
 
 `AppContext` 结构体聚合全局共享资源（串口指针、SensorNode、logger），通过 `BT::Blackboard` 注入行为树上下文。
 
-### SensorNode（TF + IMU）
+### SensorNode（TF + 双 IMU）
 
-`SensorNode` 同时订阅 `/tf` 和 `/livox/imu`（可通过 `imu_topic` 参数配置）两个话题：
+`SensorNode` 同时订阅 `/tf`、雷达 IMU（可通过 `imu_topic` 参数配置，默认 `/livox/imu`）和底盘 IMU（可通过 `chassis_imu_topic` 参数配置，默认 `/chassis/imu`）三个话题：
 
 - **TF 数据** — 实时缓存当前 x/y/z 坐标，供行为树条件节点通过 `currentX/Y/Z()` 查询
-- **IMU 数据** — `ImuData` 结构体包含完整的姿态四元数 `(ori_x, ori_y, ori_z, ori_w)`、角速度 `(ang_vel_x/y/z)` 和线加速度 `(lin_acc_x/y/z)`，通过 `imuData()` 获取副本
-- TF 与 IMU 各自持有独立的 mutex，互不阻塞
+- **雷达 IMU 数据** — `ImuData` 结构体包含完整的姿态四元数 `(ori_x, ori_y, ori_z, ori_w)`、角速度 `(ang_vel_x/y/z)` 和线加速度 `(lin_acc_x/y/z)`，通过 `imuData()` 获取副本
+- **底盘 IMU 数据** — 同样为 `ImuData` 结构体，通过 `chassisImuData()` 获取副本
+- **双 IMU 校验** — `validateImu()` 返回 `ImuDiff`（角速度偏差模长 `ang_vel_diff`、线加速度偏差模长 `lin_acc_diff`），用于检测传感器异常
+- TF 与两个 IMU 各自持有独立的 mutex，互不阻塞
