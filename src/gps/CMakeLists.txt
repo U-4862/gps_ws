@@ -16,7 +16,7 @@ src/SerialPort
 # find dependencies
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
-find_package(tf2_msgs REQUIRED)
+find_package(nav_msgs REQUIRED)
 find_package(sensor_msgs REQUIRED)
 find_package(behaviortree_cpp REQUIRED)
 
@@ -25,7 +25,7 @@ find_package(behaviortree_cpp REQUIRED)
 add_executable(gps_node src/gps_node.cpp)
 ament_target_dependencies(gps_node
   rclcpp
-  tf2_msgs
+  nav_msgs
   sensor_msgs
   behaviortree_cpp
 )

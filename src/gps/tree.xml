@@ -4,12 +4,7 @@
         <Sequence name="Root_Sequence">
             <MoveForward name="Move_Step_1" duration_ms="2000"/>
 
-            <TurnLeft name="Turn_Left_A" duration_ms="1000"/>
-            <MoveForward name="Move_Step_2"  duration_ms="2000"/>
-            <TurnRight name="Turn_Right_A" duration_ms="1000"/>
-            <MoveForward name="Move_Step_3" duration_ms="2000"/>
-        
-            
+            <TurnLeft name="Turn_Left_A" duration_ms="2000"/>
         </Sequence>
     </BehaviorTree>
 </root>
