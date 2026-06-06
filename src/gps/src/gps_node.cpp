@@ -5,6 +5,7 @@
 #include <sensor_msgs/msg/imu.hpp>
 #include "ament_index_cpp/get_package_share_directory.hpp"
 
+#include "map/map.h"
 #include "SerialPort/usart.hpp"
 #include <chrono>
 #include <cmath>
@@ -19,25 +20,16 @@
 using std::placeholders::_1;
 namespace chr = std::chrono;
 
-struct Pose2D
-{
-    uint8_t header {0x0F};
-    int8_t x {0};
-    int8_t y {0};
-    int8_t z {0};
-    int8_t pn {0};
-    int8_t grip_signal{0};
-    int8_t stop_signal{0};
-    
 
-};
 
-struct Location
-{
-    float x{0.0f};
-    float y{0.0f};
+inline constexpr Pose2D kStop{0x0f, 0, 0, 0, 0, 1, 0};
+inline constexpr Pose2D kForward{0x0f, 1, 0, 0, 0, 0, 0};
+inline constexpr Pose2D kTurnLeft{0x0f, 0, 0, 1, 0, 0, 0};
+inline constexpr Pose2D kTurnRight{0x0f, 0, 0, 1, 1, 0, 0};
 
-};
+
+
+
 
 
 /**
@@ -305,14 +297,16 @@ public:
     }
 
 protected:
+
     bool sendCommand(const Pose2D& msg)
     {
         return context_->motion_port->writeExact(&msg, sizeof(msg));
     }
 
+
     void stopRobot()
     {
-        const Pose2D stop {};
+        const Pose2D stop = kStop;
         if (!sendCommand(stop) && context_)
         {
             RCLCPP_ERROR(
@@ -335,30 +329,106 @@ public:
     MoveToLocation(
         const std::string& name,
         const BT::NodeConfig& config,
-        std::shared_ptr<AppContext> context,
-         Location DestLocation )
-        : TimedVelocityAction(name, config, std::move(context), Pose2D{0x0f, 0, 0, 0}),
-          dest_location_(DestLocation)
+        std::shared_ptr<AppContext> context )
+        : TimedVelocityAction(name, config, std::move(context), kStop)
+
     {   
     }
-    BT::NodeStatus onStart() 
+
+    static BT::PortsList providedPorts() 
+    {
+        return {
+            BT::InputPort<int>("duration_ms", 260, "Action duration in milliseconds"),
+            BT::InputPort<std::string>("location" ,"home" ," to where")
+        };
+    }
+
+    BT::NodeStatus onStart() override
+    {
+        std::string loc_name;
+        if (!getInput<std::string>("location", loc_name))
+            return BT::NodeStatus::FAILURE;
+
+        auto it = point_map.find(loc_name);
+        if (it == point_map.end())
+        {
+            RCLCPP_ERROR(context_->logger, "未知点位: %s", loc_name.c_str());
+            return BT::NodeStatus::FAILURE;
+        }
+        dest_location_ = it->second;
+
+        int duration_ms = 5000;
+        getInput<int>("duration_ms", duration_ms);
+        deadline_ = chr::steady_clock::now() + chr::milliseconds(duration_ms);
+
+        RCLCPP_INFO(context_->logger, "前往 %s (%.1f, %.1f)", 
+                    loc_name.c_str(), dest_location_.x, dest_location_.y);
+        return BT::NodeStatus::RUNNING;
+    }
 
     BT::NodeStatus onRunning() override
     {
+        if (chr::steady_clock::now() >= deadline_)
+        {
+            stopRobot();
+            return BT::NodeStatus::FAILURE;
+        }
+
+
+        uint8_t k = 10;
+        Location current_location;
+        current_location.x = static_cast<float>(context_->sensor_node->currentX());
+        current_location.y = static_cast<float>(context_->sensor_node->currentY());
+        float distance_x = dest_location_.x - current_location.x;
+        float distance_y = dest_location_.y - current_location.y;
+
+        
         if(chr::steady_clock::now() < deadline_)
         {
             if(chr::steady_clock::now()  < (deadline_) - chr::milliseconds(1500))
             {
-                Location current_location;
-                current_location.x = SensorNode::currentX;
-                current_location.y = SensorNode::currentY;
+                float speed_x = k * distance_x;
+                if(speed_x >=0)
+                {
+                    
+                    Pose2D cmd{0x0f, (uint8_t)speed_x, 0, 0, 0, 0, 0};
+                    sendCommand(cmd);
+                }
+                else
+                {
+
+                    Pose2D cmd{0x0f, (uint8_t)-speed_x, 0, 0, 1, 0, 0};
+                    sendCommand(cmd);
+                }
+                
             }
-            float distance_x = dest_location_.x - current_location.x;    
-            float distance_y = dest_location_.y - current_location.y;
+            else
+            {
+                float speed_y = k * distance_y;
+                if(speed_y >=0)
+                {
+                    
+                    Pose2D cmd{0x0f, 0, (uint8_t)speed_y, 0, 0, 0, 0};
+                    sendCommand(cmd);
+                }
+                else
+                {
 
-            Pose2D turning_command{ 0x0f , 0 , 0 , }
+                    Pose2D cmd{0x0f,  0, (uint8_t)-speed_y, 0, 1, 0, 0};
+                    sendCommand(cmd);
+                }
+            }
 
+            float k_tolerance = 0.2f;
+            if((std::abs(distance_x) < k_tolerance) && (std::abs(distance_y) < k_tolerance))
+            {
+                stopRobot();
+                return BT::NodeStatus::SUCCESS;
+            }
+
+            return BT::NodeStatus::RUNNING;
         }
+        return BT::NodeStatus::FAILURE;
     }
 
 
@@ -374,7 +444,7 @@ public:
         const std::string& name,
         const BT::NodeConfig& config,
         std::shared_ptr<AppContext> context)
-        : TimedVelocityAction(name, config, std::move(context), Pose2D)
+        : TimedVelocityAction(name, config, std::move(context), kForward)
     {}
 };
 
@@ -385,7 +455,7 @@ public:
         const std::string& name,
         const BT::NodeConfig& config,
         std::shared_ptr<AppContext> context)
-        : TimedVelocityAction(name, config, std::move(context), Pose2D)
+        : TimedVelocityAction(name, config, std::move(context), kTurnLeft)
     {
     }
 
@@ -478,15 +548,10 @@ public:
         const std::string& name,
         const BT::NodeConfig& config,
         std::shared_ptr<AppContext> context)
-        : TimedVelocityAction(name, config, std::move(context), Pose2D{0x0f, 0, 0, -1})
+        : TimedVelocityAction(name, config, std::move(context), kTurnRight)
     {
     }
 
-
-    BT::NodeStatus::onRunning() override
-    {
-        
-    }
 };
 
 
@@ -498,16 +563,16 @@ public:
  * 
  */
 
- class JudgePosition final : public TimedVelocityAction
-{
-public:
-    JudgePosition(
-        const std::string& name,
-        const BT::NodeConfig& config,
-        std::shared_ptr<AppContext> context)
-        : TimedVelocityAction(name, config, std::move(context), Pose2D{0x0f, 0, 0, 0})
-    {}
-};
+//  class JudgePosition final : public TimedVelocityAction
+// {
+// public:
+//     JudgePosition(
+//         const std::string& name,
+//         const BT::NodeConfig& config,
+//         std::shared_ptr<AppContext> context)
+//         : TimedVelocityAction(name, config, std::move(context), Pose2D{0x0f, 0, 0, 0})
+//     {}
+// };
 
 
 
@@ -622,6 +687,13 @@ static void registerNodes(BT::BehaviorTreeFactory& factory, const std::shared_pt
         [context](const std::string& name, const BT::NodeConfig& config) {
             return std::make_unique<TurnRight>(name, config, context);
         });
+
+    factory.registerBuilder<MoveToLocation>(
+        "MoveToLocation",
+        [context](const std::string& name, const BT::NodeConfig& config) {
+            return std::make_unique<MoveToLocation>(name, config, context);
+        });
+
 }
 
 int main(int argc, char** argv)

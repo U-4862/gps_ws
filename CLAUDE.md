@@ -5,6 +5,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 # explain
 使用中文解释
 
+user memory means 
+
+
 ## 构建与运行
 
 ```bash
