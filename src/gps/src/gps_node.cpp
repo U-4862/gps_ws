@@ -25,8 +25,19 @@ struct Pose2D
     int8_t x {0};
     int8_t y {0};
     int8_t z {0};
+    int8_t pn {0};
+    int8_t grip_signal{0};
+    int8_t stop_signal{0};
+    
+
 };
 
+struct Location
+{
+    float x{0.0f};
+    float y{0.0f};
+
+};
 
 
 /**
@@ -156,9 +167,9 @@ public:
 
 
 public:
-    vector<pair<double, double>> obstacles;
+    std::vector<std::pair<double, double>> obstacles;
      // 存储障碍物位置的示例
-}
+};
 
 /**
  * @brief 应用程序上下文，包含共享资源如串口和tf监听器
@@ -265,8 +276,7 @@ public:
                     name().c_str(),
                     std::chrono::duration_cast<std::chrono::milliseconds>(deadline_ - std::chrono::steady_clock::now()).count());
             }
-            {
-                if (!sendCommand(command_))
+            if (!sendCommand(command_))
                 {
                     RCLCPP_ERROR(
                         context_->logger,
@@ -283,7 +293,6 @@ public:
         stopRobot();
         RCLCPP_INFO(context_->logger, "[%s] completed", name().c_str());
         return BT::NodeStatus::SUCCESS;
-    }
     }
 
     void onHalted() override
@@ -319,6 +328,45 @@ protected:
     chr::steady_clock::time_point deadline_ {};
 };
 
+
+class MoveToLocation : public TimedVelocityAction
+{
+public:
+    MoveToLocation(
+        const std::string& name,
+        const BT::NodeConfig& config,
+        std::shared_ptr<AppContext> context,
+         Location DestLocation )
+        : TimedVelocityAction(name, config, std::move(context), Pose2D{0x0f, 0, 0, 0}),
+          dest_location_(DestLocation)
+    {   
+    }
+    BT::NodeStatus onStart() 
+
+    BT::NodeStatus onRunning() override
+    {
+        if(chr::steady_clock::now() < deadline_)
+        {
+            if(chr::steady_clock::now()  < (deadline_) - chr::milliseconds(1500))
+            {
+                Location current_location;
+                current_location.x = SensorNode::currentX;
+                current_location.y = SensorNode::currentY;
+            }
+            float distance_x = dest_location_.x - current_location.x;    
+            float distance_y = dest_location_.y - current_location.y;
+
+            Pose2D turning_command{ 0x0f , 0 , 0 , }
+
+        }
+    }
+
+
+protected:
+    Location dest_location_ ;
+};
+
+
 class MoveForward final : public TimedVelocityAction
 {
 public:
@@ -326,7 +374,7 @@ public:
         const std::string& name,
         const BT::NodeConfig& config,
         std::shared_ptr<AppContext> context)
-        : TimedVelocityAction(name, config, std::move(context), Pose2D{0x0f, 1, 0, 0})
+        : TimedVelocityAction(name, config, std::move(context), Pose2D)
     {}
 };
 
@@ -337,7 +385,7 @@ public:
         const std::string& name,
         const BT::NodeConfig& config,
         std::shared_ptr<AppContext> context)
-        : TimedVelocityAction(name, config, std::move(context), Pose2D{0x0f, 0, 0, 1})
+        : TimedVelocityAction(name, config, std::move(context), Pose2D)
     {
     }
 
@@ -357,9 +405,9 @@ public:
                         context_->motion_port->lastError().c_str());
                         return BT::NodeStatus::FAILURE;
                     }
-                RCLCPP_DEBUG(
+                RCLCPP_INFO(
                     context_->logger,
-                    "[%s] running: time left %ldms",
+                    "current status:start     [%s] running: time left %ldms",
                     name().c_str(),
                     std::chrono::duration_cast<std::chrono::milliseconds>(deadline_ - std::chrono::steady_clock::now()).count());
             }
@@ -375,9 +423,9 @@ public:
                         context_->motion_port->lastError().c_str());
                         return BT::NodeStatus::FAILURE;
                     }
-                RCLCPP_DEBUG(
+                RCLCPP_INFO(
                     context_->logger,
-                    "[%s] running: time left %ldms",
+                    "current status:turning   [%s] running: time left %ldms",
                     name().c_str(),
                     std::chrono::duration_cast<std::chrono::milliseconds>(deadline_ - std::chrono::steady_clock::now()).count());
             }
@@ -402,11 +450,16 @@ public:
                         context_->motion_port->lastError().c_str());
                         return BT::NodeStatus::FAILURE;
                     }
-                RCLCPP_DEBUG(
+                RCLCPP_INFO(
                     context_->logger,
-                    "[%s] running: time left %ldms",
+                    "current status:final     [%s] running: time left %ldms",
                     name().c_str(),
                     std::chrono::duration_cast<std::chrono::milliseconds>(deadline_ - std::chrono::steady_clock::now()).count());
+            }
+            else
+            {
+                
+                stopRobot();
             }
             return BT::NodeStatus::RUNNING;
         }
@@ -428,7 +481,17 @@ public:
         : TimedVelocityAction(name, config, std::move(context), Pose2D{0x0f, 0, 0, -1})
     {
     }
+
+
+    BT::NodeStatus::onRunning() override
+    {
+        
+    }
 };
+
+
+
+
 
 /**
  * @brief judge position (待完善

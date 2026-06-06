@@ -1,0 +1,616 @@
+[0.000000] (-) TimerEvent: {}
+[0.001032] (gps) JobQueued: {'identifier': 'gps', 'dependencies': OrderedDict()}
+[0.001352] (gps) JobStarted: {'identifier': 'gps'}
+[0.012814] (gps) JobProgress: {'identifier': 'gps', 'progress': 'cmake'}
+[0.013382] (gps) JobProgress: {'identifier': 'gps', 'progress': 'build'}
+[0.013941] (gps) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/w/projects/projects/gps_ws/build/gps', '--', '-j16', '-l16'], 'cwd': '/home/w/projects/projects/gps_ws/build/gps', 'env': OrderedDict([('PYTHON_BASIC_REPL', '1'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('ANTHROPIC_MODEL', 'deepseek-v4-pro'), ('AI_AGENT', 'claude-code_2-1-149_agent'), ('LANGUAGE', 'en_US:en'), ('USER', 'w'), ('CLAUDE_CODE_ENTRYPOINT', 'cli'), ('LC_TIME', 'zh_CN.UTF-8'), ('GIT_EDITOR', 'true'), ('XDG_SESSION_TYPE', 'x11'), ('GIT_ASKPASS', '/usr/share/code/resources/app/extensions/git/dist/askpass.sh'), ('SHLVL', '2'), ('LD_LIBRARY_PATH', '/home/w/fastlio/install/fast_lio/lib:/home/w/ws_livox/install/livox_ros_driver2/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/w'), ('CHROME_DESKTOP', 'code.desktop'), ('CONDA_SHLVL', '0'), ('TERM_PROGRAM_VERSION', '1.120.0'), ('DESKTOP_SESSION', 'ubuntu-xorg'), ('ANTHROPIC_DEFAULT_SONNET_MODEL', 'deepseek-v4-pro'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('XDG_SEAT_PATH', '/org/freedesktop/DisplayManager/Seat0'), ('VSCODE_GIT_ASKPASS_MAIN', '/usr/share/code/resources/app/extensions/git/dist/askpass-main.js'), ('LC_MONETARY', 'zh_CN.UTF-8'), ('VSCODE_GIT_ASKPASS_NODE', '/usr/share/code/code'), ('PYDEVD_DISABLE_FILE_VALIDATION', '1'), ('SYSTEMD_EXEC_PID', '3834'), ('BUNDLED_DEBUGPY_PATH', '/home/w/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/libs/debugpy'), ('VSCODE_PYTHON_AUTOACTIVATE_GUARD', '1'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('_CE_M', ''), ('_CONDA_ROOT', '/home/w/anaconda3'), ('COLCON_PREFIX_PATH', '/home/w/ws_livox/install:/home/w/fastlio/install'), ('ROS_DISTRO', 'humble'), ('GTK_IM_MODULE', 'ibus'), ('LOGNAME', 'w'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('ANTHROPIC_BASE_URL', 'https://api.deepseek.com/anthropic'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('_CE_CONDA', ''), ('FC_FONTATIONS', '1'), ('ROS_LOCALHOST_ONLY', '0'), ('ANTHROPIC_DEFAULT_OPUS_MODEL', 'deepseek-v4-pro'), ('PATH', '/home/w/.config/Code/User/globalStorage/github.copilot-chat/debugCommand:/home/w/.config/Code/User/globalStorage/github.copilot-chat/copilotCli:/home/w/anaconda3/condabin:/opt/ros/humble/bin:/home/w/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/w/.fishros/bin/:/home/w/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts:/home/w/.fishros/bin/'), ('SESSION_MANAGER', 'local/FA608PM:@/tmp/.ICE-unix/3557,unix/FA608PM:/tmp/.ICE-unix/3557'), ('GDM_LANG', 'en_US'), ('PAPERSIZE', 'a4'), ('COREPACK_ENABLE_AUTO_PIN', '0'), ('XDG_SESSION_PATH', '/org/freedesktop/DisplayManager/Session0'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'zh_CN.UTF-8'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/30053690_d880_46dd_9e93_834cb9e9e39d'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('GDK_BACKEND', 'x11'), ('CLAUDE_EFFORT', 'high'), ('DISPLAY', ':0'), ('VSCODE_DEBUGPY_ADAPTER_ENDPOINTS', '/home/w/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/.noConfigDebugAdapterEndpoints/endpoint-bdaaef88e5de8eb2.txt'), ('NoDefaultCurrentDirectoryInExePath', '1'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('PYTHONSTARTUP', '/home/w/.config/Code/User/workspaceStorage/a2ad95b9f6dfb62897a05935310ba1b5/ms-python.python/pythonrc.py'), ('LC_TELEPHONE', 'zh_CN.UTF-8'), ('ANTHROPIC_DEFAULT_HAIKU_MODEL', 'deepseek-v4-flash'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu-xorg'), ('XAUTHORITY', '/home/w/.Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1000/vscode-git-d2c6b87941.sock'), ('GNOME_TERMINAL_SERVICE', ':1.97'), ('TERM_PROGRAM', 'vscode'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('XDG_GREETER_DATA_DIR', '/var/lib/lightdm-data/w'), ('AMENT_PREFIX_PATH', '/home/w/fastlio/install/fast_lio:/home/w/ws_livox/install/livox_ros_driver2:/opt/ros/humble'), ('CONDA_PYTHON_EXE', '/home/w/anaconda3/bin/python'), ('SHELL', '/bin/bash'), ('LC_NAME', 'zh_CN.UTF-8'), ('ANTHROPIC_AUTH_TOKEN', 'sk-d787b1ce9e294cd59f51ac258dde9932'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu-xorg'), ('CLAUDE_CODE_SESSION_ID', 'beaceda1-c342-45e8-8be5-50aea0697408'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('CLAUDECODE', '1'), ('LC_MEASUREMENT', 'zh_CN.UTF-8'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('_CONDA_EXE', '/home/w/anaconda3/bin/conda'), ('LC_IDENTIFICATION', 'zh_CN.UTF-8'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/w/projects/projects/gps_ws/build/gps'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu-xorg:/etc/xdg'), ('CONDA_EXE', '/home/w/anaconda3/bin/conda'), ('XDG_DATA_DIRS', '/usr/share/ubuntu-xorg:/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('CLAUDE_CODE_EXECPATH', '/usr/bin/claude'), ('PYTHONPATH', '/home/w/fastlio/install/fast_lio/local/lib/python3.10/dist-packages:/home/w/ws_livox/install/livox_ros_driver2/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'zh_CN.UTF-8'), ('LC_PAPER', 'zh_CN.UTF-8'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/w/fastlio/install/fast_lio:/home/w/ws_livox/install/livox_ros_driver2:/opt/ros/humble')]), 'shell': False}
+[0.058142] (gps) StdoutLine: {'line': b'[ 50%] Built target SerialPort\n'}
+[0.101858] (-) TimerEvent: {}
+[0.104792] (gps) StdoutLine: {'line': b'[ 75%] Building CXX object CMakeFiles/gps_node.dir/src/gps_node.cpp.o\n'}
+[0.201951] (-) TimerEvent: {}
+[0.302132] (-) TimerEvent: {}
+[0.402318] (-) TimerEvent: {}
+[0.502586] (-) TimerEvent: {}
+[0.602888] (-) TimerEvent: {}
+[0.703365] (-) TimerEvent: {}
+[0.803549] (-) TimerEvent: {}
+[0.903730] (-) TimerEvent: {}
+[1.003915] (-) TimerEvent: {}
+[1.104443] (-) TimerEvent: {}
+[1.204890] (-) TimerEvent: {}
+[1.305856] (-) TimerEvent: {}
+[1.406048] (-) TimerEvent: {}
+[1.506257] (-) TimerEvent: {}
+[1.606466] (-) TimerEvent: {}
+[1.708866] (-) TimerEvent: {}
+[1.809067] (-) TimerEvent: {}
+[1.909934] (-) TimerEvent: {}
+[2.010858] (-) TimerEvent: {}
+[2.111045] (-) TimerEvent: {}
+[2.211847] (-) TimerEvent: {}
+[2.314513] (-) TimerEvent: {}
+[2.417825] (-) TimerEvent: {}
+[2.518005] (-) TimerEvent: {}
+[2.618265] (-) TimerEvent: {}
+[2.718847] (-) TimerEvent: {}
+[2.820237] (-) TimerEvent: {}
+[2.920528] (-) TimerEvent: {}
+[3.020852] (-) TimerEvent: {}
+[3.121853] (-) TimerEvent: {}
+[3.222034] (-) TimerEvent: {}
+[3.324858] (-) TimerEvent: {}
+[3.425047] (-) TimerEvent: {}
+[3.477099] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:306:34: error: invalid use of incomplete type \xe2\x80\x98class TimedVelocityAction\xe2\x80\x99\n'}
+[3.477464] (gps) StderrLine: {'line': b'  306 | class MoveForward final : public TimedVelocityAction\n'}
+[3.479849] (gps) StderrLine: {'line': b'      |                                  ^~~~~~~~~~~~~~~~~~~\n'}
+[3.479903] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:169:7: note: definition of \xe2\x80\x98class TimedVelocityAction\xe2\x80\x99 is not complete until the closing brace\n'}
+[3.479950] (gps) StderrLine: {'line': b'  169 | class TimedVelocityAction : public BT::StatefulActionNode\n'}
+[3.479994] (gps) StderrLine: {'line': b'      |       ^~~~~~~~~~~~~~~~~~~\n'}
+[3.480038] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:317:31: error: invalid use of incomplete type \xe2\x80\x98class TimedVelocityAction\xe2\x80\x99\n'}
+[3.480081] (gps) StderrLine: {'line': b'  317 | class TurnLeft final : public TimedVelocityAction\n'}
+[3.480123] (gps) StderrLine: {'line': b'      |                               ^~~~~~~~~~~~~~~~~~~\n'}
+[3.480163] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:169:7: note: definition of \xe2\x80\x98class TimedVelocityAction\xe2\x80\x99 is not complete until the closing brace\n'}
+[3.480206] (gps) StderrLine: {'line': b'  169 | class TimedVelocityAction : public BT::StatefulActionNode\n'}
+[3.480247] (gps) StderrLine: {'line': b'      |       ^~~~~~~~~~~~~~~~~~~\n'}
+[3.480289] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:328:20: error: \xe2\x80\x98BT::NodeStatus TimedVelocityAction::TurnLeft::onRunning()\xe2\x80\x99 marked \xe2\x80\x98override\xe2\x80\x99, but does not override\n'}
+[3.480332] (gps) StderrLine: {'line': b'  328 |     BT::NodeStatus onRunning() override\n'}
+[3.480373] (gps) StderrLine: {'line': b'      |                    ^~~~~~~~~\n'}
+[3.480414] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:405:32: error: invalid use of incomplete type \xe2\x80\x98class TimedVelocityAction\xe2\x80\x99\n'}
+[3.480456] (gps) StderrLine: {'line': b'  405 | class TurnRight final : public TimedVelocityAction\n'}
+[3.480497] (gps) StderrLine: {'line': b'      |                                ^~~~~~~~~~~~~~~~~~~\n'}
+[3.480538] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:169:7: note: definition of \xe2\x80\x98class TimedVelocityAction\xe2\x80\x99 is not complete until the closing brace\n'}
+[3.480580] (gps) StderrLine: {'line': b'  169 | class TimedVelocityAction : public BT::StatefulActionNode\n'}
+[3.480621] (gps) StderrLine: {'line': b'      |       ^~~~~~~~~~~~~~~~~~~\n'}
+[3.480662] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:422:37: error: invalid use of incomplete type \xe2\x80\x98class TimedVelocityAction\xe2\x80\x99\n'}
+[3.480704] (gps) StderrLine: {'line': b'  422 |  class JudgePosition final : public TimedVelocityAction\n'}
+[3.480745] (gps) StderrLine: {'line': b'      |                                     ^~~~~~~~~~~~~~~~~~~\n'}
+[3.480788] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:169:7: note: definition of \xe2\x80\x98class TimedVelocityAction\xe2\x80\x99 is not complete until the closing brace\n'}
+[3.480839] (gps) StderrLine: {'line': b'  169 | class TimedVelocityAction : public BT::StatefulActionNode\n'}
+[3.480881] (gps) StderrLine: {'line': b'      |       ^~~~~~~~~~~~~~~~~~~\n'}
+[3.480930] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:643:2: error: expected \xe2\x80\x98}\xe2\x80\x99 at end of input\n'}
+[3.480972] (gps) StderrLine: {'line': b'  643 | }\n'}
+[3.481013] (gps) StderrLine: {'line': b'      |  ^\n'}
+[3.481054] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:170:1: note: to match this \xe2\x80\x98{\xe2\x80\x99\n'}
+[3.481096] (gps) StderrLine: {'line': b'  170 | {\n'}
+[3.481136] (gps) StderrLine: {'line': b'      | ^\n'}
+[3.481177] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp: In constructor \xe2\x80\x98TimedVelocityAction::TimedVelocityAction(const string&, const BT::NodeConfig&, std::shared_ptr<AppContext>, Pose2D)\xe2\x80\x99:\n'}
+[3.481219] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:177:11: error: class \xe2\x80\x98TimedVelocityAction\xe2\x80\x99 does not have any field named \xe2\x80\x98context_\xe2\x80\x99\n'}
+[3.481261] (gps) StderrLine: {'line': b'  177 |           context_(std::move(context)),\n'}
+[3.481301] (gps) StderrLine: {'line': b'      |           ^~~~~~~~\n'}
+[3.481342] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:178:11: error: class \xe2\x80\x98TimedVelocityAction\xe2\x80\x99 does not have any field named \xe2\x80\x98command_\xe2\x80\x99\n'}
+[3.481386] (gps) StderrLine: {'line': b'  178 |           command_(command)\n'}
+[3.481429] (gps) StderrLine: {'line': b'      |           ^~~~~~~~\n'}
+[3.487860] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp: In member function \xe2\x80\x98virtual BT::NodeStatus TimedVelocityAction::onStart()\xe2\x80\x99:\n'}
+[3.488019] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:191:14: error: \xe2\x80\x98context_\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98ucontext_t\xe2\x80\x99?\n'}
+[3.488081] (gps) StderrLine: {'line': b'  191 |         if (!context_ || !context_->motion_port)\n'}
+[3.488127] (gps) StderrLine: {'line': b'      |              ^~~~~~~~\n'}
+[3.488169] (gps) StderrLine: {'line': b'      |              ucontext_t\n'}
+[3.492813] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:207:9: error: \xe2\x80\x98deadline_\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98readlink\xe2\x80\x99?\n'}
+[3.492886] (gps) StderrLine: {'line': b'  207 |         deadline_ = chr::steady_clock::now() + chr::milliseconds(duration_ms);\n'}
+[3.492929] (gps) StderrLine: {'line': b'      |         ^~~~~~~~~\n'}
+[3.492969] (gps) StderrLine: {'line': b'      |         readlink\n'}
+[3.496894] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:209:26: error: \xe2\x80\x98command_\xe2\x80\x99 was not declared in this scope\n'}
+[3.496966] (gps) StderrLine: {'line': b'  209 |         if (!sendCommand(command_))\n'}
+[3.497008] (gps) StderrLine: {'line': b'      |                          ^~~~~~~~\n'}
+[3.501678] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:209:14: error: \xe2\x80\x98sendCommand\xe2\x80\x99 was not declared in this scope\n'}
+[3.501750] (gps) StderrLine: {'line': b'  209 |         if (!sendCommand(command_))\n'}
+[3.501792] (gps) StderrLine: {'line': b'      |              ^~~~~~~~~~~\n'}
+[3.507819] (gps) StderrLine: {'line': b'In file included from /opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40,\n'}
+[3.507923] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24,\n'}
+[3.507967] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20,\n'}
+[3.508007] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25,\n'}
+[3.508048] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18,\n'}
+[3.508095] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20,\n'}
+[3.508135] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37,\n'}
+[3.508175] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25,\n'}
+[3.508216] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21,\n'}
+[3.508257] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,\n'}
+[3.508296] (gps) StderrLine: {'line': b'                 from /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3:\n'}
+[3.508335] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:212:17: error: \xe2\x80\x98context_\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98ucontext_t\xe2\x80\x99?\n'}
+[3.508377] (gps) StderrLine: {'line': b'  212 |                 context_->logger,\n'}
+[3.508417] (gps) StderrLine: {'line': b'      |                 ^~~~~~~~\n'}
+[3.508885] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:211:13: error: template argument 1 is invalid\n'}
+[3.508942] (gps) StderrLine: {'line': b'  211 |             RCLCPP_ERROR(\n'}
+[3.508982] (gps) StderrLine: {'line': b'      |             ^~~~~~~~~~~~\n'}
+[3.510814] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:220:13: error: \xe2\x80\x98context_\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98ucontext_t\xe2\x80\x99?\n'}
+[3.510909] (gps) StderrLine: {'line': b'  220 |             context_->logger,\n'}
+[3.510963] (gps) StderrLine: {'line': b'      |             ^~~~~~~~\n'}
+[3.511013] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:219:9: error: template argument 1 is invalid\n'}
+[3.511136] (gps) StderrLine: {'line': b'  219 |         RCLCPP_INFO(\n'}
+[3.511190] (gps) StderrLine: {'line': b'      |         ^~~~~~~~~~~\n'}
+[3.519052] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:230:13: error: \xe2\x80\x98context_\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98ucontext_t\xe2\x80\x99?\n'}
+[3.519255] (gps) StderrLine: {'line': b'  230 |             context_->logger,\n'}
+[3.519306] (gps) StderrLine: {'line': b'      |             ^~~~~~~~\n'}
+[3.519352] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:229:9: error: template argument 1 is invalid\n'}
+[3.519395] (gps) StderrLine: {'line': b'  229 |         RCLCPP_INFO(\n'}
+[3.519436] (gps) StderrLine: {'line': b'      |         ^~~~~~~~~~~\n'}
+[3.526856] (-) TimerEvent: {}
+[3.527981] (gps) StderrLine: {'line': b'In file included from /opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24,\n'}
+[3.528746] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40,\n'}
+[3.529326] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24,\n'}
+[3.529897] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20,\n'}
+[3.530499] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25,\n'}
+[3.532878] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18,\n'}
+[3.532936] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20,\n'}
+[3.532981] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37,\n'}
+[3.533022] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25,\n'}
+[3.533075] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21,\n'}
+[3.533118] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,\n'}
+[3.533157] (gps) StderrLine: {'line': b'                 from /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3:\n'}
+[3.533197] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:233:13: error: \xe2\x80\x98command_\xe2\x80\x99 was not declared in this scope\n'}
+[3.533238] (gps) StderrLine: {'line': b'  233 |             command_.x,\n'}
+[3.533278] (gps) StderrLine: {'line': b'      |             ^~~~~~~~\n'}
+[3.533317] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp: In member function \xe2\x80\x98virtual BT::NodeStatus TimedVelocityAction::onRunning()\xe2\x80\x99:\n'}
+[3.533358] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:242:40: error: \xe2\x80\x98deadline_\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98readlink\xe2\x80\x99?\n'}
+[3.533397] (gps) StderrLine: {'line': b'  242 |         if (chr::steady_clock::now() < deadline_)\n'}
+[3.533436] (gps) StderrLine: {'line': b'      |                                        ^~~~~~~~~\n'}
+[3.533475] (gps) StderrLine: {'line': b'      |                                        readlink\n'}
+[3.535558] (gps) StderrLine: {'line': b'In file included from /opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40,\n'}
+[3.535666] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24,\n'}
+[3.535723] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20,\n'}
+[3.535771] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25,\n'}
+[3.535823] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18,\n'}
+[3.535867] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20,\n'}
+[3.535909] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37,\n'}
+[3.535948] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25,\n'}
+[3.535988] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21,\n'}
+[3.536027] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,\n'}
+[3.536067] (gps) StderrLine: {'line': b'                 from /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3:\n'}
+[3.536106] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:247:21: error: \xe2\x80\x98context_\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98ucontext_t\xe2\x80\x99?\n'}
+[3.536147] (gps) StderrLine: {'line': b'  247 |                     context_->logger,\n'}
+[3.536186] (gps) StderrLine: {'line': b'      |                     ^~~~~~~~\n'}
+[3.536346] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:246:17: error: template argument 1 is invalid\n'}
+[3.536408] (gps) StderrLine: {'line': b'  246 |                 RCLCPP_DEBUG(\n'}
+[3.536450] (gps) StderrLine: {'line': b'      |                 ^~~~~~~~~~~~\n'}
+[3.542207] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:253:34: error: \xe2\x80\x98command_\xe2\x80\x99 was not declared in this scope\n'}
+[3.542371] (gps) StderrLine: {'line': b'  253 |                 if (!sendCommand(command_))\n'}
+[3.542422] (gps) StderrLine: {'line': b'      |                                  ^~~~~~~~\n'}
+[3.549979] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:253:22: error: \xe2\x80\x98sendCommand\xe2\x80\x99 was not declared in this scope\n'}
+[3.550124] (gps) StderrLine: {'line': b'  253 |                 if (!sendCommand(command_))\n'}
+[3.550180] (gps) StderrLine: {'line': b'      |                      ^~~~~~~~~~~\n'}
+[3.555572] (gps) StderrLine: {'line': b'In file included from /opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40,\n'}
+[3.555703] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24,\n'}
+[3.555750] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20,\n'}
+[3.555795] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25,\n'}
+[3.555843] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18,\n'}
+[3.555887] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20,\n'}
+[3.555928] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37,\n'}
+[3.555968] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25,\n'}
+[3.556008] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21,\n'}
+[3.556050] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,\n'}
+[3.556090] (gps) StderrLine: {'line': b'                 from /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3:\n'}
+[3.556130] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:256:25: error: \xe2\x80\x98context_\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98ucontext_t\xe2\x80\x99?\n'}
+[3.556179] (gps) StderrLine: {'line': b'  256 |                         context_->logger,\n'}
+[3.556219] (gps) StderrLine: {'line': b'      |                         ^~~~~~~~\n'}
+[3.556497] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:255:21: error: template argument 1 is invalid\n'}
+[3.556562] (gps) StderrLine: {'line': b'  255 |                     RCLCPP_ERROR(\n'}
+[3.556605] (gps) StderrLine: {'line': b'      |                     ^~~~~~~~~~~~\n'}
+[3.562289] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:260:17: error: \xe2\x80\x98stopRobot\xe2\x80\x99 was not declared in this scope\n'}
+[3.562429] (gps) StderrLine: {'line': b'  260 |                 stopRobot();\n'}
+[3.562478] (gps) StderrLine: {'line': b'      |                 ^~~~~~~~~\n'}
+[3.569963] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:267:9: error: \xe2\x80\x98stopRobot\xe2\x80\x99 was not declared in this scope\n'}
+[3.570118] (gps) StderrLine: {'line': b'  267 |         stopRobot();\n'}
+[3.570168] (gps) StderrLine: {'line': b'      |         ^~~~~~~~~\n'}
+[3.574064] (gps) StderrLine: {'line': b'In file included from /opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40,\n'}
+[3.574173] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24,\n'}
+[3.574219] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20,\n'}
+[3.574260] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25,\n'}
+[3.574300] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18,\n'}
+[3.574341] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20,\n'}
+[3.574381] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37,\n'}
+[3.574421] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25,\n'}
+[3.574461] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21,\n'}
+[3.574508] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,\n'}
+[3.574551] (gps) StderrLine: {'line': b'                 from /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3:\n'}
+[3.574614] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:268:21: error: \xe2\x80\x98context_\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98ucontext_t\xe2\x80\x99?\n'}
+[3.574656] (gps) StderrLine: {'line': b'  268 |         RCLCPP_INFO(context_->logger, "[%s] completed", name().c_str());\n'}
+[3.574695] (gps) StderrLine: {'line': b'      |                     ^~~~~~~~\n'}
+[3.574851] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:268:9: error: template argument 1 is invalid\n'}
+[3.574914] (gps) StderrLine: {'line': b'  268 |         RCLCPP_INFO(context_->logger, "[%s] completed", name().c_str());\n'}
+[3.574957] (gps) StderrLine: {'line': b'      |         ^~~~~~~~~~~\n'}
+[3.575402] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:273:5: error: a function-definition is not allowed here before \xe2\x80\x98{\xe2\x80\x99 token\n'}
+[3.575473] (gps) StderrLine: {'line': b'  273 |     {\n'}
+[3.575517] (gps) StderrLine: {'line': b'      |     ^\n'}
+[3.575626] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:281:1: error: expected primary-expression before \xe2\x80\x98protected\xe2\x80\x99\n'}
+[3.575676] (gps) StderrLine: {'line': b'  281 | protected:\n'}
+[3.575719] (gps) StderrLine: {'line': b'      | ^~~~~~~~~\n'}
+[3.575829] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:288:5: error: a function-definition is not allowed here before \xe2\x80\x98{\xe2\x80\x99 token\n'}
+[3.575890] (gps) StderrLine: {'line': b'  288 |     {\n'}
+[3.575931] (gps) StderrLine: {'line': b'      |     ^\n'}
+[3.576029] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:300:1: error: expected primary-expression before \xe2\x80\x98private\xe2\x80\x99\n'}
+[3.576079] (gps) StderrLine: {'line': b'  300 | private:\n'}
+[3.576119] (gps) StderrLine: {'line': b'      | ^~~~~~~\n'}
+[3.576598] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp: In constructor \xe2\x80\x98TimedVelocityAction::MoveForward::MoveForward(const string&, const BT::NodeConfig&, std::shared_ptr<AppContext>)\xe2\x80\x99:\n'}
+[3.576668] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:313:11: error: type \xe2\x80\x98TimedVelocityAction\xe2\x80\x99 is not a direct base of \xe2\x80\x98TimedVelocityAction::MoveForward\xe2\x80\x99\n'}
+[3.576714] (gps) StderrLine: {'line': b'  313 |         : TimedVelocityAction(name, config, std::move(context), Pose2D{0x0f, 1, 0, 0})\n'}
+[3.576757] (gps) StderrLine: {'line': b'      |           ^~~~~~~~~~~~~~~~~~~\n'}
+[3.578844] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp: In constructor \xe2\x80\x98TimedVelocityAction::TurnLeft::TurnLeft(const string&, const BT::NodeConfig&, std::shared_ptr<AppContext>)\xe2\x80\x99:\n'}
+[3.578925] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:324:11: error: type \xe2\x80\x98TimedVelocityAction\xe2\x80\x99 is not a direct base of \xe2\x80\x98TimedVelocityAction::TurnLeft\xe2\x80\x99\n'}
+[3.578971] (gps) StderrLine: {'line': b'  324 |         : TimedVelocityAction(name, config, std::move(context), Pose2D{0x0f, 0, 0, 1})\n'}
+[3.579018] (gps) StderrLine: {'line': b'      |           ^~~~~~~~~~~~~~~~~~~\n'}
+[3.582450] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp: In member function \xe2\x80\x98BT::NodeStatus TimedVelocityAction::TurnLeft::onRunning()\xe2\x80\x99:\n'}
+[3.582559] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:330:39: error: \xe2\x80\x98deadline_\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98readlink\xe2\x80\x99?\n'}
+[3.582609] (gps) StderrLine: {'line': b'  330 |         if(chr::steady_clock::now() < deadline_)\n'}
+[3.582651] (gps) StderrLine: {'line': b'      |                                       ^~~~~~~~~\n'}
+[3.582692] (gps) StderrLine: {'line': b'      |                                       readlink\n'}
+[3.592236] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:335:22: error: \xe2\x80\x98sendCommand\xe2\x80\x99 was not declared in this scope\n'}
+[3.592428] (gps) StderrLine: {'line': b'  335 |                 if (!sendCommand(start_command))\n'}
+[3.592477] (gps) StderrLine: {'line': b'      |                      ^~~~~~~~~~~\n'}
+[3.599824] (gps) StderrLine: {'line': b'In file included from /opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40,\n'}
+[3.599968] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24,\n'}
+[3.600022] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20,\n'}
+[3.600069] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25,\n'}
+[3.600113] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18,\n'}
+[3.600158] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20,\n'}
+[3.600202] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37,\n'}
+[3.600243] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25,\n'}
+[3.600285] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21,\n'}
+[3.600326] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,\n'}
+[3.600367] (gps) StderrLine: {'line': b'                 from /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3:\n'}
+[3.600408] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:338:25: error: \xe2\x80\x98context_\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98ucontext_t\xe2\x80\x99?\n'}
+[3.600452] (gps) StderrLine: {'line': b'  338 |                         context_->logger,\n'}
+[3.600495] (gps) StderrLine: {'line': b'      |                         ^~~~~~~~\n'}
+[3.600547] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:337:21: error: template argument 1 is invalid\n'}
+[3.600592] (gps) StderrLine: {'line': b'  337 |                     RCLCPP_ERROR(\n'}
+[3.600633] (gps) StderrLine: {'line': b'      |                     ^~~~~~~~~~~~\n'}
+[3.600672] (gps) StderrLine: {'line': b'In file included from /opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24,\n'}
+[3.600712] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40,\n'}
+[3.600751] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24,\n'}
+[3.600792] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20,\n'}
+[3.600847] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25,\n'}
+[3.600891] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18,\n'}
+[3.600935] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20,\n'}
+[3.600981] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37,\n'}
+[3.601023] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25,\n'}
+[3.601066] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21,\n'}
+[3.601106] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,\n'}
+[3.601149] (gps) StderrLine: {'line': b'                 from /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3:\n'}
+[3.601188] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:340:29: error: cannot call member function \xe2\x80\x98const string& BT::TreeNode::name() const\xe2\x80\x99 without object\n'}
+[3.601228] (gps) StderrLine: {'line': b'  340 |                         name().c_str(),\n'}
+[3.601267] (gps) StderrLine: {'line': b'      |                         ~~~~^~\n'}
+[3.605276] (gps) StderrLine: {'line': b'In file included from /opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40,\n'}
+[3.605415] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24,\n'}
+[3.605467] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20,\n'}
+[3.605511] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25,\n'}
+[3.605553] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18,\n'}
+[3.605601] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20,\n'}
+[3.605642] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37,\n'}
+[3.605682] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25,\n'}
+[3.605721] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21,\n'}
+[3.605761] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,\n'}
+[3.605825] (gps) StderrLine: {'line': b'                 from /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3:\n'}
+[3.605870] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:345:21: error: \xe2\x80\x98context_\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98ucontext_t\xe2\x80\x99?\n'}
+[3.605912] (gps) StderrLine: {'line': b'  345 |                     context_->logger,\n'}
+[3.605951] (gps) StderrLine: {'line': b'      |                     ^~~~~~~~\n'}
+[3.605990] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:344:17: error: template argument 1 is invalid\n'}
+[3.606028] (gps) StderrLine: {'line': b'  344 |                 RCLCPP_DEBUG(\n'}
+[3.606067] (gps) StderrLine: {'line': b'      |                 ^~~~~~~~~~~~\n'}
+[3.606105] (gps) StderrLine: {'line': b'In file included from /opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24,\n'}
+[3.606144] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40,\n'}
+[3.606183] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24,\n'}
+[3.606222] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20,\n'}
+[3.606261] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25,\n'}
+[3.606300] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18,\n'}
+[3.606338] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20,\n'}
+[3.606377] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37,\n'}
+[3.606415] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25,\n'}
+[3.606454] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21,\n'}
+[3.606493] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,\n'}
+[3.606536] (gps) StderrLine: {'line': b'                 from /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3:\n'}
+[3.606574] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:347:25: error: cannot call member function \xe2\x80\x98const string& BT::TreeNode::name() const\xe2\x80\x99 without object\n'}
+[3.606614] (gps) StderrLine: {'line': b'  347 |                     name().c_str(),\n'}
+[3.606652] (gps) StderrLine: {'line': b'      |                     ~~~~^~\n'}
+[3.610524] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:353:34: error: \xe2\x80\x98command_\xe2\x80\x99 was not declared in this scope\n'}
+[3.610650] (gps) StderrLine: {'line': b'  353 |                 if (!sendCommand(command_))\n'}
+[3.610697] (gps) StderrLine: {'line': b'      |                                  ^~~~~~~~\n'}
+[3.615860] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:353:22: error: \xe2\x80\x98sendCommand\xe2\x80\x99 was not declared in this scope\n'}
+[3.616010] (gps) StderrLine: {'line': b'  353 |                 if (!sendCommand(command_))\n'}
+[3.616060] (gps) StderrLine: {'line': b'      |                      ^~~~~~~~~~~\n'}
+[3.619921] (gps) StderrLine: {'line': b'In file included from /opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40,\n'}
+[3.620107] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24,\n'}
+[3.620158] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20,\n'}
+[3.620201] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25,\n'}
+[3.620243] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18,\n'}
+[3.620284] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20,\n'}
+[3.620477] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37,\n'}
+[3.620525] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25,\n'}
+[3.620566] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21,\n'}
+[3.620605] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,\n'}
+[3.620645] (gps) StderrLine: {'line': b'                 from /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3:\n'}
+[3.620684] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:356:25: error: \xe2\x80\x98context_\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98ucontext_t\xe2\x80\x99?\n'}
+[3.620734] (gps) StderrLine: {'line': b'  356 |                         context_->logger,\n'}
+[3.620774] (gps) StderrLine: {'line': b'      |                         ^~~~~~~~\n'}
+[3.620828] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:355:21: error: template argument 1 is invalid\n'}
+[3.620871] (gps) StderrLine: {'line': b'  355 |                     RCLCPP_ERROR(\n'}
+[3.620911] (gps) StderrLine: {'line': b'      |                     ^~~~~~~~~~~~\n'}
+[3.620951] (gps) StderrLine: {'line': b'In file included from /opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24,\n'}
+[3.620990] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40,\n'}
+[3.621029] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24,\n'}
+[3.621068] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20,\n'}
+[3.621107] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25,\n'}
+[3.621146] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18,\n'}
+[3.621189] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20,\n'}
+[3.621228] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37,\n'}
+[3.621268] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25,\n'}
+[3.621308] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21,\n'}
+[3.621347] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,\n'}
+[3.621385] (gps) StderrLine: {'line': b'                 from /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3:\n'}
+[3.621424] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:358:29: error: cannot call member function \xe2\x80\x98const string& BT::TreeNode::name() const\xe2\x80\x99 without object\n'}
+[3.621463] (gps) StderrLine: {'line': b'  358 |                         name().c_str(),\n'}
+[3.621502] (gps) StderrLine: {'line': b'      |                         ~~~~^~\n'}
+[3.625436] (gps) StderrLine: {'line': b'In file included from /opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40,\n'}
+[3.625700] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24,\n'}
+[3.625940] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20,\n'}
+[3.626097] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25,\n'}
+[3.626240] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18,\n'}
+[3.626287] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20,\n'}
+[3.626328] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37,\n'}
+[3.626370] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25,\n'}
+[3.626411] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21,\n'}
+[3.626450] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,\n'}
+[3.626489] (gps) StderrLine: {'line': b'                 from /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3:\n'}
+[3.626529] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:363:21: error: \xe2\x80\x98context_\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98ucontext_t\xe2\x80\x99?\n'}
+[3.626571] (gps) StderrLine: {'line': b'  363 |                     context_->logger,\n'}
+[3.626610] (gps) StderrLine: {'line': b'      |                     ^~~~~~~~\n'}
+[3.626650] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:362:17: error: template argument 1 is invalid\n'}
+[3.626698] (gps) StderrLine: {'line': b'  362 |                 RCLCPP_DEBUG(\n'}
+[3.626741] (gps) StderrLine: {'line': b'      |                 ^~~~~~~~~~~~\n'}
+[3.626780] (gps) StderrLine: {'line': b'In file included from /opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24,\n'}
+[3.626832] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40,\n'}
+[3.626874] (-) TimerEvent: {}
+[3.626886] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24,\n'}
+[3.626927] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20,\n'}
+[3.626967] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25,\n'}
+[3.627007] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18,\n'}
+[3.627049] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20,\n'}
+[3.627088] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37,\n'}
+[3.627127] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25,\n'}
+[3.627166] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21,\n'}
+[3.627207] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,\n'}
+[3.627247] (gps) StderrLine: {'line': b'                 from /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3:\n'}
+[3.627285] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:365:25: error: cannot call member function \xe2\x80\x98const string& BT::TreeNode::name() const\xe2\x80\x99 without object\n'}
+[3.627324] (gps) StderrLine: {'line': b'  365 |                     name().c_str(),\n'}
+[3.627363] (gps) StderrLine: {'line': b'      |                     ~~~~^~\n'}
+[3.634846] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:371:22: error: \xe2\x80\x98sendCommand\xe2\x80\x99 was not declared in this scope\n'}
+[3.635034] (gps) StderrLine: {'line': b'  371 |                 if (!sendCommand(stop_command))\n'}
+[3.635090] (gps) StderrLine: {'line': b'      |                      ^~~~~~~~~~~\n'}
+[3.637919] (gps) StderrLine: {'line': b'In file included from /opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40,\n'}
+[3.638022] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24,\n'}
+[3.638068] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20,\n'}
+[3.638111] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25,\n'}
+[3.638153] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18,\n'}
+[3.638195] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20,\n'}
+[3.638237] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37,\n'}
+[3.638277] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25,\n'}
+[3.638318] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21,\n'}
+[3.638359] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,\n'}
+[3.638399] (gps) StderrLine: {'line': b'                 from /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3:\n'}
+[3.638438] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:374:25: error: \xe2\x80\x98context_\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98ucontext_t\xe2\x80\x99?\n'}
+[3.638479] (gps) StderrLine: {'line': b'  374 |                         context_->logger,\n'}
+[3.638518] (gps) StderrLine: {'line': b'      |                         ^~~~~~~~\n'}
+[3.640205] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:373:21: error: template argument 1 is invalid\n'}
+[3.640559] (gps) StderrLine: {'line': b'  373 |                     RCLCPP_ERROR(\n'}
+[3.640708] (gps) StderrLine: {'line': b'      |                     ^~~~~~~~~~~~\n'}
+[3.643891] (gps) StderrLine: {'line': b'In file included from /opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24,\n'}
+[3.643951] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40,\n'}
+[3.643993] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24,\n'}
+[3.644033] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20,\n'}
+[3.644089] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25,\n'}
+[3.644129] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18,\n'}
+[3.644169] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20,\n'}
+[3.644208] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37,\n'}
+[3.644247] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25,\n'}
+[3.644287] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21,\n'}
+[3.644327] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,\n'}
+[3.644366] (gps) StderrLine: {'line': b'                 from /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3:\n'}
+[3.644405] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:376:29: error: cannot call member function \xe2\x80\x98const string& BT::TreeNode::name() const\xe2\x80\x99 without object\n'}
+[3.644448] (gps) StderrLine: {'line': b'  376 |                         name().c_str(),\n'}
+[3.644491] (gps) StderrLine: {'line': b'      |                         ~~~~^~\n'}
+[3.648981] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:380:34: error: \xe2\x80\x98command_\xe2\x80\x99 was not declared in this scope\n'}
+[3.649173] (gps) StderrLine: {'line': b'  380 |                 if (!sendCommand(command_))\n'}
+[3.649221] (gps) StderrLine: {'line': b'      |                                  ^~~~~~~~\n'}
+[3.659042] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:380:22: error: \xe2\x80\x98sendCommand\xe2\x80\x99 was not declared in this scope\n'}
+[3.659209] (gps) StderrLine: {'line': b'  380 |                 if (!sendCommand(command_))\n'}
+[3.659244] (gps) StderrLine: {'line': b'      |                      ^~~~~~~~~~~\n'}
+[3.669060] (gps) StderrLine: {'line': b'In file included from /opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40,\n'}
+[3.669241] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24,\n'}
+[3.669294] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20,\n'}
+[3.669336] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25,\n'}
+[3.669376] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18,\n'}
+[3.669415] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20,\n'}
+[3.669454] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37,\n'}
+[3.669492] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25,\n'}
+[3.669531] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21,\n'}
+[3.669569] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,\n'}
+[3.669608] (gps) StderrLine: {'line': b'                 from /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3:\n'}
+[3.669646] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:383:25: error: \xe2\x80\x98context_\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98ucontext_t\xe2\x80\x99?\n'}
+[3.669690] (gps) StderrLine: {'line': b'  383 |                         context_->logger,\n'}
+[3.669728] (gps) StderrLine: {'line': b'      |                         ^~~~~~~~\n'}
+[3.669768] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:382:21: error: template argument 1 is invalid\n'}
+[3.669820] (gps) StderrLine: {'line': b'  382 |                     RCLCPP_ERROR(\n'}
+[3.669861] (gps) StderrLine: {'line': b'      |                     ^~~~~~~~~~~~\n'}
+[3.669900] (gps) StderrLine: {'line': b'In file included from /opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24,\n'}
+[3.669938] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40,\n'}
+[3.669976] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24,\n'}
+[3.670015] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20,\n'}
+[3.670053] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25,\n'}
+[3.670090] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18,\n'}
+[3.670128] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20,\n'}
+[3.670167] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37,\n'}
+[3.670205] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25,\n'}
+[3.670244] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21,\n'}
+[3.670281] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,\n'}
+[3.670319] (gps) StderrLine: {'line': b'                 from /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3:\n'}
+[3.670357] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:385:29: error: cannot call member function \xe2\x80\x98const string& BT::TreeNode::name() const\xe2\x80\x99 without object\n'}
+[3.670396] (gps) StderrLine: {'line': b'  385 |                         name().c_str(),\n'}
+[3.670435] (gps) StderrLine: {'line': b'      |                         ~~~~^~\n'}
+[3.674984] (gps) StderrLine: {'line': b'In file included from /opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40,\n'}
+[3.675186] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24,\n'}
+[3.675242] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20,\n'}
+[3.675303] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25,\n'}
+[3.675344] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18,\n'}
+[3.675383] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20,\n'}
+[3.675423] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37,\n'}
+[3.675461] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25,\n'}
+[3.675500] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21,\n'}
+[3.675537] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,\n'}
+[3.675576] (gps) StderrLine: {'line': b'                 from /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3:\n'}
+[3.675613] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:390:21: error: \xe2\x80\x98context_\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98ucontext_t\xe2\x80\x99?\n'}
+[3.675666] (gps) StderrLine: {'line': b'  390 |                     context_->logger,\n'}
+[3.675708] (gps) StderrLine: {'line': b'      |                     ^~~~~~~~\n'}
+[3.676166] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:389:17: error: template argument 1 is invalid\n'}
+[3.676239] (gps) StderrLine: {'line': b'  389 |                 RCLCPP_DEBUG(\n'}
+[3.676282] (gps) StderrLine: {'line': b'      |                 ^~~~~~~~~~~~\n'}
+[3.676838] (gps) StderrLine: {'line': b'In file included from /opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24,\n'}
+[3.676910] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40,\n'}
+[3.676953] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24,\n'}
+[3.676993] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20,\n'}
+[3.677030] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25,\n'}
+[3.677070] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18,\n'}
+[3.677108] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20,\n'}
+[3.677145] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37,\n'}
+[3.677183] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25,\n'}
+[3.677221] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21,\n'}
+[3.677259] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,\n'}
+[3.677297] (gps) StderrLine: {'line': b'                 from /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3:\n'}
+[3.677334] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:392:25: error: cannot call member function \xe2\x80\x98const string& BT::TreeNode::name() const\xe2\x80\x99 without object\n'}
+[3.677374] (gps) StderrLine: {'line': b'  392 |                     name().c_str(),\n'}
+[3.677412] (gps) StderrLine: {'line': b'      |                     ~~~~^~\n'}
+[3.683631] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:398:9: error: \xe2\x80\x98stopRobot\xe2\x80\x99 was not declared in this scope\n'}
+[3.683907] (gps) StderrLine: {'line': b'  398 |         stopRobot();\n'}
+[3.684056] (gps) StderrLine: {'line': b'      |         ^~~~~~~~~\n'}
+[3.689162] (gps) StderrLine: {'line': b'In file included from /opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40,\n'}
+[3.689310] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24,\n'}
+[3.689360] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20,\n'}
+[3.689405] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25,\n'}
+[3.689453] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18,\n'}
+[3.689514] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20,\n'}
+[3.689616] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37,\n'}
+[3.689690] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25,\n'}
+[3.689751] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21,\n'}
+[3.689865] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,\n'}
+[3.689952] (gps) StderrLine: {'line': b'                 from /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3:\n'}
+[3.690013] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:399:21: error: \xe2\x80\x98context_\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98ucontext_t\xe2\x80\x99?\n'}
+[3.690068] (gps) StderrLine: {'line': b'  399 |         RCLCPP_INFO(context_->logger, "[%s] completed", name().c_str());\n'}
+[3.690159] (gps) StderrLine: {'line': b'      |                     ^~~~~~~~\n'}
+[3.691803] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:399:9: error: template argument 1 is invalid\n'}
+[3.691953] (gps) StderrLine: {'line': b'  399 |         RCLCPP_INFO(context_->logger, "[%s] completed", name().c_str());\n'}
+[3.692009] (gps) StderrLine: {'line': b'      |         ^~~~~~~~~~~\n'}
+[3.692057] (gps) StderrLine: {'line': b'In file included from /opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24,\n'}
+[3.692100] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40,\n'}
+[3.692141] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24,\n'}
+[3.692206] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20,\n'}
+[3.692247] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25,\n'}
+[3.692287] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18,\n'}
+[3.692328] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20,\n'}
+[3.692367] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37,\n'}
+[3.692406] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25,\n'}
+[3.692451] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21,\n'}
+[3.692489] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,\n'}
+[3.692528] (gps) StderrLine: {'line': b'                 from /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3:\n'}
+[3.692570] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:399:61: error: cannot call member function \xe2\x80\x98const string& BT::TreeNode::name() const\xe2\x80\x99 without object\n'}
+[3.692613] (gps) StderrLine: {'line': b'  399 |         RCLCPP_INFO(context_->logger, "[%s] completed", name().c_str());\n'}
+[3.692651] (gps) StderrLine: {'line': b'      |                                                         ~~~~^~\n'}
+[3.692690] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp: In constructor \xe2\x80\x98TimedVelocityAction::TurnRight::TurnRight(const string&, const BT::NodeConfig&, std::shared_ptr<AppContext>)\xe2\x80\x99:\n'}
+[3.692731] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:412:11: error: type \xe2\x80\x98TimedVelocityAction\xe2\x80\x99 is not a direct base of \xe2\x80\x98TimedVelocityAction::TurnRight\xe2\x80\x99\n'}
+[3.692770] (gps) StderrLine: {'line': b'  412 |         : TimedVelocityAction(name, config, std::move(context), Pose2D{0x0f, 0, 0, -1})\n'}
+[3.692815] (gps) StderrLine: {'line': b'      |           ^~~~~~~~~~~~~~~~~~~\n'}
+[3.695845] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp: In constructor \xe2\x80\x98TimedVelocityAction::JudgePosition::JudgePosition(const string&, const BT::NodeConfig&, std::shared_ptr<AppContext>)\xe2\x80\x99:\n'}
+[3.695966] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:429:11: error: type \xe2\x80\x98TimedVelocityAction\xe2\x80\x99 is not a direct base of \xe2\x80\x98TimedVelocityAction::JudgePosition\xe2\x80\x99\n'}
+[3.696016] (gps) StderrLine: {'line': b'  429 |         : TimedVelocityAction(name, config, std::move(context), Pose2D{0x0f, 0, 0, 0})\n'}
+[3.696061] (gps) StderrLine: {'line': b'      |           ^~~~~~~~~~~~~~~~~~~\n'}
+[3.700524] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp: In static member function \xe2\x80\x98static void TimedVelocityAction::registerNodes(BT::BehaviorTreeFactory&, const std::shared_ptr<AppContext>&)\xe2\x80\x99:\n'}
+[3.700648] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:529:41: error: cannot convert \xe2\x80\x98TimedVelocityAction::registerNodes(BT::BehaviorTreeFactory&, const std::shared_ptr<AppContext>&)::<lambda(const string&, const BT::NodeConfig&)>\xe2\x80\x99 to \xe2\x80\x98const NodeBuilder&\xe2\x80\x99 {aka \xe2\x80\x98const std::function<std::unique_ptr<BT::TreeNode>(const std::__cxx11::basic_string<char>&, const BT::NodeConfig&)>&\xe2\x80\x99}\n'}
+[3.700702] (gps) StderrLine: {'line': b'  529 |     factory.registerBuilder<MoveForward>(\n'}
+[3.700745] (gps) StderrLine: {'line': b'      |     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^\n'}
+[3.700788] (gps) StderrLine: {'line': b'  530 |         "MoveForward",\n'}
+[3.700839] (gps) StderrLine: {'line': b'      |         ~~~~~~~~~~~~~~                   \n'}
+[3.700880] (gps) StderrLine: {'line': b'  531 |         [context](const std::string& name, const BT::NodeConfig& config) {\n'}
+[3.700919] (gps) StderrLine: {'line': b'      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n'}
+[3.700959] (gps) StderrLine: {'line': b'  532 |             return std::make_unique<MoveForward>(name, config, context);\n'}
+[3.700998] (gps) StderrLine: {'line': b'      |             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n'}
+[3.701036] (gps) StderrLine: {'line': b'  533 |         });\n'}
+[3.701074] (gps) StderrLine: {'line': b'      |         ~~                               \n'}
+[3.701585] (gps) StderrLine: {'line': b'In file included from /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:1:\n'}
+[3.701748] (gps) StderrLine: {'line': b'/opt/ros/humble/include/behaviortree_cpp/bt_factory.h:249:66: note:   initializing argument 2 of \xe2\x80\x98void BT::BehaviorTreeFactory::registerBuilder(const string&, const NodeBuilder&) [with T = TimedVelocityAction::MoveForward; std::string = std::__cxx11::basic_string<char>; BT::NodeBuilder = std::function<std::unique_ptr<BT::TreeNode>(const std::__cxx11::basic_string<char>&, const BT::NodeConfig&)>]\xe2\x80\x99\n'}
+[3.701900] (gps) StderrLine: {'line': b'  249 |   void registerBuilder(const std::string& ID, const NodeBuilder& builder)\n'}
+[3.702038] (gps) StderrLine: {'line': b'      |                                               ~~~~~~~~~~~~~~~~~~~^~~~~~~\n'}
+[3.709351] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:535:38: error: cannot convert \xe2\x80\x98TimedVelocityAction::registerNodes(BT::BehaviorTreeFactory&, const std::shared_ptr<AppContext>&)::<lambda(const string&, const BT::NodeConfig&)>\xe2\x80\x99 to \xe2\x80\x98const NodeBuilder&\xe2\x80\x99 {aka \xe2\x80\x98const std::function<std::unique_ptr<BT::TreeNode>(const std::__cxx11::basic_string<char>&, const BT::NodeConfig&)>&\xe2\x80\x99}\n'}
+[3.709687] (gps) StderrLine: {'line': b'  535 |     factory.registerBuilder<TurnLeft>(\n'}
+[3.709849] (gps) StderrLine: {'line': b'      |     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^\n'}
+[3.709996] (gps) StderrLine: {'line': b'  536 |         "TurnLeft",\n'}
+[3.710136] (gps) StderrLine: {'line': b'      |         ~~~~~~~~~~~                   \n'}
+[3.710278] (gps) StderrLine: {'line': b'  537 |         [context](const std::string& name, const BT::NodeConfig& config) {\n'}
+[3.710615] (gps) StderrLine: {'line': b'      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n'}
+[3.712941] (gps) StderrLine: {'line': b'  538 |             return std::make_unique<TurnLeft>(name, config, context);\n'}
+[3.713004] (gps) StderrLine: {'line': b'      |             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n'}
+[3.713050] (gps) StderrLine: {'line': b'  539 |         });\n'}
+[3.713093] (gps) StderrLine: {'line': b'      |         ~~                            \n'}
+[3.713143] (gps) StderrLine: {'line': b'In file included from /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:1:\n'}
+[3.713184] (gps) StderrLine: {'line': b'/opt/ros/humble/include/behaviortree_cpp/bt_factory.h:249:66: note:   initializing argument 2 of \xe2\x80\x98void BT::BehaviorTreeFactory::registerBuilder(const string&, const NodeBuilder&) [with T = TimedVelocityAction::TurnLeft; std::string = std::__cxx11::basic_string<char>; BT::NodeBuilder = std::function<std::unique_ptr<BT::TreeNode>(const std::__cxx11::basic_string<char>&, const BT::NodeConfig&)>]\xe2\x80\x99\n'}
+[3.713239] (gps) StderrLine: {'line': b'  249 |   void registerBuilder(const std::string& ID, const NodeBuilder& builder)\n'}
+[3.713280] (gps) StderrLine: {'line': b'      |                                               ~~~~~~~~~~~~~~~~~~~^~~~~~~\n'}
+[3.726986] (-) TimerEvent: {}
+[3.751758] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:541:39: error: cannot convert \xe2\x80\x98TimedVelocityAction::registerNodes(BT::BehaviorTreeFactory&, const std::shared_ptr<AppContext>&)::<lambda(const string&, const BT::NodeConfig&)>\xe2\x80\x99 to \xe2\x80\x98const NodeBuilder&\xe2\x80\x99 {aka \xe2\x80\x98const std::function<std::unique_ptr<BT::TreeNode>(const std::__cxx11::basic_string<char>&, const BT::NodeConfig&)>&\xe2\x80\x99}\n'}
+[3.752024] (gps) StderrLine: {'line': b'  541 |     factory.registerBuilder<TurnRight>(\n'}
+[3.752082] (gps) StderrLine: {'line': b'      |     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^\n'}
+[3.752129] (gps) StderrLine: {'line': b'  542 |         "TurnRight",\n'}
+[3.752172] (gps) StderrLine: {'line': b'      |         ~~~~~~~~~~~~                   \n'}
+[3.752216] (gps) StderrLine: {'line': b'  543 |         [context](const std::string& name, const BT::NodeConfig& config) {\n'}
+[3.752262] (gps) StderrLine: {'line': b'      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n'}
+[3.752302] (gps) StderrLine: {'line': b'  544 |             return std::make_unique<TurnRight>(name, config, context);\n'}
+[3.752340] (gps) StderrLine: {'line': b'      |             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n'}
+[3.752376] (gps) StderrLine: {'line': b'  545 |         });\n'}
+[3.752413] (gps) StderrLine: {'line': b'      |         ~~                             \n'}
+[3.752453] (gps) StderrLine: {'line': b'In file included from /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:1:\n'}
+[3.752490] (gps) StderrLine: {'line': b'/opt/ros/humble/include/behaviortree_cpp/bt_factory.h:249:66: note:   initializing argument 2 of \xe2\x80\x98void BT::BehaviorTreeFactory::registerBuilder(const string&, const NodeBuilder&) [with T = TimedVelocityAction::TurnRight; std::string = std::__cxx11::basic_string<char>; BT::NodeBuilder = std::function<std::unique_ptr<BT::TreeNode>(const std::__cxx11::basic_string<char>&, const BT::NodeConfig&)>]\xe2\x80\x99\n'}
+[3.752540] (gps) StderrLine: {'line': b'  249 |   void registerBuilder(const std::string& ID, const NodeBuilder& builder)\n'}
+[3.752581] (gps) StderrLine: {'line': b'      |                                               ~~~~~~~~~~~~~~~~~~~^~~~~~~\n'}
+[3.761830] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp: At global scope:\n'}
+[3.762016] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:643:2: error: expected unqualified-id at end of input\n'}
+[3.762073] (gps) StderrLine: {'line': b'  643 | }\n'}
+[3.762122] (gps) StderrLine: {'line': b'      |  ^\n'}
+[3.827089] (-) TimerEvent: {}
+[3.929854] (-) TimerEvent: {}
+[4.032021] (-) TimerEvent: {}
+[4.132247] (-) TimerEvent: {}
+[4.234849] (-) TimerEvent: {}
+[4.335032] (-) TimerEvent: {}
+[4.435217] (-) TimerEvent: {}
+[4.535400] (-) TimerEvent: {}
+[4.635594] (-) TimerEvent: {}
+[4.735944] (-) TimerEvent: {}
+[4.837862] (-) TimerEvent: {}
+[4.938072] (-) TimerEvent: {}
+[5.038270] (-) TimerEvent: {}
+[5.138468] (-) TimerEvent: {}
+[5.238651] (-) TimerEvent: {}
+[5.338852] (-) TimerEvent: {}
+[5.439046] (-) TimerEvent: {}
+[5.539239] (-) TimerEvent: {}
+[5.639434] (-) TimerEvent: {}
+[5.740855] (-) TimerEvent: {}
+[5.841037] (-) TimerEvent: {}
+[5.941251] (-) TimerEvent: {}
+[6.043020] (-) TimerEvent: {}
+[6.143335] (-) TimerEvent: {}
+[6.244573] (-) TimerEvent: {}
+[6.344783] (-) TimerEvent: {}
+[6.445932] (-) TimerEvent: {}
+[6.546943] (-) TimerEvent: {}
+[6.647136] (-) TimerEvent: {}
+[6.747438] (-) TimerEvent: {}
+[6.848854] (-) TimerEvent: {}
+[6.949052] (-) TimerEvent: {}
+[7.049488] (-) TimerEvent: {}
+[7.150852] (-) TimerEvent: {}
+[7.251102] (-) TimerEvent: {}
+[7.351735] (-) TimerEvent: {}
+[7.452107] (-) TimerEvent: {}
+[7.553929] (-) TimerEvent: {}
+[7.564138] (gps) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/gps_node.dir/build.make:79: CMakeFiles/gps_node.dir/src/gps_node.cpp.o] Error 1\n'}
+[7.564243] (gps) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:188: CMakeFiles/gps_node.dir/all] Error 2\n'}
+[7.564290] (gps) StderrLine: {'line': b'gmake: *** [Makefile:146: all] Error 2\n'}
+[7.564334] (gps) CommandEnded: {'returncode': 2}
+[7.576672] (gps) JobEnded: {'identifier': 'gps', 'rc': 2}
+[7.589403] (-) EventReactorShutdown: {}

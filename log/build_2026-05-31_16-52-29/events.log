@@ -1,0 +1,679 @@
+[0.000000] (-) TimerEvent: {}
+[0.000963] (gps) JobQueued: {'identifier': 'gps', 'dependencies': OrderedDict()}
+[0.001113] (gps) JobStarted: {'identifier': 'gps'}
+[0.014824] (gps) JobProgress: {'identifier': 'gps', 'progress': 'cmake'}
+[0.015800] (gps) JobProgress: {'identifier': 'gps', 'progress': 'build'}
+[0.015859] (gps) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/w/projects/projects/gps_ws/build/gps', '--', '-j16', '-l16'], 'cwd': '/home/w/projects/projects/gps_ws/build/gps', 'env': OrderedDict([('PYTHON_BASIC_REPL', '1'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('ANTHROPIC_MODEL', 'deepseek-v4-pro'), ('AI_AGENT', 'claude-code_2-1-149_agent'), ('LANGUAGE', 'en_US:en'), ('USER', 'w'), ('CLAUDE_CODE_ENTRYPOINT', 'cli'), ('LC_TIME', 'zh_CN.UTF-8'), ('GIT_EDITOR', 'true'), ('XDG_SESSION_TYPE', 'x11'), ('GIT_ASKPASS', '/usr/share/code/resources/app/extensions/git/dist/askpass.sh'), ('SHLVL', '2'), ('LD_LIBRARY_PATH', '/home/w/fastlio/install/fast_lio/lib:/home/w/ws_livox/install/livox_ros_driver2/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/w'), ('CHROME_DESKTOP', 'code.desktop'), ('CONDA_SHLVL', '0'), ('TERM_PROGRAM_VERSION', '1.120.0'), ('DESKTOP_SESSION', 'ubuntu-xorg'), ('ANTHROPIC_DEFAULT_SONNET_MODEL', 'deepseek-v4-pro'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('XDG_SEAT_PATH', '/org/freedesktop/DisplayManager/Seat0'), ('VSCODE_GIT_ASKPASS_MAIN', '/usr/share/code/resources/app/extensions/git/dist/askpass-main.js'), ('LC_MONETARY', 'zh_CN.UTF-8'), ('VSCODE_GIT_ASKPASS_NODE', '/usr/share/code/code'), ('PYDEVD_DISABLE_FILE_VALIDATION', '1'), ('SYSTEMD_EXEC_PID', '3834'), ('BUNDLED_DEBUGPY_PATH', '/home/w/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/libs/debugpy'), ('VSCODE_PYTHON_AUTOACTIVATE_GUARD', '1'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('_CE_M', ''), ('_CONDA_ROOT', '/home/w/anaconda3'), ('COLCON_PREFIX_PATH', '/home/w/ws_livox/install:/home/w/fastlio/install'), ('ROS_DISTRO', 'humble'), ('GTK_IM_MODULE', 'ibus'), ('LOGNAME', 'w'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('ANTHROPIC_BASE_URL', 'https://api.deepseek.com/anthropic'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('_CE_CONDA', ''), ('FC_FONTATIONS', '1'), ('ROS_LOCALHOST_ONLY', '0'), ('ANTHROPIC_DEFAULT_OPUS_MODEL', 'deepseek-v4-pro'), ('PATH', '/home/w/.config/Code/User/globalStorage/github.copilot-chat/debugCommand:/home/w/.config/Code/User/globalStorage/github.copilot-chat/copilotCli:/home/w/anaconda3/condabin:/opt/ros/humble/bin:/home/w/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/w/.fishros/bin/:/home/w/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts:/home/w/.fishros/bin/'), ('SESSION_MANAGER', 'local/FA608PM:@/tmp/.ICE-unix/3557,unix/FA608PM:/tmp/.ICE-unix/3557'), ('GDM_LANG', 'en_US'), ('PAPERSIZE', 'a4'), ('COREPACK_ENABLE_AUTO_PIN', '0'), ('XDG_SESSION_PATH', '/org/freedesktop/DisplayManager/Session0'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'zh_CN.UTF-8'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/30053690_d880_46dd_9e93_834cb9e9e39d'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('GDK_BACKEND', 'x11'), ('CLAUDE_EFFORT', 'high'), ('DISPLAY', ':0'), ('VSCODE_DEBUGPY_ADAPTER_ENDPOINTS', '/home/w/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/.noConfigDebugAdapterEndpoints/endpoint-bdaaef88e5de8eb2.txt'), ('NoDefaultCurrentDirectoryInExePath', '1'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('PYTHONSTARTUP', '/home/w/.config/Code/User/workspaceStorage/a2ad95b9f6dfb62897a05935310ba1b5/ms-python.python/pythonrc.py'), ('LC_TELEPHONE', 'zh_CN.UTF-8'), ('ANTHROPIC_DEFAULT_HAIKU_MODEL', 'deepseek-v4-flash'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu-xorg'), ('XAUTHORITY', '/home/w/.Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1000/vscode-git-d2c6b87941.sock'), ('GNOME_TERMINAL_SERVICE', ':1.97'), ('TERM_PROGRAM', 'vscode'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('XDG_GREETER_DATA_DIR', '/var/lib/lightdm-data/w'), ('AMENT_PREFIX_PATH', '/home/w/fastlio/install/fast_lio:/home/w/ws_livox/install/livox_ros_driver2:/opt/ros/humble'), ('CONDA_PYTHON_EXE', '/home/w/anaconda3/bin/python'), ('SHELL', '/bin/bash'), ('LC_NAME', 'zh_CN.UTF-8'), ('ANTHROPIC_AUTH_TOKEN', 'sk-d787b1ce9e294cd59f51ac258dde9932'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu-xorg'), ('CLAUDE_CODE_SESSION_ID', 'beaceda1-c342-45e8-8be5-50aea0697408'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('CLAUDECODE', '1'), ('LC_MEASUREMENT', 'zh_CN.UTF-8'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('_CONDA_EXE', '/home/w/anaconda3/bin/conda'), ('LC_IDENTIFICATION', 'zh_CN.UTF-8'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/w/projects/projects/gps_ws/build/gps'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu-xorg:/etc/xdg'), ('CONDA_EXE', '/home/w/anaconda3/bin/conda'), ('XDG_DATA_DIRS', '/usr/share/ubuntu-xorg:/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('CLAUDE_CODE_EXECPATH', '/usr/bin/claude'), ('PYTHONPATH', '/home/w/fastlio/install/fast_lio/local/lib/python3.10/dist-packages:/home/w/ws_livox/install/livox_ros_driver2/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'zh_CN.UTF-8'), ('LC_PAPER', 'zh_CN.UTF-8'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/w/fastlio/install/fast_lio:/home/w/ws_livox/install/livox_ros_driver2:/opt/ros/humble')]), 'shell': False}
+[0.076049] (gps) StdoutLine: {'line': b'[ 50%] Built target SerialPort\n'}
+[0.100818] (-) TimerEvent: {}
+[0.116909] (gps) StdoutLine: {'line': b'[ 75%] Building CXX object CMakeFiles/gps_node.dir/src/gps_node.cpp.o\n'}
+[0.200933] (-) TimerEvent: {}
+[0.301154] (-) TimerEvent: {}
+[0.402811] (-) TimerEvent: {}
+[0.503011] (-) TimerEvent: {}
+[0.603207] (-) TimerEvent: {}
+[0.704729] (-) TimerEvent: {}
+[0.804956] (-) TimerEvent: {}
+[0.907811] (-) TimerEvent: {}
+[1.010812] (-) TimerEvent: {}
+[1.111034] (-) TimerEvent: {}
+[1.211266] (-) TimerEvent: {}
+[1.311825] (-) TimerEvent: {}
+[1.412102] (-) TimerEvent: {}
+[1.512481] (-) TimerEvent: {}
+[1.614809] (-) TimerEvent: {}
+[1.715015] (-) TimerEvent: {}
+[1.815342] (-) TimerEvent: {}
+[1.915766] (-) TimerEvent: {}
+[2.016814] (-) TimerEvent: {}
+[2.120814] (-) TimerEvent: {}
+[2.221015] (-) TimerEvent: {}
+[2.321326] (-) TimerEvent: {}
+[2.421576] (-) TimerEvent: {}
+[2.522189] (-) TimerEvent: {}
+[2.625813] (-) TimerEvent: {}
+[2.726009] (-) TimerEvent: {}
+[2.826205] (-) TimerEvent: {}
+[2.926530] (-) TimerEvent: {}
+[3.028814] (-) TimerEvent: {}
+[3.129087] (-) TimerEvent: {}
+[3.229297] (-) TimerEvent: {}
+[3.331818] (-) TimerEvent: {}
+[3.432046] (-) TimerEvent: {}
+[3.439225] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp: In member function \xe2\x80\x98virtual BT::NodeStatus TurnLeft::onRunning()\xe2\x80\x99:\n'}
+[3.439426] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:331:39: error: \xe2\x80\x98std::chrono::_V2::steady_clock::time_point TimedVelocityAction::deadline_\xe2\x80\x99 is private within this context\n'}
+[3.439484] (gps) StderrLine: {'line': b'  331 |         if(chr::steady_clock::now() < deadline_)\n'}
+[3.439531] (gps) StderrLine: {'line': b'      |                                       ^~~~~~~~~\n'}
+[3.439576] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:304:35: note: declared private here\n'}
+[3.439619] (gps) StderrLine: {'line': b'  304 |     chr::steady_clock::time_point deadline_ {};\n'}
+[3.439661] (gps) StderrLine: {'line': b'      |                                   ^~~~~~~~~\n'}
+[3.439899] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:333:45: error: \xe2\x80\x98std::chrono::_V2::steady_clock::time_point TimedVelocityAction::deadline_\xe2\x80\x99 is private within this context\n'}
+[3.439981] (gps) StderrLine: {'line': b'  333 |             if (chr::steady_clock::now() < (deadline_) - chr::milliseconds(1500))\n'}
+[3.440030] (gps) StderrLine: {'line': b'      |                                             ^~~~~~~~~\n'}
+[3.442656] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:304:35: note: declared private here\n'}
+[3.442732] (gps) StderrLine: {'line': b'  304 |     chr::steady_clock::time_point deadline_ {};\n'}
+[3.442788] (gps) StderrLine: {'line': b'      |                                   ^~~~~~~~~\n'}
+[3.442953] (gps) StderrLine: {'line': b'In file included from /opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40,\n'}
+[3.443007] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24,\n'}
+[3.443053] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20,\n'}
+[3.443097] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25,\n'}
+[3.443141] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18,\n'}
+[3.443183] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20,\n'}
+[3.443224] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37,\n'}
+[3.443266] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25,\n'}
+[3.443308] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21,\n'}
+[3.443348] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,\n'}
+[3.443389] (gps) StderrLine: {'line': b'                 from /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3:\n'}
+[3.443431] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:338:21: error: \xe2\x80\x98std::shared_ptr<AppContext> TimedVelocityAction::context_\xe2\x80\x99 is private within this context\n'}
+[3.443475] (gps) StderrLine: {'line': b'  338 |                     RCLCPP_ERROR(\n'}
+[3.443516] (gps) StderrLine: {'line': b'      |                     ^~~~~~~~~~~~\n'}
+[3.443830] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:302:33: note: declared private here\n'}
+[3.444778] (gps) StderrLine: {'line': b'  302 |     std::shared_ptr<AppContext> context_;\n'}
+[3.444833] (gps) StderrLine: {'line': b'      |                                 ^~~~~~~~\n'}
+[3.444876] (gps) StderrLine: {'line': b'In file included from /opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24,\n'}
+[3.444919] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40,\n'}
+[3.444960] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24,\n'}
+[3.445001] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20,\n'}
+[3.445042] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25,\n'}
+[3.445082] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18,\n'}
+[3.445123] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20,\n'}
+[3.445163] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37,\n'}
+[3.445206] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25,\n'}
+[3.445249] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21,\n'}
+[3.445291] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,\n'}
+[3.445337] (gps) StderrLine: {'line': b'                 from /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3:\n'}
+[3.445378] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:339:25: error: \xe2\x80\x98std::shared_ptr<AppContext> TimedVelocityAction::context_\xe2\x80\x99 is private within this context\n'}
+[3.445419] (gps) StderrLine: {'line': b'  339 |                         context_->logger,\n'}
+[3.445459] (gps) StderrLine: {'line': b'      |                         ^~~~~~~~\n'}
+[3.445500] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:302:33: note: declared private here\n'}
+[3.445540] (gps) StderrLine: {'line': b'  302 |     std::shared_ptr<AppContext> context_;\n'}
+[3.445580] (gps) StderrLine: {'line': b'      |                                 ^~~~~~~~\n'}
+[3.445620] (gps) StderrLine: {'line': b'In file included from /opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24,\n'}
+[3.445665] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40,\n'}
+[3.445709] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24,\n'}
+[3.445750] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20,\n'}
+[3.445799] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25,\n'}
+[3.445843] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18,\n'}
+[3.445883] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20,\n'}
+[3.445924] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37,\n'}
+[3.445964] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25,\n'}
+[3.446005] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21,\n'}
+[3.446046] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,\n'}
+[3.446087] (gps) StderrLine: {'line': b'                 from /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3:\n'}
+[3.446127] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:339:25: error: \xe2\x80\x98std::shared_ptr<AppContext> TimedVelocityAction::context_\xe2\x80\x99 is private within this context\n'}
+[3.446172] (gps) StderrLine: {'line': b'  339 |                         context_->logger,\n'}
+[3.446212] (gps) StderrLine: {'line': b'      |                         ^~~~~~~~\n'}
+[3.446252] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:302:33: note: declared private here\n'}
+[3.446293] (gps) StderrLine: {'line': b'  302 |     std::shared_ptr<AppContext> context_;\n'}
+[3.446334] (gps) StderrLine: {'line': b'      |                                 ^~~~~~~~\n'}
+[3.446374] (gps) StderrLine: {'line': b'In file included from /opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24,\n'}
+[3.446415] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40,\n'}
+[3.446455] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24,\n'}
+[3.446495] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20,\n'}
+[3.446536] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25,\n'}
+[3.446577] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18,\n'}
+[3.446617] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20,\n'}
+[3.446657] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37,\n'}
+[3.446697] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25,\n'}
+[3.446739] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21,\n'}
+[3.446790] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,\n'}
+[3.446832] (gps) StderrLine: {'line': b'                 from /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3:\n'}
+[3.446873] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:342:25: error: \xe2\x80\x98std::shared_ptr<AppContext> TimedVelocityAction::context_\xe2\x80\x99 is private within this context\n'}
+[3.446914] (gps) StderrLine: {'line': b'  342 |                         context_->motion_port->lastError().c_str());\n'}
+[3.446956] (gps) StderrLine: {'line': b'      |                         ^~~~~~~~\n'}
+[3.446995] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:302:33: note: declared private here\n'}
+[3.447035] (gps) StderrLine: {'line': b'  302 |     std::shared_ptr<AppContext> context_;\n'}
+[3.447075] (gps) StderrLine: {'line': b'      |                                 ^~~~~~~~\n'}
+[3.447115] (gps) StderrLine: {'line': b'In file included from /opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40,\n'}
+[3.447156] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24,\n'}
+[3.447197] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20,\n'}
+[3.447241] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25,\n'}
+[3.447282] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18,\n'}
+[3.447323] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20,\n'}
+[3.447364] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37,\n'}
+[3.447404] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25,\n'}
+[3.447445] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21,\n'}
+[3.447489] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,\n'}
+[3.447534] (gps) StderrLine: {'line': b'                 from /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3:\n'}
+[3.447574] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:345:17: error: \xe2\x80\x98std::shared_ptr<AppContext> TimedVelocityAction::context_\xe2\x80\x99 is private within this context\n'}
+[3.447616] (gps) StderrLine: {'line': b'  345 |                 RCLCPP_DEBUG(\n'}
+[3.447656] (gps) StderrLine: {'line': b'      |                 ^~~~~~~~~~~~\n'}
+[3.447696] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:302:33: note: declared private here\n'}
+[3.447740] (gps) StderrLine: {'line': b'  302 |     std::shared_ptr<AppContext> context_;\n'}
+[3.449597] (gps) StderrLine: {'line': b'      |                                 ^~~~~~~~\n'}
+[3.449656] (gps) StderrLine: {'line': b'In file included from /opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24,\n'}
+[3.449700] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40,\n'}
+[3.449744] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24,\n'}
+[3.449794] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20,\n'}
+[3.449838] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25,\n'}
+[3.449881] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18,\n'}
+[3.449923] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20,\n'}
+[3.449966] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37,\n'}
+[3.450009] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25,\n'}
+[3.450052] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21,\n'}
+[3.450093] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,\n'}
+[3.450135] (gps) StderrLine: {'line': b'                 from /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3:\n'}
+[3.450177] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:346:21: error: \xe2\x80\x98std::shared_ptr<AppContext> TimedVelocityAction::context_\xe2\x80\x99 is private within this context\n'}
+[3.450219] (gps) StderrLine: {'line': b'  346 |                     context_->logger,\n'}
+[3.450261] (gps) StderrLine: {'line': b'      |                     ^~~~~~~~\n'}
+[3.450303] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:302:33: note: declared private here\n'}
+[3.450344] (gps) StderrLine: {'line': b'  302 |     std::shared_ptr<AppContext> context_;\n'}
+[3.450387] (gps) StderrLine: {'line': b'      |                                 ^~~~~~~~\n'}
+[3.450428] (gps) StderrLine: {'line': b'In file included from /opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24,\n'}
+[3.450470] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40,\n'}
+[3.450512] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24,\n'}
+[3.450554] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20,\n'}
+[3.450596] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25,\n'}
+[3.450637] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18,\n'}
+[3.450678] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20,\n'}
+[3.450723] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37,\n'}
+[3.450772] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25,\n'}
+[3.450818] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21,\n'}
+[3.450859] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,\n'}
+[3.450900] (gps) StderrLine: {'line': b'                 from /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3:\n'}
+[3.450941] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:346:21: error: \xe2\x80\x98std::shared_ptr<AppContext> TimedVelocityAction::context_\xe2\x80\x99 is private within this context\n'}
+[3.450986] (gps) StderrLine: {'line': b'  346 |                     context_->logger,\n'}
+[3.451027] (gps) StderrLine: {'line': b'      |                     ^~~~~~~~\n'}
+[3.451070] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:302:33: note: declared private here\n'}
+[3.451113] (gps) StderrLine: {'line': b'  302 |     std::shared_ptr<AppContext> context_;\n'}
+[3.451155] (gps) StderrLine: {'line': b'      |                                 ^~~~~~~~\n'}
+[3.451197] (gps) StderrLine: {'line': b'In file included from /opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24,\n'}
+[3.451237] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40,\n'}
+[3.451282] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24,\n'}
+[3.451322] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20,\n'}
+[3.451364] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25,\n'}
+[3.451406] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18,\n'}
+[3.451448] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20,\n'}
+[3.451492] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37,\n'}
+[3.451534] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25,\n'}
+[3.451576] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21,\n'}
+[3.451618] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,\n'}
+[3.451660] (gps) StderrLine: {'line': b'                 from /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3:\n'}
+[3.451703] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:349:75: error: \xe2\x80\x98std::chrono::_V2::steady_clock::time_point TimedVelocityAction::deadline_\xe2\x80\x99 is private within this context\n'}
+[3.451760] (gps) StderrLine: {'line': b'  349 |                     std::chrono::duration_cast<std::chrono::milliseconds>(deadline_ - std::chrono::steady_clock::now()).count());\n'}
+[3.451813] (gps) StderrLine: {'line': b'      |                                                                           ^~~~~~~~~\n'}
+[3.451856] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:304:35: note: declared private here\n'}
+[3.451897] (gps) StderrLine: {'line': b'  304 |     chr::steady_clock::time_point deadline_ {};\n'}
+[3.451940] (gps) StderrLine: {'line': b'      |                                   ^~~~~~~~~\n'}
+[3.451983] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:351:49: error: \xe2\x80\x98std::chrono::_V2::steady_clock::time_point TimedVelocityAction::deadline_\xe2\x80\x99 is private within this context\n'}
+[3.452026] (gps) StderrLine: {'line': b'  351 |             else if (chr::steady_clock::now() < deadline_ - chr::milliseconds(1000))\n'}
+[3.452073] (gps) StderrLine: {'line': b'      |                                                 ^~~~~~~~~\n'}
+[3.452114] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:304:35: note: declared private here\n'}
+[3.452155] (gps) StderrLine: {'line': b'  304 |     chr::steady_clock::time_point deadline_ {};\n'}
+[3.452197] (gps) StderrLine: {'line': b'      |                                   ^~~~~~~~~\n'}
+[3.452239] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:354:34: error: \xe2\x80\x98Pose2D TimedVelocityAction::command_\xe2\x80\x99 is private within this context\n'}
+[3.452280] (gps) StderrLine: {'line': b'  354 |                 if (!sendCommand(command_))\n'}
+[3.452322] (gps) StderrLine: {'line': b'      |                                  ^~~~~~~~\n'}
+[3.452364] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:303:12: note: declared private here\n'}
+[3.452406] (gps) StderrLine: {'line': b'  303 |     Pose2D command_;\n'}
+[3.452450] (gps) StderrLine: {'line': b'      |            ^~~~~~~~\n'}
+[3.452491] (gps) StderrLine: {'line': b'In file included from /opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40,\n'}
+[3.452533] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24,\n'}
+[3.452575] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20,\n'}
+[3.452616] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25,\n'}
+[3.452658] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18,\n'}
+[3.452700] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20,\n'}
+[3.452744] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37,\n'}
+[3.456355] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25,\n'}
+[3.456577] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21,\n'}
+[3.456824] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,\n'}
+[3.457039] (gps) StderrLine: {'line': b'                 from /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3:\n'}
+[3.457095] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:356:21: error: \xe2\x80\x98std::shared_ptr<AppContext> TimedVelocityAction::context_\xe2\x80\x99 is private within this context\n'}
+[3.457141] (gps) StderrLine: {'line': b'  356 |                     RCLCPP_ERROR(\n'}
+[3.457184] (gps) StderrLine: {'line': b'      |                     ^~~~~~~~~~~~\n'}
+[3.457227] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:302:33: note: declared private here\n'}
+[3.457269] (gps) StderrLine: {'line': b'  302 |     std::shared_ptr<AppContext> context_;\n'}
+[3.457311] (gps) StderrLine: {'line': b'      |                                 ^~~~~~~~\n'}
+[3.457353] (gps) StderrLine: {'line': b'In file included from /opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24,\n'}
+[3.457397] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40,\n'}
+[3.457440] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24,\n'}
+[3.457484] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20,\n'}
+[3.457529] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25,\n'}
+[3.457573] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18,\n'}
+[3.457618] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20,\n'}
+[3.457667] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37,\n'}
+[3.457711] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25,\n'}
+[3.457759] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21,\n'}
+[3.457814] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,\n'}
+[3.457860] (gps) StderrLine: {'line': b'                 from /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3:\n'}
+[3.457906] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:357:25: error: \xe2\x80\x98std::shared_ptr<AppContext> TimedVelocityAction::context_\xe2\x80\x99 is private within this context\n'}
+[3.457954] (gps) StderrLine: {'line': b'  357 |                         context_->logger,\n'}
+[3.457998] (gps) StderrLine: {'line': b'      |                         ^~~~~~~~\n'}
+[3.458044] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:302:33: note: declared private here\n'}
+[3.458093] (gps) StderrLine: {'line': b'  302 |     std::shared_ptr<AppContext> context_;\n'}
+[3.458138] (gps) StderrLine: {'line': b'      |                                 ^~~~~~~~\n'}
+[3.458185] (gps) StderrLine: {'line': b'In file included from /opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24,\n'}
+[3.458228] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40,\n'}
+[3.458270] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24,\n'}
+[3.458313] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20,\n'}
+[3.458356] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25,\n'}
+[3.458398] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18,\n'}
+[3.458442] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20,\n'}
+[3.458484] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37,\n'}
+[3.458525] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25,\n'}
+[3.458568] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21,\n'}
+[3.458610] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,\n'}
+[3.458651] (gps) StderrLine: {'line': b'                 from /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3:\n'}
+[3.458692] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:357:25: error: \xe2\x80\x98std::shared_ptr<AppContext> TimedVelocityAction::context_\xe2\x80\x99 is private within this context\n'}
+[3.458734] (gps) StderrLine: {'line': b'  357 |                         context_->logger,\n'}
+[3.458784] (gps) StderrLine: {'line': b'      |                         ^~~~~~~~\n'}
+[3.458828] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:302:33: note: declared private here\n'}
+[3.458870] (gps) StderrLine: {'line': b'  302 |     std::shared_ptr<AppContext> context_;\n'}
+[3.458911] (gps) StderrLine: {'line': b'      |                                 ^~~~~~~~\n'}
+[3.458954] (gps) StderrLine: {'line': b'In file included from /opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24,\n'}
+[3.458997] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40,\n'}
+[3.459038] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24,\n'}
+[3.459080] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20,\n'}
+[3.459129] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25,\n'}
+[3.459172] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18,\n'}
+[3.459217] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20,\n'}
+[3.459260] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37,\n'}
+[3.459302] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25,\n'}
+[3.459345] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21,\n'}
+[3.459387] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,\n'}
+[3.459429] (gps) StderrLine: {'line': b'                 from /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3:\n'}
+[3.459474] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:360:25: error: \xe2\x80\x98std::shared_ptr<AppContext> TimedVelocityAction::context_\xe2\x80\x99 is private within this context\n'}
+[3.459526] (gps) StderrLine: {'line': b'  360 |                         context_->motion_port->lastError().c_str());\n'}
+[3.459578] (gps) StderrLine: {'line': b'      |                         ^~~~~~~~\n'}
+[3.459619] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:302:33: note: declared private here\n'}
+[3.459661] (gps) StderrLine: {'line': b'  302 |     std::shared_ptr<AppContext> context_;\n'}
+[3.459705] (gps) StderrLine: {'line': b'      |                                 ^~~~~~~~\n'}
+[3.462594] (gps) StderrLine: {'line': b'In file included from /opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40,\n'}
+[3.462702] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24,\n'}
+[3.462747] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20,\n'}
+[3.462798] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25,\n'}
+[3.462843] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18,\n'}
+[3.462886] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20,\n'}
+[3.462928] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37,\n'}
+[3.462971] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25,\n'}
+[3.463015] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21,\n'}
+[3.463058] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,\n'}
+[3.463100] (gps) StderrLine: {'line': b'                 from /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3:\n'}
+[3.463143] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:363:17: error: \xe2\x80\x98std::shared_ptr<AppContext> TimedVelocityAction::context_\xe2\x80\x99 is private within this context\n'}
+[3.463195] (gps) StderrLine: {'line': b'  363 |                 RCLCPP_DEBUG(\n'}
+[3.463238] (gps) StderrLine: {'line': b'      |                 ^~~~~~~~~~~~\n'}
+[3.463286] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:302:33: note: declared private here\n'}
+[3.463330] (gps) StderrLine: {'line': b'  302 |     std::shared_ptr<AppContext> context_;\n'}
+[3.463373] (gps) StderrLine: {'line': b'      |                                 ^~~~~~~~\n'}
+[3.463415] (gps) StderrLine: {'line': b'In file included from /opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24,\n'}
+[3.463462] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40,\n'}
+[3.463505] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24,\n'}
+[3.463547] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20,\n'}
+[3.463589] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25,\n'}
+[3.463631] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18,\n'}
+[3.463673] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20,\n'}
+[3.463716] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37,\n'}
+[3.463764] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25,\n'}
+[3.463814] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21,\n'}
+[3.463856] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,\n'}
+[3.463897] (gps) StderrLine: {'line': b'                 from /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3:\n'}
+[3.463938] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:364:21: error: \xe2\x80\x98std::shared_ptr<AppContext> TimedVelocityAction::context_\xe2\x80\x99 is private within this context\n'}
+[3.464007] (gps) StderrLine: {'line': b'  364 |                     context_->logger,\n'}
+[3.464053] (gps) StderrLine: {'line': b'      |                     ^~~~~~~~\n'}
+[3.464095] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:302:33: note: declared private here\n'}
+[3.464139] (gps) StderrLine: {'line': b'  302 |     std::shared_ptr<AppContext> context_;\n'}
+[3.464181] (gps) StderrLine: {'line': b'      |                                 ^~~~~~~~\n'}
+[3.464224] (gps) StderrLine: {'line': b'In file included from /opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24,\n'}
+[3.464268] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40,\n'}
+[3.464310] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24,\n'}
+[3.464352] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20,\n'}
+[3.464395] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25,\n'}
+[3.464437] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18,\n'}
+[3.464479] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20,\n'}
+[3.464522] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37,\n'}
+[3.464564] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25,\n'}
+[3.464606] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21,\n'}
+[3.464647] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,\n'}
+[3.464690] (gps) StderrLine: {'line': b'                 from /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3:\n'}
+[3.464734] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:364:21: error: \xe2\x80\x98std::shared_ptr<AppContext> TimedVelocityAction::context_\xe2\x80\x99 is private within this context\n'}
+[3.464785] (gps) StderrLine: {'line': b'  364 |                     context_->logger,\n'}
+[3.464830] (gps) StderrLine: {'line': b'      |                     ^~~~~~~~\n'}
+[3.464874] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:302:33: note: declared private here\n'}
+[3.464925] (gps) StderrLine: {'line': b'  302 |     std::shared_ptr<AppContext> context_;\n'}
+[3.464968] (gps) StderrLine: {'line': b'      |                                 ^~~~~~~~\n'}
+[3.465010] (gps) StderrLine: {'line': b'In file included from /opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24,\n'}
+[3.465052] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40,\n'}
+[3.465095] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24,\n'}
+[3.465136] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20,\n'}
+[3.465179] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25,\n'}
+[3.465222] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18,\n'}
+[3.465264] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20,\n'}
+[3.465307] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37,\n'}
+[3.465349] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25,\n'}
+[3.465391] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21,\n'}
+[3.465433] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,\n'}
+[3.465480] (gps) StderrLine: {'line': b'                 from /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3:\n'}
+[3.465526] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:367:75: error: \xe2\x80\x98std::chrono::_V2::steady_clock::time_point TimedVelocityAction::deadline_\xe2\x80\x99 is private within this context\n'}
+[3.465577] (gps) StderrLine: {'line': b'  367 |                     std::chrono::duration_cast<std::chrono::milliseconds>(deadline_ - std::chrono::steady_clock::now()).count());\n'}
+[3.465619] (gps) StderrLine: {'line': b'      |                                                                           ^~~~~~~~~\n'}
+[3.465660] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:304:35: note: declared private here\n'}
+[3.465702] (gps) StderrLine: {'line': b'  304 |     chr::steady_clock::time_point deadline_ {};\n'}
+[3.465746] (gps) StderrLine: {'line': b'      |                                   ^~~~~~~~~\n'}
+[3.469445] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:369:49: error: \xe2\x80\x98std::chrono::_V2::steady_clock::time_point TimedVelocityAction::deadline_\xe2\x80\x99 is private within this context\n'}
+[3.469715] (gps) StderrLine: {'line': b'  369 |             else if (chr::steady_clock::now() < deadline_ - chr::milliseconds(400))\n'}
+[3.469951] (gps) StderrLine: {'line': b'      |                                                 ^~~~~~~~~\n'}
+[3.470192] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:304:35: note: declared private here\n'}
+[3.470465] (gps) StderrLine: {'line': b'  304 |     chr::steady_clock::time_point deadline_ {};\n'}
+[3.470698] (gps) StderrLine: {'line': b'      |                                   ^~~~~~~~~\n'}
+[3.470949] (gps) StderrLine: {'line': b'In file included from /opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40,\n'}
+[3.471181] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24,\n'}
+[3.471433] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20,\n'}
+[3.471533] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25,\n'}
+[3.471576] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18,\n'}
+[3.471626] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20,\n'}
+[3.471670] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37,\n'}
+[3.471712] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25,\n'}
+[3.471759] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21,\n'}
+[3.471809] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,\n'}
+[3.471851] (gps) StderrLine: {'line': b'                 from /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3:\n'}
+[3.471893] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:374:21: error: \xe2\x80\x98std::shared_ptr<AppContext> TimedVelocityAction::context_\xe2\x80\x99 is private within this context\n'}
+[3.471938] (gps) StderrLine: {'line': b'  374 |                     RCLCPP_ERROR(\n'}
+[3.471980] (gps) StderrLine: {'line': b'      |                     ^~~~~~~~~~~~\n'}
+[3.472024] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:302:33: note: declared private here\n'}
+[3.472067] (gps) StderrLine: {'line': b'  302 |     std::shared_ptr<AppContext> context_;\n'}
+[3.472111] (gps) StderrLine: {'line': b'      |                                 ^~~~~~~~\n'}
+[3.472156] (gps) StderrLine: {'line': b'In file included from /opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24,\n'}
+[3.472201] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40,\n'}
+[3.472246] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24,\n'}
+[3.472290] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20,\n'}
+[3.472333] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25,\n'}
+[3.472377] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18,\n'}
+[3.472421] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20,\n'}
+[3.472464] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37,\n'}
+[3.472505] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25,\n'}
+[3.472547] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21,\n'}
+[3.472590] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,\n'}
+[3.472632] (gps) StderrLine: {'line': b'                 from /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3:\n'}
+[3.472675] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:375:25: error: \xe2\x80\x98std::shared_ptr<AppContext> TimedVelocityAction::context_\xe2\x80\x99 is private within this context\n'}
+[3.472718] (gps) StderrLine: {'line': b'  375 |                         context_->logger,\n'}
+[3.472769] (gps) StderrLine: {'line': b'      |                         ^~~~~~~~\n'}
+[3.472815] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:302:33: note: declared private here\n'}
+[3.472857] (gps) StderrLine: {'line': b'  302 |     std::shared_ptr<AppContext> context_;\n'}
+[3.472898] (gps) StderrLine: {'line': b'      |                                 ^~~~~~~~\n'}
+[3.472940] (gps) StderrLine: {'line': b'In file included from /opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24,\n'}
+[3.472982] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40,\n'}
+[3.473030] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24,\n'}
+[3.473078] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20,\n'}
+[3.473120] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25,\n'}
+[3.473162] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18,\n'}
+[3.473204] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20,\n'}
+[3.473246] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37,\n'}
+[3.473288] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25,\n'}
+[3.473335] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21,\n'}
+[3.473376] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,\n'}
+[3.473417] (gps) StderrLine: {'line': b'                 from /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3:\n'}
+[3.473459] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:375:25: error: \xe2\x80\x98std::shared_ptr<AppContext> TimedVelocityAction::context_\xe2\x80\x99 is private within this context\n'}
+[3.473501] (gps) StderrLine: {'line': b'  375 |                         context_->logger,\n'}
+[3.473543] (gps) StderrLine: {'line': b'      |                         ^~~~~~~~\n'}
+[3.473584] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:302:33: note: declared private here\n'}
+[3.473626] (gps) StderrLine: {'line': b'  302 |     std::shared_ptr<AppContext> context_;\n'}
+[3.473667] (gps) StderrLine: {'line': b'      |                                 ^~~~~~~~\n'}
+[3.473708] (gps) StderrLine: {'line': b'In file included from /opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24,\n'}
+[3.473751] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40,\n'}
+[3.476283] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24,\n'}
+[3.476331] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20,\n'}
+[3.476374] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25,\n'}
+[3.476416] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18,\n'}
+[3.476458] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20,\n'}
+[3.476501] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37,\n'}
+[3.476542] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25,\n'}
+[3.476584] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21,\n'}
+[3.476627] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,\n'}
+[3.476668] (gps) StderrLine: {'line': b'                 from /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3:\n'}
+[3.476713] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:378:25: error: \xe2\x80\x98std::shared_ptr<AppContext> TimedVelocityAction::context_\xe2\x80\x99 is private within this context\n'}
+[3.476761] (gps) StderrLine: {'line': b'  378 |                         context_->motion_port->lastError().c_str());\n'}
+[3.476810] (gps) StderrLine: {'line': b'      |                         ^~~~~~~~\n'}
+[3.476852] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:302:33: note: declared private here\n'}
+[3.476896] (gps) StderrLine: {'line': b'  302 |     std::shared_ptr<AppContext> context_;\n'}
+[3.476947] (gps) StderrLine: {'line': b'      |                                 ^~~~~~~~\n'}
+[3.476989] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:381:34: error: \xe2\x80\x98Pose2D TimedVelocityAction::command_\xe2\x80\x99 is private within this context\n'}
+[3.477033] (gps) StderrLine: {'line': b'  381 |                 if (!sendCommand(command_))\n'}
+[3.477078] (gps) StderrLine: {'line': b'      |                                  ^~~~~~~~\n'}
+[3.477119] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:303:12: note: declared private here\n'}
+[3.477162] (gps) StderrLine: {'line': b'  303 |     Pose2D command_;\n'}
+[3.477204] (gps) StderrLine: {'line': b'      |            ^~~~~~~~\n'}
+[3.477245] (gps) StderrLine: {'line': b'In file included from /opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40,\n'}
+[3.477288] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24,\n'}
+[3.477331] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20,\n'}
+[3.477374] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25,\n'}
+[3.477416] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18,\n'}
+[3.477458] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20,\n'}
+[3.477500] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37,\n'}
+[3.477542] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25,\n'}
+[3.477586] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21,\n'}
+[3.477628] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,\n'}
+[3.477669] (gps) StderrLine: {'line': b'                 from /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3:\n'}
+[3.477716] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:383:21: error: \xe2\x80\x98std::shared_ptr<AppContext> TimedVelocityAction::context_\xe2\x80\x99 is private within this context\n'}
+[3.477770] (gps) StderrLine: {'line': b'  383 |                     RCLCPP_ERROR(\n'}
+[3.477823] (gps) StderrLine: {'line': b'      |                     ^~~~~~~~~~~~\n'}
+[3.477868] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:302:33: note: declared private here\n'}
+[3.477913] (gps) StderrLine: {'line': b'  302 |     std::shared_ptr<AppContext> context_;\n'}
+[3.477956] (gps) StderrLine: {'line': b'      |                                 ^~~~~~~~\n'}
+[3.478000] (gps) StderrLine: {'line': b'In file included from /opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24,\n'}
+[3.478048] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40,\n'}
+[3.478092] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24,\n'}
+[3.478136] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20,\n'}
+[3.478179] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25,\n'}
+[3.478221] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18,\n'}
+[3.478267] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20,\n'}
+[3.478310] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37,\n'}
+[3.478353] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25,\n'}
+[3.478401] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21,\n'}
+[3.478444] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,\n'}
+[3.478486] (gps) StderrLine: {'line': b'                 from /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3:\n'}
+[3.478531] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:384:25: error: \xe2\x80\x98std::shared_ptr<AppContext> TimedVelocityAction::context_\xe2\x80\x99 is private within this context\n'}
+[3.478574] (gps) StderrLine: {'line': b'  384 |                         context_->logger,\n'}
+[3.478616] (gps) StderrLine: {'line': b'      |                         ^~~~~~~~\n'}
+[3.478659] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:302:33: note: declared private here\n'}
+[3.478702] (gps) StderrLine: {'line': b'  302 |     std::shared_ptr<AppContext> context_;\n'}
+[3.478749] (gps) StderrLine: {'line': b'      |                                 ^~~~~~~~\n'}
+[3.478844] (gps) StderrLine: {'line': b'In file included from /opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24,\n'}
+[3.478888] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40,\n'}
+[3.478931] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24,\n'}
+[3.478974] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20,\n'}
+[3.479020] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25,\n'}
+[3.479063] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18,\n'}
+[3.479106] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20,\n'}
+[3.479148] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37,\n'}
+[3.479190] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25,\n'}
+[3.479232] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21,\n'}
+[3.479275] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,\n'}
+[3.479316] (gps) StderrLine: {'line': b'                 from /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3:\n'}
+[3.479358] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:384:25: error: \xe2\x80\x98std::shared_ptr<AppContext> TimedVelocityAction::context_\xe2\x80\x99 is private within this context\n'}
+[3.479401] (gps) StderrLine: {'line': b'  384 |                         context_->logger,\n'}
+[3.479442] (gps) StderrLine: {'line': b'      |                         ^~~~~~~~\n'}
+[3.479485] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:302:33: note: declared private here\n'}
+[3.479530] (gps) StderrLine: {'line': b'  302 |     std::shared_ptr<AppContext> context_;\n'}
+[3.479572] (gps) StderrLine: {'line': b'      |                                 ^~~~~~~~\n'}
+[3.479614] (gps) StderrLine: {'line': b'In file included from /opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24,\n'}
+[3.479657] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40,\n'}
+[3.479702] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24,\n'}
+[3.479748] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20,\n'}
+[3.482298] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25,\n'}
+[3.482352] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18,\n'}
+[3.482403] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20,\n'}
+[3.482459] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37,\n'}
+[3.482512] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25,\n'}
+[3.482564] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21,\n'}
+[3.482614] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,\n'}
+[3.482670] (gps) StderrLine: {'line': b'                 from /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3:\n'}
+[3.482735] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:387:25: error: \xe2\x80\x98std::shared_ptr<AppContext> TimedVelocityAction::context_\xe2\x80\x99 is private within this context\n'}
+[3.482817] (gps) StderrLine: {'line': b'  387 |                         context_->motion_port->lastError().c_str());\n'}
+[3.482879] (gps) StderrLine: {'line': b'      |                         ^~~~~~~~\n'}
+[3.482924] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:302:33: note: declared private here\n'}
+[3.482970] (gps) StderrLine: {'line': b'  302 |     std::shared_ptr<AppContext> context_;\n'}
+[3.483010] (gps) StderrLine: {'line': b'      |                                 ^~~~~~~~\n'}
+[3.483053] (gps) StderrLine: {'line': b'In file included from /opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40,\n'}
+[3.483094] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24,\n'}
+[3.483131] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20,\n'}
+[3.483166] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25,\n'}
+[3.483198] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18,\n'}
+[3.483231] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20,\n'}
+[3.483263] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37,\n'}
+[3.483297] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25,\n'}
+[3.483333] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21,\n'}
+[3.483370] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,\n'}
+[3.483407] (gps) StderrLine: {'line': b'                 from /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3:\n'}
+[3.483444] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:390:17: error: \xe2\x80\x98std::shared_ptr<AppContext> TimedVelocityAction::context_\xe2\x80\x99 is private within this context\n'}
+[3.483482] (gps) StderrLine: {'line': b'  390 |                 RCLCPP_DEBUG(\n'}
+[3.483518] (gps) StderrLine: {'line': b'      |                 ^~~~~~~~~~~~\n'}
+[3.483552] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:302:33: note: declared private here\n'}
+[3.483584] (gps) StderrLine: {'line': b'  302 |     std::shared_ptr<AppContext> context_;\n'}
+[3.483617] (gps) StderrLine: {'line': b'      |                                 ^~~~~~~~\n'}
+[3.483649] (gps) StderrLine: {'line': b'In file included from /opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24,\n'}
+[3.483680] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40,\n'}
+[3.483714] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24,\n'}
+[3.483753] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20,\n'}
+[3.483808] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25,\n'}
+[3.483841] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18,\n'}
+[3.483873] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20,\n'}
+[3.483904] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37,\n'}
+[3.483935] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25,\n'}
+[3.483966] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21,\n'}
+[3.483997] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,\n'}
+[3.484033] (gps) StderrLine: {'line': b'                 from /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3:\n'}
+[3.484067] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:391:21: error: \xe2\x80\x98std::shared_ptr<AppContext> TimedVelocityAction::context_\xe2\x80\x99 is private within this context\n'}
+[3.484109] (gps) StderrLine: {'line': b'  391 |                     context_->logger,\n'}
+[3.484147] (gps) StderrLine: {'line': b'      |                     ^~~~~~~~\n'}
+[3.484177] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:302:33: note: declared private here\n'}
+[3.484209] (gps) StderrLine: {'line': b'  302 |     std::shared_ptr<AppContext> context_;\n'}
+[3.484241] (gps) StderrLine: {'line': b'      |                                 ^~~~~~~~\n'}
+[3.484278] (gps) StderrLine: {'line': b'In file included from /opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24,\n'}
+[3.484309] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40,\n'}
+[3.484341] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24,\n'}
+[3.484373] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20,\n'}
+[3.484407] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25,\n'}
+[3.484440] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18,\n'}
+[3.484472] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20,\n'}
+[3.484504] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37,\n'}
+[3.484538] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25,\n'}
+[3.484576] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21,\n'}
+[3.484606] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,\n'}
+[3.484635] (gps) StderrLine: {'line': b'                 from /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3:\n'}
+[3.484665] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:391:21: error: \xe2\x80\x98std::shared_ptr<AppContext> TimedVelocityAction::context_\xe2\x80\x99 is private within this context\n'}
+[3.484696] (gps) StderrLine: {'line': b'  391 |                     context_->logger,\n'}
+[3.484726] (gps) StderrLine: {'line': b'      |                     ^~~~~~~~\n'}
+[3.484764] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:302:33: note: declared private here\n'}
+[3.484801] (gps) StderrLine: {'line': b'  302 |     std::shared_ptr<AppContext> context_;\n'}
+[3.484871] (gps) StderrLine: {'line': b'      |                                 ^~~~~~~~\n'}
+[3.484920] (gps) StderrLine: {'line': b'In file included from /opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24,\n'}
+[3.484971] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40,\n'}
+[3.485019] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24,\n'}
+[3.485070] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20,\n'}
+[3.485114] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25,\n'}
+[3.485147] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18,\n'}
+[3.485177] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20,\n'}
+[3.485209] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37,\n'}
+[3.485248] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25,\n'}
+[3.485343] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21,\n'}
+[3.485547] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,\n'}
+[3.485630] (gps) StderrLine: {'line': b'                 from /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3:\n'}
+[3.485688] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:394:75: error: \xe2\x80\x98std::chrono::_V2::steady_clock::time_point TimedVelocityAction::deadline_\xe2\x80\x99 is private within this context\n'}
+[3.485794] (gps) StderrLine: {'line': b'  394 |                     std::chrono::duration_cast<std::chrono::milliseconds>(deadline_ - std::chrono::steady_clock::now()).count());\n'}
+[3.485895] (gps) StderrLine: {'line': b'      |                                                                           ^~~~~~~~~\n'}
+[3.485994] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:304:35: note: declared private here\n'}
+[3.486213] (gps) StderrLine: {'line': b'  304 |     chr::steady_clock::time_point deadline_ {};\n'}
+[3.486344] (gps) StderrLine: {'line': b'      |                                   ^~~~~~~~~\n'}
+[3.486411] (gps) StderrLine: {'line': b'In file included from /opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40,\n'}
+[3.486505] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24,\n'}
+[3.486580] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20,\n'}
+[3.486668] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25,\n'}
+[3.486862] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18,\n'}
+[3.487024] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20,\n'}
+[3.487158] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37,\n'}
+[3.487309] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25,\n'}
+[3.487422] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21,\n'}
+[3.487493] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,\n'}
+[3.487570] (gps) StderrLine: {'line': b'                 from /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3:\n'}
+[3.487618] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:400:9: error: \xe2\x80\x98std::shared_ptr<AppContext> TimedVelocityAction::context_\xe2\x80\x99 is private within this context\n'}
+[3.487689] (gps) StderrLine: {'line': b'  400 |         RCLCPP_INFO(context_->logger, "[%s] completed", name().c_str());\n'}
+[3.487782] (gps) StderrLine: {'line': b'      |         ^~~~~~~~~~~\n'}
+[3.487899] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:302:33: note: declared private here\n'}
+[3.488139] (gps) StderrLine: {'line': b'  302 |     std::shared_ptr<AppContext> context_;\n'}
+[3.488303] (gps) StderrLine: {'line': b'      |                                 ^~~~~~~~\n'}
+[3.488383] (gps) StderrLine: {'line': b'In file included from /opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24,\n'}
+[3.488446] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40,\n'}
+[3.488529] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24,\n'}
+[3.488621] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20,\n'}
+[3.488751] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25,\n'}
+[3.488945] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18,\n'}
+[3.489057] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20,\n'}
+[3.489142] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37,\n'}
+[3.489223] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25,\n'}
+[3.489301] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21,\n'}
+[3.489368] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,\n'}
+[3.489436] (gps) StderrLine: {'line': b'                 from /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3:\n'}
+[3.489502] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:400:21: error: \xe2\x80\x98std::shared_ptr<AppContext> TimedVelocityAction::context_\xe2\x80\x99 is private within this context\n'}
+[3.489578] (gps) StderrLine: {'line': b'  400 |         RCLCPP_INFO(context_->logger, "[%s] completed", name().c_str());\n'}
+[3.489638] (gps) StderrLine: {'line': b'      |                     ^~~~~~~~\n'}
+[3.489712] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:302:33: note: declared private here\n'}
+[3.489789] (gps) StderrLine: {'line': b'  302 |     std::shared_ptr<AppContext> context_;\n'}
+[3.489866] (gps) StderrLine: {'line': b'      |                                 ^~~~~~~~\n'}
+[3.489927] (gps) StderrLine: {'line': b'In file included from /opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24,\n'}
+[3.489992] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40,\n'}
+[3.490057] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24,\n'}
+[3.490115] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20,\n'}
+[3.490177] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25,\n'}
+[3.490244] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18,\n'}
+[3.490304] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20,\n'}
+[3.490374] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37,\n'}
+[3.490446] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25,\n'}
+[3.490521] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21,\n'}
+[3.490601] (gps) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,\n'}
+[3.490669] (gps) StderrLine: {'line': b'                 from /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3:\n'}
+[3.490763] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:400:21: error: \xe2\x80\x98std::shared_ptr<AppContext> TimedVelocityAction::context_\xe2\x80\x99 is private within this context\n'}
+[3.490855] (gps) StderrLine: {'line': b'  400 |         RCLCPP_INFO(context_->logger, "[%s] completed", name().c_str());\n'}
+[3.490914] (gps) StderrLine: {'line': b'      |                     ^~~~~~~~\n'}
+[3.490977] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:302:33: note: declared private here\n'}
+[3.491046] (gps) StderrLine: {'line': b'  302 |     std::shared_ptr<AppContext> context_;\n'}
+[3.491102] (gps) StderrLine: {'line': b'      |                                 ^~~~~~~~\n'}
+[3.532821] (-) TimerEvent: {}
+[3.634784] (-) TimerEvent: {}
+[3.737816] (-) TimerEvent: {}
+[3.838320] (-) TimerEvent: {}
+[3.938533] (-) TimerEvent: {}
+[4.038753] (-) TimerEvent: {}
+[4.139142] (-) TimerEvent: {}
+[4.239585] (-) TimerEvent: {}
+[4.340030] (-) TimerEvent: {}
+[4.440226] (-) TimerEvent: {}
+[4.542979] (-) TimerEvent: {}
+[4.643804] (-) TimerEvent: {}
+[4.744007] (-) TimerEvent: {}
+[4.844302] (-) TimerEvent: {}
+[4.944656] (-) TimerEvent: {}
+[5.046909] (-) TimerEvent: {}
+[5.147097] (-) TimerEvent: {}
+[5.248811] (-) TimerEvent: {}
+[5.349124] (-) TimerEvent: {}
+[5.450026] (-) TimerEvent: {}
+[5.550220] (-) TimerEvent: {}
+[5.650550] (-) TimerEvent: {}
+[5.751813] (-) TimerEvent: {}
+[5.852016] (-) TimerEvent: {}
+[5.952305] (-) TimerEvent: {}
+[6.052629] (-) TimerEvent: {}
+[6.152966] (-) TimerEvent: {}
+[6.253252] (-) TimerEvent: {}
+[6.355961] (-) TimerEvent: {}
+[6.456214] (-) TimerEvent: {}
+[6.556445] (-) TimerEvent: {}
+[6.656739] (-) TimerEvent: {}
+[6.757254] (-) TimerEvent: {}
+[6.863816] (-) TimerEvent: {}
+[6.963997] (-) TimerEvent: {}
+[7.064316] (-) TimerEvent: {}
+[7.148886] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp: In member function \xe2\x80\x98virtual BT::NodeStatus TimedVelocityAction::onRunning()\xe2\x80\x99:\n'}
+[7.149274] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:271:5: warning: control reaches end of non-void function [-Wreturn-type]\n'}
+[7.149427] (gps) StderrLine: {'line': b'  271 |     }\n'}
+[7.149574] (gps) StderrLine: {'line': b'      |     ^\n'}
+[7.166807] (-) TimerEvent: {}
+[7.267008] (-) TimerEvent: {}
+[7.367201] (-) TimerEvent: {}
+[7.467383] (-) TimerEvent: {}
+[7.497361] (gps) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/gps_node.dir/build.make:79: CMakeFiles/gps_node.dir/src/gps_node.cpp.o] Error 1\n'}
+[7.498294] (gps) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:188: CMakeFiles/gps_node.dir/all] Error 2\n'}
+[7.499075] (gps) StderrLine: {'line': b'gmake: *** [Makefile:146: all] Error 2\n'}
+[7.503139] (gps) CommandEnded: {'returncode': 2}
+[7.513609] (gps) JobEnded: {'identifier': 'gps', 'rc': 2}
+[7.514865] (-) EventReactorShutdown: {}

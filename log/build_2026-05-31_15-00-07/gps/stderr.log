@@ -1,0 +1,34 @@
+In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+                 from [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3[m[K:
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:[m[K In member function ‘[01m[Kvirtual BT::NodeStatus TimedVelocityAction::onStart()[m[K’:
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:237:13:[m[K [01;31m[Kerror: [m[K‘[01m[KSensor[m[K’ was not declared in this scope
+  237 |             [01;31m[KSensor[m[K Node::currentX(),
+      |             [01;31m[K^~~~~~[m[K
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:238:20:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K)[m[K’ before ‘[01m[KNode[m[K’
+  238 |             Sensor [01;31m[KNode[m[K::currentY(),
+      |                    [01;31m[K^~~~[m[K
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:233:9:[m[K [01;36m[Knote: [m[Kto match this ‘[01m[K([m[K’
+  233 |         [01;36m[KRCLCPP_INFO[m[K(
+      |         [01;36m[K^~~~~~~~~~~[m[K
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:239:20:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K)[m[K’ before ‘[01m[KNode[m[K’
+  239 |             Sensor [01;31m[KNode[m[K::currentZ(),
+      |                    [01;31m[K^~~~[m[K
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:233:9:[m[K [01;36m[Knote: [m[Kto match this ‘[01m[K([m[K’
+  233 |         [01;36m[KRCLCPP_INFO[m[K(
+      |         [01;36m[K^~~~~~~~~~~[m[K
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:241:9:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[K)[m[K’ token
+  241 |         [01;31m[K)[m[K
+      |         [01;31m[K^[m[K
+gmake[2]: *** [CMakeFiles/gps_node.dir/build.make:79: CMakeFiles/gps_node.dir/src/gps_node.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:188: CMakeFiles/gps_node.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

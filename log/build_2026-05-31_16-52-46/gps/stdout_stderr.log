@@ -1,0 +1,596 @@
+[ 50%] Built target SerialPort
+[ 75%] Building CXX object CMakeFiles/gps_node.dir/src/gps_node.cpp.o
+/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp: In member function ‘virtual BT::NodeStatus TurnLeft::onRunning()’:
+/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:331:39: error: ‘std::chrono::_V2::steady_clock::time_point TimedVelocityAction::deadline_’ is private within this context
+  331 |         if(chr::steady_clock::now() < deadline_)
+      |                                       ^~~~~~~~~
+/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:304:35: note: declared private here
+  304 |     chr::steady_clock::time_point deadline_ {};
+      |                                   ^~~~~~~~~
+/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:333:45: error: ‘std::chrono::_V2::steady_clock::time_point TimedVelocityAction::deadline_’ is private within this context
+  333 |             if (chr::steady_clock::now() < (deadline_) - chr::milliseconds(1500))
+      |                                             ^~~~~~~~~
+/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:304:35: note: declared private here
+  304 |     chr::steady_clock::time_point deadline_ {};
+      |                                   ^~~~~~~~~
+In file included from /opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,
+                 from /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3:
+/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:338:21: error: ‘std::shared_ptr<AppContext> TimedVelocityAction::context_’ is private within this context
+  338 |                     RCLCPP_ERROR(
+      |                     ^~~~~~~~~~~~
+/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:302:33: note: declared private here
+  302 |     std::shared_ptr<AppContext> context_;
+      |                                 ^~~~~~~~
+In file included from /opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,
+                 from /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3:
+/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:339:25: error: ‘std::shared_ptr<AppContext> TimedVelocityAction::context_’ is private within this context
+  339 |                         context_->logger,
+      |                         ^~~~~~~~
+/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:302:33: note: declared private here
+  302 |     std::shared_ptr<AppContext> context_;
+      |                                 ^~~~~~~~
+In file included from /opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,
+                 from /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3:
+/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:339:25: error: ‘std::shared_ptr<AppContext> TimedVelocityAction::context_’ is private within this context
+  339 |                         context_->logger,
+      |                         ^~~~~~~~
+/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:302:33: note: declared private here
+  302 |     std::shared_ptr<AppContext> context_;
+      |                                 ^~~~~~~~
+In file included from /opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,
+                 from /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3:
+/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:342:25: error: ‘std::shared_ptr<AppContext> TimedVelocityAction::context_’ is private within this context
+  342 |                         context_->motion_port->lastError().c_str());
+      |                         ^~~~~~~~
+/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:302:33: note: declared private here
+  302 |     std::shared_ptr<AppContext> context_;
+      |                                 ^~~~~~~~
+In file included from /opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,
+                 from /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3:
+/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:345:17: error: ‘std::shared_ptr<AppContext> TimedVelocityAction::context_’ is private within this context
+  345 |                 RCLCPP_DEBUG(
+      |                 ^~~~~~~~~~~~
+/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:302:33: note: declared private here
+  302 |     std::shared_ptr<AppContext> context_;
+      |                                 ^~~~~~~~
+In file included from /opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,
+                 from /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3:
+/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:346:21: error: ‘std::shared_ptr<AppContext> TimedVelocityAction::context_’ is private within this context
+  346 |                     context_->logger,
+      |                     ^~~~~~~~
+/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:302:33: note: declared private here
+  302 |     std::shared_ptr<AppContext> context_;
+      |                                 ^~~~~~~~
+In file included from /opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,
+                 from /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3:
+/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:346:21: error: ‘std::shared_ptr<AppContext> TimedVelocityAction::context_’ is private within this context
+  346 |                     context_->logger,
+      |                     ^~~~~~~~
+/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:302:33: note: declared private here
+  302 |     std::shared_ptr<AppContext> context_;
+      |                                 ^~~~~~~~
+In file included from /opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,
+                 from /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3:
+/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:349:75: error: ‘std::chrono::_V2::steady_clock::time_point TimedVelocityAction::deadline_’ is private within this context
+  349 |                     std::chrono::duration_cast<std::chrono::milliseconds>(deadline_ - std::chrono::steady_clock::now()).count());
+      |                                                                           ^~~~~~~~~
+/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:304:35: note: declared private here
+  304 |     chr::steady_clock::time_point deadline_ {};
+      |                                   ^~~~~~~~~
+/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:351:49: error: ‘std::chrono::_V2::steady_clock::time_point TimedVelocityAction::deadline_’ is private within this context
+  351 |             else if (chr::steady_clock::now() < deadline_ - chr::milliseconds(1000))
+      |                                                 ^~~~~~~~~
+/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:304:35: note: declared private here
+  304 |     chr::steady_clock::time_point deadline_ {};
+      |                                   ^~~~~~~~~
+/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:354:34: error: ‘Pose2D TimedVelocityAction::command_’ is private within this context
+  354 |                 if (!sendCommand(command_))
+      |                                  ^~~~~~~~
+/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:303:12: note: declared private here
+  303 |     Pose2D command_;
+      |            ^~~~~~~~
+In file included from /opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,
+                 from /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3:
+/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:356:21: error: ‘std::shared_ptr<AppContext> TimedVelocityAction::context_’ is private within this context
+  356 |                     RCLCPP_ERROR(
+      |                     ^~~~~~~~~~~~
+/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:302:33: note: declared private here
+  302 |     std::shared_ptr<AppContext> context_;
+      |                                 ^~~~~~~~
+In file included from /opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,
+                 from /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3:
+/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:357:25: error: ‘std::shared_ptr<AppContext> TimedVelocityAction::context_’ is private within this context
+  357 |                         context_->logger,
+      |                         ^~~~~~~~
+/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:302:33: note: declared private here
+  302 |     std::shared_ptr<AppContext> context_;
+      |                                 ^~~~~~~~
+In file included from /opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,
+                 from /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3:
+/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:357:25: error: ‘std::shared_ptr<AppContext> TimedVelocityAction::context_’ is private within this context
+  357 |                         context_->logger,
+      |                         ^~~~~~~~
+/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:302:33: note: declared private here
+  302 |     std::shared_ptr<AppContext> context_;
+      |                                 ^~~~~~~~
+In file included from /opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,
+                 from /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3:
+/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:360:25: error: ‘std::shared_ptr<AppContext> TimedVelocityAction::context_’ is private within this context
+  360 |                         context_->motion_port->lastError().c_str());
+      |                         ^~~~~~~~
+/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:302:33: note: declared private here
+  302 |     std::shared_ptr<AppContext> context_;
+      |                                 ^~~~~~~~
+In file included from /opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,
+                 from /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3:
+/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:363:17: error: ‘std::shared_ptr<AppContext> TimedVelocityAction::context_’ is private within this context
+  363 |                 RCLCPP_DEBUG(
+      |                 ^~~~~~~~~~~~
+/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:302:33: note: declared private here
+  302 |     std::shared_ptr<AppContext> context_;
+      |                                 ^~~~~~~~
+In file included from /opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,
+                 from /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3:
+/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:364:21: error: ‘std::shared_ptr<AppContext> TimedVelocityAction::context_’ is private within this context
+  364 |                     context_->logger,
+      |                     ^~~~~~~~
+/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:302:33: note: declared private here
+  302 |     std::shared_ptr<AppContext> context_;
+      |                                 ^~~~~~~~
+In file included from /opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,
+                 from /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3:
+/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:364:21: error: ‘std::shared_ptr<AppContext> TimedVelocityAction::context_’ is private within this context
+  364 |                     context_->logger,
+      |                     ^~~~~~~~
+/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:302:33: note: declared private here
+  302 |     std::shared_ptr<AppContext> context_;
+      |                                 ^~~~~~~~
+In file included from /opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,
+                 from /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3:
+/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:367:75: error: ‘std::chrono::_V2::steady_clock::time_point TimedVelocityAction::deadline_’ is private within this context
+  367 |                     std::chrono::duration_cast<std::chrono::milliseconds>(deadline_ - std::chrono::steady_clock::now()).count());
+      |                                                                           ^~~~~~~~~
+/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:304:35: note: declared private here
+  304 |     chr::steady_clock::time_point deadline_ {};
+      |                                   ^~~~~~~~~
+/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:369:49: error: ‘std::chrono::_V2::steady_clock::time_point TimedVelocityAction::deadline_’ is private within this context
+  369 |             else if (chr::steady_clock::now() < deadline_ - chr::milliseconds(400))
+      |                                                 ^~~~~~~~~
+/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:304:35: note: declared private here
+  304 |     chr::steady_clock::time_point deadline_ {};
+      |                                   ^~~~~~~~~
+In file included from /opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,
+                 from /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3:
+/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:374:21: error: ‘std::shared_ptr<AppContext> TimedVelocityAction::context_’ is private within this context
+  374 |                     RCLCPP_ERROR(
+      |                     ^~~~~~~~~~~~
+/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:302:33: note: declared private here
+  302 |     std::shared_ptr<AppContext> context_;
+      |                                 ^~~~~~~~
+In file included from /opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,
+                 from /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3:
+/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:375:25: error: ‘std::shared_ptr<AppContext> TimedVelocityAction::context_’ is private within this context
+  375 |                         context_->logger,
+      |                         ^~~~~~~~
+/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:302:33: note: declared private here
+  302 |     std::shared_ptr<AppContext> context_;
+      |                                 ^~~~~~~~
+In file included from /opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,
+                 from /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3:
+/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:375:25: error: ‘std::shared_ptr<AppContext> TimedVelocityAction::context_’ is private within this context
+  375 |                         context_->logger,
+      |                         ^~~~~~~~
+/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:302:33: note: declared private here
+  302 |     std::shared_ptr<AppContext> context_;
+      |                                 ^~~~~~~~
+In file included from /opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,
+                 from /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3:
+/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:378:25: error: ‘std::shared_ptr<AppContext> TimedVelocityAction::context_’ is private within this context
+  378 |                         context_->motion_port->lastError().c_str());
+      |                         ^~~~~~~~
+/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:302:33: note: declared private here
+  302 |     std::shared_ptr<AppContext> context_;
+      |                                 ^~~~~~~~
+/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:381:34: error: ‘Pose2D TimedVelocityAction::command_’ is private within this context
+  381 |                 if (!sendCommand(command_))
+      |                                  ^~~~~~~~
+/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:303:12: note: declared private here
+  303 |     Pose2D command_;
+      |            ^~~~~~~~
+In file included from /opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,
+                 from /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3:
+/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:383:21: error: ‘std::shared_ptr<AppContext> TimedVelocityAction::context_’ is private within this context
+  383 |                     RCLCPP_ERROR(
+      |                     ^~~~~~~~~~~~
+/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:302:33: note: declared private here
+  302 |     std::shared_ptr<AppContext> context_;
+      |                                 ^~~~~~~~
+In file included from /opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,
+                 from /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3:
+/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:384:25: error: ‘std::shared_ptr<AppContext> TimedVelocityAction::context_’ is private within this context
+  384 |                         context_->logger,
+      |                         ^~~~~~~~
+/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:302:33: note: declared private here
+  302 |     std::shared_ptr<AppContext> context_;
+      |                                 ^~~~~~~~
+In file included from /opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,
+                 from /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3:
+/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:384:25: error: ‘std::shared_ptr<AppContext> TimedVelocityAction::context_’ is private within this context
+  384 |                         context_->logger,
+      |                         ^~~~~~~~
+/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:302:33: note: declared private here
+  302 |     std::shared_ptr<AppContext> context_;
+      |                                 ^~~~~~~~
+In file included from /opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,
+                 from /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3:
+/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:387:25: error: ‘std::shared_ptr<AppContext> TimedVelocityAction::context_’ is private within this context
+  387 |                         context_->motion_port->lastError().c_str());
+      |                         ^~~~~~~~
+/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:302:33: note: declared private here
+  302 |     std::shared_ptr<AppContext> context_;
+      |                                 ^~~~~~~~
+In file included from /opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,
+                 from /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3:
+/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:390:17: error: ‘std::shared_ptr<AppContext> TimedVelocityAction::context_’ is private within this context
+  390 |                 RCLCPP_DEBUG(
+      |                 ^~~~~~~~~~~~
+/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:302:33: note: declared private here
+  302 |     std::shared_ptr<AppContext> context_;
+      |                                 ^~~~~~~~
+In file included from /opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,
+                 from /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3:
+/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:391:21: error: ‘std::shared_ptr<AppContext> TimedVelocityAction::context_’ is private within this context
+  391 |                     context_->logger,
+      |                     ^~~~~~~~
+/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:302:33: note: declared private here
+  302 |     std::shared_ptr<AppContext> context_;
+      |                                 ^~~~~~~~
+In file included from /opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,
+                 from /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3:
+/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:391:21: error: ‘std::shared_ptr<AppContext> TimedVelocityAction::context_’ is private within this context
+  391 |                     context_->logger,
+      |                     ^~~~~~~~
+/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:302:33: note: declared private here
+  302 |     std::shared_ptr<AppContext> context_;
+      |                                 ^~~~~~~~
+In file included from /opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,
+                 from /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3:
+/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:394:75: error: ‘std::chrono::_V2::steady_clock::time_point TimedVelocityAction::deadline_’ is private within this context
+  394 |                     std::chrono::duration_cast<std::chrono::milliseconds>(deadline_ - std::chrono::steady_clock::now()).count());
+      |                                                                           ^~~~~~~~~
+/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:304:35: note: declared private here
+  304 |     chr::steady_clock::time_point deadline_ {};
+      |                                   ^~~~~~~~~
+In file included from /opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,
+                 from /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3:
+/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:400:9: error: ‘std::shared_ptr<AppContext> TimedVelocityAction::context_’ is private within this context
+  400 |         RCLCPP_INFO(context_->logger, "[%s] completed", name().c_str());
+      |         ^~~~~~~~~~~
+/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:302:33: note: declared private here
+  302 |     std::shared_ptr<AppContext> context_;
+      |                                 ^~~~~~~~
+In file included from /opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,
+                 from /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3:
+/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:400:21: error: ‘std::shared_ptr<AppContext> TimedVelocityAction::context_’ is private within this context
+  400 |         RCLCPP_INFO(context_->logger, "[%s] completed", name().c_str());
+      |                     ^~~~~~~~
+/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:302:33: note: declared private here
+  302 |     std::shared_ptr<AppContext> context_;
+      |                                 ^~~~~~~~
+In file included from /opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,
+                 from /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3:
+/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:400:21: error: ‘std::shared_ptr<AppContext> TimedVelocityAction::context_’ is private within this context
+  400 |         RCLCPP_INFO(context_->logger, "[%s] completed", name().c_str());
+      |                     ^~~~~~~~
+/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:302:33: note: declared private here
+  302 |     std::shared_ptr<AppContext> context_;
+      |                                 ^~~~~~~~
+/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp: In member function ‘virtual BT::NodeStatus TimedVelocityAction::onRunning()’:
+/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:271:5: warning: control reaches end of non-void function [-Wreturn-type]
+  271 |     }
+      |     ^
+gmake[2]: *** [CMakeFiles/gps_node.dir/build.make:79: CMakeFiles/gps_node.dir/src/gps_node.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:188: CMakeFiles/gps_node.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

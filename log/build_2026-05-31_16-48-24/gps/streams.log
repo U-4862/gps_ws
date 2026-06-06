@@ -1,0 +1,534 @@
+[0.018s] Invoking command in '/home/w/projects/projects/gps_ws/build/gps': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/w/projects/projects/gps_ws/build/gps -- -j16 -l16
+[0.058s] [ 50%] Built target SerialPort
+[0.104s] [ 75%] Building CXX object CMakeFiles/gps_node.dir/src/gps_node.cpp.o
+[3.476s] /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:306:34: error: invalid use of incomplete type ‘class TimedVelocityAction’
+[3.478s]   306 | class MoveForward final : public TimedVelocityAction
+[3.479s]       |                                  ^~~~~~~~~~~~~~~~~~~
+[3.479s] /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:169:7: note: definition of ‘class TimedVelocityAction’ is not complete until the closing brace
+[3.479s]   169 | class TimedVelocityAction : public BT::StatefulActionNode
+[3.479s]       |       ^~~~~~~~~~~~~~~~~~~
+[3.479s] /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:317:31: error: invalid use of incomplete type ‘class TimedVelocityAction’
+[3.479s]   317 | class TurnLeft final : public TimedVelocityAction
+[3.479s]       |                               ^~~~~~~~~~~~~~~~~~~
+[3.479s] /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:169:7: note: definition of ‘class TimedVelocityAction’ is not complete until the closing brace
+[3.479s]   169 | class TimedVelocityAction : public BT::StatefulActionNode
+[3.479s]       |       ^~~~~~~~~~~~~~~~~~~
+[3.479s] /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:328:20: error: ‘BT::NodeStatus TimedVelocityAction::TurnLeft::onRunning()’ marked ‘override’, but does not override
+[3.479s]   328 |     BT::NodeStatus onRunning() override
+[3.479s]       |                    ^~~~~~~~~
+[3.479s] /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:405:32: error: invalid use of incomplete type ‘class TimedVelocityAction’
+[3.479s]   405 | class TurnRight final : public TimedVelocityAction
+[3.479s]       |                                ^~~~~~~~~~~~~~~~~~~
+[3.479s] /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:169:7: note: definition of ‘class TimedVelocityAction’ is not complete until the closing brace
+[3.479s]   169 | class TimedVelocityAction : public BT::StatefulActionNode
+[3.479s]       |       ^~~~~~~~~~~~~~~~~~~
+[3.479s] /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:422:37: error: invalid use of incomplete type ‘class TimedVelocityAction’
+[3.479s]   422 |  class JudgePosition final : public TimedVelocityAction
+[3.479s]       |                                     ^~~~~~~~~~~~~~~~~~~
+[3.479s] /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:169:7: note: definition of ‘class TimedVelocityAction’ is not complete until the closing brace
+[3.480s]   169 | class TimedVelocityAction : public BT::StatefulActionNode
+[3.480s]       |       ^~~~~~~~~~~~~~~~~~~
+[3.480s] /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:643:2: error: expected ‘}’ at end of input
+[3.480s]   643 | }
+[3.480s]       |  ^
+[3.480s] /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:170:1: note: to match this ‘{’
+[3.480s]   170 | {
+[3.480s]       | ^
+[3.480s] /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp: In constructor ‘TimedVelocityAction::TimedVelocityAction(const string&, const BT::NodeConfig&, std::shared_ptr<AppContext>, Pose2D)’:
+[3.480s] /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:177:11: error: class ‘TimedVelocityAction’ does not have any field named ‘context_’
+[3.480s]   177 |           context_(std::move(context)),
+[3.480s]       |           ^~~~~~~~
+[3.480s] /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:178:11: error: class ‘TimedVelocityAction’ does not have any field named ‘command_’
+[3.480s]   178 |           command_(command)
+[3.480s]       |           ^~~~~~~~
+[3.487s] /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp: In member function ‘virtual BT::NodeStatus TimedVelocityAction::onStart()’:
+[3.487s] /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:191:14: error: ‘context_’ was not declared in this scope; did you mean ‘ucontext_t’?
+[3.487s]   191 |         if (!context_ || !context_->motion_port)
+[3.487s]       |              ^~~~~~~~
+[3.487s]       |              ucontext_t
+[3.492s] /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:207:9: error: ‘deadline_’ was not declared in this scope; did you mean ‘readlink’?
+[3.492s]   207 |         deadline_ = chr::steady_clock::now() + chr::milliseconds(duration_ms);
+[3.492s]       |         ^~~~~~~~~
+[3.492s]       |         readlink
+[3.496s] /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:209:26: error: ‘command_’ was not declared in this scope
+[3.496s]   209 |         if (!sendCommand(command_))
+[3.496s]       |                          ^~~~~~~~
+[3.500s] /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:209:14: error: ‘sendCommand’ was not declared in this scope
+[3.500s]   209 |         if (!sendCommand(command_))
+[3.500s]       |              ^~~~~~~~~~~
+[3.507s] In file included from /opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40,
+[3.507s]                  from /opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24,
+[3.507s]                  from /opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20,
+[3.507s]                  from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25,
+[3.507s]                  from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18,
+[3.507s]                  from /opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20,
+[3.507s]                  from /opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37,
+[3.507s]                  from /opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25,
+[3.507s]                  from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21,
+[3.507s]                  from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,
+[3.507s]                  from /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3:
+[3.507s] /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:212:17: error: ‘context_’ was not declared in this scope; did you mean ‘ucontext_t’?
+[3.507s]   212 |                 context_->logger,
+[3.507s]       |                 ^~~~~~~~
+[3.508s] /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:211:13: error: template argument 1 is invalid
+[3.508s]   211 |             RCLCPP_ERROR(
+[3.508s]       |             ^~~~~~~~~~~~
+[3.510s] /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:220:13: error: ‘context_’ was not declared in this scope; did you mean ‘ucontext_t’?
+[3.510s]   220 |             context_->logger,
+[3.510s]       |             ^~~~~~~~
+[3.510s] /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:219:9: error: template argument 1 is invalid
+[3.510s]   219 |         RCLCPP_INFO(
+[3.510s]       |         ^~~~~~~~~~~
+[3.518s] /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:230:13: error: ‘context_’ was not declared in this scope; did you mean ‘ucontext_t’?
+[3.518s]   230 |             context_->logger,
+[3.518s]       |             ^~~~~~~~
+[3.518s] /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:229:9: error: template argument 1 is invalid
+[3.518s]   229 |         RCLCPP_INFO(
+[3.518s]       |         ^~~~~~~~~~~
+[3.527s] In file included from /opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24,
+[3.528s]                  from /opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40,
+[3.528s]                  from /opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24,
+[3.529s]                  from /opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20,
+[3.531s]                  from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25,
+[3.532s]                  from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18,
+[3.532s]                  from /opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20,
+[3.532s]                  from /opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37,
+[3.532s]                  from /opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25,
+[3.532s]                  from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21,
+[3.532s]                  from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,
+[3.532s]                  from /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3:
+[3.532s] /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:233:13: error: ‘command_’ was not declared in this scope
+[3.532s]   233 |             command_.x,
+[3.532s]       |             ^~~~~~~~
+[3.532s] /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp: In member function ‘virtual BT::NodeStatus TimedVelocityAction::onRunning()’:
+[3.532s] /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:242:40: error: ‘deadline_’ was not declared in this scope; did you mean ‘readlink’?
+[3.532s]   242 |         if (chr::steady_clock::now() < deadline_)
+[3.532s]       |                                        ^~~~~~~~~
+[3.532s]       |                                        readlink
+[3.534s] In file included from /opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40,
+[3.534s]                  from /opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24,
+[3.534s]                  from /opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20,
+[3.534s]                  from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25,
+[3.534s]                  from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18,
+[3.535s]                  from /opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20,
+[3.535s]                  from /opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37,
+[3.535s]                  from /opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25,
+[3.535s]                  from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21,
+[3.535s]                  from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,
+[3.535s]                  from /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3:
+[3.535s] /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:247:21: error: ‘context_’ was not declared in this scope; did you mean ‘ucontext_t’?
+[3.535s]   247 |                     context_->logger,
+[3.535s]       |                     ^~~~~~~~
+[3.535s] /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:246:17: error: template argument 1 is invalid
+[3.535s]   246 |                 RCLCPP_DEBUG(
+[3.535s]       |                 ^~~~~~~~~~~~
+[3.541s] /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:253:34: error: ‘command_’ was not declared in this scope
+[3.541s]   253 |                 if (!sendCommand(command_))
+[3.541s]       |                                  ^~~~~~~~
+[3.549s] /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:253:22: error: ‘sendCommand’ was not declared in this scope
+[3.549s]   253 |                 if (!sendCommand(command_))
+[3.549s]       |                      ^~~~~~~~~~~
+[3.554s] In file included from /opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40,
+[3.554s]                  from /opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24,
+[3.554s]                  from /opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20,
+[3.554s]                  from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25,
+[3.555s]                  from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18,
+[3.555s]                  from /opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20,
+[3.555s]                  from /opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37,
+[3.555s]                  from /opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25,
+[3.555s]                  from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21,
+[3.555s]                  from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,
+[3.555s]                  from /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3:
+[3.555s] /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:256:25: error: ‘context_’ was not declared in this scope; did you mean ‘ucontext_t’?
+[3.555s]   256 |                         context_->logger,
+[3.555s]       |                         ^~~~~~~~
+[3.555s] /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:255:21: error: template argument 1 is invalid
+[3.555s]   255 |                     RCLCPP_ERROR(
+[3.555s]       |                     ^~~~~~~~~~~~
+[3.561s] /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:260:17: error: ‘stopRobot’ was not declared in this scope
+[3.561s]   260 |                 stopRobot();
+[3.561s]       |                 ^~~~~~~~~
+[3.569s] /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:267:9: error: ‘stopRobot’ was not declared in this scope
+[3.569s]   267 |         stopRobot();
+[3.569s]       |         ^~~~~~~~~
+[3.573s] In file included from /opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40,
+[3.573s]                  from /opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24,
+[3.573s]                  from /opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20,
+[3.573s]                  from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25,
+[3.573s]                  from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18,
+[3.573s]                  from /opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20,
+[3.573s]                  from /opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37,
+[3.573s]                  from /opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25,
+[3.573s]                  from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21,
+[3.573s]                  from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,
+[3.573s]                  from /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3:
+[3.573s] /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:268:21: error: ‘context_’ was not declared in this scope; did you mean ‘ucontext_t’?
+[3.573s]   268 |         RCLCPP_INFO(context_->logger, "[%s] completed", name().c_str());
+[3.573s]       |                     ^~~~~~~~
+[3.574s] /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:268:9: error: template argument 1 is invalid
+[3.574s]   268 |         RCLCPP_INFO(context_->logger, "[%s] completed", name().c_str());
+[3.574s]       |         ^~~~~~~~~~~
+[3.574s] /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:273:5: error: a function-definition is not allowed here before ‘{’ token
+[3.574s]   273 |     {
+[3.574s]       |     ^
+[3.574s] /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:281:1: error: expected primary-expression before ‘protected’
+[3.574s]   281 | protected:
+[3.574s]       | ^~~~~~~~~
+[3.575s] /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:288:5: error: a function-definition is not allowed here before ‘{’ token
+[3.575s]   288 |     {
+[3.575s]       |     ^
+[3.575s] /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:300:1: error: expected primary-expression before ‘private’
+[3.575s]   300 | private:
+[3.575s]       | ^~~~~~~
+[3.575s] /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp: In constructor ‘TimedVelocityAction::MoveForward::MoveForward(const string&, const BT::NodeConfig&, std::shared_ptr<AppContext>)’:
+[3.575s] /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:313:11: error: type ‘TimedVelocityAction’ is not a direct base of ‘TimedVelocityAction::MoveForward’
+[3.575s]   313 |         : TimedVelocityAction(name, config, std::move(context), Pose2D{0x0f, 1, 0, 0})
+[3.575s]       |           ^~~~~~~~~~~~~~~~~~~
+[3.578s] /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp: In constructor ‘TimedVelocityAction::TurnLeft::TurnLeft(const string&, const BT::NodeConfig&, std::shared_ptr<AppContext>)’:
+[3.578s] /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:324:11: error: type ‘TimedVelocityAction’ is not a direct base of ‘TimedVelocityAction::TurnLeft’
+[3.578s]   324 |         : TimedVelocityAction(name, config, std::move(context), Pose2D{0x0f, 0, 0, 1})
+[3.578s]       |           ^~~~~~~~~~~~~~~~~~~
+[3.581s] /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp: In member function ‘BT::NodeStatus TimedVelocityAction::TurnLeft::onRunning()’:
+[3.581s] /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:330:39: error: ‘deadline_’ was not declared in this scope; did you mean ‘readlink’?
+[3.581s]   330 |         if(chr::steady_clock::now() < deadline_)
+[3.581s]       |                                       ^~~~~~~~~
+[3.581s]       |                                       readlink
+[3.591s] /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:335:22: error: ‘sendCommand’ was not declared in this scope
+[3.591s]   335 |                 if (!sendCommand(start_command))
+[3.591s]       |                      ^~~~~~~~~~~
+[3.599s] In file included from /opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40,
+[3.599s]                  from /opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24,
+[3.599s]                  from /opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20,
+[3.599s]                  from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25,
+[3.599s]                  from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18,
+[3.599s]                  from /opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20,
+[3.599s]                  from /opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37,
+[3.599s]                  from /opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25,
+[3.599s]                  from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21,
+[3.599s]                  from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,
+[3.599s]                  from /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3:
+[3.599s] /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:338:25: error: ‘context_’ was not declared in this scope; did you mean ‘ucontext_t’?
+[3.599s]   338 |                         context_->logger,
+[3.599s]       |                         ^~~~~~~~
+[3.599s] /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:337:21: error: template argument 1 is invalid
+[3.599s]   337 |                     RCLCPP_ERROR(
+[3.599s]       |                     ^~~~~~~~~~~~
+[3.599s] In file included from /opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24,
+[3.599s]                  from /opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40,
+[3.599s]                  from /opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24,
+[3.599s]                  from /opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20,
+[3.600s]                  from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25,
+[3.600s]                  from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18,
+[3.600s]                  from /opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20,
+[3.600s]                  from /opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37,
+[3.600s]                  from /opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25,
+[3.600s]                  from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21,
+[3.600s]                  from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,
+[3.600s]                  from /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3:
+[3.600s] /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:340:29: error: cannot call member function ‘const string& BT::TreeNode::name() const’ without object
+[3.600s]   340 |                         name().c_str(),
+[3.600s]       |                         ~~~~^~
+[3.604s] In file included from /opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40,
+[3.604s]                  from /opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24,
+[3.604s]                  from /opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20,
+[3.604s]                  from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25,
+[3.604s]                  from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18,
+[3.604s]                  from /opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20,
+[3.604s]                  from /opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37,
+[3.604s]                  from /opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25,
+[3.604s]                  from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21,
+[3.604s]                  from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,
+[3.604s]                  from /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3:
+[3.605s] /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:345:21: error: ‘context_’ was not declared in this scope; did you mean ‘ucontext_t’?
+[3.605s]   345 |                     context_->logger,
+[3.605s]       |                     ^~~~~~~~
+[3.605s] /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:344:17: error: template argument 1 is invalid
+[3.605s]   344 |                 RCLCPP_DEBUG(
+[3.605s]       |                 ^~~~~~~~~~~~
+[3.605s] In file included from /opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24,
+[3.605s]                  from /opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40,
+[3.605s]                  from /opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24,
+[3.605s]                  from /opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20,
+[3.605s]                  from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25,
+[3.605s]                  from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18,
+[3.605s]                  from /opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20,
+[3.605s]                  from /opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37,
+[3.605s]                  from /opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25,
+[3.605s]                  from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21,
+[3.605s]                  from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,
+[3.605s]                  from /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3:
+[3.605s] /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:347:25: error: cannot call member function ‘const string& BT::TreeNode::name() const’ without object
+[3.605s]   347 |                     name().c_str(),
+[3.605s]       |                     ~~~~^~
+[3.609s] /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:353:34: error: ‘command_’ was not declared in this scope
+[3.609s]   353 |                 if (!sendCommand(command_))
+[3.609s]       |                                  ^~~~~~~~
+[3.615s] /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:353:22: error: ‘sendCommand’ was not declared in this scope
+[3.615s]   353 |                 if (!sendCommand(command_))
+[3.615s]       |                      ^~~~~~~~~~~
+[3.619s] In file included from /opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40,
+[3.619s]                  from /opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24,
+[3.619s]                  from /opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20,
+[3.619s]                  from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25,
+[3.619s]                  from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18,
+[3.619s]                  from /opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20,
+[3.619s]                  from /opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37,
+[3.619s]                  from /opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25,
+[3.619s]                  from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21,
+[3.619s]                  from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,
+[3.619s]                  from /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3:
+[3.619s] /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:356:25: error: ‘context_’ was not declared in this scope; did you mean ‘ucontext_t’?
+[3.619s]   356 |                         context_->logger,
+[3.619s]       |                         ^~~~~~~~
+[3.619s] /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:355:21: error: template argument 1 is invalid
+[3.620s]   355 |                     RCLCPP_ERROR(
+[3.620s]       |                     ^~~~~~~~~~~~
+[3.620s] In file included from /opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24,
+[3.620s]                  from /opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40,
+[3.620s]                  from /opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24,
+[3.620s]                  from /opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20,
+[3.620s]                  from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25,
+[3.620s]                  from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18,
+[3.620s]                  from /opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20,
+[3.620s]                  from /opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37,
+[3.620s]                  from /opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25,
+[3.620s]                  from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21,
+[3.620s]                  from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,
+[3.620s]                  from /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3:
+[3.620s] /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:358:29: error: cannot call member function ‘const string& BT::TreeNode::name() const’ without object
+[3.620s]   358 |                         name().c_str(),
+[3.620s]       |                         ~~~~^~
+[3.624s] In file included from /opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40,
+[3.625s]                  from /opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24,
+[3.625s]                  from /opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20,
+[3.625s]                  from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25,
+[3.625s]                  from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18,
+[3.625s]                  from /opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20,
+[3.625s]                  from /opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37,
+[3.625s]                  from /opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25,
+[3.625s]                  from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21,
+[3.625s]                  from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,
+[3.625s]                  from /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3:
+[3.625s] /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:363:21: error: ‘context_’ was not declared in this scope; did you mean ‘ucontext_t’?
+[3.625s]   363 |                     context_->logger,
+[3.625s]       |                     ^~~~~~~~
+[3.625s] /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:362:17: error: template argument 1 is invalid
+[3.625s]   362 |                 RCLCPP_DEBUG(
+[3.625s]       |                 ^~~~~~~~~~~~
+[3.625s] In file included from /opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24,
+[3.625s]                  from /opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40,
+[3.626s]                  from /opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24,
+[3.626s]                  from /opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20,
+[3.626s]                  from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25,
+[3.626s]                  from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18,
+[3.626s]                  from /opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20,
+[3.626s]                  from /opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37,
+[3.626s]                  from /opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25,
+[3.626s]                  from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21,
+[3.626s]                  from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,
+[3.626s]                  from /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3:
+[3.626s] /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:365:25: error: cannot call member function ‘const string& BT::TreeNode::name() const’ without object
+[3.626s]   365 |                     name().c_str(),
+[3.626s]       |                     ~~~~^~
+[3.634s] /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:371:22: error: ‘sendCommand’ was not declared in this scope
+[3.634s]   371 |                 if (!sendCommand(stop_command))
+[3.634s]       |                      ^~~~~~~~~~~
+[3.637s] In file included from /opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40,
+[3.637s]                  from /opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24,
+[3.637s]                  from /opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20,
+[3.637s]                  from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25,
+[3.637s]                  from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18,
+[3.637s]                  from /opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20,
+[3.637s]                  from /opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37,
+[3.637s]                  from /opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25,
+[3.637s]                  from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21,
+[3.637s]                  from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,
+[3.637s]                  from /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3:
+[3.637s] /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:374:25: error: ‘context_’ was not declared in this scope; did you mean ‘ucontext_t’?
+[3.637s]   374 |                         context_->logger,
+[3.637s]       |                         ^~~~~~~~
+[3.639s] /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:373:21: error: template argument 1 is invalid
+[3.639s]   373 |                     RCLCPP_ERROR(
+[3.642s]       |                     ^~~~~~~~~~~~
+[3.643s] In file included from /opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24,
+[3.643s]                  from /opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40,
+[3.643s]                  from /opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24,
+[3.643s]                  from /opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20,
+[3.643s]                  from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25,
+[3.643s]                  from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18,
+[3.643s]                  from /opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20,
+[3.643s]                  from /opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37,
+[3.643s]                  from /opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25,
+[3.643s]                  from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21,
+[3.643s]                  from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,
+[3.643s]                  from /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3:
+[3.643s] /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:376:29: error: cannot call member function ‘const string& BT::TreeNode::name() const’ without object
+[3.643s]   376 |                         name().c_str(),
+[3.643s]       |                         ~~~~^~
+[3.648s] /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:380:34: error: ‘command_’ was not declared in this scope
+[3.648s]   380 |                 if (!sendCommand(command_))
+[3.648s]       |                                  ^~~~~~~~
+[3.658s] /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:380:22: error: ‘sendCommand’ was not declared in this scope
+[3.658s]   380 |                 if (!sendCommand(command_))
+[3.658s]       |                      ^~~~~~~~~~~
+[3.668s] In file included from /opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40,
+[3.668s]                  from /opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24,
+[3.668s]                  from /opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20,
+[3.668s]                  from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25,
+[3.668s]                  from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18,
+[3.668s]                  from /opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20,
+[3.668s]                  from /opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37,
+[3.668s]                  from /opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25,
+[3.668s]                  from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21,
+[3.668s]                  from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,
+[3.668s]                  from /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3:
+[3.668s] /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:383:25: error: ‘context_’ was not declared in this scope; did you mean ‘ucontext_t’?
+[3.668s]   383 |                         context_->logger,
+[3.668s]       |                         ^~~~~~~~
+[3.668s] /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:382:21: error: template argument 1 is invalid
+[3.668s]   382 |                     RCLCPP_ERROR(
+[3.669s]       |                     ^~~~~~~~~~~~
+[3.669s] In file included from /opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24,
+[3.669s]                  from /opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40,
+[3.669s]                  from /opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24,
+[3.669s]                  from /opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20,
+[3.669s]                  from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25,
+[3.669s]                  from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18,
+[3.669s]                  from /opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20,
+[3.669s]                  from /opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37,
+[3.669s]                  from /opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25,
+[3.669s]                  from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21,
+[3.669s]                  from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,
+[3.669s]                  from /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3:
+[3.669s] /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:385:29: error: cannot call member function ‘const string& BT::TreeNode::name() const’ without object
+[3.669s]   385 |                         name().c_str(),
+[3.669s]       |                         ~~~~^~
+[3.674s] In file included from /opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40,
+[3.674s]                  from /opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24,
+[3.674s]                  from /opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20,
+[3.674s]                  from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25,
+[3.674s]                  from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18,
+[3.674s]                  from /opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20,
+[3.674s]                  from /opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37,
+[3.674s]                  from /opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25,
+[3.674s]                  from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21,
+[3.674s]                  from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,
+[3.674s]                  from /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3:
+[3.674s] /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:390:21: error: ‘context_’ was not declared in this scope; did you mean ‘ucontext_t’?
+[3.674s]   390 |                     context_->logger,
+[3.674s]       |                     ^~~~~~~~
+[3.675s] /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:389:17: error: template argument 1 is invalid
+[3.675s]   389 |                 RCLCPP_DEBUG(
+[3.675s]       |                 ^~~~~~~~~~~~
+[3.676s] In file included from /opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24,
+[3.676s]                  from /opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40,
+[3.676s]                  from /opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24,
+[3.676s]                  from /opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20,
+[3.676s]                  from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25,
+[3.676s]                  from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18,
+[3.676s]                  from /opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20,
+[3.676s]                  from /opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37,
+[3.676s]                  from /opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25,
+[3.676s]                  from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21,
+[3.676s]                  from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,
+[3.676s]                  from /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3:
+[3.676s] /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:392:25: error: cannot call member function ‘const string& BT::TreeNode::name() const’ without object
+[3.676s]   392 |                     name().c_str(),
+[3.676s]       |                     ~~~~^~
+[3.682s] /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:398:9: error: ‘stopRobot’ was not declared in this scope
+[3.683s]   398 |         stopRobot();
+[3.683s]       |         ^~~~~~~~~
+[3.688s] In file included from /opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40,
+[3.688s]                  from /opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24,
+[3.688s]                  from /opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20,
+[3.688s]                  from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25,
+[3.688s]                  from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18,
+[3.688s]                  from /opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20,
+[3.688s]                  from /opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37,
+[3.688s]                  from /opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25,
+[3.688s]                  from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21,
+[3.689s]                  from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,
+[3.689s]                  from /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3:
+[3.689s] /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:399:21: error: ‘context_’ was not declared in this scope; did you mean ‘ucontext_t’?
+[3.689s]   399 |         RCLCPP_INFO(context_->logger, "[%s] completed", name().c_str());
+[3.689s]       |                     ^~~~~~~~
+[3.691s] /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:399:9: error: template argument 1 is invalid
+[3.691s]   399 |         RCLCPP_INFO(context_->logger, "[%s] completed", name().c_str());
+[3.691s]       |         ^~~~~~~~~~~
+[3.691s] In file included from /opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24,
+[3.691s]                  from /opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40,
+[3.691s]                  from /opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24,
+[3.691s]                  from /opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20,
+[3.691s]                  from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25,
+[3.691s]                  from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18,
+[3.691s]                  from /opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20,
+[3.691s]                  from /opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37,
+[3.691s]                  from /opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25,
+[3.691s]                  from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21,
+[3.691s]                  from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,
+[3.691s]                  from /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3:
+[3.691s] /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:399:61: error: cannot call member function ‘const string& BT::TreeNode::name() const’ without object
+[3.691s]   399 |         RCLCPP_INFO(context_->logger, "[%s] completed", name().c_str());
+[3.691s]       |                                                         ~~~~^~
+[3.691s] /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp: In constructor ‘TimedVelocityAction::TurnRight::TurnRight(const string&, const BT::NodeConfig&, std::shared_ptr<AppContext>)’:
+[3.691s] /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:412:11: error: type ‘TimedVelocityAction’ is not a direct base of ‘TimedVelocityAction::TurnRight’
+[3.691s]   412 |         : TimedVelocityAction(name, config, std::move(context), Pose2D{0x0f, 0, 0, -1})
+[3.691s]       |           ^~~~~~~~~~~~~~~~~~~
+[3.695s] /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp: In constructor ‘TimedVelocityAction::JudgePosition::JudgePosition(const string&, const BT::NodeConfig&, std::shared_ptr<AppContext>)’:
+[3.695s] /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:429:11: error: type ‘TimedVelocityAction’ is not a direct base of ‘TimedVelocityAction::JudgePosition’
+[3.695s]   429 |         : TimedVelocityAction(name, config, std::move(context), Pose2D{0x0f, 0, 0, 0})
+[3.695s]       |           ^~~~~~~~~~~~~~~~~~~
+[3.699s] /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp: In static member function ‘static void TimedVelocityAction::registerNodes(BT::BehaviorTreeFactory&, const std::shared_ptr<AppContext>&)’:
+[3.699s] /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:529:41: error: cannot convert ‘TimedVelocityAction::registerNodes(BT::BehaviorTreeFactory&, const std::shared_ptr<AppContext>&)::<lambda(const string&, const BT::NodeConfig&)>’ to ‘const NodeBuilder&’ {aka ‘const std::function<std::unique_ptr<BT::TreeNode>(const std::__cxx11::basic_string<char>&, const BT::NodeConfig&)>&’}
+[3.699s]   529 |     factory.registerBuilder<MoveForward>(
+[3.699s]       |     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+[3.699s]   530 |         "MoveForward",
+[3.700s]       |         ~~~~~~~~~~~~~~                   
+[3.700s]   531 |         [context](const std::string& name, const BT::NodeConfig& config) {
+[3.700s]       |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[3.700s]   532 |             return std::make_unique<MoveForward>(name, config, context);
+[3.700s]       |             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[3.700s]   533 |         });
+[3.700s]       |         ~~                               
+[3.700s] In file included from /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:1:
+[3.700s] /opt/ros/humble/include/behaviortree_cpp/bt_factory.h:249:66: note:   initializing argument 2 of ‘void BT::BehaviorTreeFactory::registerBuilder(const string&, const NodeBuilder&) [with T = TimedVelocityAction::MoveForward; std::string = std::__cxx11::basic_string<char>; BT::NodeBuilder = std::function<std::unique_ptr<BT::TreeNode>(const std::__cxx11::basic_string<char>&, const BT::NodeConfig&)>]’
+[3.701s]   249 |   void registerBuilder(const std::string& ID, const NodeBuilder& builder)
+[3.701s]       |                                               ~~~~~~~~~~~~~~~~~~~^~~~~~~
+[3.708s] /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:535:38: error: cannot convert ‘TimedVelocityAction::registerNodes(BT::BehaviorTreeFactory&, const std::shared_ptr<AppContext>&)::<lambda(const string&, const BT::NodeConfig&)>’ to ‘const NodeBuilder&’ {aka ‘const std::function<std::unique_ptr<BT::TreeNode>(const std::__cxx11::basic_string<char>&, const BT::NodeConfig&)>&’}
+[3.708s]   535 |     factory.registerBuilder<TurnLeft>(
+[3.709s]       |     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+[3.709s]   536 |         "TurnLeft",
+[3.709s]       |         ~~~~~~~~~~~                   
+[3.709s]   537 |         [context](const std::string& name, const BT::NodeConfig& config) {
+[3.712s]       |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[3.712s]   538 |             return std::make_unique<TurnLeft>(name, config, context);
+[3.712s]       |             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[3.712s]   539 |         });
+[3.712s]       |         ~~                            
+[3.712s] In file included from /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:1:
+[3.712s] /opt/ros/humble/include/behaviortree_cpp/bt_factory.h:249:66: note:   initializing argument 2 of ‘void BT::BehaviorTreeFactory::registerBuilder(const string&, const NodeBuilder&) [with T = TimedVelocityAction::TurnLeft; std::string = std::__cxx11::basic_string<char>; BT::NodeBuilder = std::function<std::unique_ptr<BT::TreeNode>(const std::__cxx11::basic_string<char>&, const BT::NodeConfig&)>]’
+[3.712s]   249 |   void registerBuilder(const std::string& ID, const NodeBuilder& builder)
+[3.712s]       |                                               ~~~~~~~~~~~~~~~~~~~^~~~~~~
+[3.751s] /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:541:39: error: cannot convert ‘TimedVelocityAction::registerNodes(BT::BehaviorTreeFactory&, const std::shared_ptr<AppContext>&)::<lambda(const string&, const BT::NodeConfig&)>’ to ‘const NodeBuilder&’ {aka ‘const std::function<std::unique_ptr<BT::TreeNode>(const std::__cxx11::basic_string<char>&, const BT::NodeConfig&)>&’}
+[3.751s]   541 |     factory.registerBuilder<TurnRight>(
+[3.751s]       |     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+[3.751s]   542 |         "TurnRight",
+[3.751s]       |         ~~~~~~~~~~~~                   
+[3.751s]   543 |         [context](const std::string& name, const BT::NodeConfig& config) {
+[3.751s]       |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[3.751s]   544 |             return std::make_unique<TurnRight>(name, config, context);
+[3.751s]       |             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[3.751s]   545 |         });
+[3.751s]       |         ~~                             
+[3.751s] In file included from /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:1:
+[3.751s] /opt/ros/humble/include/behaviortree_cpp/bt_factory.h:249:66: note:   initializing argument 2 of ‘void BT::BehaviorTreeFactory::registerBuilder(const string&, const NodeBuilder&) [with T = TimedVelocityAction::TurnRight; std::string = std::__cxx11::basic_string<char>; BT::NodeBuilder = std::function<std::unique_ptr<BT::TreeNode>(const std::__cxx11::basic_string<char>&, const BT::NodeConfig&)>]’
+[3.751s]   249 |   void registerBuilder(const std::string& ID, const NodeBuilder& builder)
+[3.751s]       |                                               ~~~~~~~~~~~~~~~~~~~^~~~~~~
+[3.761s] /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp: At global scope:
+[3.761s] /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:643:2: error: expected unqualified-id at end of input
+[3.761s]   643 | }
+[3.761s]       |  ^
+[7.563s] gmake[2]: *** [CMakeFiles/gps_node.dir/build.make:79: CMakeFiles/gps_node.dir/src/gps_node.cpp.o] Error 1
+[7.563s] gmake[1]: *** [CMakeFiles/Makefile2:188: CMakeFiles/gps_node.dir/all] Error 2
+[7.563s] gmake: *** [Makefile:146: all] Error 2
+[7.563s] Invoked command in '/home/w/projects/projects/gps_ws/build/gps' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/w/projects/projects/gps_ws/build/gps -- -j16 -l16

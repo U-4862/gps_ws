@@ -2,6 +2,9 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+# explain
+使用中文解释
+
 ## 构建与运行
 
 ```bash

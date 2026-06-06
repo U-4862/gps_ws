@@ -1,0 +1,18 @@
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:[m[K In constructor ‘[01m[KMoveForward::MoveForward(const string&, const BT::NodeConfig&, std::shared_ptr<AppContext>)[m[K’:
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:308:86:[m[K [01;35m[Kwarning: [m[Kmissing initializer for member ‘[01m[KPose2D::nextPose1[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wmissing-field-initializers-Wmissing-field-initializers]8;;[m[K]
+  308 | TimedVelocityAction(name, config, std::move(context), Pose2D {0x0f,1, 0 ,0 [01;35m[K}[m[K)
+      |                                                                            [01;35m[K^[m[K
+
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:308:86:[m[K [01;35m[Kwarning: [m[Kmissing initializer for member ‘[01m[KPose2D::nextPose2[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wmissing-field-initializers-Wmissing-field-initializers]8;;[m[K]
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:[m[K In constructor ‘[01m[KTurnLeft::TurnLeft(const string&, const BT::NodeConfig&, std::shared_ptr<AppContext>)[m[K’:
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:319:86:[m[K [01;35m[Kwarning: [m[Kmissing initializer for member ‘[01m[KPose2D::nextPose1[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wmissing-field-initializers-Wmissing-field-initializers]8;;[m[K]
+  319 | TimedVelocityAction(name, config, std::move(context), Pose2D {0x0f,0, 0 ,1 [01;35m[K}[m[K)
+      |                                                                            [01;35m[K^[m[K
+
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:319:86:[m[K [01;35m[Kwarning: [m[Kmissing initializer for member ‘[01m[KPose2D::nextPose2[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wmissing-field-initializers-Wmissing-field-initializers]8;;[m[K]
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:[m[K In constructor ‘[01m[KTurnRight::TurnRight(const string&, const BT::NodeConfig&, std::shared_ptr<AppContext>)[m[K’:
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:331:86:[m[K [01;35m[Kwarning: [m[Kmissing initializer for member ‘[01m[KPose2D::nextPose1[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wmissing-field-initializers-Wmissing-field-initializers]8;;[m[K]
+  331 | TimedVelocityAction(name, config, std::move(context), Pose2D {0x0f,0, 0 ,-1[01;35m[K}[m[K)
+      |                                                                            [01;35m[K^[m[K
+
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:331:86:[m[K [01;35m[Kwarning: [m[Kmissing initializer for member ‘[01m[KPose2D::nextPose2[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wmissing-field-initializers-Wmissing-field-initializers]8;;[m[K]

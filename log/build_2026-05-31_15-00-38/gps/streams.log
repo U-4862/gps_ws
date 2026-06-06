@@ -1,0 +1,32 @@
+[0.033s] Invoking command in '/home/w/projects/projects/gps_ws/build/gps': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/w/projects/projects/gps_ws/build/gps -- -j16 -l16
+[0.078s] [ 50%] Built target SerialPort
+[0.141s] [ 75%] [32mBuilding CXX object CMakeFiles/gps_node.dir/src/gps_node.cpp.o[0m
+[4.710s] In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24[m[K,
+[4.710s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+[4.710s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+[4.710s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+[4.710s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+[4.710s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+[4.710s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+[4.710s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+[4.712s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+[4.712s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+[4.712s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+[4.712s]                  from [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3[m[K:
+[4.712s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:[m[K In member function ‘[01m[Kvirtual BT::NodeStatus TimedVelocityAction::onStart()[m[K’:
+[4.712s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:237:33:[m[K [01;31m[Kerror: [m[Kcannot call member function ‘[01m[Kdouble SensorNode::currentX() const[m[K’ without object
+[4.712s]   237 |             [01;31m[KSensorNode::currentX()[m[K,
+[4.712s]       |             [01;31m[K~~~~~~~~~~~~~~~~~~~~^~[m[K
+[4.712s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:238:33:[m[K [01;31m[Kerror: [m[Kcannot call member function ‘[01m[Kdouble SensorNode::currentY() const[m[K’ without object
+[4.712s]   238 |             [01;31m[KSensorNode::currentY()[m[K,
+[4.712s]       |             [01;31m[K~~~~~~~~~~~~~~~~~~~~^~[m[K
+[4.712s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:239:33:[m[K [01;31m[Kerror: [m[Kcannot call member function ‘[01m[Kdouble SensorNode::currentZ() const[m[K’ without object
+[4.712s]   239 |             [01;31m[KSensorNode::currentZ()[m[K,
+[4.712s]       |             [01;31m[K~~~~~~~~~~~~~~~~~~~~^~[m[K
+[4.712s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:241:9:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[K)[m[K’ token
+[4.712s]   241 |         [01;31m[K)[m[K
+[4.713s]       |         [01;31m[K^[m[K
+[9.669s] gmake[2]: *** [CMakeFiles/gps_node.dir/build.make:79: CMakeFiles/gps_node.dir/src/gps_node.cpp.o] Error 1
+[9.670s] gmake[1]: *** [CMakeFiles/Makefile2:188: CMakeFiles/gps_node.dir/all] Error 2
+[9.670s] gmake: *** [Makefile:146: all] Error 2
+[9.673s] Invoked command in '/home/w/projects/projects/gps_ws/build/gps' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/w/projects/projects/gps_ws/build/gps -- -j16 -l16

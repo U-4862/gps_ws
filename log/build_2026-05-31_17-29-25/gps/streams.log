@@ -1,0 +1,531 @@
+[0.016s] Invoking command in '/home/w/projects/projects/gps_ws/build/gps': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/w/projects/projects/gps_ws/build/gps -- -j16 -l16
+[0.063s] [ 50%] Built target SerialPort
+[0.093s] [ 75%] [32mBuilding CXX object CMakeFiles/gps_node.dir/src/gps_node.cpp.o[0m
+[3.559s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:322:34:[m[K [01;31m[Kerror: [m[Kinvalid use of incomplete type ‘[01m[Kclass TimedVelocityAction[m[K’
+[3.559s]   322 | class MoveForward final : public [01;31m[KTimedVelocityAction[m[K
+[3.559s]       |                                  [01;31m[K^~~~~~~~~~~~~~~~~~~[m[K
+[3.559s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:185:7:[m[K [01;36m[Knote: [m[Kdefinition of ‘[01m[Kclass TimedVelocityAction[m[K’ is not complete until the closing brace
+[3.559s]   185 | class [01;36m[KTimedVelocityAction[m[K : public BT::StatefulActionNode
+[3.559s]       |       [01;36m[K^~~~~~~~~~~~~~~~~~~[m[K
+[3.559s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:333:31:[m[K [01;31m[Kerror: [m[Kinvalid use of incomplete type ‘[01m[Kclass TimedVelocityAction[m[K’
+[3.559s]   333 | class TurnLeft final : public [01;31m[KTimedVelocityAction[m[K
+[3.559s]       |                               [01;31m[K^~~~~~~~~~~~~~~~~~~[m[K
+[3.559s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:185:7:[m[K [01;36m[Knote: [m[Kdefinition of ‘[01m[Kclass TimedVelocityAction[m[K’ is not complete until the closing brace
+[3.559s]   185 | class [01;36m[KTimedVelocityAction[m[K : public BT::StatefulActionNode
+[3.559s]       |       [01;36m[K^~~~~~~~~~~~~~~~~~~[m[K
+[3.559s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:344:20:[m[K [01;31m[Kerror: [m[K‘[01m[KBT::NodeStatus TimedVelocityAction::TurnLeft::onRunning()[m[K’ marked ‘[01m[Koverride[m[K’, but does not override
+[3.559s]   344 |     BT::NodeStatus [01;31m[KonRunning[m[K() override
+[3.559s]       |                    [01;31m[K^~~~~~~~~[m[K
+[3.559s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:421:32:[m[K [01;31m[Kerror: [m[Kinvalid use of incomplete type ‘[01m[Kclass TimedVelocityAction[m[K’
+[3.559s]   421 | class TurnRight final : public [01;31m[KTimedVelocityAction[m[K
+[3.559s]       |                                [01;31m[K^~~~~~~~~~~~~~~~~~~[m[K
+[3.560s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:185:7:[m[K [01;36m[Knote: [m[Kdefinition of ‘[01m[Kclass TimedVelocityAction[m[K’ is not complete until the closing brace
+[3.560s]   185 | class [01;36m[KTimedVelocityAction[m[K : public BT::StatefulActionNode
+[3.560s]       |       [01;36m[K^~~~~~~~~~~~~~~~~~~[m[K
+[3.560s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:438:37:[m[K [01;31m[Kerror: [m[Kinvalid use of incomplete type ‘[01m[Kclass TimedVelocityAction[m[K’
+[3.560s]   438 |  class JudgePosition final : public [01;31m[KTimedVelocityAction[m[K
+[3.560s]       |                                     [01;31m[K^~~~~~~~~~~~~~~~~~~[m[K
+[3.560s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:185:7:[m[K [01;36m[Knote: [m[Kdefinition of ‘[01m[Kclass TimedVelocityAction[m[K’ is not complete until the closing brace
+[3.560s]   185 | class [01;36m[KTimedVelocityAction[m[K : public BT::StatefulActionNode
+[3.560s]       |       [01;36m[K^~~~~~~~~~~~~~~~~~~[m[K
+[3.560s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:659:2:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K}[m[K’ at end of input
+[3.560s]   659 | }
+[3.560s]       |  [01;31m[K^[m[K
+[3.560s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:186:1:[m[K [01;36m[Knote: [m[Kto match this ‘[01m[K{[m[K’
+[3.560s]   186 | [01;36m[K{[m[K
+[3.560s]       | [01;36m[K^[m[K
+[3.560s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:[m[K In constructor ‘[01m[KTimedVelocityAction::TimedVelocityAction(const string&, const BT::NodeConfig&, std::shared_ptr<AppContext>, Pose2D)[m[K’:
+[3.560s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:193:11:[m[K [01;31m[Kerror: [m[Kclass ‘[01m[KTimedVelocityAction[m[K’ does not have any field named ‘[01m[Kcontext_[m[K’
+[3.560s]   193 |           [01;31m[Kcontext_[m[K(std::move(context)),
+[3.560s]       |           [01;31m[K^~~~~~~~[m[K
+[3.560s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:194:11:[m[K [01;31m[Kerror: [m[Kclass ‘[01m[KTimedVelocityAction[m[K’ does not have any field named ‘[01m[Kcommand_[m[K’
+[3.560s]   194 |           [01;31m[Kcommand_[m[K(command)
+[3.560s]       |           [01;31m[K^~~~~~~~[m[K
+[3.570s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:[m[K In member function ‘[01m[Kvirtual BT::NodeStatus TimedVelocityAction::onStart()[m[K’:
+[3.570s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:207:14:[m[K [01;31m[Kerror: [m[K‘[01m[Kcontext_[m[K’ was not declared in this scope; did you mean ‘[01m[Kucontext_t[m[K’?
+[3.570s]   207 |         if (![01;31m[Kcontext_[m[K || !context_->motion_port)
+[3.570s]       |              [01;31m[K^~~~~~~~[m[K
+[3.570s]       |              [32m[Kucontext_t[m[K
+[3.573s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:223:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kdeadline_[m[K’ was not declared in this scope; did you mean ‘[01m[Kreadlink[m[K’?
+[3.573s]   223 |         [01;31m[Kdeadline_[m[K = chr::steady_clock::now() + chr::milliseconds(duration_ms);
+[3.573s]       |         [01;31m[K^~~~~~~~~[m[K
+[3.573s]       |         [32m[Kreadlink[m[K
+[3.582s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:225:26:[m[K [01;31m[Kerror: [m[K‘[01m[Kcommand_[m[K’ was not declared in this scope
+[3.582s]   225 |         if (!sendCommand([01;31m[Kcommand_[m[K))
+[3.582s]       |                          [01;31m[K^~~~~~~~[m[K
+[3.591s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:225:14:[m[K [01;31m[Kerror: [m[K‘[01m[KsendCommand[m[K’ was not declared in this scope
+[3.592s]   225 |         if (![01;31m[KsendCommand[m[K(command_))
+[3.592s]       |              [01;31m[K^~~~~~~~~~~[m[K
+[3.597s] In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+[3.597s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+[3.597s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+[3.598s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+[3.598s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+[3.598s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+[3.598s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+[3.598s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+[3.598s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+[3.599s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+[3.601s]                  from [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3[m[K:
+[3.601s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:228:17:[m[K [01;31m[Kerror: [m[K‘[01m[Kcontext_[m[K’ was not declared in this scope; did you mean ‘[01m[Kucontext_t[m[K’?
+[3.601s]   228 |                 [01;31m[Kcontext_[m[K->logger,
+[3.601s]       |                 [01;31m[K^~~~~~~~[m[K
+[3.601s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:227:13:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[3.601s]   227 |             [01;31m[KRCLCPP_ERROR[m[K(
+[3.601s]       |             [01;31m[K^~~~~~~~~~~~[m[K
+[3.608s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:236:13:[m[K [01;31m[Kerror: [m[K‘[01m[Kcontext_[m[K’ was not declared in this scope; did you mean ‘[01m[Kucontext_t[m[K’?
+[3.608s]   236 |             [01;31m[Kcontext_[m[K->logger,
+[3.608s]       |             [01;31m[K^~~~~~~~[m[K
+[3.608s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:235:9:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[3.608s]   235 |         [01;31m[KRCLCPP_INFO[m[K(
+[3.608s]       |         [01;31m[K^~~~~~~~~~~[m[K
+[3.614s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:246:13:[m[K [01;31m[Kerror: [m[K‘[01m[Kcontext_[m[K’ was not declared in this scope; did you mean ‘[01m[Kucontext_t[m[K’?
+[3.615s]   246 |             [01;31m[Kcontext_[m[K->logger,
+[3.615s]       |             [01;31m[K^~~~~~~~[m[K
+[3.615s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:245:9:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[3.615s]   245 |         [01;31m[KRCLCPP_INFO[m[K(
+[3.615s]       |         [01;31m[K^~~~~~~~~~~[m[K
+[3.624s] In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24[m[K,
+[3.627s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+[3.627s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+[3.627s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+[3.627s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+[3.627s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+[3.627s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+[3.627s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+[3.627s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+[3.627s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+[3.627s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+[3.627s]                  from [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3[m[K:
+[3.628s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:249:13:[m[K [01;31m[Kerror: [m[K‘[01m[Kcommand_[m[K’ was not declared in this scope
+[3.628s]   249 |             [01;31m[Kcommand_[m[K.x,
+[3.628s]       |             [01;31m[K^~~~~~~~[m[K
+[3.634s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:[m[K In member function ‘[01m[Kvirtual BT::NodeStatus TimedVelocityAction::onRunning()[m[K’:
+[3.634s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:258:40:[m[K [01;31m[Kerror: [m[K‘[01m[Kdeadline_[m[K’ was not declared in this scope; did you mean ‘[01m[Kreadlink[m[K’?
+[3.634s]   258 |         if (chr::steady_clock::now() < [01;31m[Kdeadline_[m[K)
+[3.634s]       |                                        [01;31m[K^~~~~~~~~[m[K
+[3.634s]       |                                        [32m[Kreadlink[m[K
+[3.642s] In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+[3.644s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+[3.644s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+[3.644s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+[3.644s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+[3.644s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+[3.644s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+[3.644s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+[3.644s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+[3.644s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+[3.644s]                  from [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3[m[K:
+[3.645s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:263:21:[m[K [01;31m[Kerror: [m[K‘[01m[Kcontext_[m[K’ was not declared in this scope; did you mean ‘[01m[Kucontext_t[m[K’?
+[3.645s]   263 |                     [01;31m[Kcontext_[m[K->logger,
+[3.645s]       |                     [01;31m[K^~~~~~~~[m[K
+[3.645s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:262:17:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[3.645s]   262 |                 [01;31m[KRCLCPP_DEBUG[m[K(
+[3.645s]       |                 [01;31m[K^~~~~~~~~~~~[m[K
+[3.651s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:269:34:[m[K [01;31m[Kerror: [m[K‘[01m[Kcommand_[m[K’ was not declared in this scope
+[3.651s]   269 |                 if (!sendCommand([01;31m[Kcommand_[m[K))
+[3.651s]       |                                  [01;31m[K^~~~~~~~[m[K
+[3.660s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:269:22:[m[K [01;31m[Kerror: [m[K‘[01m[KsendCommand[m[K’ was not declared in this scope
+[3.660s]   269 |                 if (![01;31m[KsendCommand[m[K(command_))
+[3.660s]       |                      [01;31m[K^~~~~~~~~~~[m[K
+[3.675s] In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+[3.675s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+[3.675s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+[3.675s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+[3.675s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+[3.675s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+[3.676s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+[3.676s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+[3.676s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+[3.676s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+[3.676s]                  from [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3[m[K:
+[3.676s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:272:25:[m[K [01;31m[Kerror: [m[K‘[01m[Kcontext_[m[K’ was not declared in this scope; did you mean ‘[01m[Kucontext_t[m[K’?
+[3.676s]   272 |                         [01;31m[Kcontext_[m[K->logger,
+[3.676s]       |                         [01;31m[K^~~~~~~~[m[K
+[3.676s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:271:21:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[3.676s]   271 |                     [01;31m[KRCLCPP_ERROR[m[K(
+[3.676s]       |                     [01;31m[K^~~~~~~~~~~~[m[K
+[3.679s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:276:17:[m[K [01;31m[Kerror: [m[K‘[01m[KstopRobot[m[K’ was not declared in this scope
+[3.679s]   276 |                 [01;31m[KstopRobot[m[K();
+[3.679s]       |                 [01;31m[K^~~~~~~~~[m[K
+[3.687s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:283:9:[m[K [01;31m[Kerror: [m[K‘[01m[KstopRobot[m[K’ was not declared in this scope
+[3.688s]   283 |         [01;31m[KstopRobot[m[K();
+[3.688s]       |         [01;31m[K^~~~~~~~~[m[K
+[3.695s] In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+[3.695s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+[3.695s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+[3.695s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+[3.695s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+[3.695s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+[3.696s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+[3.696s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+[3.696s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+[3.696s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+[3.696s]                  from [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3[m[K:
+[3.697s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:284:21:[m[K [01;31m[Kerror: [m[K‘[01m[Kcontext_[m[K’ was not declared in this scope; did you mean ‘[01m[Kucontext_t[m[K’?
+[3.697s]   284 |         RCLCPP_INFO([01;31m[Kcontext_[m[K->logger, "[%s] completed", name().c_str());
+[3.697s]       |                     [01;31m[K^~~~~~~~[m[K
+[3.697s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:284:9:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[3.697s]   284 |         [01;31m[KRCLCPP_INFO[m[K(context_->logger, "[%s] completed", name().c_str());
+[3.697s]       |         [01;31m[K^~~~~~~~~~~[m[K
+[3.697s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:290:5:[m[K [01;31m[Kerror: [m[Ka function-definition is not allowed here before ‘[01m[K{[m[K’ token
+[3.697s]   290 |     [01;31m[K{[m[K
+[3.697s]       |     [01;31m[K^[m[K
+[3.697s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:298:1:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[Kprotected[m[K’
+[3.697s]   298 | [01;31m[Kprotected[m[K:
+[3.697s]       | [01;31m[K^~~~~~~~~[m[K
+[3.697s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:305:5:[m[K [01;31m[Kerror: [m[Ka function-definition is not allowed here before ‘[01m[K{[m[K’ token
+[3.697s]   305 |     [01;31m[K{[m[K
+[3.697s]       |     [01;31m[K^[m[K
+[3.697s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:[m[K In constructor ‘[01m[KTimedVelocityAction::MoveForward::MoveForward(const string&, const BT::NodeConfig&, std::shared_ptr<AppContext>)[m[K’:
+[3.697s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:329:11:[m[K [01;31m[Kerror: [m[Ktype ‘[01m[KTimedVelocityAction[m[K’ is not a direct base of ‘[01m[KTimedVelocityAction::MoveForward[m[K’
+[3.697s]   329 |         : [01;31m[KTimedVelocityAction[m[K(name, config, std::move(context), Pose2D{0x0f, 1, 0, 0})
+[3.697s]       |           [01;31m[K^~~~~~~~~~~~~~~~~~~[m[K
+[3.697s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:[m[K In constructor ‘[01m[KTimedVelocityAction::TurnLeft::TurnLeft(const string&, const BT::NodeConfig&, std::shared_ptr<AppContext>)[m[K’:
+[3.697s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:340:11:[m[K [01;31m[Kerror: [m[Ktype ‘[01m[KTimedVelocityAction[m[K’ is not a direct base of ‘[01m[KTimedVelocityAction::TurnLeft[m[K’
+[3.697s]   340 |         : [01;31m[KTimedVelocityAction[m[K(name, config, std::move(context), Pose2D{0x0f, 0, 0, 1})
+[3.697s]       |           [01;31m[K^~~~~~~~~~~~~~~~~~~[m[K
+[3.706s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:[m[K In member function ‘[01m[KBT::NodeStatus TimedVelocityAction::TurnLeft::onRunning()[m[K’:
+[3.706s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:346:39:[m[K [01;31m[Kerror: [m[K‘[01m[Kdeadline_[m[K’ was not declared in this scope; did you mean ‘[01m[Kreadlink[m[K’?
+[3.707s]   346 |         if(chr::steady_clock::now() < [01;31m[Kdeadline_[m[K)
+[3.707s]       |                                       [01;31m[K^~~~~~~~~[m[K
+[3.707s]       |                                       [32m[Kreadlink[m[K
+[3.711s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:351:22:[m[K [01;31m[Kerror: [m[K‘[01m[KsendCommand[m[K’ was not declared in this scope
+[3.711s]   351 |                 if (![01;31m[KsendCommand[m[K(start_command))
+[3.712s]       |                      [01;31m[K^~~~~~~~~~~[m[K
+[3.721s] In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+[3.721s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+[3.721s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+[3.721s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+[3.721s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+[3.721s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+[3.721s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+[3.721s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+[3.721s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+[3.721s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+[3.721s]                  from [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3[m[K:
+[3.722s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:354:25:[m[K [01;31m[Kerror: [m[K‘[01m[Kcontext_[m[K’ was not declared in this scope; did you mean ‘[01m[Kucontext_t[m[K’?
+[3.722s]   354 |                         [01;31m[Kcontext_[m[K->logger,
+[3.722s]       |                         [01;31m[K^~~~~~~~[m[K
+[3.722s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:353:21:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[3.722s]   353 |                     [01;31m[KRCLCPP_ERROR[m[K(
+[3.722s]       |                     [01;31m[K^~~~~~~~~~~~[m[K
+[3.722s] In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24[m[K,
+[3.722s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+[3.722s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+[3.722s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+[3.722s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+[3.722s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+[3.722s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+[3.722s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+[3.722s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+[3.722s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+[3.722s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+[3.722s]                  from [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3[m[K:
+[3.722s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:356:29:[m[K [01;31m[Kerror: [m[Kcannot call member function ‘[01m[Kconst string& BT::TreeNode::name() const[m[K’ without object
+[3.722s]   356 |                         [01;31m[Kname()[m[K.c_str(),
+[3.722s]       |                         [01;31m[K~~~~^~[m[K
+[3.726s] In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+[3.726s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+[3.726s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+[3.727s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+[3.727s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+[3.727s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+[3.727s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+[3.727s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+[3.727s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+[3.727s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+[3.727s]                  from [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3[m[K:
+[3.727s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:361:21:[m[K [01;31m[Kerror: [m[K‘[01m[Kcontext_[m[K’ was not declared in this scope; did you mean ‘[01m[Kucontext_t[m[K’?
+[3.727s]   361 |                     [01;31m[Kcontext_[m[K->logger,
+[3.727s]       |                     [01;31m[K^~~~~~~~[m[K
+[3.727s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:360:17:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[3.727s]   360 |                 [01;31m[KRCLCPP_DEBUG[m[K(
+[3.727s]       |                 [01;31m[K^~~~~~~~~~~~[m[K
+[3.727s] In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24[m[K,
+[3.727s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+[3.727s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+[3.727s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+[3.727s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+[3.727s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+[3.727s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+[3.727s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+[3.727s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+[3.727s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+[3.727s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+[3.727s]                  from [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3[m[K:
+[3.728s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:363:25:[m[K [01;31m[Kerror: [m[Kcannot call member function ‘[01m[Kconst string& BT::TreeNode::name() const[m[K’ without object
+[3.728s]   363 |                     [01;31m[Kname()[m[K.c_str(),
+[3.728s]       |                     [01;31m[K~~~~^~[m[K
+[3.734s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:369:34:[m[K [01;31m[Kerror: [m[K‘[01m[Kcommand_[m[K’ was not declared in this scope
+[3.736s]   369 |                 if (!sendCommand([01;31m[Kcommand_[m[K))
+[3.736s]       |                                  [01;31m[K^~~~~~~~[m[K
+[3.742s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:369:22:[m[K [01;31m[Kerror: [m[K‘[01m[KsendCommand[m[K’ was not declared in this scope
+[3.742s]   369 |                 if (![01;31m[KsendCommand[m[K(command_))
+[3.742s]       |                      [01;31m[K^~~~~~~~~~~[m[K
+[3.754s] In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+[3.757s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+[3.757s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+[3.757s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+[3.757s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+[3.757s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+[3.757s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+[3.757s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+[3.757s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+[3.757s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+[3.757s]                  from [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3[m[K:
+[3.757s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:372:25:[m[K [01;31m[Kerror: [m[K‘[01m[Kcontext_[m[K’ was not declared in this scope; did you mean ‘[01m[Kucontext_t[m[K’?
+[3.757s]   372 |                         [01;31m[Kcontext_[m[K->logger,
+[3.757s]       |                         [01;31m[K^~~~~~~~[m[K
+[3.757s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:371:21:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[3.757s]   371 |                     [01;31m[KRCLCPP_ERROR[m[K(
+[3.757s]       |                     [01;31m[K^~~~~~~~~~~~[m[K
+[3.757s] In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24[m[K,
+[3.757s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+[3.757s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+[3.757s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+[3.757s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+[3.757s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+[3.758s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+[3.758s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+[3.758s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+[3.758s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+[3.758s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+[3.758s]                  from [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3[m[K:
+[3.758s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:374:29:[m[K [01;31m[Kerror: [m[Kcannot call member function ‘[01m[Kconst string& BT::TreeNode::name() const[m[K’ without object
+[3.758s]   374 |                         [01;31m[Kname()[m[K.c_str(),
+[3.758s]       |                         [01;31m[K~~~~^~[m[K
+[3.765s] In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+[3.765s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+[3.765s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+[3.765s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+[3.765s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+[3.765s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+[3.765s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+[3.765s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+[3.765s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+[3.765s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+[3.765s]                  from [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3[m[K:
+[3.765s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:379:21:[m[K [01;31m[Kerror: [m[K‘[01m[Kcontext_[m[K’ was not declared in this scope; did you mean ‘[01m[Kucontext_t[m[K’?
+[3.765s]   379 |                     [01;31m[Kcontext_[m[K->logger,
+[3.765s]       |                     [01;31m[K^~~~~~~~[m[K
+[3.765s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:378:17:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[3.765s]   378 |                 [01;31m[KRCLCPP_DEBUG[m[K(
+[3.765s]       |                 [01;31m[K^~~~~~~~~~~~[m[K
+[3.765s] In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24[m[K,
+[3.765s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+[3.765s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+[3.765s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+[3.765s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+[3.765s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+[3.765s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+[3.766s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+[3.766s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+[3.766s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+[3.766s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+[3.766s]                  from [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3[m[K:
+[3.766s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:381:25:[m[K [01;31m[Kerror: [m[Kcannot call member function ‘[01m[Kconst string& BT::TreeNode::name() const[m[K’ without object
+[3.766s]   381 |                     [01;31m[Kname()[m[K.c_str(),
+[3.766s]       |                     [01;31m[K~~~~^~[m[K
+[3.774s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:387:22:[m[K [01;31m[Kerror: [m[K‘[01m[KsendCommand[m[K’ was not declared in this scope
+[3.774s]   387 |                 if (![01;31m[KsendCommand[m[K(stop_command))
+[3.774s]       |                      [01;31m[K^~~~~~~~~~~[m[K
+[3.777s] In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+[3.777s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+[3.778s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+[3.778s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+[3.778s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+[3.778s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+[3.778s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+[3.778s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+[3.778s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+[3.778s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+[3.778s]                  from [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3[m[K:
+[3.778s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:390:25:[m[K [01;31m[Kerror: [m[K‘[01m[Kcontext_[m[K’ was not declared in this scope; did you mean ‘[01m[Kucontext_t[m[K’?
+[3.778s]   390 |                         [01;31m[Kcontext_[m[K->logger,
+[3.778s]       |                         [01;31m[K^~~~~~~~[m[K
+[3.778s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:389:21:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[3.778s]   389 |                     [01;31m[KRCLCPP_ERROR[m[K(
+[3.778s]       |                     [01;31m[K^~~~~~~~~~~~[m[K
+[3.778s] In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24[m[K,
+[3.778s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+[3.778s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+[3.778s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+[3.778s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+[3.778s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+[3.783s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+[3.783s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+[3.783s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+[3.783s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+[3.783s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+[3.783s]                  from [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3[m[K:
+[3.783s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:392:29:[m[K [01;31m[Kerror: [m[Kcannot call member function ‘[01m[Kconst string& BT::TreeNode::name() const[m[K’ without object
+[3.783s]   392 |                         [01;31m[Kname()[m[K.c_str(),
+[3.783s]       |                         [01;31m[K~~~~^~[m[K
+[3.787s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:396:34:[m[K [01;31m[Kerror: [m[K‘[01m[Kcommand_[m[K’ was not declared in this scope
+[3.787s]   396 |                 if (!sendCommand([01;31m[Kcommand_[m[K))
+[3.787s]       |                                  [01;31m[K^~~~~~~~[m[K
+[3.791s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:396:22:[m[K [01;31m[Kerror: [m[K‘[01m[KsendCommand[m[K’ was not declared in this scope
+[3.791s]   396 |                 if (![01;31m[KsendCommand[m[K(command_))
+[3.791s]       |                      [01;31m[K^~~~~~~~~~~[m[K
+[3.798s] In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+[3.798s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+[3.798s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+[3.798s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+[3.798s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+[3.798s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+[3.798s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+[3.798s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+[3.798s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+[3.798s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+[3.799s]                  from [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3[m[K:
+[3.799s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:399:25:[m[K [01;31m[Kerror: [m[K‘[01m[Kcontext_[m[K’ was not declared in this scope; did you mean ‘[01m[Kucontext_t[m[K’?
+[3.799s]   399 |                         [01;31m[Kcontext_[m[K->logger,
+[3.799s]       |                         [01;31m[K^~~~~~~~[m[K
+[3.799s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:398:21:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[3.799s]   398 |                     [01;31m[KRCLCPP_ERROR[m[K(
+[3.799s]       |                     [01;31m[K^~~~~~~~~~~~[m[K
+[3.799s] In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24[m[K,
+[3.799s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+[3.799s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+[3.799s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+[3.799s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+[3.799s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+[3.799s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+[3.799s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+[3.799s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+[3.799s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+[3.799s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+[3.799s]                  from [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3[m[K:
+[3.799s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:401:29:[m[K [01;31m[Kerror: [m[Kcannot call member function ‘[01m[Kconst string& BT::TreeNode::name() const[m[K’ without object
+[3.799s]   401 |                         [01;31m[Kname()[m[K.c_str(),
+[3.799s]       |                         [01;31m[K~~~~^~[m[K
+[3.804s] In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+[3.804s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+[3.804s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+[3.804s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+[3.804s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+[3.804s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+[3.805s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+[3.805s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+[3.805s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+[3.805s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+[3.806s]                  from [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3[m[K:
+[3.807s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:406:21:[m[K [01;31m[Kerror: [m[K‘[01m[Kcontext_[m[K’ was not declared in this scope; did you mean ‘[01m[Kucontext_t[m[K’?
+[3.807s]   406 |                     [01;31m[Kcontext_[m[K->logger,
+[3.807s]       |                     [01;31m[K^~~~~~~~[m[K
+[3.807s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:405:17:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[3.807s]   405 |                 [01;31m[KRCLCPP_DEBUG[m[K(
+[3.807s]       |                 [01;31m[K^~~~~~~~~~~~[m[K
+[3.807s] In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24[m[K,
+[3.807s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+[3.807s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+[3.807s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+[3.807s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+[3.807s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+[3.807s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+[3.807s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+[3.807s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+[3.807s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+[3.807s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+[3.807s]                  from [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3[m[K:
+[3.807s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:408:25:[m[K [01;31m[Kerror: [m[Kcannot call member function ‘[01m[Kconst string& BT::TreeNode::name() const[m[K’ without object
+[3.807s]   408 |                     [01;31m[Kname()[m[K.c_str(),
+[3.807s]       |                     [01;31m[K~~~~^~[m[K
+[3.816s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:414:9:[m[K [01;31m[Kerror: [m[K‘[01m[KstopRobot[m[K’ was not declared in this scope
+[3.816s]   414 |         [01;31m[KstopRobot[m[K();
+[3.816s]       |         [01;31m[K^~~~~~~~~[m[K
+[3.821s] In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+[3.821s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+[3.821s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+[3.821s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+[3.821s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+[3.821s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+[3.821s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+[3.821s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+[3.821s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+[3.821s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+[3.822s]                  from [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3[m[K:
+[3.822s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:415:21:[m[K [01;31m[Kerror: [m[K‘[01m[Kcontext_[m[K’ was not declared in this scope; did you mean ‘[01m[Kucontext_t[m[K’?
+[3.822s]   415 |         RCLCPP_INFO([01;31m[Kcontext_[m[K->logger, "[%s] completed", name().c_str());
+[3.822s]       |                     [01;31m[K^~~~~~~~[m[K
+[3.822s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:415:9:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[3.822s]   415 |         [01;31m[KRCLCPP_INFO[m[K(context_->logger, "[%s] completed", name().c_str());
+[3.822s]       |         [01;31m[K^~~~~~~~~~~[m[K
+[3.822s] In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24[m[K,
+[3.822s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+[3.822s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+[3.822s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+[3.822s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+[3.822s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+[3.822s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+[3.822s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+[3.822s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+[3.822s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+[3.823s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+[3.823s]                  from [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3[m[K:
+[3.823s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:415:61:[m[K [01;31m[Kerror: [m[Kcannot call member function ‘[01m[Kconst string& BT::TreeNode::name() const[m[K’ without object
+[3.823s]   415 |         RCLCPP_INFO(context_->logger, "[%s] completed", [01;31m[Kname()[m[K.c_str());
+[3.823s]       |                                                         [01;31m[K~~~~^~[m[K
+[3.823s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:[m[K In constructor ‘[01m[KTimedVelocityAction::TurnRight::TurnRight(const string&, const BT::NodeConfig&, std::shared_ptr<AppContext>)[m[K’:
+[3.823s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:428:11:[m[K [01;31m[Kerror: [m[Ktype ‘[01m[KTimedVelocityAction[m[K’ is not a direct base of ‘[01m[KTimedVelocityAction::TurnRight[m[K’
+[3.823s]   428 |         : [01;31m[KTimedVelocityAction[m[K(name, config, std::move(context), Pose2D{0x0f, 0, 0, -1})
+[3.823s]       |           [01;31m[K^~~~~~~~~~~~~~~~~~~[m[K
+[3.823s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:[m[K In constructor ‘[01m[KTimedVelocityAction::JudgePosition::JudgePosition(const string&, const BT::NodeConfig&, std::shared_ptr<AppContext>)[m[K’:
+[3.823s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:445:11:[m[K [01;31m[Kerror: [m[Ktype ‘[01m[KTimedVelocityAction[m[K’ is not a direct base of ‘[01m[KTimedVelocityAction::JudgePosition[m[K’
+[3.823s]   445 |         : [01;31m[KTimedVelocityAction[m[K(name, config, std::move(context), Pose2D{0x0f, 0, 0, 0})
+[3.823s]       |           [01;31m[K^~~~~~~~~~~~~~~~~~~[m[K
+[3.830s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:[m[K In static member function ‘[01m[Kstatic void TimedVelocityAction::registerNodes(BT::BehaviorTreeFactory&, const std::shared_ptr<AppContext>&)[m[K’:
+[3.830s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:545:41:[m[K [01;31m[Kerror: [m[Kcannot convert ‘[01m[KTimedVelocityAction::registerNodes(BT::BehaviorTreeFactory&, const std::shared_ptr<AppContext>&)::<lambda(const string&, const BT::NodeConfig&)>[m[K’ to ‘[01m[Kconst NodeBuilder&[m[K’ {aka ‘[01m[Kconst std::function<std::unique_ptr<BT::TreeNode>(const std::__cxx11::basic_string<char>&, const BT::NodeConfig&)>&[m[K’}
+[3.830s]   545 |     [01;31m[Kfactory.registerBuilder<MoveForward>([m[K
+[3.830s]       |     [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^[m[K
+[3.831s]   546 | [01;31m[K        "MoveForward",[m[K
+[3.831s]       |         [01;31m[K~~~~~~~~~~~~~~[m[K                   
+[3.831s]   547 | [01;31m[K        [context](const std::string& name, const BT::NodeConfig& config) {[m[K
+[3.831s]       |         [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[3.831s]   548 | [01;31m[K            return std::make_unique<MoveForward>(name, config, context);[m[K
+[3.831s]       |             [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[3.831s]   549 | [01;31m[K        })[m[K;
+[3.831s]       |         [01;31m[K~~[m[K                               
+[3.831s] In file included from [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:1[m[K:
+[3.831s] [01m[K/opt/ros/humble/include/behaviortree_cpp/bt_factory.h:249:66:[m[K [01;36m[Knote: [m[K  initializing argument 2 of ‘[01m[Kvoid BT::BehaviorTreeFactory::registerBuilder(const string&, const NodeBuilder&) [with T = TimedVelocityAction::MoveForward; std::string = std::__cxx11::basic_string<char>; BT::NodeBuilder = std::function<std::unique_ptr<BT::TreeNode>(const std::__cxx11::basic_string<char>&, const BT::NodeConfig&)>][m[K’
+[3.831s]   249 |   void registerBuilder(const std::string& ID, [01;36m[Kconst NodeBuilder& builder[m[K)
+[3.831s]       |                                               [01;36m[K~~~~~~~~~~~~~~~~~~~^~~~~~~[m[K
+[3.844s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:551:38:[m[K [01;31m[Kerror: [m[Kcannot convert ‘[01m[KTimedVelocityAction::registerNodes(BT::BehaviorTreeFactory&, const std::shared_ptr<AppContext>&)::<lambda(const string&, const BT::NodeConfig&)>[m[K’ to ‘[01m[Kconst NodeBuilder&[m[K’ {aka ‘[01m[Kconst std::function<std::unique_ptr<BT::TreeNode>(const std::__cxx11::basic_string<char>&, const BT::NodeConfig&)>&[m[K’}
+[3.844s]   551 |     [01;31m[Kfactory.registerBuilder<TurnLeft>([m[K
+[3.844s]       |     [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^[m[K
+[3.844s]   552 | [01;31m[K        "TurnLeft",[m[K
+[3.844s]       |         [01;31m[K~~~~~~~~~~~[m[K                   
+[3.844s]   553 | [01;31m[K        [context](const std::string& name, const BT::NodeConfig& config) {[m[K
+[3.844s]       |         [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[3.845s]   554 | [01;31m[K            return std::make_unique<TurnLeft>(name, config, context);[m[K
+[3.845s]       |             [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[3.845s]   555 | [01;31m[K        })[m[K;
+[3.845s]       |         [01;31m[K~~[m[K                            
+[3.845s] In file included from [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:1[m[K:
+[3.845s] [01m[K/opt/ros/humble/include/behaviortree_cpp/bt_factory.h:249:66:[m[K [01;36m[Knote: [m[K  initializing argument 2 of ‘[01m[Kvoid BT::BehaviorTreeFactory::registerBuilder(const string&, const NodeBuilder&) [with T = TimedVelocityAction::TurnLeft; std::string = std::__cxx11::basic_string<char>; BT::NodeBuilder = std::function<std::unique_ptr<BT::TreeNode>(const std::__cxx11::basic_string<char>&, const BT::NodeConfig&)>][m[K’
+[3.845s]   249 |   void registerBuilder(const std::string& ID, [01;36m[Kconst NodeBuilder& builder[m[K)
+[3.845s]       |                                               [01;36m[K~~~~~~~~~~~~~~~~~~~^~~~~~~[m[K
+[3.891s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:557:39:[m[K [01;31m[Kerror: [m[Kcannot convert ‘[01m[KTimedVelocityAction::registerNodes(BT::BehaviorTreeFactory&, const std::shared_ptr<AppContext>&)::<lambda(const string&, const BT::NodeConfig&)>[m[K’ to ‘[01m[Kconst NodeBuilder&[m[K’ {aka ‘[01m[Kconst std::function<std::unique_ptr<BT::TreeNode>(const std::__cxx11::basic_string<char>&, const BT::NodeConfig&)>&[m[K’}
+[3.891s]   557 |     [01;31m[Kfactory.registerBuilder<TurnRight>([m[K
+[3.891s]       |     [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^[m[K
+[3.891s]   558 | [01;31m[K        "TurnRight",[m[K
+[3.891s]       |         [01;31m[K~~~~~~~~~~~~[m[K                   
+[3.891s]   559 | [01;31m[K        [context](const std::string& name, const BT::NodeConfig& config) {[m[K
+[3.891s]       |         [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[3.891s]   560 | [01;31m[K            return std::make_unique<TurnRight>(name, config, context);[m[K
+[3.892s]       |             [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[3.892s]   561 | [01;31m[K        })[m[K;
+[3.892s]       |         [01;31m[K~~[m[K                             
+[3.893s] In file included from [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:1[m[K:
+[3.893s] [01m[K/opt/ros/humble/include/behaviortree_cpp/bt_factory.h:249:66:[m[K [01;36m[Knote: [m[K  initializing argument 2 of ‘[01m[Kvoid BT::BehaviorTreeFactory::registerBuilder(const string&, const NodeBuilder&) [with T = TimedVelocityAction::TurnRight; std::string = std::__cxx11::basic_string<char>; BT::NodeBuilder = std::function<std::unique_ptr<BT::TreeNode>(const std::__cxx11::basic_string<char>&, const BT::NodeConfig&)>][m[K’
+[3.893s]   249 |   void registerBuilder(const std::string& ID, [01;36m[Kconst NodeBuilder& builder[m[K)
+[3.893s]       |                                               [01;36m[K~~~~~~~~~~~~~~~~~~~^~~~~~~[m[K
+[3.904s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:[m[K At global scope:
+[3.904s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:659:2:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id at end of input
+[3.904s]   659 | }
+[3.904s]       |  [01;31m[K^[m[K
+[7.590s] gmake[2]: *** [CMakeFiles/gps_node.dir/build.make:79: CMakeFiles/gps_node.dir/src/gps_node.cpp.o] Error 1
+[7.590s] gmake[1]: *** [CMakeFiles/Makefile2:188: CMakeFiles/gps_node.dir/all] Error 2
+[7.590s] gmake: *** [Makefile:146: all] Error 2
+[7.594s] Invoked command in '/home/w/projects/projects/gps_ws/build/gps' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/w/projects/projects/gps_ws/build/gps -- -j16 -l16

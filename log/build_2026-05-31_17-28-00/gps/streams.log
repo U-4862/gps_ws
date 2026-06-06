@@ -1,0 +1,31 @@
+[0.018s] Invoking command in '/home/w/projects/projects/gps_ws/build/gps': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/w/projects/projects/gps_ws/build/gps -- -j16 -l16
+[0.062s] [ 50%] Built target SerialPort
+[0.099s] [ 75%] [32mBuilding CXX object CMakeFiles/gps_node.dir/src/gps_node.cpp.o[0m
+[3.687s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:159:17:[m[K [01;31m[Kerror: [m[K‘[01m[Kpair[m[K’ was not declared in this scope; did you mean ‘[01m[Kstd::pair[m[K’?
+[3.687s]   159 |     std::vector<[01;31m[Kpair[m[K<double, double>> obstacles;
+[3.688s]       |                 [01;31m[K^~~~[m[K
+[3.688s]       |                 [32m[Kstd::pair[m[K
+[3.688s] In file included from [01m[K/usr/include/c++/11/utility:70[m[K,
+[3.688s]                  from [01m[K/opt/ros/humble/include/behaviortree_cpp/contrib/expected.hpp:146[m[K,
+[3.688s]                  from [01m[K/opt/ros/humble/include/behaviortree_cpp/basic_types.h:3[m[K,
+[3.688s]                  from [01m[K/opt/ros/humble/include/behaviortree_cpp/tree_node.h:16[m[K,
+[3.688s]                  from [01m[K/opt/ros/humble/include/behaviortree_cpp/leaf_node.h:17[m[K,
+[3.688s]                  from [01m[K/opt/ros/humble/include/behaviortree_cpp/action_node.h:17[m[K,
+[3.688s]                  from [01m[K/opt/ros/humble/include/behaviortree_cpp/behavior_tree.h:16[m[K,
+[3.688s]                  from [01m[K/opt/ros/humble/include/behaviortree_cpp/bt_factory.h:17[m[K,
+[3.689s]                  from [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:1[m[K:
+[3.689s] [01m[K/usr/include/c++/11/bits/stl_pair.h:211:12:[m[K [01;36m[Knote: [m[K‘[01m[Kstd::pair[m[K’ declared here
+[3.689s]   211 |     struct [01;36m[Kpair[m[K
+[3.689s]       |            [01;36m[K^~~~[m[K
+[3.689s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:159:36:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[3.689s]   159 |     std::vector<pair<double, double[01;31m[K>>[m[K obstacles;
+[3.689s]       |                                    [01;31m[K^~[m[K
+[3.689s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:159:36:[m[K [01;31m[Kerror: [m[Ktemplate argument 2 is invalid
+[7.192s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:[m[K In member function ‘[01m[Kvirtual BT::NodeStatus TimedVelocityAction::onRunning()[m[K’:
+[7.192s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:287:5:[m[K [01;35m[Kwarning: [m[Kcontrol reaches end of non-void function [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreturn-type-Wreturn-type]8;;[m[K]
+[7.192s]   287 |     [01;35m[K}[m[K
+[7.192s]       |     [01;35m[K^[m[K
+[7.527s] gmake[2]: *** [CMakeFiles/gps_node.dir/build.make:79: CMakeFiles/gps_node.dir/src/gps_node.cpp.o] Error 1
+[7.527s] gmake[1]: *** [CMakeFiles/Makefile2:188: CMakeFiles/gps_node.dir/all] Error 2
+[7.527s] gmake: *** [Makefile:146: all] Error 2
+[7.534s] Invoked command in '/home/w/projects/projects/gps_ws/build/gps' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/w/projects/projects/gps_ws/build/gps -- -j16 -l16

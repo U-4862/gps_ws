@@ -1,0 +1,91 @@
+[0.026s] Invoking command in '/home/w/projects/projects/gps_ws/build/gps': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/w/projects/projects/gps_ws/src/gps -DCMAKE_INSTALL_PREFIX=/home/w/projects/projects/gps_ws/install/gps
+[0.178s] -- The C compiler identification is GNU 11.4.0
+[0.348s] -- The CXX compiler identification is GNU 11.4.0
+[0.376s] -- Detecting C compiler ABI info
+[0.490s] -- Detecting C compiler ABI info - done
+[0.518s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.518s] -- Detecting C compile features
+[0.521s] -- Detecting C compile features - done
+[0.549s] -- Detecting CXX compiler ABI info
+[0.691s] -- Detecting CXX compiler ABI info - done
+[0.711s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.711s] -- Detecting CXX compile features
+[0.712s] -- Detecting CXX compile features - done
+[0.741s] -- Found ament_cmake: 1.3.14 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.985s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter
+[1.174s] -- Found rclcpp: 16.0.19 (/opt/ros/humble/share/rclcpp/cmake)
+[1.302s] -- Found rosidl_generator_c: 3.1.8 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[1.315s] -- Found rosidl_adapter: 3.1.8 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[1.339s] -- Found rosidl_generator_cpp: 3.1.8 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[1.369s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.397s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.487s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[1.493s] -- Found rmw_fastrtps_cpp: 6.2.10 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[1.682s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")
+[1.731s] -- Found FastRTPS: /opt/ros/humble/include
+[1.783s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[1.812s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[1.920s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[1.921s] -- Found Threads: TRUE
+[2.064s] -- Found tf2_msgs: 0.25.20 (/opt/ros/humble/share/tf2_msgs/cmake)
+[2.198s] -- Found sensor_msgs: 4.9.1 (/opt/ros/humble/share/sensor_msgs/cmake)
+[2.243s] -- Found behaviortree_cpp: 4.9.0 (/opt/ros/humble/share/behaviortree_cpp/cmake)
+[2.248s] -- Found ament_lint_auto: 0.12.15 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[2.410s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[2.411s] -- Configured cppcheck include dirs: /home/w/projects/projects/gps_ws/src/gps/src/SerialPort
+[2.411s] -- Configured cppcheck exclude dirs and/or files: 
+[2.418s] -- Added test 'lint_cmake' to check CMake code style
+[2.420s] -- Added test 'uncrustify' to check C / C++ code style
+[2.420s] -- Configured uncrustify additional arguments: 
+[2.421s] -- Added test 'xmllint' to check XML markup files
+[2.426s] -- Configuring done (2.4s)
+[2.465s] -- Generating done (0.0s)
+[2.522s] -- Build files have been written to: /home/w/projects/projects/gps_ws/build/gps
+[2.533s] Invoked command in '/home/w/projects/projects/gps_ws/build/gps' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/w/projects/projects/gps_ws/src/gps -DCMAKE_INSTALL_PREFIX=/home/w/projects/projects/gps_ws/install/gps
+[2.535s] Invoking command in '/home/w/projects/projects/gps_ws/build/gps': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/w/projects/projects/gps_ws/build/gps -- -j16 -l16
+[2.585s] [ 25%] [32mBuilding CXX object CMakeFiles/SerialPort.dir/src/SerialPort/usart.cpp.o[0m
+[2.911s] [ 50%] [1m[32mLinking CXX static library libSerialPort.a[0m
+[2.946s] [ 50%] Built target SerialPort
+[2.967s] [ 75%] [32mBuilding CXX object CMakeFiles/gps_node.dir/src/gps_node.cpp.o[0m
+[6.282s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:[m[K In constructor ‘[01m[KMoveForward::MoveForward(const string&, const BT::NodeConfig&, std::shared_ptr<AppContext>)[m[K’:
+[6.282s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:308:86:[m[K [01;35m[Kwarning: [m[Kmissing initializer for member ‘[01m[KPose2D::nextPose1[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wmissing-field-initializers-Wmissing-field-initializers]8;;[m[K]
+[6.282s]   308 | TimedVelocityAction(name, config, std::move(context), Pose2D {0x0f,1, 0 ,0 [01;35m[K}[m[K)
+[6.282s]       |                                                                            [01;35m[K^[m[K
+[6.282s] 
+[6.283s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:308:86:[m[K [01;35m[Kwarning: [m[Kmissing initializer for member ‘[01m[KPose2D::nextPose2[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wmissing-field-initializers-Wmissing-field-initializers]8;;[m[K]
+[6.283s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:[m[K In constructor ‘[01m[KTurnLeft::TurnLeft(const string&, const BT::NodeConfig&, std::shared_ptr<AppContext>)[m[K’:
+[6.283s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:319:86:[m[K [01;35m[Kwarning: [m[Kmissing initializer for member ‘[01m[KPose2D::nextPose1[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wmissing-field-initializers-Wmissing-field-initializers]8;;[m[K]
+[6.283s]   319 | TimedVelocityAction(name, config, std::move(context), Pose2D {0x0f,0, 0 ,1 [01;35m[K}[m[K)
+[6.283s]       |                                                                            [01;35m[K^[m[K
+[6.283s] 
+[6.283s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:319:86:[m[K [01;35m[Kwarning: [m[Kmissing initializer for member ‘[01m[KPose2D::nextPose2[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wmissing-field-initializers-Wmissing-field-initializers]8;;[m[K]
+[6.283s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:[m[K In constructor ‘[01m[KTurnRight::TurnRight(const string&, const BT::NodeConfig&, std::shared_ptr<AppContext>)[m[K’:
+[6.283s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:331:86:[m[K [01;35m[Kwarning: [m[Kmissing initializer for member ‘[01m[KPose2D::nextPose1[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wmissing-field-initializers-Wmissing-field-initializers]8;;[m[K]
+[6.283s]   331 | TimedVelocityAction(name, config, std::move(context), Pose2D {0x0f,0, 0 ,-1[01;35m[K}[m[K)
+[6.283s]       |                                                                            [01;35m[K^[m[K
+[6.283s] 
+[6.287s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:331:86:[m[K [01;35m[Kwarning: [m[Kmissing initializer for member ‘[01m[KPose2D::nextPose2[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wmissing-field-initializers-Wmissing-field-initializers]8;;[m[K]
+[14.917s] [100%] [1m[32mLinking CXX executable gps_node[0m
+[15.888s] [100%] Built target gps_node
+[15.894s] Invoked command in '/home/w/projects/projects/gps_ws/build/gps' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/w/projects/projects/gps_ws/build/gps -- -j16 -l16
+[15.906s] Invoking command in '/home/w/projects/projects/gps_ws/build/gps': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/w/projects/projects/gps_ws/build/gps
+[15.908s] -- Install configuration: ""
+[15.908s] -- Installing: /home/w/projects/projects/gps_ws/install/gps/lib/gps/gps_node
+[15.913s] -- Set non-toolchain portion of runtime path of "/home/w/projects/projects/gps_ws/install/gps/lib/gps/gps_node" to ""
+[15.913s] -- Installing: /home/w/projects/projects/gps_ws/install/gps/share/gps/tree.xml
+[15.914s] -- Installing: /home/w/projects/projects/gps_ws/install/gps/share/ament_index/resource_index/package_run_dependencies/gps
+[15.914s] -- Installing: /home/w/projects/projects/gps_ws/install/gps/share/ament_index/resource_index/parent_prefix_path/gps
+[15.914s] -- Installing: /home/w/projects/projects/gps_ws/install/gps/share/gps/environment/ament_prefix_path.sh
+[15.914s] -- Installing: /home/w/projects/projects/gps_ws/install/gps/share/gps/environment/ament_prefix_path.dsv
+[15.914s] -- Installing: /home/w/projects/projects/gps_ws/install/gps/share/gps/environment/path.sh
+[15.915s] -- Installing: /home/w/projects/projects/gps_ws/install/gps/share/gps/environment/path.dsv
+[15.915s] -- Installing: /home/w/projects/projects/gps_ws/install/gps/share/gps/local_setup.bash
+[15.915s] -- Installing: /home/w/projects/projects/gps_ws/install/gps/share/gps/local_setup.sh
+[15.915s] -- Installing: /home/w/projects/projects/gps_ws/install/gps/share/gps/local_setup.zsh
+[15.915s] -- Installing: /home/w/projects/projects/gps_ws/install/gps/share/gps/local_setup.dsv
+[15.915s] -- Installing: /home/w/projects/projects/gps_ws/install/gps/share/gps/package.dsv
+[15.916s] -- Installing: /home/w/projects/projects/gps_ws/install/gps/share/ament_index/resource_index/packages/gps
+[15.916s] -- Installing: /home/w/projects/projects/gps_ws/install/gps/share/gps/cmake/gpsConfig.cmake
+[15.916s] -- Installing: /home/w/projects/projects/gps_ws/install/gps/share/gps/cmake/gpsConfig-version.cmake
+[15.916s] -- Installing: /home/w/projects/projects/gps_ws/install/gps/share/gps/package.xml
+[15.918s] Invoked command in '/home/w/projects/projects/gps_ws/build/gps' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/w/projects/projects/gps_ws/build/gps
