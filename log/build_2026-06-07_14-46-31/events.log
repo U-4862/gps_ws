@@ -1,0 +1,156 @@
+[0.000000] (-) TimerEvent: {}
+[0.001655] (gps) JobQueued: {'identifier': 'gps', 'dependencies': OrderedDict()}
+[0.003191] (gps) JobStarted: {'identifier': 'gps'}
+[0.015576] (gps) JobProgress: {'identifier': 'gps', 'progress': 'cmake'}
+[0.016082] (gps) JobProgress: {'identifier': 'gps', 'progress': 'build'}
+[0.016576] (gps) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/w/projects/projects/gps_ws/build/gps', '--', '-j16', '-l16'], 'cwd': '/home/w/projects/projects/gps_ws/build/gps', 'env': OrderedDict([('PYTHON_BASIC_REPL', '1'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('LANGUAGE', 'en_US:en'), ('USER', 'w'), ('LC_TIME', 'zh_CN.UTF-8'), ('XDG_SESSION_TYPE', 'x11'), ('GIT_ASKPASS', '/usr/share/code/resources/app/extensions/git/dist/askpass.sh'), ('SHLVL', '2'), ('LD_LIBRARY_PATH', '/home/w/fastlio/install/fast_lio/lib:/home/w/ws_livox/install/livox_ros_driver2/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/w'), ('CHROME_DESKTOP', 'code.desktop'), ('CONDA_SHLVL', '0'), ('TERM_PROGRAM_VERSION', '1.120.0'), ('DESKTOP_SESSION', 'ubuntu-xorg'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('XDG_SEAT_PATH', '/org/freedesktop/DisplayManager/Seat0'), ('VSCODE_GIT_ASKPASS_MAIN', '/usr/share/code/resources/app/extensions/git/dist/askpass-main.js'), ('LC_MONETARY', 'zh_CN.UTF-8'), ('VSCODE_GIT_ASKPASS_NODE', '/usr/share/code/code'), ('PYDEVD_DISABLE_FILE_VALIDATION', '1'), ('SYSTEMD_EXEC_PID', '3787'), ('BUNDLED_DEBUGPY_PATH', '/home/w/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/libs/debugpy'), ('VSCODE_PYTHON_AUTOACTIVATE_GUARD', '1'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('_CE_M', ''), ('_CONDA_ROOT', '/home/w/anaconda3'), ('COLCON_PREFIX_PATH', '/home/w/ws_livox/install:/home/w/fastlio/install'), ('AM_HOME', '/home/w/projects/ics2025/abstract-machine'), ('ROS_DISTRO', 'humble'), ('GTK_IM_MODULE', 'ibus'), ('LOGNAME', 'w'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('CLAUDE_CODE_SSE_PORT', '56315'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('_CE_CONDA', ''), ('FC_FONTATIONS', '1'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/home/w/.config/Code/User/globalStorage/github.copilot-chat/debugCommand:/home/w/.config/Code/User/globalStorage/github.copilot-chat/copilotCli:/home/w/anaconda3/condabin:/opt/ros/humble/bin:/home/w/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/w/.fishros/bin/:/home/w/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts:/home/w/.fishros/bin/'), ('SESSION_MANAGER', 'local/FA608PM:@/tmp/.ICE-unix/3571,unix/FA608PM:/tmp/.ICE-unix/3571'), ('GDM_LANG', 'en_US'), ('PAPERSIZE', 'a4'), ('XDG_SESSION_PATH', '/org/freedesktop/DisplayManager/Session0'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'zh_CN.UTF-8'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/47b8e51e_3dc0_445e_8c57_48c5a9245c95'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('GDK_BACKEND', 'x11'), ('DISPLAY', ':0'), ('VSCODE_DEBUGPY_ADAPTER_ENDPOINTS', '/home/w/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/.noConfigDebugAdapterEndpoints/endpoint-208ebe67c5b783f1.txt'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('PYTHONSTARTUP', '/home/w/.config/Code/User/workspaceStorage/a2ad95b9f6dfb62897a05935310ba1b5/ms-python.python/pythonrc.py'), ('LC_TELEPHONE', 'zh_CN.UTF-8'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu-xorg'), ('XAUTHORITY', '/home/w/.Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1000/vscode-git-d2c6b87941.sock'), ('GNOME_TERMINAL_SERVICE', ':1.100'), ('TERM_PROGRAM', 'vscode'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('XDG_GREETER_DATA_DIR', '/var/lib/lightdm-data/w'), ('AMENT_PREFIX_PATH', '/home/w/fastlio/install/fast_lio:/home/w/ws_livox/install/livox_ros_driver2:/opt/ros/humble'), ('CONDA_PYTHON_EXE', '/home/w/anaconda3/bin/python'), ('SHELL', '/bin/bash'), ('LC_NAME', 'zh_CN.UTF-8'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu-xorg'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'zh_CN.UTF-8'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('_CONDA_EXE', '/home/w/anaconda3/bin/conda'), ('LC_IDENTIFICATION', 'zh_CN.UTF-8'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/w/projects/projects/gps_ws/build/gps'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu-xorg:/etc/xdg'), ('CONDA_EXE', '/home/w/anaconda3/bin/conda'), ('XDG_DATA_DIRS', '/usr/share/ubuntu-xorg:/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/w/fastlio/install/fast_lio/local/lib/python3.10/dist-packages:/home/w/ws_livox/install/livox_ros_driver2/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'zh_CN.UTF-8'), ('LC_PAPER', 'zh_CN.UTF-8'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('NEMU_HOME', '/home/w/projects/ics2025/nemu'), ('CMAKE_PREFIX_PATH', '/home/w/fastlio/install/fast_lio:/home/w/ws_livox/install/livox_ros_driver2:/opt/ros/humble')]), 'shell': False}
+[0.058378] (gps) StdoutLine: {'line': b'[ 50%] Built target SerialPort\n'}
+[0.080697] (gps) StdoutLine: {'line': b'[ 75%] \x1b[32mBuilding CXX object CMakeFiles/gps_node.dir/src/gps_node.cpp.o\x1b[0m\n'}
+[0.099568] (-) TimerEvent: {}
+[0.199823] (-) TimerEvent: {}
+[0.300150] (-) TimerEvent: {}
+[0.400743] (-) TimerEvent: {}
+[0.501211] (-) TimerEvent: {}
+[0.602694] (-) TimerEvent: {}
+[0.703005] (-) TimerEvent: {}
+[0.803333] (-) TimerEvent: {}
+[0.903603] (-) TimerEvent: {}
+[1.005921] (-) TimerEvent: {}
+[1.106216] (-) TimerEvent: {}
+[1.206534] (-) TimerEvent: {}
+[1.307017] (-) TimerEvent: {}
+[1.407462] (-) TimerEvent: {}
+[1.508891] (-) TimerEvent: {}
+[1.609182] (-) TimerEvent: {}
+[1.709460] (-) TimerEvent: {}
+[1.809703] (-) TimerEvent: {}
+[1.910008] (-) TimerEvent: {}
+[2.012010] (-) TimerEvent: {}
+[2.112322] (-) TimerEvent: {}
+[2.213694] (-) TimerEvent: {}
+[2.313963] (-) TimerEvent: {}
+[2.414229] (-) TimerEvent: {}
+[2.514502] (-) TimerEvent: {}
+[2.614783] (-) TimerEvent: {}
+[2.717697] (-) TimerEvent: {}
+[2.818053] (-) TimerEvent: {}
+[2.920691] (-) TimerEvent: {}
+[3.021003] (-) TimerEvent: {}
+[3.122693] (-) TimerEvent: {}
+[3.223026] (-) TimerEvent: {}
+[3.323564] (-) TimerEvent: {}
+[3.424695] (-) TimerEvent: {}
+[3.525018] (-) TimerEvent: {}
+[3.625376] (-) TimerEvent: {}
+[3.726692] (-) TimerEvent: {}
+[3.827031] (-) TimerEvent: {}
+[3.927693] (-) TimerEvent: {}
+[4.031804] (-) TimerEvent: {}
+[4.132343] (-) TimerEvent: {}
+[4.232631] (-) TimerEvent: {}
+[4.332910] (-) TimerEvent: {}
+[4.434696] (-) TimerEvent: {}
+[4.534974] (-) TimerEvent: {}
+[4.635772] (-) TimerEvent: {}
+[4.736058] (-) TimerEvent: {}
+[4.836481] (-) TimerEvent: {}
+[4.939732] (-) TimerEvent: {}
+[5.040100] (-) TimerEvent: {}
+[5.141697] (-) TimerEvent: {}
+[5.241980] (-) TimerEvent: {}
+[5.342502] (-) TimerEvent: {}
+[5.442834] (-) TimerEvent: {}
+[5.543528] (-) TimerEvent: {}
+[5.646105] (-) TimerEvent: {}
+[5.746858] (-) TimerEvent: {}
+[5.847225] (-) TimerEvent: {}
+[5.947647] (-) TimerEvent: {}
+[6.053693] (-) TimerEvent: {}
+[6.153981] (-) TimerEvent: {}
+[6.254591] (-) TimerEvent: {}
+[6.355312] (-) TimerEvent: {}
+[6.458692] (-) TimerEvent: {}
+[6.558972] (-) TimerEvent: {}
+[6.659320] (-) TimerEvent: {}
+[6.759699] (-) TimerEvent: {}
+[6.860252] (-) TimerEvent: {}
+[6.961693] (-) TimerEvent: {}
+[7.061987] (-) TimerEvent: {}
+[7.162289] (-) TimerEvent: {}
+[7.262595] (-) TimerEvent: {}
+[7.362909] (-) TimerEvent: {}
+[7.464874] (-) TimerEvent: {}
+[7.565140] (-) TimerEvent: {}
+[7.665453] (-) TimerEvent: {}
+[7.765994] (-) TimerEvent: {}
+[7.868692] (-) TimerEvent: {}
+[7.968990] (-) TimerEvent: {}
+[8.069374] (-) TimerEvent: {}
+[8.169693] (-) TimerEvent: {}
+[8.269966] (-) TimerEvent: {}
+[8.372694] (-) TimerEvent: {}
+[8.472961] (-) TimerEvent: {}
+[8.574691] (-) TimerEvent: {}
+[8.674966] (-) TimerEvent: {}
+[8.775238] (-) TimerEvent: {}
+[8.875514] (-) TimerEvent: {}
+[8.975844] (-) TimerEvent: {}
+[9.076188] (-) TimerEvent: {}
+[9.177797] (-) TimerEvent: {}
+[9.278076] (-) TimerEvent: {}
+[9.378390] (-) TimerEvent: {}
+[9.478760] (-) TimerEvent: {}
+[9.581734] (-) TimerEvent: {}
+[9.682089] (-) TimerEvent: {}
+[9.783736] (-) TimerEvent: {}
+[9.884223] (-) TimerEvent: {}
+[9.988169] (-) TimerEvent: {}
+[10.088607] (-) TimerEvent: {}
+[10.189948] (-) TimerEvent: {}
+[10.290205] (-) TimerEvent: {}
+[10.390465] (-) TimerEvent: {}
+[10.490733] (-) TimerEvent: {}
+[10.591024] (-) TimerEvent: {}
+[10.693721] (-) TimerEvent: {}
+[10.794092] (-) TimerEvent: {}
+[10.894581] (-) TimerEvent: {}
+[10.994971] (-) TimerEvent: {}
+[11.095242] (-) TimerEvent: {}
+[11.197693] (-) TimerEvent: {}
+[11.297961] (-) TimerEvent: {}
+[11.398287] (-) TimerEvent: {}
+[11.498627] (-) TimerEvent: {}
+[11.572740] (gps) StdoutLine: {'line': b'[100%] \x1b[1m\x1b[32mLinking CXX executable gps_node\x1b[0m\n'}
+[11.598692] (-) TimerEvent: {}
+[11.699034] (-) TimerEvent: {}
+[11.799705] (-) TimerEvent: {}
+[11.903695] (-) TimerEvent: {}
+[12.003990] (-) TimerEvent: {}
+[12.104696] (-) TimerEvent: {}
+[12.149618] (gps) StdoutLine: {'line': b'[100%] Built target gps_node\n'}
+[12.155034] (gps) CommandEnded: {'returncode': 0}
+[12.155843] (gps) JobProgress: {'identifier': 'gps', 'progress': 'install'}
+[12.163867] (gps) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/w/projects/projects/gps_ws/build/gps'], 'cwd': '/home/w/projects/projects/gps_ws/build/gps', 'env': OrderedDict([('PYTHON_BASIC_REPL', '1'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('LANGUAGE', 'en_US:en'), ('USER', 'w'), ('LC_TIME', 'zh_CN.UTF-8'), ('XDG_SESSION_TYPE', 'x11'), ('GIT_ASKPASS', '/usr/share/code/resources/app/extensions/git/dist/askpass.sh'), ('SHLVL', '2'), ('LD_LIBRARY_PATH', '/home/w/fastlio/install/fast_lio/lib:/home/w/ws_livox/install/livox_ros_driver2/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/w'), ('CHROME_DESKTOP', 'code.desktop'), ('CONDA_SHLVL', '0'), ('TERM_PROGRAM_VERSION', '1.120.0'), ('DESKTOP_SESSION', 'ubuntu-xorg'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('XDG_SEAT_PATH', '/org/freedesktop/DisplayManager/Seat0'), ('VSCODE_GIT_ASKPASS_MAIN', '/usr/share/code/resources/app/extensions/git/dist/askpass-main.js'), ('LC_MONETARY', 'zh_CN.UTF-8'), ('VSCODE_GIT_ASKPASS_NODE', '/usr/share/code/code'), ('PYDEVD_DISABLE_FILE_VALIDATION', '1'), ('SYSTEMD_EXEC_PID', '3787'), ('BUNDLED_DEBUGPY_PATH', '/home/w/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/libs/debugpy'), ('VSCODE_PYTHON_AUTOACTIVATE_GUARD', '1'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('_CE_M', ''), ('_CONDA_ROOT', '/home/w/anaconda3'), ('COLCON_PREFIX_PATH', '/home/w/ws_livox/install:/home/w/fastlio/install'), ('AM_HOME', '/home/w/projects/ics2025/abstract-machine'), ('ROS_DISTRO', 'humble'), ('GTK_IM_MODULE', 'ibus'), ('LOGNAME', 'w'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('CLAUDE_CODE_SSE_PORT', '56315'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('_CE_CONDA', ''), ('FC_FONTATIONS', '1'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/home/w/.config/Code/User/globalStorage/github.copilot-chat/debugCommand:/home/w/.config/Code/User/globalStorage/github.copilot-chat/copilotCli:/home/w/anaconda3/condabin:/opt/ros/humble/bin:/home/w/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/w/.fishros/bin/:/home/w/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts:/home/w/.fishros/bin/'), ('SESSION_MANAGER', 'local/FA608PM:@/tmp/.ICE-unix/3571,unix/FA608PM:/tmp/.ICE-unix/3571'), ('GDM_LANG', 'en_US'), ('PAPERSIZE', 'a4'), ('XDG_SESSION_PATH', '/org/freedesktop/DisplayManager/Session0'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'zh_CN.UTF-8'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/47b8e51e_3dc0_445e_8c57_48c5a9245c95'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('GDK_BACKEND', 'x11'), ('DISPLAY', ':0'), ('VSCODE_DEBUGPY_ADAPTER_ENDPOINTS', '/home/w/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/.noConfigDebugAdapterEndpoints/endpoint-208ebe67c5b783f1.txt'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('PYTHONSTARTUP', '/home/w/.config/Code/User/workspaceStorage/a2ad95b9f6dfb62897a05935310ba1b5/ms-python.python/pythonrc.py'), ('LC_TELEPHONE', 'zh_CN.UTF-8'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu-xorg'), ('XAUTHORITY', '/home/w/.Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1000/vscode-git-d2c6b87941.sock'), ('GNOME_TERMINAL_SERVICE', ':1.100'), ('TERM_PROGRAM', 'vscode'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('XDG_GREETER_DATA_DIR', '/var/lib/lightdm-data/w'), ('AMENT_PREFIX_PATH', '/home/w/fastlio/install/fast_lio:/home/w/ws_livox/install/livox_ros_driver2:/opt/ros/humble'), ('CONDA_PYTHON_EXE', '/home/w/anaconda3/bin/python'), ('SHELL', '/bin/bash'), ('LC_NAME', 'zh_CN.UTF-8'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu-xorg'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'zh_CN.UTF-8'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('_CONDA_EXE', '/home/w/anaconda3/bin/conda'), ('LC_IDENTIFICATION', 'zh_CN.UTF-8'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/w/projects/projects/gps_ws/build/gps'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu-xorg:/etc/xdg'), ('CONDA_EXE', '/home/w/anaconda3/bin/conda'), ('XDG_DATA_DIRS', '/usr/share/ubuntu-xorg:/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/w/fastlio/install/fast_lio/local/lib/python3.10/dist-packages:/home/w/ws_livox/install/livox_ros_driver2/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'zh_CN.UTF-8'), ('LC_PAPER', 'zh_CN.UTF-8'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('NEMU_HOME', '/home/w/projects/ics2025/nemu'), ('CMAKE_PREFIX_PATH', '/home/w/fastlio/install/fast_lio:/home/w/ws_livox/install/livox_ros_driver2:/opt/ros/humble')]), 'shell': False}
+[12.170856] (gps) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[12.171040] (gps) StdoutLine: {'line': b'-- Installing: /home/w/projects/projects/gps_ws/install/gps/lib/gps/gps_node\n'}
+[12.183469] (gps) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/w/projects/projects/gps_ws/install/gps/lib/gps/gps_node" to ""\n'}
+[12.184729] (gps) StdoutLine: {'line': b'-- Installing: /home/w/projects/projects/gps_ws/install/gps/share/gps/tree.xml\n'}
+[12.184934] (gps) StdoutLine: {'line': b'-- Up-to-date: /home/w/projects/projects/gps_ws/install/gps/share/ament_index/resource_index/package_run_dependencies/gps\n'}
+[12.185001] (gps) StdoutLine: {'line': b'-- Up-to-date: /home/w/projects/projects/gps_ws/install/gps/share/ament_index/resource_index/parent_prefix_path/gps\n'}
+[12.185065] (gps) StdoutLine: {'line': b'-- Up-to-date: /home/w/projects/projects/gps_ws/install/gps/share/gps/environment/ament_prefix_path.sh\n'}
+[12.185104] (gps) StdoutLine: {'line': b'-- Up-to-date: /home/w/projects/projects/gps_ws/install/gps/share/gps/environment/ament_prefix_path.dsv\n'}
+[12.185166] (gps) StdoutLine: {'line': b'-- Up-to-date: /home/w/projects/projects/gps_ws/install/gps/share/gps/environment/path.sh\n'}
+[12.185203] (gps) StdoutLine: {'line': b'-- Up-to-date: /home/w/projects/projects/gps_ws/install/gps/share/gps/environment/path.dsv\n'}
+[12.188699] (gps) StdoutLine: {'line': b'-- Up-to-date: /home/w/projects/projects/gps_ws/install/gps/share/gps/local_setup.bash\n'}
+[12.188959] (gps) StdoutLine: {'line': b'-- Up-to-date: /home/w/projects/projects/gps_ws/install/gps/share/gps/local_setup.sh\n'}
+[12.189176] (gps) StdoutLine: {'line': b'-- Up-to-date: /home/w/projects/projects/gps_ws/install/gps/share/gps/local_setup.zsh\n'}
+[12.189217] (gps) StdoutLine: {'line': b'-- Up-to-date: /home/w/projects/projects/gps_ws/install/gps/share/gps/local_setup.dsv\n'}
+[12.189254] (gps) StdoutLine: {'line': b'-- Installing: /home/w/projects/projects/gps_ws/install/gps/share/gps/package.dsv\n'}
+[12.189291] (gps) StdoutLine: {'line': b'-- Up-to-date: /home/w/projects/projects/gps_ws/install/gps/share/ament_index/resource_index/packages/gps\n'}
+[12.189328] (gps) StdoutLine: {'line': b'-- Up-to-date: /home/w/projects/projects/gps_ws/install/gps/share/gps/cmake/gpsConfig.cmake\n'}
+[12.189364] (gps) StdoutLine: {'line': b'-- Up-to-date: /home/w/projects/projects/gps_ws/install/gps/share/gps/cmake/gpsConfig-version.cmake\n'}
+[12.189400] (gps) StdoutLine: {'line': b'-- Up-to-date: /home/w/projects/projects/gps_ws/install/gps/share/gps/package.xml\n'}
+[12.198658] (gps) CommandEnded: {'returncode': 0}
+[12.204858] (-) TimerEvent: {}
+[12.211324] (gps) JobEnded: {'identifier': 'gps', 'rc': 0}
+[12.212047] (-) EventReactorShutdown: {}

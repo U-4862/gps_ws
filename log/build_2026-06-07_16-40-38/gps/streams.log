@@ -1,0 +1,21 @@
+[0.013s] Invoking command in '/home/w/projects/projects/gps_ws/build/gps': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/w/projects/projects/gps_ws/build/gps -- -j16 -l16
+[0.063s] [ 50%] Built target SerialPort
+[0.082s] [ 75%] [32mBuilding CXX object CMakeFiles/gps_node.dir/src/gps_node.cpp.o[0m
+[2.240s] In file included from [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:8[m[K:
+[2.240s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/map/map.h:16:5:[m[K [01;31m[Kerror: [m[Kexpected identifier before ‘[01m[Ktrue[m[K’
+[2.240s]    16 |     [01;31m[Ktrue[m[K = 1,
+[2.240s]       |     [01;31m[K^~~~[m[K
+[2.240s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/map/map.h:16:5:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K}[m[K’ before ‘[01m[Ktrue[m[K’
+[2.241s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/map/map.h:14:15:[m[K [01;36m[Knote: [m[Kto match this ‘[01m[K{[m[K’
+[2.241s]    14 | enum RFS_param[01;36m[K{[m[K
+[2.241s]       |               [01;36m[K^[m[K
+[2.241s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/map/map.h:16:5:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[Ktrue[m[K’
+[2.241s]    16 |     [01;31m[Ktrue[m[K = 1,
+[2.241s]       |     [01;31m[K^~~~[m[K
+[2.241s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/map/map.h:18:1:[m[K [01;31m[Kerror: [m[Kexpected declaration before ‘[01m[K}[m[K’ token
+[2.241s]    18 | [01;31m[K}[m[K;
+[2.241s]       | [01;31m[K^[m[K
+[5.155s] gmake[2]: *** [CMakeFiles/gps_node.dir/build.make:79: CMakeFiles/gps_node.dir/src/gps_node.cpp.o] Error 1
+[5.155s] gmake[1]: *** [CMakeFiles/Makefile2:188: CMakeFiles/gps_node.dir/all] Error 2
+[5.155s] gmake: *** [Makefile:146: all] Error 2
+[5.157s] Invoked command in '/home/w/projects/projects/gps_ws/build/gps' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/w/projects/projects/gps_ws/build/gps -- -j16 -l16

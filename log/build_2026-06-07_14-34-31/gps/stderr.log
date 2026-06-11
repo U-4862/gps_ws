@@ -1,0 +1,13 @@
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:[m[K In member function ‘[01m[Kvirtual BT::NodeStatus MoveToLocation::onRunning()[m[K’:
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:394:38:[m[K [01;35m[Kwarning: [m[Knarrowing conversion of ‘[01m[K(uint8_t)speed_x[m[K’ from ‘[01m[Kuint8_t[m[K’ {aka ‘[01m[Kunsigned char[m[K’} to ‘[01m[Kint8_t[m[K’ {aka ‘[01m[Ksigned char[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wnarrowing-Wnarrowing]8;;[m[K]
+  394 |                     Pose2D cmd{0x0f, [01;35m[K(uint8_t)speed_x[m[K, 0, 0, 0, 0, 0};
+      |                                      [01;35m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:400:38:[m[K [01;35m[Kwarning: [m[Knarrowing conversion of ‘[01m[K(uint8_t)-(speed_x)[m[K’ from ‘[01m[Kuint8_t[m[K’ {aka ‘[01m[Kunsigned char[m[K’} to ‘[01m[Kint8_t[m[K’ {aka ‘[01m[Ksigned char[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wnarrowing-Wnarrowing]8;;[m[K]
+  400 |                     Pose2D cmd{0x0f, [01;35m[K(uint8_t)-speed_x[m[K, 0, 0, 1, 0, 0};
+      |                                      [01;35m[K^~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:411:41:[m[K [01;35m[Kwarning: [m[Knarrowing conversion of ‘[01m[K(uint8_t)speed_y[m[K’ from ‘[01m[Kuint8_t[m[K’ {aka ‘[01m[Kunsigned char[m[K’} to ‘[01m[Kint8_t[m[K’ {aka ‘[01m[Ksigned char[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wnarrowing-Wnarrowing]8;;[m[K]
+  411 |                     Pose2D cmd{0x0f, 0, [01;35m[K(uint8_t)speed_y[m[K, 0, 0, 0, 0};
+      |                                         [01;35m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:417:42:[m[K [01;35m[Kwarning: [m[Knarrowing conversion of ‘[01m[K(uint8_t)-(speed_y)[m[K’ from ‘[01m[Kuint8_t[m[K’ {aka ‘[01m[Kunsigned char[m[K’} to ‘[01m[Kint8_t[m[K’ {aka ‘[01m[Ksigned char[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wnarrowing-Wnarrowing]8;;[m[K]
+  417 |                     Pose2D cmd{0x0f,  0, [01;35m[K(uint8_t)-speed_y[m[K, 0, 1, 0, 0};
+      |                                          [01;35m[K^~~~~~~~~~~~~~~~~[m[K

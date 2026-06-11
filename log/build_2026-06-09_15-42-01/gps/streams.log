@@ -1,0 +1,76 @@
+[0.013s] Invoking command in '/home/w/projects/projects/gps_ws/build/gps': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/w/projects/projects/gps_ws/build/gps -- -j16 -l16
+[0.075s] [ 50%] Built target SerialPort
+[0.102s] [ 75%] [32mBuilding CXX object CMakeFiles/gps_node.dir/src/gps_node.cpp.o[0m
+[2.336s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:25:57:[m[K [01;31m[Kerror: [m[Kcannot convert ‘[01m[Kpn_signal[m[K’ to ‘[01m[Kuint8_t[m[K’ {aka ‘[01m[Kunsigned char[m[K’} in initialization
+[2.336s]    25 | inline constexpr Pose2D kStop{0x0f, 0, 0, 0, [01;31m[Kpn_signal::POS[m[K, stop_signal::FORCE_STOP, grip_param::LOOSE,turn90_signal::NONE};
+[2.336s]       |                                              [01;31m[K~~~~~~~~~~~^~~[m[K
+[2.336s]       |                                                         [01;31m[K|[m[K
+[2.336s]       |                                                         [01;31m[Kpn_signal[m[K
+[2.336s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:26:57:[m[K [01;31m[Kerror: [m[Kcannot convert ‘[01m[Kpn_signal[m[K’ to ‘[01m[Kuint8_t[m[K’ {aka ‘[01m[Kunsigned char[m[K’} in initialization
+[2.336s]    26 | inline constexpr Pose2D kForward{0x0f, 1, 0, [01;31m[Kpn_signal::POS[m[K, stop_signal::NORMAL, grip_param::LOOSE, grip_param::LOOSE,turn90_signal::NONE};
+[2.337s]       |                                              [01;31m[K~~~~~~~~~~~^~~[m[K
+[2.337s]       |                                                         [01;31m[K|[m[K
+[2.337s]       |                                                         [01;31m[Kpn_signal[m[K
+[2.337s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:27:61:[m[K [01;31m[Kerror: [m[Kcannot convert ‘[01m[Kpn_signal[m[K’ to ‘[01m[Kuint8_t[m[K’ {aka ‘[01m[Kunsigned char[m[K’} in initialization
+[2.337s]    27 | inline constexpr Pose2D kTurnLeft{0x0f, 0, 0, 1, [01;31m[Kpn_signal::POS[m[K, stop_signal::NORMAL, grip_param::LOOSE,turn90_signal::NONE};
+[2.337s]       |                                                  [01;31m[K~~~~~~~~~~~^~~[m[K
+[2.337s]       |                                                             [01;31m[K|[m[K
+[2.337s]       |                                                             [01;31m[Kpn_signal[m[K
+[2.337s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:28:62:[m[K [01;31m[Kerror: [m[Kcannot convert ‘[01m[Kpn_signal[m[K’ to ‘[01m[Kuint8_t[m[K’ {aka ‘[01m[Kunsigned char[m[K’} in initialization
+[2.337s]    28 | inline constexpr Pose2D kTurnRight{0x0f, 0, 0, 1, [01;31m[Kpn_signal::NEG[m[K, stop_signal::NORMAL, grip_param::LOOSE,turn90_signal::NONE};
+[2.337s]       |                                                   [01;31m[K~~~~~~~~~~~^~~[m[K
+[2.337s]       |                                                              [01;31m[K|[m[K
+[2.337s]       |                                                              [01;31m[Kpn_signal[m[K
+[2.337s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:29:57:[m[K [01;31m[Kerror: [m[Kcannot convert ‘[01m[Kpn_signal[m[K’ to ‘[01m[Kuint8_t[m[K’ {aka ‘[01m[Kunsigned char[m[K’} in initialization
+[2.337s]    29 | inline constexpr Pose2D kGrip{0x0f, 0, 0, 0, [01;31m[Kpn_signal::POS[m[K, stop_signal::NORMAL, grip_param::GRIPPED,turn90_signal::NONE};
+[2.337s]       |                                              [01;31m[K~~~~~~~~~~~^~~[m[K
+[2.337s]       |                                                         [01;31m[K|[m[K
+[2.337s]       |                                                         [01;31m[Kpn_signal[m[K
+[2.337s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:30:63:[m[K [01;31m[Kerror: [m[Kcannot convert ‘[01m[Kpn_signal[m[K’ to ‘[01m[Kuint8_t[m[K’ {aka ‘[01m[Kunsigned char[m[K’} in initialization
+[2.337s]    30 | inline constexpr Pose2D kTurn90Left{0x0f, 0, 0, 0, [01;31m[Kpn_signal::POS[m[K, stop_signal::NORMAL, grip_param::LOOSE,turn90_signal::TURN_90};
+[2.337s]       |                                                    [01;31m[K~~~~~~~~~~~^~~[m[K
+[2.337s]       |                                                               [01;31m[K|[m[K
+[2.337s]       |                                                               [01;31m[Kpn_signal[m[K
+[2.337s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:31:64:[m[K [01;31m[Kerror: [m[Kcannot convert ‘[01m[Kpn_signal[m[K’ to ‘[01m[Kuint8_t[m[K’ {aka ‘[01m[Kunsigned char[m[K’} in initialization
+[2.337s]    31 | inline constexpr Pose2D kTurn90Right{0x0f, 0, 0, 0, [01;31m[Kpn_signal::NEG[m[K, stop_signal::NORMAL, grip_param::LOOSE,turn90_signal::TURN_90};
+[2.337s]       |                                                     [01;31m[K~~~~~~~~~~~^~~[m[K
+[2.337s]       |                                                                [01;31m[K|[m[K
+[2.337s]       |                                                                [01;31m[Kpn_signal[m[K
+[2.408s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:[m[K In member function ‘[01m[Kvirtual BT::NodeStatus MoveToLocation::onStart()[m[K’:
+[2.408s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:370:18:[m[K [01;31m[Kerror: [m[K‘[01m[KTURN_X[m[K’ was not declared in this scope
+[2.408s]   370 |         phase_ = [01;31m[KTURN_X[m[K;
+[2.408s]       |                  [01;31m[K^~~~~~[m[K
+[2.409s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:[m[K In member function ‘[01m[Kvirtual BT::NodeStatus MoveToLocation::onRunning()[m[K’:
+[2.409s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:399:50:[m[K [01;31m[Kerror: [m[K‘[01m[Kstruct PoseData[m[K’ has no member named ‘[01m[Kori[m[K’; did you mean ‘[01m[Kori_x[m[K’?
+[2.409s]   399 |         double yaw = quatToYaw(Pose.ori_x , Pose.[01;31m[Kori[m[K.y , Pose.ori_z ,Pose.ori_w );
+[2.409s]       |                                                  [01;31m[K^~~[m[K
+[2.409s]       |                                                  [32m[Kori_x[m[K
+[2.412s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:448:52:[m[K [01;31m[Kerror: [m[K‘[01m[Kdx[m[K’ was not declared in this scope
+[2.412s]   448 |             case Phase::TURN_X: return turnToFace(([01;31m[Kdx[m[K>=0) ? 0.0 : M_PI ,yaw,Phase::DRIVE_X );
+[2.412s]       |                                                    [01;31m[K^~[m[K
+[2.414s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:450:53:[m[K [01;31m[Kerror: [m[K‘[01m[Kdy[m[K’ was not declared in this scope
+[2.415s]   450 |             case Phase::TURN_Y : return turnToFace(([01;31m[Kdy[m[K>=0) ? M_PI_2 : -M_PI_2,yaw,Phase::DRIVE_Y);
+[2.415s]       |                                                     [01;31m[K^~[m[K
+[2.415s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:393:17:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kk[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+[2.415s]   393 |         uint8_t [01;35m[Kk[m[K = 10;
+[2.415s]       |                 [01;35m[K^[m[K
+[2.415s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:[m[K In static member function ‘[01m[Kstatic double MoveToLocation::quatToYaw(double, double, double, double)[m[K’:
+[2.415s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:467:31:[m[K [01;35m[Kwarning: [m[Kleft operand of comma operator has no effect [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-value-Wunused-value]8;;[m[K]
+[2.415s]   467 |         double siny = 2.0 * ([01;35m[Kw*z[m[K, x*y);
+[2.415s]       |                              [01;35m[K~^~[m[K
+[2.415s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:[m[K In member function ‘[01m[KBT::NodeStatus MoveToLocation::driveToTarget(float, MoveToLocation::Phase)[m[K’:
+[2.415s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:503:46:[m[K [01;31m[Kerror: [m[Kcannot convert ‘[01m[Kpn_signal[m[K’ to ‘[01m[Kuint8_t[m[K’ {aka ‘[01m[Kunsigned char[m[K’} in initialization
+[2.415s]   503 |         Pose2D cmd{0x0f, 0, 0, 0, [01;31m[Kpn_signal::POS[m[K, stop_signal::NORMAL, grip_param::LOOSE, turn90_signal::NONE};
+[2.415s]       |                                   [01;31m[K~~~~~~~~~~~^~~[m[K
+[2.415s]       |                                              [01;31m[K|[m[K
+[2.416s]       |                                              [01;31m[Kpn_signal[m[K
+[2.416s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:502:15:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kspeed[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+[2.416s]   502 |         float [01;35m[Kspeed[m[K = std::clamp( 10.0f * distance , -20.0f ,20.0f);
+[2.416s]       |               [01;35m[K^~~~~[m[K
+[2.416s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:503:16:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kcmd[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+[2.416s]   503 |         Pose2D [01;35m[Kcmd[m[K{0x0f, 0, 0, 0, pn_signal::POS, stop_signal::NORMAL, grip_param::LOOSE, turn90_signal::NONE};
+[2.416s]       |                [01;35m[K^~~[m[K
+[4.960s] gmake[2]: *** [CMakeFiles/gps_node.dir/build.make:79: CMakeFiles/gps_node.dir/src/gps_node.cpp.o] Error 1
+[4.961s] gmake[1]: *** [CMakeFiles/Makefile2:188: CMakeFiles/gps_node.dir/all] Error 2
+[4.961s] gmake: *** [Makefile:146: all] Error 2
+[4.963s] Invoked command in '/home/w/projects/projects/gps_ws/build/gps' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/w/projects/projects/gps_ws/build/gps -- -j16 -l16

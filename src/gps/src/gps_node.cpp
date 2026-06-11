@@ -22,12 +22,13 @@ namespace chr = std::chrono;
 
 
 
-inline constexpr Pose2D kStop{0x0f, 0, 0, 0, 0, 1, 0};
-inline constexpr Pose2D kForward{0x0f, 1, 0, 0, 0, 0, 0};
-inline constexpr Pose2D kTurnLeft{0x0f, 0, 0, 1, 0, 0, 0};
-inline constexpr Pose2D kTurnRight{0x0f, 0, 0, 1, 1, 0, 0};
-
-
+inline constexpr Pose2D kStop{0x0f, 0, 0, 0, pn_signal::POS, grip_param::LOOSE, stop_signal::FORCE_STOP, turn90_signal::NONE};
+inline constexpr Pose2D kForward{0x0f, 1, 0, 0, pn_signal::POS, stop_signal::NORMAL, grip_param::LOOSE, turn90_signal::NONE};
+inline constexpr Pose2D kTurnLeft{0x0f, 0, 0, 1, pn_signal::POS, stop_signal::NORMAL, grip_param::LOOSE,turn90_signal::NONE};
+inline constexpr Pose2D kTurnRight{0x0f, 0, 0, 1, pn_signal::NEG, stop_signal::NORMAL, grip_param::LOOSE,turn90_signal::NONE};
+inline constexpr Pose2D kGrip{0x0f, 0, 0, 0, pn_signal::POS, stop_signal::NORMAL, grip_param::GRIPPED,turn90_signal::NONE};
+inline constexpr Pose2D kTurn90Left{0x0f, 0, 0, 0, pn_signal::POS, stop_signal::NORMAL, grip_param::LOOSE,turn90_signal::TURN_90};
+inline constexpr Pose2D kTurn90Right{0x0f, 0, 0, 0, pn_signal::NEG, stop_signal::NORMAL, grip_param::LOOSE,turn90_signal::TURN_90};
 
 
 
@@ -87,6 +88,15 @@ public:
     double currentX() const { std::lock_guard<std::mutex> lock(odom_mutex_); return pose_.x; }
     double currentY() const { std::lock_guard<std::mutex> lock(odom_mutex_); return pose_.y; }
     double currentZ() const { std::lock_guard<std::mutex> lock(odom_mutex_); return pose_.z; }
+    
+    double currentYaw() const
+    {
+        std::lock_guard<std::mutex> lock(odom_mutex_);
+        double siny = 2.0 * (pose_.ori_w * pose_.ori_z + pose_.ori_x * pose_.ori_y);
+        double cosy = 1.0 - 2.0 * (pose_.ori_y * pose_.ori_y + pose_.ori_z * pose_.ori_z); 
+        return std::atan2(siny , cosy);
+    }
+
     PoseData poseData() const { std::lock_guard<std::mutex> lock(odom_mutex_); return pose_; }
 
     // 雷达 IMU
@@ -156,6 +166,7 @@ class Map
 public:
     Map() = default;
     // 这里可以添加地图相关的方法和成员变量 
+
 
 
 public:
@@ -356,7 +367,9 @@ public:
             return BT::NodeStatus::FAILURE;
         }
         dest_location_ = it->second;
-
+        phase_ = Phase::TURN_X;
+        
+        overall_deadtime_ = chr::steady_clock::now() + chr::seconds(15);
         int duration_ms = 5000;
         getInput<int>("duration_ms", duration_ms);
         deadline_ = chr::steady_clock::now() + chr::milliseconds(duration_ms);
@@ -368,56 +381,60 @@ public:
 
     BT::NodeStatus onRunning() override
     {
-        if (chr::steady_clock::now() >= deadline_)
+        auto now = chr::steady_clock::now();
+        if (now >= overall_deadtime_)
         {
             stopRobot();
             return BT::NodeStatus::FAILURE;
         }
 
+        PoseData Pose = context_->sensor_node->poseData();
 
-        uint8_t k = 10;
+        //uint8_t k = 10;
         Location current_location;
         current_location.x = static_cast<float>(context_->sensor_node->currentX());
         current_location.y = static_cast<float>(context_->sensor_node->currentY());
         float distance_x = dest_location_.x - current_location.x;
         float distance_y = dest_location_.y - current_location.y;
+        double yaw = quatToYaw(Pose.ori_x , Pose.ori_y , Pose.ori_z ,Pose.ori_w );
+
 
         
-        if(chr::steady_clock::now() < deadline_)
-        {
-            if(chr::steady_clock::now()  < (deadline_) - chr::milliseconds(1500))
-            {
-                float speed_x = k * distance_x;
-                if(speed_x >=0)
-                {
+        // if(chr::steady_clock::now() < deadline_)
+        // {
+        //     if(chr::steady_clock::now()  < (deadline_) - chr::milliseconds(4500))
+        //     {
+        //         float speed_x = k * distance_x;
+        //         if(speed_x >=0)
+        //         {
                     
-                    Pose2D cmd{0x0f, (uint8_t)speed_x, 0, 0, 0, 0, 0};
-                    sendCommand(cmd);
-                }
-                else
-                {
+        //             Pose2D cmd{0x0f, (uint8_t)speed_x, 0, 0, 0, 0, 0};
+        //             sendCommand(cmd);
+        //         }
+        //         else
+        //         {
 
-                    Pose2D cmd{0x0f, (uint8_t)-speed_x, 0, 0, 1, 0, 0};
-                    sendCommand(cmd);
-                }
+        //             Pose2D cmd{0x0f, (uint8_t)-speed_x, 0, 0, 1, 0, 0};
+        //             sendCommand(cmd);
+        //         }
                 
-            }
-            else
-            {
-                float speed_y = k * distance_y;
-                if(speed_y >=0)
-                {
+        //     }
+        //     else
+        //     {
+        //         float speed_y = k * distance_y;
+        //         if(speed_y >=0)
+        //         {
                     
-                    Pose2D cmd{0x0f, 0, (uint8_t)speed_y, 0, 0, 0, 0};
-                    sendCommand(cmd);
-                }
-                else
-                {
+        //             Pose2D cmd{0x0f, 0, (uint8_t)speed_y, 0, 0, 0, 0};
+        //             sendCommand(cmd);
+        //         }
+        //         else
+        //         {
 
-                    Pose2D cmd{0x0f,  0, (uint8_t)-speed_y, 0, 1, 0, 0};
-                    sendCommand(cmd);
-                }
-            }
+        //             Pose2D cmd{0x0f,  0, (uint8_t)-speed_y, 0, 1, 0, 0};
+        //             sendCommand(cmd);
+        //         }
+        //     }
 
             float k_tolerance = 0.2f;
             if((std::abs(distance_x) < k_tolerance) && (std::abs(distance_y) < k_tolerance))
@@ -426,14 +443,79 @@ public:
                 return BT::NodeStatus::SUCCESS;
             }
 
-            return BT::NodeStatus::RUNNING;
-        }
+            switch (phase_)
+            {
+            case Phase::TURN_X: return turnToFace((distance_x>=0) ? 0.0 : M_PI ,yaw,Phase::DRIVE_X );
+            case Phase::DRIVE_X : return driveToTarget(distance_x  , Phase::TURN_Y);
+            case Phase::TURN_Y : return turnToFace((distance_y>=0) ? M_PI_2 : -M_PI_2,yaw,Phase::DRIVE_Y);
+            case Phase::DRIVE_Y : return driveToTarget(distance_y , Phase::DONE);
+            case Phase::DONE : stopRobot(); return BT::NodeStatus::SUCCESS;
+            }
+
+
+        //     return BT::NodeStatus::RUNNING;
+        // }
         return BT::NodeStatus::FAILURE;
     }
 
 
 protected:
+    enum class Phase{ TURN_X , DRIVE_X , TURN_Y , DRIVE_Y ,DONE};
+    
+    static double quatToYaw(double x,double y, double z,double w)
+    {
+        double siny = 2.0 * (w*z + x*y);
+        double cosy = 1.0 - 2.0 * ( y*y  + z* z);
+        return std::atan2(siny , cosy);
+    }
+
+    BT::NodeStatus turnToFace(double target_yaw , double current_yaw , Phase next)
+    {
+        double diff = target_yaw - current_yaw ; 
+        while (diff > M_PI) diff -= 2* M_PI;
+        while (diff < -M_PI) diff += 2 * M_PI;
+
+        constexpr double kYawTol = 0.1;
+        if(std::abs(diff) < kYawTol)
+        {
+            stopRobot();
+            phase_ = next;
+            RCLCPP_INFO(context_->logger,"MoveTo:转向完成，进入下一阶段");
+            return BT::NodeStatus::RUNNING;
+        }
+        
+        sendCommand((diff>0) ? kTurnLeft: kTurnRight);
+        return BT::NodeStatus::RUNNING;
+    } 
+
+
+    BT::NodeStatus driveToTarget(float distance , Phase next)
+    {
+        constexpr float kTol = 0.15f;
+        if( std::abs(distance) < kTol)
+        {
+            stopRobot();
+            phase_ = next;
+            return BT::NodeStatus::RUNNING;
+        }
+
+        float speed = std::clamp( 10.0f * distance , -20.0f ,20.0f);
+        if(speed >= 0)
+        {
+            Pose2D cmd{0x0f, (uint8_t)speed, 0, 0, pn_signal::POS, stop_signal::NORMAL, grip_param::LOOSE, turn90_signal::NONE};
+            sendCommand(cmd);
+        }
+        else
+        {
+            Pose2D cmd{0x0f, (uint8_t)(-speed), 0, 0, pn_signal::NEG, stop_signal::NORMAL, grip_param::LOOSE, turn90_signal::NONE};
+            sendCommand(cmd);
+        }
+        return BT::NodeStatus::RUNNING;
+    }
+
     Location dest_location_ ;
+    Phase phase_ {Phase::TURN_X};
+    chr::steady_clock::time_point overall_deadtime_ ; 
 };
 
 
@@ -693,7 +775,7 @@ static void registerNodes(BT::BehaviorTreeFactory& factory, const std::shared_pt
         [context](const std::string& name, const BT::NodeConfig& config) {
             return std::make_unique<MoveToLocation>(name, config, context);
         });
-
+    
 }
 
 int main(int argc, char** argv)

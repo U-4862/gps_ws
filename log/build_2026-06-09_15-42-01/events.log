@@ -1,0 +1,132 @@
+[0.000000] (-) TimerEvent: {}
+[0.000653] (gps) JobQueued: {'identifier': 'gps', 'dependencies': OrderedDict()}
+[0.000765] (gps) JobStarted: {'identifier': 'gps'}
+[0.011105] (gps) JobProgress: {'identifier': 'gps', 'progress': 'cmake'}
+[0.011723] (gps) JobProgress: {'identifier': 'gps', 'progress': 'build'}
+[0.012333] (gps) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/w/projects/projects/gps_ws/build/gps', '--', '-j16', '-l16'], 'cwd': '/home/w/projects/projects/gps_ws/build/gps', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('PYTHON_BASIC_REPL', '1'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('LANGUAGE', 'en_US:en'), ('USER', 'w'), ('LC_TIME', 'zh_CN.UTF-8'), ('XDG_SESSION_TYPE', 'x11'), ('GIT_ASKPASS', '/usr/share/code/resources/app/extensions/git/dist/askpass.sh'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/w/fastlio/install/fast_lio/lib:/home/w/ws_livox/install/livox_ros_driver2/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/w'), ('CHROME_DESKTOP', 'code.desktop'), ('CONDA_SHLVL', '0'), ('TERM_PROGRAM_VERSION', '1.120.0'), ('DESKTOP_SESSION', 'ubuntu-xorg'), ('GIO_LAUNCHED_DESKTOP_FILE', '/usr/share/applications/code.desktop'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('XDG_SEAT_PATH', '/org/freedesktop/DisplayManager/Seat0'), ('VSCODE_GIT_ASKPASS_MAIN', '/usr/share/code/resources/app/extensions/git/dist/askpass-main.js'), ('LC_MONETARY', 'zh_CN.UTF-8'), ('VSCODE_GIT_ASKPASS_NODE', '/usr/share/code/code'), ('MANAGERPID', '1836'), ('PYDEVD_DISABLE_FILE_VALIDATION', '1'), ('SYSTEMD_EXEC_PID', '2551'), ('BUNDLED_DEBUGPY_PATH', '/home/w/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/libs/debugpy'), ('VSCODE_PYTHON_AUTOACTIVATE_GUARD', '1'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('_CE_M', ''), ('_CONDA_ROOT', '/home/w/anaconda3'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '5159'), ('COLCON_PREFIX_PATH', '/home/w/projects/projects/gps_ws/install:/home/w/ws_livox/install:/home/w/fastlio/install'), ('AM_HOME', '/home/w/projects/ics2025/abstract-machine'), ('ROS_DISTRO', 'humble'), ('GTK_IM_MODULE', 'ibus'), ('LOGNAME', 'w'), ('JOURNAL_STREAM', '8:18668'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('CLAUDE_CODE_SSE_PORT', '32250'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('_CE_CONDA', ''), ('FC_FONTATIONS', '1'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/home/w/.config/Code/User/globalStorage/github.copilot-chat/debugCommand:/home/w/.config/Code/User/globalStorage/github.copilot-chat/copilotCli:/home/w/.local/bin:/home/w/anaconda3/condabin:/opt/ros/humble/bin:/home/w/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/w/.fishros/bin/:/home/w/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts:/home/w/.fishros/bin/'), ('SESSION_MANAGER', 'local/FA608PM:@/tmp/.ICE-unix/2464,unix/FA608PM:/tmp/.ICE-unix/2464'), ('GDM_LANG', 'en_US'), ('INVOCATION_ID', '0ce930ceef624097b8f690376287feea'), ('PAPERSIZE', 'a4'), ('XDG_SESSION_PATH', '/org/freedesktop/DisplayManager/Session0'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'zh_CN.UTF-8'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('GDK_BACKEND', 'x11'), ('DISPLAY', ':0'), ('VSCODE_DEBUGPY_ADAPTER_ENDPOINTS', '/home/w/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/.noConfigDebugAdapterEndpoints/endpoint-097c48a3521994f0.txt'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('PYTHONSTARTUP', '/home/w/.config/Code/User/workspaceStorage/a2ad95b9f6dfb62897a05935310ba1b5/ms-python.python/pythonrc.py'), ('LC_TELEPHONE', 'zh_CN.UTF-8'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu-xorg'), ('XAUTHORITY', '/home/w/.Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1000/vscode-git-d2c6b87941.sock'), ('TERM_PROGRAM', 'vscode'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('XDG_GREETER_DATA_DIR', '/var/lib/lightdm-data/w'), ('AMENT_PREFIX_PATH', '/home/w/projects/projects/gps_ws/install/gps:/home/w/fastlio/install/fast_lio:/home/w/ws_livox/install/livox_ros_driver2:/opt/ros/humble'), ('CONDA_PYTHON_EXE', '/home/w/anaconda3/bin/python'), ('SHELL', '/bin/bash'), ('LC_NAME', 'zh_CN.UTF-8'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu-xorg'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'zh_CN.UTF-8'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('_CONDA_EXE', '/home/w/anaconda3/bin/conda'), ('LC_IDENTIFICATION', 'zh_CN.UTF-8'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/w/projects/projects/gps_ws/build/gps'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu-xorg:/etc/xdg'), ('CONDA_EXE', '/home/w/anaconda3/bin/conda'), ('XDG_DATA_DIRS', '/usr/share/ubuntu-xorg:/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/w/fastlio/install/fast_lio/local/lib/python3.10/dist-packages:/home/w/ws_livox/install/livox_ros_driver2/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'zh_CN.UTF-8'), ('LC_PAPER', 'zh_CN.UTF-8'), ('COLCON', '1'), ('NEMU_HOME', '/home/w/projects/ics2025/nemu'), ('CMAKE_PREFIX_PATH', '/home/w/projects/projects/gps_ws/install/gps:/home/w/fastlio/install/fast_lio:/home/w/ws_livox/install/livox_ros_driver2:/opt/ros/humble')]), 'shell': False}
+[0.075505] (gps) StdoutLine: {'line': b'[ 50%] Built target SerialPort\n'}
+[0.099782] (-) TimerEvent: {}
+[0.103076] (gps) StdoutLine: {'line': b'[ 75%] \x1b[32mBuilding CXX object CMakeFiles/gps_node.dir/src/gps_node.cpp.o\x1b[0m\n'}
+[0.199887] (-) TimerEvent: {}
+[0.300156] (-) TimerEvent: {}
+[0.400444] (-) TimerEvent: {}
+[0.500777] (-) TimerEvent: {}
+[0.601108] (-) TimerEvent: {}
+[0.701388] (-) TimerEvent: {}
+[0.801664] (-) TimerEvent: {}
+[0.901993] (-) TimerEvent: {}
+[1.002330] (-) TimerEvent: {}
+[1.102625] (-) TimerEvent: {}
+[1.202919] (-) TimerEvent: {}
+[1.303250] (-) TimerEvent: {}
+[1.403555] (-) TimerEvent: {}
+[1.503843] (-) TimerEvent: {}
+[1.604178] (-) TimerEvent: {}
+[1.704511] (-) TimerEvent: {}
+[1.804868] (-) TimerEvent: {}
+[1.905180] (-) TimerEvent: {}
+[2.005481] (-) TimerEvent: {}
+[2.105819] (-) TimerEvent: {}
+[2.206155] (-) TimerEvent: {}
+[2.306486] (-) TimerEvent: {}
+[2.336633] (gps) StderrLine: {'line': b'\x1b[01m\x1b[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:25:57:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kcannot convert \xe2\x80\x98\x1b[01m\x1b[Kpn_signal\x1b[m\x1b[K\xe2\x80\x99 to \xe2\x80\x98\x1b[01m\x1b[Kuint8_t\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Kunsigned char\x1b[m\x1b[K\xe2\x80\x99} in initialization\n'}
+[2.336878] (gps) StderrLine: {'line': b'   25 | inline constexpr Pose2D kStop{0x0f, 0, 0, 0, \x1b[01;31m\x1b[Kpn_signal::POS\x1b[m\x1b[K, stop_signal::FORCE_STOP, grip_param::LOOSE,turn90_signal::NONE};\n'}
+[2.336959] (gps) StderrLine: {'line': b'      |                                              \x1b[01;31m\x1b[K~~~~~~~~~~~^~~\x1b[m\x1b[K\n'}
+[2.337029] (gps) StderrLine: {'line': b'      |                                                         \x1b[01;31m\x1b[K|\x1b[m\x1b[K\n'}
+[2.337090] (gps) StderrLine: {'line': b'      |                                                         \x1b[01;31m\x1b[Kpn_signal\x1b[m\x1b[K\n'}
+[2.337149] (gps) StderrLine: {'line': b'\x1b[01m\x1b[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:26:57:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kcannot convert \xe2\x80\x98\x1b[01m\x1b[Kpn_signal\x1b[m\x1b[K\xe2\x80\x99 to \xe2\x80\x98\x1b[01m\x1b[Kuint8_t\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Kunsigned char\x1b[m\x1b[K\xe2\x80\x99} in initialization\n'}
+[2.337211] (gps) StderrLine: {'line': b'   26 | inline constexpr Pose2D kForward{0x0f, 1, 0, \x1b[01;31m\x1b[Kpn_signal::POS\x1b[m\x1b[K, stop_signal::NORMAL, grip_param::LOOSE, grip_param::LOOSE,turn90_signal::NONE};\n'}
+[2.337269] (gps) StderrLine: {'line': b'      |                                              \x1b[01;31m\x1b[K~~~~~~~~~~~^~~\x1b[m\x1b[K\n'}
+[2.337324] (gps) StderrLine: {'line': b'      |                                                         \x1b[01;31m\x1b[K|\x1b[m\x1b[K\n'}
+[2.337378] (gps) StderrLine: {'line': b'      |                                                         \x1b[01;31m\x1b[Kpn_signal\x1b[m\x1b[K\n'}
+[2.337432] (gps) StderrLine: {'line': b'\x1b[01m\x1b[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:27:61:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kcannot convert \xe2\x80\x98\x1b[01m\x1b[Kpn_signal\x1b[m\x1b[K\xe2\x80\x99 to \xe2\x80\x98\x1b[01m\x1b[Kuint8_t\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Kunsigned char\x1b[m\x1b[K\xe2\x80\x99} in initialization\n'}
+[2.337488] (gps) StderrLine: {'line': b'   27 | inline constexpr Pose2D kTurnLeft{0x0f, 0, 0, 1, \x1b[01;31m\x1b[Kpn_signal::POS\x1b[m\x1b[K, stop_signal::NORMAL, grip_param::LOOSE,turn90_signal::NONE};\n'}
+[2.337544] (gps) StderrLine: {'line': b'      |                                                  \x1b[01;31m\x1b[K~~~~~~~~~~~^~~\x1b[m\x1b[K\n'}
+[2.337608] (gps) StderrLine: {'line': b'      |                                                             \x1b[01;31m\x1b[K|\x1b[m\x1b[K\n'}
+[2.337668] (gps) StderrLine: {'line': b'      |                                                             \x1b[01;31m\x1b[Kpn_signal\x1b[m\x1b[K\n'}
+[2.337722] (gps) StderrLine: {'line': b'\x1b[01m\x1b[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:28:62:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kcannot convert \xe2\x80\x98\x1b[01m\x1b[Kpn_signal\x1b[m\x1b[K\xe2\x80\x99 to \xe2\x80\x98\x1b[01m\x1b[Kuint8_t\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Kunsigned char\x1b[m\x1b[K\xe2\x80\x99} in initialization\n'}
+[2.337764] (gps) StderrLine: {'line': b'   28 | inline constexpr Pose2D kTurnRight{0x0f, 0, 0, 1, \x1b[01;31m\x1b[Kpn_signal::NEG\x1b[m\x1b[K, stop_signal::NORMAL, grip_param::LOOSE,turn90_signal::NONE};\n'}
+[2.337790] (gps) StderrLine: {'line': b'      |                                                   \x1b[01;31m\x1b[K~~~~~~~~~~~^~~\x1b[m\x1b[K\n'}
+[2.337815] (gps) StderrLine: {'line': b'      |                                                              \x1b[01;31m\x1b[K|\x1b[m\x1b[K\n'}
+[2.337840] (gps) StderrLine: {'line': b'      |                                                              \x1b[01;31m\x1b[Kpn_signal\x1b[m\x1b[K\n'}
+[2.337866] (gps) StderrLine: {'line': b'\x1b[01m\x1b[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:29:57:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kcannot convert \xe2\x80\x98\x1b[01m\x1b[Kpn_signal\x1b[m\x1b[K\xe2\x80\x99 to \xe2\x80\x98\x1b[01m\x1b[Kuint8_t\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Kunsigned char\x1b[m\x1b[K\xe2\x80\x99} in initialization\n'}
+[2.337897] (gps) StderrLine: {'line': b'   29 | inline constexpr Pose2D kGrip{0x0f, 0, 0, 0, \x1b[01;31m\x1b[Kpn_signal::POS\x1b[m\x1b[K, stop_signal::NORMAL, grip_param::GRIPPED,turn90_signal::NONE};\n'}
+[2.337922] (gps) StderrLine: {'line': b'      |                                              \x1b[01;31m\x1b[K~~~~~~~~~~~^~~\x1b[m\x1b[K\n'}
+[2.337948] (gps) StderrLine: {'line': b'      |                                                         \x1b[01;31m\x1b[K|\x1b[m\x1b[K\n'}
+[2.337972] (gps) StderrLine: {'line': b'      |                                                         \x1b[01;31m\x1b[Kpn_signal\x1b[m\x1b[K\n'}
+[2.337997] (gps) StderrLine: {'line': b'\x1b[01m\x1b[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:30:63:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kcannot convert \xe2\x80\x98\x1b[01m\x1b[Kpn_signal\x1b[m\x1b[K\xe2\x80\x99 to \xe2\x80\x98\x1b[01m\x1b[Kuint8_t\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Kunsigned char\x1b[m\x1b[K\xe2\x80\x99} in initialization\n'}
+[2.338023] (gps) StderrLine: {'line': b'   30 | inline constexpr Pose2D kTurn90Left{0x0f, 0, 0, 0, \x1b[01;31m\x1b[Kpn_signal::POS\x1b[m\x1b[K, stop_signal::NORMAL, grip_param::LOOSE,turn90_signal::TURN_90};\n'}
+[2.338052] (gps) StderrLine: {'line': b'      |                                                    \x1b[01;31m\x1b[K~~~~~~~~~~~^~~\x1b[m\x1b[K\n'}
+[2.338079] (gps) StderrLine: {'line': b'      |                                                               \x1b[01;31m\x1b[K|\x1b[m\x1b[K\n'}
+[2.338104] (gps) StderrLine: {'line': b'      |                                                               \x1b[01;31m\x1b[Kpn_signal\x1b[m\x1b[K\n'}
+[2.338129] (gps) StderrLine: {'line': b'\x1b[01m\x1b[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:31:64:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kcannot convert \xe2\x80\x98\x1b[01m\x1b[Kpn_signal\x1b[m\x1b[K\xe2\x80\x99 to \xe2\x80\x98\x1b[01m\x1b[Kuint8_t\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Kunsigned char\x1b[m\x1b[K\xe2\x80\x99} in initialization\n'}
+[2.338160] (gps) StderrLine: {'line': b'   31 | inline constexpr Pose2D kTurn90Right{0x0f, 0, 0, 0, \x1b[01;31m\x1b[Kpn_signal::NEG\x1b[m\x1b[K, stop_signal::NORMAL, grip_param::LOOSE,turn90_signal::TURN_90};\n'}
+[2.338183] (gps) StderrLine: {'line': b'      |                                                     \x1b[01;31m\x1b[K~~~~~~~~~~~^~~\x1b[m\x1b[K\n'}
+[2.338206] (gps) StderrLine: {'line': b'      |                                                                \x1b[01;31m\x1b[K|\x1b[m\x1b[K\n'}
+[2.338228] (gps) StderrLine: {'line': b'      |                                                                \x1b[01;31m\x1b[Kpn_signal\x1b[m\x1b[K\n'}
+[2.406618] (-) TimerEvent: {}
+[2.408367] (gps) StderrLine: {'line': b'\x1b[01m\x1b[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvirtual BT::NodeStatus MoveToLocation::onStart()\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[2.408468] (gps) StderrLine: {'line': b'\x1b[01m\x1b[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:370:18:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KTURN_X\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[2.408502] (gps) StderrLine: {'line': b'  370 |         phase_ = \x1b[01;31m\x1b[KTURN_X\x1b[m\x1b[K;\n'}
+[2.408529] (gps) StderrLine: {'line': b'      |                  \x1b[01;31m\x1b[K^~~~~~\x1b[m\x1b[K\n'}
+[2.409409] (gps) StderrLine: {'line': b'\x1b[01m\x1b[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvirtual BT::NodeStatus MoveToLocation::onRunning()\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[2.409556] (gps) StderrLine: {'line': b'\x1b[01m\x1b[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:399:50:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kstruct PoseData\x1b[m\x1b[K\xe2\x80\x99 has no member named \xe2\x80\x98\x1b[01m\x1b[Kori\x1b[m\x1b[K\xe2\x80\x99; did you mean \xe2\x80\x98\x1b[01m\x1b[Kori_x\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[2.409657] (gps) StderrLine: {'line': b'  399 |         double yaw = quatToYaw(Pose.ori_x , Pose.\x1b[01;31m\x1b[Kori\x1b[m\x1b[K.y , Pose.ori_z ,Pose.ori_w );\n'}
+[2.409732] (gps) StderrLine: {'line': b'      |                                                  \x1b[01;31m\x1b[K^~~\x1b[m\x1b[K\n'}
+[2.409758] (gps) StderrLine: {'line': b'      |                                                  \x1b[32m\x1b[Kori_x\x1b[m\x1b[K\n'}
+[2.412201] (gps) StderrLine: {'line': b'\x1b[01m\x1b[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:448:52:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kdx\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[2.412352] (gps) StderrLine: {'line': b'  448 |             case Phase::TURN_X: return turnToFace((\x1b[01;31m\x1b[Kdx\x1b[m\x1b[K>=0) ? 0.0 : M_PI ,yaw,Phase::DRIVE_X );\n'}
+[2.412436] (gps) StderrLine: {'line': b'      |                                                    \x1b[01;31m\x1b[K^~\x1b[m\x1b[K\n'}
+[2.415008] (gps) StderrLine: {'line': b'\x1b[01m\x1b[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:450:53:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kdy\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[2.415207] (gps) StderrLine: {'line': b'  450 |             case Phase::TURN_Y : return turnToFace((\x1b[01;31m\x1b[Kdy\x1b[m\x1b[K>=0) ? M_PI_2 : -M_PI_2,yaw,Phase::DRIVE_Y);\n'}
+[2.415321] (gps) StderrLine: {'line': b'      |                                                     \x1b[01;31m\x1b[K^~\x1b[m\x1b[K\n'}
+[2.415474] (gps) StderrLine: {'line': b'\x1b[01m\x1b[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:393:17:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused variable \xe2\x80\x98\x1b[01m\x1b[Kk\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable\x07-Wunused-variable\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[2.415665] (gps) StderrLine: {'line': b'  393 |         uint8_t \x1b[01;35m\x1b[Kk\x1b[m\x1b[K = 10;\n'}
+[2.415752] (gps) StderrLine: {'line': b'      |                 \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[2.415792] (gps) StderrLine: {'line': b'\x1b[01m\x1b[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:\x1b[m\x1b[K In static member function \xe2\x80\x98\x1b[01m\x1b[Kstatic double MoveToLocation::quatToYaw(double, double, double, double)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[2.415829] (gps) StderrLine: {'line': b'\x1b[01m\x1b[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:467:31:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kleft operand of comma operator has no effect [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-value\x07-Wunused-value\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[2.415869] (gps) StderrLine: {'line': b'  467 |         double siny = 2.0 * (\x1b[01;35m\x1b[Kw*z\x1b[m\x1b[K, x*y);\n'}
+[2.415905] (gps) StderrLine: {'line': b'      |                              \x1b[01;35m\x1b[K~^~\x1b[m\x1b[K\n'}
+[2.416051] (gps) StderrLine: {'line': b'\x1b[01m\x1b[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[KBT::NodeStatus MoveToLocation::driveToTarget(float, MoveToLocation::Phase)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[2.416130] (gps) StderrLine: {'line': b'\x1b[01m\x1b[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:503:46:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kcannot convert \xe2\x80\x98\x1b[01m\x1b[Kpn_signal\x1b[m\x1b[K\xe2\x80\x99 to \xe2\x80\x98\x1b[01m\x1b[Kuint8_t\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Kunsigned char\x1b[m\x1b[K\xe2\x80\x99} in initialization\n'}
+[2.416166] (gps) StderrLine: {'line': b'  503 |         Pose2D cmd{0x0f, 0, 0, 0, \x1b[01;31m\x1b[Kpn_signal::POS\x1b[m\x1b[K, stop_signal::NORMAL, grip_param::LOOSE, turn90_signal::NONE};\n'}
+[2.416194] (gps) StderrLine: {'line': b'      |                                   \x1b[01;31m\x1b[K~~~~~~~~~~~^~~\x1b[m\x1b[K\n'}
+[2.416222] (gps) StderrLine: {'line': b'      |                                              \x1b[01;31m\x1b[K|\x1b[m\x1b[K\n'}
+[2.416254] (gps) StderrLine: {'line': b'      |                                              \x1b[01;31m\x1b[Kpn_signal\x1b[m\x1b[K\n'}
+[2.416299] (gps) StderrLine: {'line': b'\x1b[01m\x1b[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:502:15:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused variable \xe2\x80\x98\x1b[01m\x1b[Kspeed\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable\x07-Wunused-variable\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[2.416332] (gps) StderrLine: {'line': b'  502 |         float \x1b[01;35m\x1b[Kspeed\x1b[m\x1b[K = std::clamp( 10.0f * distance , -20.0f ,20.0f);\n'}
+[2.416359] (gps) StderrLine: {'line': b'      |               \x1b[01;35m\x1b[K^~~~~\x1b[m\x1b[K\n'}
+[2.416385] (gps) StderrLine: {'line': b'\x1b[01m\x1b[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:503:16:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused variable \xe2\x80\x98\x1b[01m\x1b[Kcmd\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable\x07-Wunused-variable\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[2.416413] (gps) StderrLine: {'line': b'  503 |         Pose2D \x1b[01;35m\x1b[Kcmd\x1b[m\x1b[K{0x0f, 0, 0, 0, pn_signal::POS, stop_signal::NORMAL, grip_param::LOOSE, turn90_signal::NONE};\n'}
+[2.416442] (gps) StderrLine: {'line': b'      |                \x1b[01;35m\x1b[K^~~\x1b[m\x1b[K\n'}
+[2.506724] (-) TimerEvent: {}
+[2.607056] (-) TimerEvent: {}
+[2.707376] (-) TimerEvent: {}
+[2.807716] (-) TimerEvent: {}
+[2.908019] (-) TimerEvent: {}
+[3.008353] (-) TimerEvent: {}
+[3.108680] (-) TimerEvent: {}
+[3.209017] (-) TimerEvent: {}
+[3.309343] (-) TimerEvent: {}
+[3.409668] (-) TimerEvent: {}
+[3.510003] (-) TimerEvent: {}
+[3.610334] (-) TimerEvent: {}
+[3.710664] (-) TimerEvent: {}
+[3.811002] (-) TimerEvent: {}
+[3.911347] (-) TimerEvent: {}
+[4.011675] (-) TimerEvent: {}
+[4.112003] (-) TimerEvent: {}
+[4.212327] (-) TimerEvent: {}
+[4.312654] (-) TimerEvent: {}
+[4.412982] (-) TimerEvent: {}
+[4.513296] (-) TimerEvent: {}
+[4.613676] (-) TimerEvent: {}
+[4.714011] (-) TimerEvent: {}
+[4.814338] (-) TimerEvent: {}
+[4.914676] (-) TimerEvent: {}
+[4.960860] (gps) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/gps_node.dir/build.make:79: CMakeFiles/gps_node.dir/src/gps_node.cpp.o] Error 1\n'}
+[4.961198] (gps) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:188: CMakeFiles/gps_node.dir/all] Error 2\n'}
+[4.961455] (gps) StderrLine: {'line': b'gmake: *** [Makefile:146: all] Error 2\n'}
+[4.963339] (gps) CommandEnded: {'returncode': 2}
+[4.971373] (gps) JobEnded: {'identifier': 'gps', 'rc': 2}
+[4.982127] (-) EventReactorShutdown: {}
