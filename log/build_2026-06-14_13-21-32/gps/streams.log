@@ -1,0 +1,23 @@
+[0.012s] Invoking command in '/home/w/projects/projects/gps_ws/build/gps': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/w/projects/projects/gps_ws/build/gps -- -j16 -l16
+[0.044s] [ 50%] Built target SerialPort
+[0.073s] [ 75%] [32mBuilding CXX object CMakeFiles/gps_node.dir/src/gps_node.cpp.o[0m
+[2.466s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:[m[K In constructor ‘[01m[KTurnLeft::TurnLeft(const string&, const BT::NodeConfig&, std::shared_ptr<AppContext>)[m[K’:
+[2.466s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:540:65:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[KMoveToLocation::MoveToLocation(const string&, const BT::NodeConfig&, std::remove_reference<std::shared_ptr<AppContext>&>::type, const Pose2D&)[m[K’
+[2.466s]   540 |         : MoveToLocation(name, config, std::move(context), kStop[01;31m[K)[m[K
+[2.466s]       |                                                                 [01;31m[K^[m[K
+[2.466s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:340:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[KMoveToLocation::MoveToLocation(const string&, const BT::NodeConfig&, std::shared_ptr<AppContext>)[m[K’
+[2.466s]   340 |     [01;36m[KMoveToLocation[m[K(
+[2.466s]       |     [01;36m[K^~~~~~~~~~~~~~[m[K
+[2.466s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:340:5:[m[K [01;36m[Knote: [m[K  candidate expects 3 arguments, 4 provided
+[2.467s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:[m[K In constructor ‘[01m[KTurnRight::TurnRight(const string&, const BT::NodeConfig&, std::shared_ptr<AppContext>)[m[K’:
+[2.467s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:654:65:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[KMoveToLocation::MoveToLocation(const string&, const BT::NodeConfig&, std::remove_reference<std::shared_ptr<AppContext>&>::type, const Pose2D&)[m[K’
+[2.467s]   654 |         : MoveToLocation(name, config, std::move(context), kStop[01;31m[K)[m[K
+[2.467s]       |                                                                 [01;31m[K^[m[K
+[2.467s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:340:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[KMoveToLocation::MoveToLocation(const string&, const BT::NodeConfig&, std::shared_ptr<AppContext>)[m[K’
+[2.467s]   340 |     [01;36m[KMoveToLocation[m[K(
+[2.467s]       |     [01;36m[K^~~~~~~~~~~~~~[m[K
+[2.467s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:340:5:[m[K [01;36m[Knote: [m[K  candidate expects 3 arguments, 4 provided
+[5.101s] gmake[2]: *** [CMakeFiles/gps_node.dir/build.make:79: CMakeFiles/gps_node.dir/src/gps_node.cpp.o] Error 1
+[5.101s] gmake[1]: *** [CMakeFiles/Makefile2:188: CMakeFiles/gps_node.dir/all] Error 2
+[5.101s] gmake: *** [Makefile:146: all] Error 2
+[5.103s] Invoked command in '/home/w/projects/projects/gps_ws/build/gps' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/w/projects/projects/gps_ws/build/gps -- -j16 -l16

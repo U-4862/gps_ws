@@ -1,0 +1,11 @@
+[0.012s] Invoking command in '/home/w/projects/projects/gps_ws/build/gps': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/w/projects/projects/gps_ws/build/gps -- -j16 -l16
+[0.046s] [ 50%] Built target SerialPort
+[0.075s] [ 75%] [32mBuilding CXX object CMakeFiles/gps_node.dir/src/gps_node.cpp.o[0m
+[2.378s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:[m[K In member function ‘[01m[Kvirtual BT::NodeStatus MoveToLocation::onRunning()[m[K’:
+[2.379s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:396:54:[m[K [01;31m[Kerror: [m[K‘[01m[Kstruct PoseData[m[K’ has no member named ‘[01m[KY[m[K’
+[2.379s]   396 |         current_location.y = static_cast<float>(Pose.[01;31m[KY[m[K);
+[2.379s]       |                                                      [01;31m[K^[m[K
+[4.970s] gmake[2]: *** [CMakeFiles/gps_node.dir/build.make:79: CMakeFiles/gps_node.dir/src/gps_node.cpp.o] Error 1
+[4.970s] gmake[1]: *** [CMakeFiles/Makefile2:188: CMakeFiles/gps_node.dir/all] Error 2
+[4.971s] gmake: *** [Makefile:146: all] Error 2
+[4.973s] Invoked command in '/home/w/projects/projects/gps_ws/build/gps' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/w/projects/projects/gps_ws/build/gps -- -j16 -l16

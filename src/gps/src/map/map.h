@@ -68,8 +68,8 @@ struct Location
     {"restart_point", {0.0f, 0.0f}},
     {"weapon_chair", {1.2f, 0.7f}},
     {"home" ,{0.4f , 0.0f}},
-    {"test1" , {1.0f , 1.5f}}
-    
+    {"test1" , {1.0f , 1.5f}},
+    {"test2" , {2.57f , -1.6f}}
     
 };
 

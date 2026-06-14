@@ -1,0 +1,29 @@
+[0.012s] Invoking command in '/home/w/projects/projects/gps_ws/build/gps': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/w/projects/projects/gps_ws/build/gps -- -j16 -l16
+[0.076s] [ 50%] Built target SerialPort
+[0.103s] [ 75%] [32mBuilding CXX object CMakeFiles/gps_node.dir/src/gps_node.cpp.o[0m
+[2.625s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:[m[K In constructor ‘[01m[KTurnLeft::TurnLeft(const string&, const BT::NodeConfig&, std::shared_ptr<AppContext>)[m[K’:
+[2.625s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:540:11:[m[K [01;31m[Kerror: [m[Ktype ‘[01m[KTimedVelocityAction[m[K’ is not a direct base of ‘[01m[KTurnLeft[m[K’
+[2.625s]   540 |         : [01;31m[KTimedVelocityAction[m[K(name, config, std::move(context), kStop)
+[2.625s]       |           [01;31m[K^~~~~~~~~~~~~~~~~~~[m[K
+[2.625s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:540:70:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[KMoveToLocation::MoveToLocation()[m[K’
+[2.625s]   540 |         : TimedVelocityAction(name, config, std::move(context), kStop[01;31m[K)[m[K
+[2.625s]       |                                                                      [01;31m[K^[m[K
+[2.625s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:340:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[KMoveToLocation::MoveToLocation(const string&, const BT::NodeConfig&, std::shared_ptr<AppContext>)[m[K’
+[2.625s]   340 |     [01;36m[KMoveToLocation[m[K(
+[2.625s]       |     [01;36m[K^~~~~~~~~~~~~~[m[K
+[2.625s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:340:5:[m[K [01;36m[Knote: [m[K  candidate expects 3 arguments, 0 provided
+[2.626s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:[m[K In constructor ‘[01m[KTurnRight::TurnRight(const string&, const BT::NodeConfig&, std::shared_ptr<AppContext>)[m[K’:
+[2.626s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:654:11:[m[K [01;31m[Kerror: [m[Ktype ‘[01m[KTimedVelocityAction[m[K’ is not a direct base of ‘[01m[KTurnRight[m[K’
+[2.626s]   654 |         : [01;31m[KTimedVelocityAction[m[K(name, config, std::move(context), kStop)
+[2.626s]       |           [01;31m[K^~~~~~~~~~~~~~~~~~~[m[K
+[2.626s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:654:70:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[KMoveToLocation::MoveToLocation()[m[K’
+[2.626s]   654 |         : TimedVelocityAction(name, config, std::move(context), kStop[01;31m[K)[m[K
+[2.626s]       |                                                                      [01;31m[K^[m[K
+[2.626s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:340:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[KMoveToLocation::MoveToLocation(const string&, const BT::NodeConfig&, std::shared_ptr<AppContext>)[m[K’
+[2.626s]   340 |     [01;36m[KMoveToLocation[m[K(
+[2.626s]       |     [01;36m[K^~~~~~~~~~~~~~[m[K
+[2.626s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:340:5:[m[K [01;36m[Knote: [m[K  candidate expects 3 arguments, 0 provided
+[5.771s] gmake[2]: *** [CMakeFiles/gps_node.dir/build.make:79: CMakeFiles/gps_node.dir/src/gps_node.cpp.o] Error 1
+[5.771s] gmake[1]: *** [CMakeFiles/Makefile2:188: CMakeFiles/gps_node.dir/all] Error 2
+[5.771s] gmake: *** [Makefile:146: all] Error 2
+[5.775s] Invoked command in '/home/w/projects/projects/gps_ws/build/gps' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/w/projects/projects/gps_ws/build/gps -- -j16 -l16

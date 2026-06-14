@@ -397,7 +397,7 @@ public:
         float distance_x = dest_location_.x - current_location.x;
         float distance_y = dest_location_.y - current_location.y;
         double yaw = quatToYaw(Pose.ori_x , Pose.ori_y , Pose.ori_z ,Pose.ori_w );
-
+        RCLCPP_INFO(context_->logger , "dis_x:%3f,dis_y:%3f",distance_x ,distance_y);
 
         
         // if(chr::steady_clock::now() < deadline_)
@@ -530,110 +530,150 @@ public:
     {}
 };
 
-class TurnLeft final : public TimedVelocityAction
+class TurnLeft final : public MoveToLocation
 {
 public:
     TurnLeft(
         const std::string& name,
         const BT::NodeConfig& config,
         std::shared_ptr<AppContext> context)
-        : TimedVelocityAction(name, config, std::move(context), kTurnLeft)
+        : MoveToLocation(name, config, std::move(context))
     {
     }
 
     BT::NodeStatus onRunning() override
     {
-        if(chr::steady_clock::now() < deadline_)
+        if(chr::steady_clock::now() >= deadline_)
+        {  
+            stopRobot();
+            return BT::NodeStatus::FAILURE;
+        }
+        
+        PoseData Pose = context_->sensor_node->poseData();
+        double yaw = quatToYaw(Pose.ori_x , Pose.ori_y ,Pose.ori_z , Pose.ori_w);
+        turnToFace(M_PI_2, yaw, Phase::DRIVE_X);
+        
+        if(phase_ == Phase::DRIVE_X)
         {
-            if (chr::steady_clock::now() < (deadline_) - chr::milliseconds(1500))
-            {
-                Pose2D start_command{0x0f, 0, 0, 3};
-                if (!sendCommand(start_command))
-                    {
-                    RCLCPP_ERROR(
-                        context_->logger,
-                        "[%s] failed to send ##Start To Turn command: %s",
-                        name().c_str(),
-                        context_->motion_port->lastError().c_str());
-                        return BT::NodeStatus::FAILURE;
-                    }
-                RCLCPP_INFO(
-                    context_->logger,
-                    "current status:start     [%s] running: time left %ldms",
-                    name().c_str(),
-                    std::chrono::duration_cast<std::chrono::milliseconds>(deadline_ - std::chrono::steady_clock::now()).count());
-            }
-            else if (chr::steady_clock::now() < deadline_ - chr::milliseconds(1000))
-            {
-                
-                if (!sendCommand(command_))
-                    {
-                    RCLCPP_ERROR(
-                        context_->logger,
-                        "[%s] failed to send turning command: %s",
-                        name().c_str(),
-                        context_->motion_port->lastError().c_str());
-                        return BT::NodeStatus::FAILURE;
-                    }
-                RCLCPP_INFO(
-                    context_->logger,
-                    "current status:turning   [%s] running: time left %ldms",
-                    name().c_str(),
-                    std::chrono::duration_cast<std::chrono::milliseconds>(deadline_ - std::chrono::steady_clock::now()).count());
-            }
-            else if (chr::steady_clock::now() < deadline_ - chr::milliseconds(400))
-            {
-                Pose2D stop_command{0x0f, 0, 0, 0};
-                if (!sendCommand(stop_command))
-                    {
-                    RCLCPP_ERROR(
-                        context_->logger,
-                        "[%s] failed to send stop command: %s",
-                        name().c_str(),
-                        context_->motion_port->lastError().c_str());
-                        return BT::NodeStatus::FAILURE;
-                    }
-                if (!sendCommand(command_))
-                    {
-                    RCLCPP_ERROR(
-                        context_->logger,
-                        "[%s] failed to send turning command: %s",
-                        name().c_str(),
-                        context_->motion_port->lastError().c_str());
-                        return BT::NodeStatus::FAILURE;
-                    }
-                RCLCPP_INFO(
-                    context_->logger,
-                    "current status:final     [%s] running: time left %ldms",
-                    name().c_str(),
-                    std::chrono::duration_cast<std::chrono::milliseconds>(deadline_ - std::chrono::steady_clock::now()).count());
-            }
-            else
-            {
-                
-                stopRobot();
-            }
-            return BT::NodeStatus::RUNNING;
+            return BT::NodeStatus::SUCCESS;
         }
 
-        stopRobot();
-        RCLCPP_INFO(context_->logger, "[%s] completed", name().c_str());
-        return BT::NodeStatus::SUCCESS;
-    }
+        return BT::NodeStatus::FAILURE;
+    } 
+
+    
+
+    // BT::NodeStatus onRunning() override
+    // {
+    //     if(chr::steady_clock::now() < deadline_)
+    //     {
+    //         if (chr::steady_clock::now() < (deadline_) - chr::milliseconds(1500))
+    //         {
+    //             Pose2D start_command{0x0f, 0, 0, 3};
+    //             if (!sendCommand(start_command))
+    //                 {
+    //                 RCLCPP_ERROR(
+    //                     context_->logger,
+    //                     "[%s] failed to send ##Start To Turn command: %s",
+    //                     name().c_str(),
+    //                     context_->motion_port->lastError().c_str());
+    //                     return BT::NodeStatus::FAILURE;
+    //                 }
+    //             RCLCPP_INFO(
+    //                 context_->logger,
+    //                 "current status:start     [%s] running: time left %ldms",
+    //                 name().c_str(),
+    //                 std::chrono::duration_cast<std::chrono::milliseconds>(deadline_ - std::chrono::steady_clock::now()).count());
+    //         }
+    //         else if (chr::steady_clock::now() < deadline_ - chr::milliseconds(1000))
+    //         {
+                
+    //             if (!sendCommand(command_))
+    //                 {
+    //                 RCLCPP_ERROR(
+    //                     context_->logger,
+    //                     "[%s] failed to send turning command: %s",
+    //                     name().c_str(),
+    //                     context_->motion_port->lastError().c_str());
+    //                     return BT::NodeStatus::FAILURE;
+    //                 }
+    //             RCLCPP_INFO(
+    //                 context_->logger,
+    //                 "current status:turning   [%s] running: time left %ldms",
+    //                 name().c_str(),
+    //                 std::chrono::duration_cast<std::chrono::milliseconds>(deadline_ - std::chrono::steady_clock::now()).count());
+    //         }
+    //         else if (chr::steady_clock::now() < deadline_ - chr::milliseconds(400))
+    //         {
+    //             Pose2D stop_command{0x0f, 0, 0, 0};
+    //             if (!sendCommand(stop_command))
+    //                 {
+    //                 RCLCPP_ERROR(
+    //                     context_->logger,
+    //                     "[%s] failed to send stop command: %s",
+    //                     name().c_str(),
+    //                     context_->motion_port->lastError().c_str());
+    //                     return BT::NodeStatus::FAILURE;
+    //                 }
+    //             if (!sendCommand(command_))
+    //                 {
+    //                 RCLCPP_ERROR(
+    //                     context_->logger,
+    //                     "[%s] failed to send turning command: %s",
+    //                     name().c_str(),
+    //                     context_->motion_port->lastError().c_str());
+    //                     return BT::NodeStatus::FAILURE;
+    //                 }
+    //             RCLCPP_INFO(
+    //                 context_->logger,
+    //                 "current status:final     [%s] running: time left %ldms",
+    //                 name().c_str(),
+    //                 std::chrono::duration_cast<std::chrono::milliseconds>(deadline_ - std::chrono::steady_clock::now()).count());
+    //         }
+    //         else
+    //         {
+                
+    //             stopRobot();
+    //         }
+    //         return BT::NodeStatus::RUNNING;
+    //     }
+
+    //     stopRobot();
+    //     RCLCPP_INFO(context_->logger, "[%s] completed", name().c_str());
+    //     return BT::NodeStatus::SUCCESS;
+    // }
 };
 
 
-class TurnRight final : public TimedVelocityAction
+class TurnRight final : public MoveToLocation
 {
 public:
     TurnRight(
         const std::string& name,
         const BT::NodeConfig& config,
         std::shared_ptr<AppContext> context)
-        : TimedVelocityAction(name, config, std::move(context), kTurnRight)
+        : MoveToLocation(name, config, std::move(context))
     {
     }
 
+    BT::NodeStatus onRunning() override
+    {
+        if(chr::steady_clock::now() >= deadline_)
+        {  
+            stopRobot();
+            return BT::NodeStatus::FAILURE;
+        }
+        
+        PoseData Pose = context_->sensor_node->poseData();
+        double yaw = quatToYaw(Pose.ori_x , Pose.ori_y ,Pose.ori_z , Pose.ori_w);
+        turnToFace(-M_PI_2, yaw, Phase::DRIVE_X);
+        if(phase_ == Phase::DRIVE_X)
+        {
+            return BT::NodeStatus::SUCCESS;
+        }
+
+        return BT::NodeStatus::FAILURE;
+    } 
 };
 
 
