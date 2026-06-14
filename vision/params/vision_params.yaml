@@ -1,0 +1,5 @@
+/**:
+  ros__parameters:
+    START_VISION: true
+    KFS_Status: "ACTIVE"
+    IS_GRIPPED: "NOT_GRIPPED"

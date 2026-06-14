@@ -23,12 +23,12 @@ namespace chr = std::chrono;
 
 
 inline constexpr Pose2D kStop{0x0f, 0, 0, 0, pn_signal::POS, grip_param::LOOSE, stop_signal::FORCE_STOP, turn90_signal::NONE};
-inline constexpr Pose2D kForward{0x0f, 1, 0, 0, pn_signal::POS, stop_signal::NORMAL, grip_param::LOOSE, turn90_signal::NONE};
-inline constexpr Pose2D kTurnLeft{0x0f, 0, 0, 1, pn_signal::POS, stop_signal::NORMAL, grip_param::LOOSE,turn90_signal::NONE};
-inline constexpr Pose2D kTurnRight{0x0f, 0, 0, 1, pn_signal::NEG, stop_signal::NORMAL, grip_param::LOOSE,turn90_signal::NONE};
-inline constexpr Pose2D kGrip{0x0f, 0, 0, 0, pn_signal::POS, stop_signal::NORMAL, grip_param::GRIPPED,turn90_signal::NONE};
-inline constexpr Pose2D kTurn90Left{0x0f, 0, 0, 0, pn_signal::POS, stop_signal::NORMAL, grip_param::LOOSE,turn90_signal::TURN_90};
-inline constexpr Pose2D kTurn90Right{0x0f, 0, 0, 0, pn_signal::NEG, stop_signal::NORMAL, grip_param::LOOSE,turn90_signal::TURN_90};
+inline constexpr Pose2D kForward{0x0f, 1, 0, 0, pn_signal::POS, grip_param::LOOSE, stop_signal::NORMAL, turn90_signal::NONE};
+inline constexpr Pose2D kTurnLeft{0x0f, 0, 0, 1, pn_signal::POS, grip_param::LOOSE, stop_signal::NORMAL, turn90_signal::NONE};
+inline constexpr Pose2D kTurnRight{0x0f, 0, 0, 1, pn_signal::NEG, grip_param::LOOSE, stop_signal::NORMAL, turn90_signal::NONE};
+inline constexpr Pose2D kGrip{0x0f, 0, 0, 0, pn_signal::POS, grip_param::LOOSE, stop_signal::NORMAL, turn90_signal::NONE};
+inline constexpr Pose2D kTurn90Left{0x0f, 0, 0, 0, pn_signal::POS, grip_param::LOOSE, stop_signal::NORMAL, turn90_signal::TURN_90};
+inline constexpr Pose2D kTurn90Right{0x0f, 0, 0, 0, pn_signal::NEG, grip_param::LOOSE, stop_signal::NORMAL, turn90_signal::TURN_90};
 
 
 
@@ -383,7 +383,7 @@ public:
     {
         auto now = chr::steady_clock::now();
         if (now >= overall_deadtime_)
-        {
+        {    
             stopRobot();
             return BT::NodeStatus::FAILURE;
         }
@@ -397,7 +397,7 @@ public:
         float distance_x = dest_location_.x - current_location.x;
         float distance_y = dest_location_.y - current_location.y;
         double yaw = quatToYaw(Pose.ori_x , Pose.ori_y , Pose.ori_z ,Pose.ori_w );
-
+        RCLCPP_INFO(context_->logger, "角度: %.2f", yaw);
 
         
         // if(chr::steady_clock::now() < deadline_)
@@ -471,7 +471,8 @@ protected:
 
     BT::NodeStatus turnToFace(double target_yaw , double current_yaw , Phase next)
     {
-        double diff = target_yaw - current_yaw ; 
+        double diff = target_yaw - current_yaw ;
+        RCLCPP_INFO(context_->logger, "目标角度: %.2f, 当前角度: %.2f, 差值: %.2f", target_yaw, current_yaw, diff);
         while (diff > M_PI) diff -= 2* M_PI;
         while (diff < -M_PI) diff += 2 * M_PI;
 
@@ -484,7 +485,19 @@ protected:
             return BT::NodeStatus::RUNNING;
         }
         
-        sendCommand((diff>0) ? kTurnLeft: kTurnRight);
+        // sendCommand((diff>0) ? kTurnLeft: kTurnRight);
+        float turn_speed = std::clamp( 5.0f * static_cast<float>(diff) , -20.0f , 20.0f);
+        if(turn_speed >= 0)
+        {
+            Pose2D cmd{0x0f, 0, 0, (uint8_t)turn_speed, pn_signal::POS, grip_param::LOOSE, stop_signal::NORMAL, turn90_signal::NONE};
+            sendCommand(cmd);
+        }
+        else
+        {
+             Pose2D cmd{0x0f, 0, 0, (uint8_t)(-turn_speed), pn_signal::NEG, grip_param::LOOSE, stop_signal::NORMAL, turn90_signal::NONE};
+             sendCommand(cmd);
+        }
+
         return BT::NodeStatus::RUNNING;
     } 
 
@@ -502,12 +515,12 @@ protected:
         float speed = std::clamp( 10.0f * distance , -20.0f ,20.0f);
         if(speed >= 0)
         {
-            Pose2D cmd{0x0f, (uint8_t)speed, 0, 0, pn_signal::POS, stop_signal::NORMAL, grip_param::LOOSE, turn90_signal::NONE};
+            Pose2D cmd{0x0f, (uint8_t)speed, 0, 0, pn_signal::POS, grip_param::LOOSE, stop_signal::NORMAL, turn90_signal::NONE};
             sendCommand(cmd);
         }
         else
         {
-            Pose2D cmd{0x0f, (uint8_t)(-speed), 0, 0, pn_signal::NEG, stop_signal::NORMAL, grip_param::LOOSE, turn90_signal::NONE};
+            Pose2D cmd{0x0f, (uint8_t)(-speed), 0, 0, pn_signal::NEG, grip_param::LOOSE, stop_signal::NORMAL, turn90_signal::NONE};
             sendCommand(cmd);
         }
         return BT::NodeStatus::RUNNING;
@@ -517,6 +530,30 @@ protected:
     Phase phase_ {Phase::TURN_X};
     chr::steady_clock::time_point overall_deadtime_ ; 
 };
+
+class AdjustPose : public TimedVelocityAction
+{
+    public:
+    AdjustPose(
+        const std::string & name,
+        const BT::NodeConfig& config,
+        std::shared_ptr<AppContext> context) 
+        : TimedVelocityAction(name ,config ,std::move(context) , kStop )
+    {}
+	
+	BT::NodeStatus onRunning() override
+	{
+		PoseData pose = context_->sensor_node->PoseData();
+		Location cur_loc;
+        cur_loc.x = static_cast<float>(pose.x);
+        cur_loc.y = static_cast<float>(posw.y);
+    }
+
+	private:
+	
+
+}
+
 
 
 class MoveForward final : public TimedVelocityAction
