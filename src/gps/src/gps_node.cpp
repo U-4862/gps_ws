@@ -20,15 +20,14 @@
 using std::placeholders::_1;
 namespace chr = std::chrono;
 
-
-
-inline constexpr Pose2D kStop{0x0f, 0, 0, 0, pn_signal::POS, grip_param::LOOSE, stop_signal::FORCE_STOP, turn90_signal::NONE};
-inline constexpr Pose2D kForward{0x0f, 1, 0, 0, pn_signal::POS, stop_signal::NORMAL, grip_param::LOOSE, turn90_signal::NONE};
-inline constexpr Pose2D kTurnLeft{0x0f, 0, 0, 1, pn_signal::POS, stop_signal::NORMAL, grip_param::LOOSE,turn90_signal::NONE};
-inline constexpr Pose2D kTurnRight{0x0f, 0, 0, 1, pn_signal::NEG, stop_signal::NORMAL, grip_param::LOOSE,turn90_signal::NONE};
-inline constexpr Pose2D kGrip{0x0f, 0, 0, 0, pn_signal::POS, stop_signal::NORMAL, grip_param::GRIPPED,turn90_signal::NONE};
-inline constexpr Pose2D kTurn90Left{0x0f, 0, 0, 0, pn_signal::POS, stop_signal::NORMAL, grip_param::LOOSE,turn90_signal::TURN_90};
-inline constexpr Pose2D kTurn90Right{0x0f, 0, 0, 0, pn_signal::NEG, stop_signal::NORMAL, grip_param::LOOSE,turn90_signal::TURN_90};
+inline constexpr Pose2D kLeft{0x0f, 0, 1, 0, pn_signal::POS, grip_signal::LOOSE, up_signal::NORMAL , up_signal::NORMAL};
+inline constexpr Pose2D kStop{0x0f, 0, 0, 0, pn_signal::POS, grip_signal::LOOSE, up_signal::NORMAL , up_signal::NORMAL};
+inline constexpr Pose2D kForward{0x0f, 1, 0, 0, pn_signal::POS, grip_signal::LOOSE, up_signal::NORMAL, up_signal::NORMAL};
+inline constexpr Pose2D kTurnLeft{0x0f, 0, 0, 1, pn_signal::POS, grip_signal::LOOSE, up_signal::NORMAL ,up_signal::NORMAL};
+inline constexpr Pose2D kTurnRight{0x0f, 0, 0, 1, pn_signal::NEG, grip_signal::LOOSE, up_signal::NORMAL ,up_signal::NORMAL};
+inline constexpr Pose2D kGrip{0x0f, 0, 0, 0, pn_signal::POS, grip_signal::GRIP, up_signal::NORMAL,up_signal::NORMAL };
+inline constexpr Pose2D kTurn90Left{0x0f, 0, 0, 0, pn_signal::POS, grip_signal::LOOSE, up_signal::NORMAL,up_signal::NORMAL};
+inline constexpr Pose2D kTurn90Right{0x0f, 0, 0, 0, pn_signal::NEG, grip_signal::LOOSE, up_signal::NORMAL ,up_signal::NORMAL};
 
 
 
@@ -68,20 +67,19 @@ class SensorNode : public rclcpp::Node
 {
 public:
     explicit SensorNode(
+            const std::string& odom_topic = "/odom_corrected",
             const std::string& radar_imu_topic = "/livox/imu"/*,
             const std::string& chassis_imu_topic = "/chassis/imu"*/)
         : rclcpp::Node("sensor_node")
     {
         const auto qos = rclcpp::SensorDataQoS();
-        odom_sub_ = create_subscription<nav_msgs::msg::Odometry>("/Odometry", qos,
+        odom_sub_ = create_subscription<nav_msgs::msg::Odometry>(odom_topic, qos,
             std::bind(&SensorNode::onOdometryReceived, this, _1));
         radar_imu_sub_ = create_subscription<sensor_msgs::msg::Imu>(radar_imu_topic, qos,
             std::bind(&SensorNode::onRadarImuReceived, this, _1));
-        // chassis_imu_sub_ = create_subscription<sensor_msgs::msg::Imu>(chassis_imu_topic, qos,
-        //     std::bind(&SensorNode::onChassisImuReceived, this, _1));
         RCLCPP_INFO(get_logger(),
-            "Listening on /Odometry, radar IMU: %s",
-            radar_imu_topic.c_str());
+            "Listening on %s, radar IMU: %s",
+            odom_topic.c_str(), radar_imu_topic.c_str());
     }
 
     // Odometry
@@ -356,7 +354,7 @@ public:
 
     BT::NodeStatus onStart() override
     {
-        std::string loc_name;
+        std::string loc_name; 
         if (!getInput<std::string>("location", loc_name))
             return BT::NodeStatus::FAILURE;
 
@@ -369,7 +367,7 @@ public:
         dest_location_ = it->second;
         phase_ = Phase::TURN_X;
         
-        overall_deadtime_ = chr::steady_clock::now() + chr::seconds(15);
+        overall_deadtime_ = chr::steady_clock::now() + chr::seconds(50);
         int duration_ms = 5000;
         getInput<int>("duration_ms", duration_ms);
         deadline_ = chr::steady_clock::now() + chr::milliseconds(duration_ms);
@@ -397,7 +395,7 @@ public:
         float distance_x = dest_location_.x - current_location.x;
         float distance_y = dest_location_.y - current_location.y;
         double yaw = quatToYaw(Pose.ori_x , Pose.ori_y , Pose.ori_z ,Pose.ori_w );
-        RCLCPP_INFO(context_->logger , "dis_x:%3f,dis_y:%3f",distance_x ,distance_y);
+        RCLCPP_INFO(context_->logger , "current_node:{%s}dis_x:%3f,dis_y:%3f",name().c_str(),distance_x ,distance_y);
 
         
         // if(chr::steady_clock::now() < deadline_)
@@ -489,7 +487,7 @@ protected:
     } 
 
 
-    BT::NodeStatus driveToTarget(float distance , Phase next)
+    virtual BT::NodeStatus driveToTarget(float distance , Phase next)
     {
         constexpr float kTol = 0.15f;
         if( std::abs(distance) < kTol)
@@ -502,12 +500,12 @@ protected:
         float speed = std::clamp( 10.0f * distance , -20.0f ,20.0f);
         if(speed >= 0)
         {
-            Pose2D cmd{0x0f, (uint8_t)speed, 0, 0, pn_signal::POS, stop_signal::NORMAL, grip_param::LOOSE, turn90_signal::NONE};
+            Pose2D cmd{0x0f, (uint8_t)speed, 0, 0, pn_signal::POS,grip_signal::LOOSE, up_signal::NORMAL, up_signal::NORMAL};
             sendCommand(cmd);
         }
         else
         {
-            Pose2D cmd{0x0f, (uint8_t)(-speed), 0, 0, pn_signal::NEG, stop_signal::NORMAL, grip_param::LOOSE, turn90_signal::NONE};
+            Pose2D cmd{0x0f, (uint8_t)(-speed), 0, 0, pn_signal::POS, grip_signal::LOOSE , up_signal::NORMAL ,up_signal::NORMAL};
             sendCommand(cmd);
         }
         return BT::NodeStatus::RUNNING;
@@ -518,6 +516,115 @@ protected:
     chr::steady_clock::time_point overall_deadtime_ ; 
 };
 
+
+// class MoveToLocationUP : public TimedVelocityAction
+// {
+// public: 
+//     MoveToLocationUP(
+//         const std::string& name,
+//         const BT::NodeConfig& config,
+//         std::shared_pt<AppContext> context )
+//         : TimedVelocityAction(name , config , std::move(context), kStop)
+//         {
+//         }
+
+//         static BT::PortsList providedPorts()
+//         {
+//             return {
+//                 BT::InputPort<int>("duration_ms" , 260 , "duration in milleseconds"),
+//                 BT::InputPort<int>("location" ,"home" , "to where")
+//             };
+//         }
+    
+//     BT::NodeStatus onStart() override
+//     {
+//         std::string loc_name;
+//         if (!getInput<std::string>("location" , loc_name))
+//             return BT::NodeStatus::FAILURE;
+        
+//         auto it = point_map.find(loc_name);
+//         if (it == point_map.end())
+//         {
+//             RCLCPP_ERROR(context_->logger/ )
+//         }
+//     }
+
+        
+// }
+
+class MoveToLocationUP: public MoveToLocation
+{
+    public:
+    MoveToLocationUP(
+        const std::string& name,
+        const BT::NodeConfig& config,
+        std::shared_ptr<AppContext> context)
+        : MoveToLocation(name, config, std::move(context))
+    {}
+
+    protected:
+    BT::NodeStatus driveToTarget(float distance ,Phase next) override
+    {
+        constexpr float kTol = 0.15f;
+        if( std::abs(distance) < kTol)
+        {
+            stopRobot();
+            phase_ = next;
+            return BT::NodeStatus::RUNNING;
+        }
+
+        float speed = std::clamp( 10.0f * distance , -20.0f ,20.0f);
+        if(speed >= 0)
+        {
+            Pose2D cmd{0x0f, (uint8_t)speed, 0, 0, pn_signal::NEG, grip_signal::LOOSE, up_signal::UP, up_signal::NORMAL};
+            sendCommand(cmd);
+        }
+        else
+        {
+            Pose2D cmd{0x0f, (uint8_t)(-speed), 0, 0, pn_signal::NEG, grip_signal::LOOSE, up_signal::UP, up_signal::NORMAL};
+            sendCommand(cmd);
+        }
+        return BT::NodeStatus::RUNNING;
+    }
+
+};
+
+class MoveToLocationDOWN: public MoveToLocation
+{
+    public:
+    MoveToLocationDOWN(
+        const std::string& name,
+        const BT::NodeConfig& config,
+        std::shared_ptr<AppContext> context)
+        : MoveToLocation(name, config, std::move(context))
+    {}
+
+    protected:
+    BT::NodeStatus driveToTarget(float distance ,Phase next) override
+    {
+        constexpr float kTol = 0.15f;
+        if( std::abs(distance) < kTol)
+        {
+            stopRobot();
+            phase_ = next;
+            return BT::NodeStatus::RUNNING;
+        }
+
+        float speed = std::clamp( 10.0f * distance , -20.0f ,20.0f);
+        if(speed >= 0)
+        {
+            Pose2D cmd{0x0f, (uint8_t)speed, 0, 0, pn_signal::POS, grip_signal::LOOSE, up_signal::DOWN, up_signal::NORMAL};
+            sendCommand(cmd);
+        }
+        else
+        {
+            Pose2D cmd{0x0f, (uint8_t)(-speed), 0, 0, pn_signal::POS, grip_signal::LOOSE, up_signal::DOWN, up_signal::NORMAL};
+            sendCommand(cmd);
+        }
+        return BT::NodeStatus::RUNNING;
+    }
+
+};
 
 class MoveForward final : public TimedVelocityAction
 {
@@ -530,150 +637,107 @@ public:
     {}
 };
 
-class TurnLeft final : public MoveToLocation
+class TurnLeft final : public TimedVelocityAction
 {
 public:
     TurnLeft(
         const std::string& name,
         const BT::NodeConfig& config,
         std::shared_ptr<AppContext> context)
-        : MoveToLocation(name, config, std::move(context))
+        : TimedVelocityAction(name, config, std::move(context), kGrip)
     {
     }
 
-    BT::NodeStatus onRunning() override
+};
+
+class Horizon final : public TimedVelocityAction
+{
+public:
+    Horizon(
+        const std::string& name,
+        const BT::NodeConfig& config,
+        std::shared_ptr<AppContext> context)
+        : TimedVelocityAction(name, config, std::move(context), kLeft)
     {
-        if(chr::steady_clock::now() >= deadline_)
-        {  
-            stopRobot();
-            return BT::NodeStatus::FAILURE;
-        }
-        
-        PoseData Pose = context_->sensor_node->poseData();
-        double yaw = quatToYaw(Pose.ori_x , Pose.ori_y ,Pose.ori_z , Pose.ori_w);
-        turnToFace(M_PI_2, yaw, Phase::DRIVE_X);
-        
-        if(phase_ == Phase::DRIVE_X)
-        {
-            return BT::NodeStatus::SUCCESS;
-        }
+    }
 
-        return BT::NodeStatus::FAILURE;
-    } 
-
-    
-
-    // BT::NodeStatus onRunning() override
-    // {
-    //     if(chr::steady_clock::now() < deadline_)
-    //     {
-    //         if (chr::steady_clock::now() < (deadline_) - chr::milliseconds(1500))
-    //         {
-    //             Pose2D start_command{0x0f, 0, 0, 3};
-    //             if (!sendCommand(start_command))
-    //                 {
-    //                 RCLCPP_ERROR(
-    //                     context_->logger,
-    //                     "[%s] failed to send ##Start To Turn command: %s",
-    //                     name().c_str(),
-    //                     context_->motion_port->lastError().c_str());
-    //                     return BT::NodeStatus::FAILURE;
-    //                 }
-    //             RCLCPP_INFO(
-    //                 context_->logger,
-    //                 "current status:start     [%s] running: time left %ldms",
-    //                 name().c_str(),
-    //                 std::chrono::duration_cast<std::chrono::milliseconds>(deadline_ - std::chrono::steady_clock::now()).count());
-    //         }
-    //         else if (chr::steady_clock::now() < deadline_ - chr::milliseconds(1000))
-    //         {
-                
-    //             if (!sendCommand(command_))
-    //                 {
-    //                 RCLCPP_ERROR(
-    //                     context_->logger,
-    //                     "[%s] failed to send turning command: %s",
-    //                     name().c_str(),
-    //                     context_->motion_port->lastError().c_str());
-    //                     return BT::NodeStatus::FAILURE;
-    //                 }
-    //             RCLCPP_INFO(
-    //                 context_->logger,
-    //                 "current status:turning   [%s] running: time left %ldms",
-    //                 name().c_str(),
-    //                 std::chrono::duration_cast<std::chrono::milliseconds>(deadline_ - std::chrono::steady_clock::now()).count());
-    //         }
-    //         else if (chr::steady_clock::now() < deadline_ - chr::milliseconds(400))
-    //         {
-    //             Pose2D stop_command{0x0f, 0, 0, 0};
-    //             if (!sendCommand(stop_command))
-    //                 {
-    //                 RCLCPP_ERROR(
-    //                     context_->logger,
-    //                     "[%s] failed to send stop command: %s",
-    //                     name().c_str(),
-    //                     context_->motion_port->lastError().c_str());
-    //                     return BT::NodeStatus::FAILURE;
-    //                 }
-    //             if (!sendCommand(command_))
-    //                 {
-    //                 RCLCPP_ERROR(
-    //                     context_->logger,
-    //                     "[%s] failed to send turning command: %s",
-    //                     name().c_str(),
-    //                     context_->motion_port->lastError().c_str());
-    //                     return BT::NodeStatus::FAILURE;
-    //                 }
-    //             RCLCPP_INFO(
-    //                 context_->logger,
-    //                 "current status:final     [%s] running: time left %ldms",
-    //                 name().c_str(),
-    //                 std::chrono::duration_cast<std::chrono::milliseconds>(deadline_ - std::chrono::steady_clock::now()).count());
-    //         }
-    //         else
-    //         {
-                
-    //             stopRobot();
-    //         }
-    //         return BT::NodeStatus::RUNNING;
-    //     }
-
-    //     stopRobot();
-    //     RCLCPP_INFO(context_->logger, "[%s] completed", name().c_str());
-    //     return BT::NodeStatus::SUCCESS;
-    // }
 };
 
 
-class TurnRight final : public MoveToLocation
+class Sync final : public TimedVelocityAction
+{
+public:
+    Sync(
+        const std::string& name,
+        const BT::NodeConfig& config,
+        std::shared_ptr<AppContext> context)
+        : TimedVelocityAction(name, config, std::move(context), kStop)
+    {
+    }
+
+};
+
+
+class TurnRight final : public TimedVelocityAction
 {
 public:
     TurnRight(
         const std::string& name,
         const BT::NodeConfig& config,
         std::shared_ptr<AppContext> context)
-        : MoveToLocation(name, config, std::move(context))
+        : TimedVelocityAction(name, config, std::move(context), kTurnRight)
     {
+    }
+
+    BT::NodeStatus onStart() override
+    {
+        int duration_ms = 2000;
+        getInput<int>("duration_ms", duration_ms);
+        deadline_ = chr::steady_clock::now() + chr::milliseconds(duration_ms);
+
+        start_yaw_ = context_->sensor_node->currentYaw();
+        target_yaw_ = normalizeAngle(start_yaw_ - M_PI_2);
+
+        RCLCPP_INFO(context_->logger,
+            "[%s] turn right: start_yaw=%.2f target_yaw=%.2f timeout=%dms",
+            name().c_str(), start_yaw_, target_yaw_, duration_ms);
+        return BT::NodeStatus::RUNNING;
     }
 
     BT::NodeStatus onRunning() override
     {
-        if(chr::steady_clock::now() >= deadline_)
-        {  
+        if (chr::steady_clock::now() >= deadline_)
+        {
             stopRobot();
+            RCLCPP_WARN(context_->logger, "[%s] turn right timeout", name().c_str());
             return BT::NodeStatus::FAILURE;
         }
-        
-        PoseData Pose = context_->sensor_node->poseData();
-        double yaw = quatToYaw(Pose.ori_x , Pose.ori_y ,Pose.ori_z , Pose.ori_w);
-        turnToFace(-M_PI_2, yaw, Phase::DRIVE_X);
-        if(phase_ == Phase::DRIVE_X)
+
+        double yaw = context_->sensor_node->currentYaw();
+        double diff = normalizeAngle(target_yaw_ - yaw);
+
+        if (std::abs(diff) < kYawTolerance)
         {
+            stopRobot();
+            RCLCPP_INFO(context_->logger, "[%s] turn right done, yaw=%.2f", name().c_str(), yaw);
             return BT::NodeStatus::SUCCESS;
         }
 
-        return BT::NodeStatus::FAILURE;
-    } 
+        sendCommand(diff > 0 ? kTurnLeft : kTurnRight);
+        return BT::NodeStatus::RUNNING;
+    }
+
+private:
+    static double normalizeAngle(double a)
+    {
+        while (a > M_PI) a -= 2 * M_PI;
+        while (a < -M_PI) a += 2 * M_PI;
+        return a;
+    }
+
+    static constexpr double kYawTolerance = 0.1;
+    double start_yaw_ = 0.0;
+    double target_yaw_ = 0.0;
 };
 
 
@@ -810,11 +874,36 @@ static void registerNodes(BT::BehaviorTreeFactory& factory, const std::shared_pt
             return std::make_unique<TurnRight>(name, config, context);
         });
 
+    factory.registerBuilder<Sync>(
+        "Sync",
+        [context](const std::string& name, const BT::NodeConfig& config) {
+            return std::make_unique<Sync>(name, config, context);
+        });
+
+     factory.registerBuilder<Horizon>(
+        "Horizon",
+        [context](const std::string& name, const BT::NodeConfig& config) {
+            return std::make_unique<Horizon>(name, config, context);
+        });
+
     factory.registerBuilder<MoveToLocation>(
         "MoveToLocation",
         [context](const std::string& name, const BT::NodeConfig& config) {
             return std::make_unique<MoveToLocation>(name, config, context);
         });
+
+    factory.registerBuilder<MoveToLocationUP>(
+        "MoveToLocationUP",
+        [context](const std::string& name, const BT::NodeConfig& config) {
+            return std::make_unique<MoveToLocationUP>(name, config, context);
+        });
+
+    factory.registerBuilder<MoveToLocationDOWN>(
+        "MoveToLocationDOWN",
+        [context](const std::string& name, const BT::NodeConfig& config) {
+            return std::make_unique<MoveToLocationDOWN>(name, config, context);
+        });
+    
     
 }
 
@@ -830,17 +919,17 @@ int main(int argc, char** argv)
     auto app_node = std::make_shared<rclcpp::Node>("gps_bt_app");
     app_node->declare_parameter<std::string>("tree_xml", "tree.xml");
     app_node->declare_parameter<std::string>("motion_port", "/dev/ttyUSB0");
+    app_node->declare_parameter<std::string>("odom_topic", "/odom_corrected");
     app_node->declare_parameter<std::string>("imu_topic", "/livox/imu");
-    // app_node->declare_parameter<std::string>("chassis_imu_topic", "/chassis/imu");
     app_node->declare_parameter<int>("tick_period_ms", 50);
 
     const auto tree_xml = app_node->get_parameter("tree_xml").as_string();
     const auto motion_port_path = app_node->get_parameter("motion_port").as_string();
+    const auto odom_topic = app_node->get_parameter("odom_topic").as_string();
     const auto imu_topic = app_node->get_parameter("imu_topic").as_string();
-    // const auto chassis_imu_topic = app_node->get_parameter("chassis_imu_topic").as_string();
     const auto tick_period_ms = app_node->get_parameter("tick_period_ms").as_int();
 
-    auto sensor_node = std::make_shared<SensorNode>(imu_topic /*, chassis_imu_topic*/);
+    auto sensor_node = std::make_shared<SensorNode>(odom_topic, imu_topic);
     auto motion_port = std::make_shared<SerialPort>(motion_port_path, B115200, 0, 2);
 
     if (!motion_port->openPort())
