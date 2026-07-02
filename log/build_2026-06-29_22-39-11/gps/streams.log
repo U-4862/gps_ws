@@ -1,0 +1,60 @@
+[0.007s] Invoking command in '/home/w/projects/projects/gps_ws/build/gps': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/w/projects/projects/gps_ws/build/gps -- -j16 -l16
+[0.040s] [ 50%] Built target SerialPort
+[0.065s] [ 75%] [32mBuilding CXX object CMakeFiles/gps_node.dir/src/gps_node.cpp.o[0m
+[2.280s] In file included from [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:8[m[K:
+[2.280s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/map/map.h:86:15:[m[K [01;31m[Kerror: [m[K‘[01m[K_0[m[K’ was not declared in this scope; did you mean ‘[01m[Ky0[m[K’?
+[2.281s]    86 |     {"TGRA" ,{[01;31m[K_0[m[K.69F,0.85F}},
+[2.281s]       |               [01;31m[K^~[m[K
+[2.281s]       |               [32m[Ky0[m[K
+[2.281s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/map/map.h:86:17:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K}[m[K’ before numeric constant
+[2.281s]    86 |     {"TGRA" ,[32m[K{[m[K_0[01;31m[K.69F[m[K,0.85F}},
+[2.281s]       |              [32m[K~[m[K  [01;31m[K^~~~[m[K
+[2.281s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/map/map.h:86:17:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K}[m[K’ before numeric constant
+[2.281s]    86 |     [32m[K{[m[K"TGRA" ,{_0[01;31m[K.69F[m[K,0.85F}},
+[2.281s]       |     [32m[K~[m[K           [01;31m[K^~~~[m[K
+[2.281s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/map/map.h:86:17:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K}[m[K’ before numeric constant
+[2.281s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/map/map.h:65:1:[m[K [01;36m[Knote: [m[Kto match this ‘[01m[K{[m[K’
+[2.281s]    65 | [01;36m[K{[m[K
+[2.281s]       | [01;36m[K^[m[K
+[2.289s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/map/map.h:86:17:[m[K [01;31m[Kerror: [m[Kcould not convert ‘[01m[K{{"restart_point", {0.0f, 0.0f}}, {"weapon_chair", {1.0e+0f, 5.0e-1f}}, {"home", {4.00000006e-1f, 0.0f}}, {"test1", {1.0e+0f, 1.29999995e+0f}}, {"test2", {2.4000001e+0f, 1.29999995e+0f}}, {"M2", {4.5999999e+0f, 1.29999995e+0f}}, {"R3", {4.5999999e+0f, -2.70000005e+0f}}, {"R6", {4.80000019e+0f, -2.70000005e+0f}}, {"R9", {6.0e+0f, -2.70000005e+0f}}, {"R12", {(7.19999981e+0f - 2.70000005e+0f)}}, {"tran1", {6.99999988e-1f, 6.49999976e-1f}}, {"TGRA", {<expression error>}}}[m[K’ from ‘[01m[K<brace-enclosed initializer list>[m[K’ to ‘[01m[Kstd::unordered_map<std::__cxx11::basic_string<char>, Location>[m[K’
+[2.289s]    86 |     {"TGRA" ,{_0[01;31m[K.69F[m[K,0.85F}},
+[2.289s]       |                 [01;31m[K^~~~[m[K
+[2.289s]       |                 [01;31m[K|[m[K
+[2.289s]       |                 [01;31m[K<brace-enclosed initializer list>[m[K
+[2.289s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/map/map.h:86:27:[m[K [01;31m[Kerror: [m[Kexpected declaration before ‘[01m[K}[m[K’ token
+[2.289s]    86 |     {"TGRA" ,{_0.69F,0.85F[01;31m[K}[m[K},
+[2.289s]       |                           [01;31m[K^[m[K
+[2.289s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/map/map.h:86:28:[m[K [01;31m[Kerror: [m[Kexpected declaration before ‘[01m[K}[m[K’ token
+[2.289s]    86 |     {"TGRA" ,{_0.69F,0.85F}[01;31m[K}[m[K,
+[2.289s]       |                            [01;31m[K^[m[K
+[2.290s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/map/map.h:86:29:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K,[m[K’ token
+[2.290s]    86 |     {"TGRA" ,{_0.69F,0.85F}}[01;31m[K,[m[K
+[2.290s]       |                             [01;31m[K^[m[K
+[2.290s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/map/map.h:87:5:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K{[m[K’ token
+[2.290s]    87 |     [01;31m[K{[m[K"tran2", {2.5f , 0.0f }},
+[2.290s]       |     [01;31m[K^[m[K
+[2.290s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/map/map.h:87:30:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K,[m[K’ token
+[2.290s]    87 |     {"tran2", {2.5f , 0.0f }}[01;31m[K,[m[K
+[2.290s]       |                              [01;31m[K^[m[K
+[2.290s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/map/map.h:88:5:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K{[m[K’ token
+[2.290s]    88 |     [01;31m[K{[m[K"tran3" , {1.0f , 0.0f}},
+[2.290s]       |     [01;31m[K^[m[K
+[2.290s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/map/map.h:88:30:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K,[m[K’ token
+[2.291s]    88 |     {"tran3" , {1.0f , 0.0f}}[01;31m[K,[m[K
+[2.291s]       |                              [01;31m[K^[m[K
+[2.291s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/map/map.h:89:5:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K{[m[K’ token
+[2.291s]    89 |     [01;31m[K{[m[K"tran4" , {2.2f,0.0f}},
+[2.291s]       |     [01;31m[K^[m[K
+[2.291s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/map/map.h:89:28:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K,[m[K’ token
+[2.291s]    89 |     {"tran4" , {2.2f,0.0f}}[01;31m[K,[m[K
+[2.291s]       |                            [01;31m[K^[m[K
+[2.291s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/map/map.h:90:5:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K{[m[K’ token
+[2.291s]    90 |     [01;31m[K{[m[K"tran5" , {3.0f , 0.0f}}
+[2.291s]       |     [01;31m[K^[m[K
+[2.291s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/map/map.h:91:1:[m[K [01;31m[Kerror: [m[Kexpected declaration before ‘[01m[K}[m[K’ token
+[2.291s]    91 | [01;31m[K}[m[K;
+[2.292s]       | [01;31m[K^[m[K
+[5.207s] gmake[2]: *** [CMakeFiles/gps_node.dir/build.make:79: CMakeFiles/gps_node.dir/src/gps_node.cpp.o] Error 1
+[5.208s] gmake[1]: *** [CMakeFiles/Makefile2:188: CMakeFiles/gps_node.dir/all] Error 2
+[5.208s] gmake: *** [Makefile:146: all] Error 2
+[5.209s] Invoked command in '/home/w/projects/projects/gps_ws/build/gps' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/w/projects/projects/gps_ws/build/gps -- -j16 -l16

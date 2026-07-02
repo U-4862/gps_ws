@@ -2,13 +2,16 @@
     <BehaviorTree ID="MainTree">
       
         <Sequence name="Root_Sequence">
-            <!-- <MoveForward name="Move_Step_1" duration_ms="2000"/>
-
-            <TurnLeft name="Turn_Left_A" duration_ms="2000"/> -->
-            <MoveToLocation name="the weapon chair"  location = "test1" duration_ms="9000"/>
-            <TurnLeft name = "turn 1" duration_ms="1000" />
-            <MoveToLocation name = "test2" location="test2" duration_ms = "9000"/>
-            <TurnRight name = "turn2" duration_ms = "1000"/>
+            <MoveToLocation  name = "loc1" location = "tran1" duration_ms = "2212"/> 
+            
+            <Sync name = "Grip1" duration_ms= "4000"/>
+            <TurnLeft  name = "Grf" duration_ms = "4000"/> 
+            <MoveBackward duration_ms="700"/>
+            <MoveToLocationL name = "loc2" location = "tran2" duration_ms =  "1314"/>
+            
+            <!--<MoveToLocation  name = "loc3" location = "tran2"  duration_ms = "23121"/>
+            <MoveToLocation  name = "loc4" location = "tran4"  duration_ms = "321231"/>
+            <MoveToLocation  name =  "loc5"  location = "tran5" duration_ms = "321123"/>  -->
         </Sequence>
     </BehaviorTree>
 </root>

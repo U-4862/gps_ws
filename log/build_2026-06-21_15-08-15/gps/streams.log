@@ -1,0 +1,16 @@
+[0.010s] Invoking command in '/home/w/projects/projects/gps_ws/build/gps': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/w/projects/projects/gps_ws/build/gps -- -j16 -l16
+[0.043s] [ 50%] Built target SerialPort
+[0.059s] [ 75%] [32mBuilding CXX object CMakeFiles/gps_node.dir/src/gps_node.cpp.o[0m
+[2.207s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:31:100:[m[K [01;31m[Kerror: [m[K‘[01m[KN[m[K’ is not a member of ‘[01m[Kup_signal[m[K’
+[2.207s]    31 | inline constexpr Pose2D kTurn90Right{0x0f, 0, 0, 0, pn_signal::NEG, grip_signal::LOOSE, up_signal::[01;31m[KN[m[K ORMAL ,up_signal::NORMAL};
+[2.207s]       |                                                                                                    [01;31m[K^[m[K
+[2.207s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:31:102:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K}[m[K’ before ‘[01m[KORMAL[m[K’
+[2.207s]    31 | inline constexpr Pose2D kTurn90Right[32m[K{[m[K0x0f, 0, 0, 0, pn_signal::NEG, grip_signal::LOOSE, up_signal::N [01;31m[KORMAL[m[K ,up_signal::NORMAL};
+[2.207s]       |                                     [32m[K~[m[K                                                                [01;31m[K^~~~~[m[K
+[2.207s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:31:126:[m[K [01;31m[Kerror: [m[Kexpected declaration before ‘[01m[K}[m[K’ token
+[2.207s]    31 | inline constexpr Pose2D kTurn90Right{0x0f, 0, 0, 0, pn_signal::NEG, grip_signal::LOOSE, up_signal::N ORMAL ,up_signal::NORMAL[01;31m[K}[m[K;
+[2.207s]       |                                                                                                                              [01;31m[K^[m[K
+[5.105s] gmake[2]: *** [CMakeFiles/gps_node.dir/build.make:79: CMakeFiles/gps_node.dir/src/gps_node.cpp.o] Error 1
+[5.105s] gmake[1]: *** [CMakeFiles/Makefile2:188: CMakeFiles/gps_node.dir/all] Error 2
+[5.105s] gmake: *** [Makefile:146: all] Error 2
+[5.109s] Invoked command in '/home/w/projects/projects/gps_ws/build/gps' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/w/projects/projects/gps_ws/build/gps -- -j16 -l16

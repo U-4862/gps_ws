@@ -7,6 +7,14 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 user memory means 
 
+## 相关工作空间
+
+- **slam_ws** (`/home/w/slam_ws`) — SLAM 建图和回环检测工作空间
+  - 包含 `slam_bridge` 包，用于运行 slam_toolbox 和点云到激光扫描的转换
+  - 地图保存目录：`/home/w/slam_ws/maps/`（目前为空）
+  - 配置文件：`src/slam_bridge/config/slam_toolbox_params.yaml`
+
+
 
 ## 构建与运行
 

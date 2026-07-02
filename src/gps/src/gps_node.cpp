@@ -23,9 +23,11 @@ namespace chr = std::chrono;
 inline constexpr Pose2D kLeft{0x0f, 0, 1, 0, pn_signal::POS, grip_signal::LOOSE, up_signal::NORMAL , up_signal::NORMAL};
 inline constexpr Pose2D kStop{0x0f, 0, 0, 0, pn_signal::POS, grip_signal::LOOSE, up_signal::NORMAL , up_signal::NORMAL};
 inline constexpr Pose2D kForward{0x0f, 1, 0, 0, pn_signal::POS, grip_signal::LOOSE, up_signal::NORMAL, up_signal::NORMAL};
+inline constexpr Pose2D kBack{0x0f, 1, 0, 0, pn_signal::NEG, grip_signal::LOOSE, up_signal::NORMAL, up_signal::NORMAL};
 inline constexpr Pose2D kTurnLeft{0x0f, 0, 0, 1, pn_signal::POS, grip_signal::LOOSE, up_signal::NORMAL ,up_signal::NORMAL};
 inline constexpr Pose2D kTurnRight{0x0f, 0, 0, 1, pn_signal::NEG, grip_signal::LOOSE, up_signal::NORMAL ,up_signal::NORMAL};
 inline constexpr Pose2D kGrip{0x0f, 0, 0, 0, pn_signal::POS, grip_signal::GRIP, up_signal::NORMAL,up_signal::NORMAL };
+inline constexpr Pose2D kLoose{0x0f, 0,0,0 ,pn_signal::POS,grip_signal::LOOSE,up_signal::NORMAL , up_signal::NORMAL};
 inline constexpr Pose2D kTurn90Left{0x0f, 0, 0, 0, pn_signal::POS, grip_signal::LOOSE, up_signal::NORMAL,up_signal::NORMAL};
 inline constexpr Pose2D kTurn90Right{0x0f, 0, 0, 0, pn_signal::NEG, grip_signal::LOOSE, up_signal::NORMAL ,up_signal::NORMAL};
 
@@ -626,6 +628,62 @@ class MoveToLocationDOWN: public MoveToLocation
 
 };
 
+class MoveToLocationL : public MoveToLocation
+{
+public:
+    MoveToLocationL(
+        const std::string& name,
+        const BT::NodeConfig& config,
+        std::shared_ptr<AppContext> context)
+        : MoveToLocation(name, config, std::move(context))
+    {}
+
+    BT::NodeStatus onStart() override
+    {
+        auto status = MoveToLocation::onStart();
+        phase_ = Phase::TURN_Y;
+        return status;
+    }
+
+    BT::NodeStatus onRunning() override
+    {
+        auto now = chr::steady_clock::now();
+        if (now >= overall_deadtime_)
+        {
+            stopRobot();
+            return BT::NodeStatus::FAILURE;
+        }
+
+        PoseData Pose = context_->sensor_node->poseData();
+        Location current_location;
+        current_location.x = static_cast<float>(context_->sensor_node->currentX());
+        current_location.y = static_cast<float>(context_->sensor_node->currentY());
+        float distance_x = dest_location_.x - current_location.x;
+        float distance_y = dest_location_.y - current_location.y;
+        double yaw = quatToYaw(Pose.ori_x, Pose.ori_y, Pose.ori_z, Pose.ori_w);
+        RCLCPP_INFO(context_->logger, "current_node:{%s}dis_x:%3f,dis_y:%3f",
+                    name().c_str(), distance_x, distance_y);
+
+        float k_tolerance = 0.2f;
+        if ((std::abs(distance_x) < k_tolerance) && (std::abs(distance_y) < k_tolerance))
+        {
+            stopRobot();
+            return BT::NodeStatus::SUCCESS;
+        }
+
+        switch (phase_)
+        {
+        case Phase::TURN_Y:  return turnToFace((distance_y >= 0) ? M_PI_2 : -M_PI_2, yaw, Phase::DRIVE_Y);
+        case Phase::DRIVE_Y: return driveToTarget(distance_y, Phase::TURN_X);
+        case Phase::TURN_X:  return turnToFace((distance_x >= 0) ? 0.0 : M_PI, yaw, Phase::DRIVE_X);
+        case Phase::DRIVE_X: return driveToTarget(distance_x, Phase::DONE);
+        case Phase::DONE:    stopRobot(); return BT::NodeStatus::SUCCESS;
+        }
+        return BT::NodeStatus::FAILURE;
+    }
+};
+
+
 class MoveForward final : public TimedVelocityAction
 {
 public:
@@ -634,6 +692,17 @@ public:
         const BT::NodeConfig& config,
         std::shared_ptr<AppContext> context)
         : TimedVelocityAction(name, config, std::move(context), kForward)
+    {}
+};
+
+class MoveBackward final : public TimedVelocityAction
+{
+public:
+    MoveBackward(
+        const std::string& name,
+        const BT::NodeConfig& config,
+        std::shared_ptr<AppContext> context)
+        : TimedVelocityAction(name, config, std::move(context), kBack)
     {}
 };
 
@@ -862,6 +931,12 @@ static void registerNodes(BT::BehaviorTreeFactory& factory, const std::shared_pt
             return std::make_unique<MoveForward>(name, config, context);
         });
 
+    factory.registerBuilder<MoveBackward>(
+        "MoveBackward",
+        [context](const std::string& name, const BT::NodeConfig& config) {
+            return std::make_unique<MoveBackward>(name, config, context);
+        });
+
     factory.registerBuilder<TurnLeft>(
         "TurnLeft",
         [context](const std::string& name, const BT::NodeConfig& config) {
@@ -903,8 +978,14 @@ static void registerNodes(BT::BehaviorTreeFactory& factory, const std::shared_pt
         [context](const std::string& name, const BT::NodeConfig& config) {
             return std::make_unique<MoveToLocationDOWN>(name, config, context);
         });
-    
-    
+
+    factory.registerBuilder<MoveToLocationL>(
+        "MoveToLocationL",
+        [context](const std::string& name, const BT::NodeConfig& config) {
+            return std::make_unique<MoveToLocationL>(name, config, context);
+        });
+
+
 }
 
 int main(int argc, char** argv)
