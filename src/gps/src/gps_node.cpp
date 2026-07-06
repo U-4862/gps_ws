@@ -683,6 +683,76 @@ public:
     }
 };
 
+class MoveToLocationUPL : public MoveToLocationL
+{
+public:
+    MoveToLocationUPL(
+        const std::string& name,
+        const BT::NodeConfig& config,
+        std::shared_ptr<AppContext> context)
+        : MoveToLocationL(name, config, std::move(context))
+    {}
+
+protected:
+    BT::NodeStatus driveToTarget(float distance, Phase next) override
+    {
+        constexpr float kTol = 0.15f;
+        if (std::abs(distance) < kTol)
+        {
+            stopRobot();
+            phase_ = next;
+            return BT::NodeStatus::RUNNING;
+        }
+        float speed = std::clamp(10.0f * distance, -20.0f, 20.0f);
+        if (speed >= 0)
+        {
+            Pose2D cmd{0x0f, (uint8_t)speed, 0, 0, pn_signal::NEG, grip_signal::LOOSE, up_signal::UP, up_signal::NORMAL};
+            sendCommand(cmd);
+        }
+        else
+        {
+            Pose2D cmd{0x0f, (uint8_t)(-speed), 0, 0, pn_signal::NEG, grip_signal::LOOSE, up_signal::UP, up_signal::NORMAL};
+            sendCommand(cmd);
+        }
+        return BT::NodeStatus::RUNNING;
+    }
+};
+
+class MoveToLocationDOWNL : public MoveToLocationL
+{
+public:
+    MoveToLocationDOWNL(
+        const std::string& name,
+        const BT::NodeConfig& config,
+        std::shared_ptr<AppContext> context)
+        : MoveToLocationL(name, config, std::move(context))
+    {}
+
+protected:
+    BT::NodeStatus driveToTarget(float distance, Phase next) override
+    {
+        constexpr float kTol = 0.15f;
+        if (std::abs(distance) < kTol)
+        {
+            stopRobot();
+            phase_ = next;
+            return BT::NodeStatus::RUNNING;
+        }
+        float speed = std::clamp(10.0f * distance, -20.0f, 20.0f);
+        if (speed >= 0)
+        {
+            Pose2D cmd{0x0f, (uint8_t)speed, 0, 0, pn_signal::POS, grip_signal::LOOSE, up_signal::DOWN, up_signal::NORMAL};
+            sendCommand(cmd);
+        }
+        else
+        {
+            Pose2D cmd{0x0f, (uint8_t)(-speed), 0, 0, pn_signal::POS, grip_signal::LOOSE, up_signal::DOWN, up_signal::NORMAL};
+            sendCommand(cmd);
+        }
+        return BT::NodeStatus::RUNNING;
+    }
+};
+
 
 class MoveForward final : public TimedVelocityAction
 {
@@ -923,6 +993,360 @@ private:
  * @param factory 
  * @param context 
  */
+class AdjustPosition final : public BT::StatefulActionNode
+{
+public:
+    AdjustPosition(
+        const std::string& name,
+        const BT::NodeConfig& config,
+        std::shared_ptr<AppContext> context)
+        : BT::StatefulActionNode(name, config), context_(std::move(context))
+    {}
+
+    static BT::PortsList providedPorts()
+    {
+        return {
+            BT::InputPort<double>("target_yaw", 0.0, "Target heading in radians"),
+            BT::InputPort<int>("timeout_ms", 5000, "Timeout in milliseconds")
+        };
+    }
+
+    BT::NodeStatus onStart() override
+    {
+        if (!context_ || !context_->motion_port)
+            throw BT::RuntimeError("motion serial port context is missing");
+
+        getInput<double>("target_yaw", target_yaw_);
+        int timeout_ms = 5000;
+        getInput<int>("timeout_ms", timeout_ms);
+        deadline_ = chr::steady_clock::now() + chr::milliseconds(timeout_ms);
+
+        RCLCPP_INFO(context_->logger,
+            "[AdjustPosition] start yaw=%.3f target=%.3f timeout=%dms",
+            context_->sensor_node->currentYaw(), target_yaw_, timeout_ms);
+        return BT::NodeStatus::RUNNING;
+    }
+
+    BT::NodeStatus onRunning() override
+    {
+        if (chr::steady_clock::now() >= deadline_)
+        {
+            stopRobot();
+            RCLCPP_WARN(context_->logger, "[AdjustPosition] timeout");
+            return BT::NodeStatus::FAILURE;
+        }
+
+        double yaw = context_->sensor_node->currentYaw();
+        double diff = target_yaw_ - yaw;
+        while (diff >  M_PI) diff -= 2.0 * M_PI;
+        while (diff < -M_PI) diff += 2.0 * M_PI;
+
+        if (std::abs(diff) < kYawTolerance)
+        {
+            stopRobot();
+            RCLCPP_INFO(context_->logger, "[AdjustPosition] done, yaw=%.3f", yaw);
+            return BT::NodeStatus::SUCCESS;
+        }
+
+        Pose2D cmd = (diff > 0) ? kTurnLeft : kTurnRight;
+        context_->motion_port->writeExact(&cmd, sizeof(cmd));
+        return BT::NodeStatus::RUNNING;
+    }
+
+    void onHalted() override
+    {
+        stopRobot();
+        RCLCPP_WARN(context_->logger, "[AdjustPosition] halted");
+    }
+
+private:
+    void stopRobot()
+    {
+        context_->motion_port->writeExact(&kStop, sizeof(kStop));
+    }
+
+    static constexpr double kYawTolerance = 0.1;
+    std::shared_ptr<AppContext> context_;
+    double target_yaw_ = 0.0;
+    chr::steady_clock::time_point deadline_;
+};
+
+class CloseVision final : public BT::SyncActionNode
+{
+public:
+    CloseVision(
+        const std::string& name,
+        const BT::NodeConfig& config,
+        std::shared_ptr<AppContext> context)
+        : BT::SyncActionNode(name, config), context_(std::move(context))
+    {}
+
+    static BT::PortsList providedPorts() { return {}; }
+
+    BT::NodeStatus tick() override
+    {
+        auto param_client = std::make_shared<rclcpp::SyncParametersClient>(
+            context_->sensor_node, "/vision_node");
+        if (!param_client->wait_for_service(std::chrono::seconds(2)))
+        {
+            RCLCPP_ERROR(context_->logger, "[CloseVision] 无法连接到 vision_node");
+            return BT::NodeStatus::FAILURE;
+        }
+        try
+        {
+            auto result = param_client->set_parameters({rclcpp::Parameter("START_VISION", false)});
+            if (result[0].successful)
+            {
+                RCLCPP_INFO(context_->logger, "[CloseVision] 已关闭视觉系统");
+                return BT::NodeStatus::SUCCESS;
+            }
+            RCLCPP_ERROR(context_->logger, "[CloseVision] 设置参数失败: %s", result[0].reason.c_str());
+        }
+        catch (const std::exception& e)
+        {
+            RCLCPP_ERROR(context_->logger, "[CloseVision] 异常: %s", e.what());
+        }
+        return BT::NodeStatus::FAILURE;
+    }
+
+private:
+    std::shared_ptr<AppContext> context_;
+};
+
+class Observe final : public BT::StatefulActionNode
+{
+public:
+    Observe(
+        const std::string& name,
+        const BT::NodeConfig& config,
+        std::shared_ptr<AppContext> context)
+        : BT::StatefulActionNode(name, config), context_(std::move(context))
+    {}
+
+    static BT::PortsList providedPorts()
+    {
+        return { BT::InputPort<int>("duration_ms", 3000, "观察持续时间（毫秒）") };
+    }
+
+    BT::NodeStatus onStart() override
+    {
+        param_client_ = std::make_shared<rclcpp::SyncParametersClient>(
+            context_->sensor_node, "/vision_node");
+        if (!param_client_->wait_for_service(std::chrono::seconds(2)))
+        {
+            RCLCPP_ERROR(context_->logger, "[Observe] 无法连接到 vision_node");
+            return BT::NodeStatus::FAILURE;
+        }
+        try
+        {
+            auto result = param_client_->set_parameters({rclcpp::Parameter("START_VISION", true)});
+            if (!result[0].successful)
+            {
+                RCLCPP_ERROR(context_->logger, "[Observe] 启动视觉失败: %s", result[0].reason.c_str());
+                return BT::NodeStatus::FAILURE;
+            }
+        }
+        catch (const std::exception& e)
+        {
+            RCLCPP_ERROR(context_->logger, "[Observe] 异常: %s", e.what());
+            return BT::NodeStatus::FAILURE;
+        }
+        int duration_ms = 3000;
+        getInput<int>("duration_ms", duration_ms);
+        deadline_ = chr::steady_clock::now() + chr::milliseconds(duration_ms);
+        RCLCPP_INFO(context_->logger, "[Observe] 开始观察，持续 %d ms", duration_ms);
+        return BT::NodeStatus::RUNNING;
+    }
+
+    BT::NodeStatus onRunning() override
+    {
+        if (chr::steady_clock::now() >= deadline_)
+        {
+            RCLCPP_INFO(context_->logger, "[Observe] 观察完成");
+            return BT::NodeStatus::SUCCESS;
+        }
+        try
+        {
+            auto params = param_client_->get_parameters({"IS_GRIPPED"});
+            if (!params.empty() && params[0].as_string() == "GRIPPED")
+            {
+                RCLCPP_INFO(context_->logger, "[Observe] 检测到目标已抓取");
+                return BT::NodeStatus::SUCCESS;
+            }
+        }
+        catch (const std::exception&) {}
+        return BT::NodeStatus::RUNNING;
+    }
+
+    void onHalted() override
+    {
+        RCLCPP_WARN(context_->logger, "[Observe] 观察被中断");
+    }
+
+private:
+    std::shared_ptr<AppContext> context_;
+    std::shared_ptr<rclcpp::SyncParametersClient> param_client_;
+    chr::steady_clock::time_point deadline_;
+};
+
+class GrabKFS final : public BT::StatefulActionNode
+{
+public:
+    GrabKFS(
+        const std::string& name,
+        const BT::NodeConfig& config,
+        std::shared_ptr<AppContext> context)
+        : BT::StatefulActionNode(name, config), context_(std::move(context))
+    {}
+
+    static BT::PortsList providedPorts()
+    {
+        return { BT::InputPort<int>("duration_ms", 2000, "抓取动作持续时间（毫秒）") };
+    }
+
+    BT::NodeStatus onStart() override
+    {
+        param_client_ = std::make_shared<rclcpp::SyncParametersClient>(
+            context_->sensor_node, "/vision_node");
+        if (!param_client_->wait_for_service(std::chrono::seconds(2)))
+        {
+            RCLCPP_ERROR(context_->logger, "[GrabKFS] 无法连接到 vision_node");
+            return BT::NodeStatus::FAILURE;
+        }
+        int duration_ms = 2000;
+        getInput<int>("duration_ms", duration_ms);
+        deadline_ = chr::steady_clock::now() + chr::milliseconds(duration_ms);
+        RCLCPP_INFO(context_->logger, "[GrabKFS] 开始抓取，持续 %d ms", duration_ms);
+        if (context_->motion_port)
+            context_->motion_port->writeExact(&kStop, sizeof(kStop));
+        return BT::NodeStatus::RUNNING;
+    }
+
+    BT::NodeStatus onRunning() override
+    {
+        if (chr::steady_clock::now() >= deadline_)
+        {
+            try
+            {
+                auto result = param_client_->set_parameters({rclcpp::Parameter("IS_GRIPPED", "GRIPPED")});
+                if (result[0].successful)
+                {
+                    RCLCPP_INFO(context_->logger, "[GrabKFS] 抓取完成");
+                    if (context_->motion_port)
+                        context_->motion_port->writeExact(&kStop, sizeof(kStop));
+                    return BT::NodeStatus::SUCCESS;
+                }
+                RCLCPP_ERROR(context_->logger, "[GrabKFS] 通知失败: %s", result[0].reason.c_str());
+            }
+            catch (const std::exception& e)
+            {
+                RCLCPP_ERROR(context_->logger, "[GrabKFS] 异常: %s", e.what());
+            }
+            return BT::NodeStatus::FAILURE;
+        }
+        return BT::NodeStatus::RUNNING;
+    }
+
+    void onHalted() override
+    {
+        RCLCPP_WARN(context_->logger, "[GrabKFS] 抓取被中断");
+        if (context_->motion_port)
+            context_->motion_port->writeExact(&kStop, sizeof(kStop));
+    }
+
+private:
+    std::shared_ptr<AppContext> context_;
+    std::shared_ptr<rclcpp::SyncParametersClient> param_client_;
+    chr::steady_clock::time_point deadline_;
+};
+
+class CheckAvoid final : public BT::ConditionNode
+{
+public:
+    CheckAvoid(
+        const std::string& name,
+        const BT::NodeConfig& config,
+        std::shared_ptr<AppContext> context)
+        : BT::ConditionNode(name, config), context_(std::move(context))
+    {}
+
+    static BT::PortsList providedPorts() { return {}; }
+
+    BT::NodeStatus tick() override
+    {
+        auto param_client = std::make_shared<rclcpp::SyncParametersClient>(
+            context_->sensor_node, "/vision_node");
+        if (!param_client->wait_for_service(std::chrono::seconds(1)))
+        {
+            RCLCPP_WARN(context_->logger, "[CheckAvoid] 无法连接 vision_node");
+            return BT::NodeStatus::FAILURE;
+        }
+        try
+        {
+            auto params = param_client->get_parameters({"Avoid"});
+            if (!params.empty() && params[0].as_bool())
+            {
+                RCLCPP_INFO(context_->logger, "[CheckAvoid] 检测到 KFS");
+                return BT::NodeStatus::SUCCESS;
+            }
+        }
+        catch (const std::exception& e)
+        {
+            RCLCPP_WARN(context_->logger, "[CheckAvoid] 异常: %s", e.what());
+        }
+        return BT::NodeStatus::FAILURE;
+    }
+
+private:
+    std::shared_ptr<AppContext> context_;
+};
+
+class IsAtTarget final : public BT::ConditionNode
+{
+public:
+    IsAtTarget(
+        const std::string& name,
+        const BT::NodeConfig& config,
+        std::shared_ptr<AppContext> context)
+        : BT::ConditionNode(name, config), context_(std::move(context))
+    {}
+
+    static BT::PortsList providedPorts()
+    {
+        return {
+            BT::InputPort<std::string>("location", "home", "目标点位名称"),
+            BT::InputPort<double>("tolerance", 0.2, "到达容差（米）")
+        };
+    }
+
+    BT::NodeStatus tick() override
+    {
+        std::string loc_name;
+        if (!getInput<std::string>("location", loc_name))
+            return BT::NodeStatus::FAILURE;
+
+        auto it = point_map.find(loc_name);
+        if (it == point_map.end())
+        {
+            RCLCPP_ERROR(context_->logger, "[IsAtTarget] 未知点位: %s", loc_name.c_str());
+            return BT::NodeStatus::FAILURE;
+        }
+
+        double tolerance = 0.2;
+        getInput<double>("tolerance", tolerance);
+
+        float dx = it->second.x - static_cast<float>(context_->sensor_node->currentX());
+        float dy = it->second.y - static_cast<float>(context_->sensor_node->currentY());
+
+        return std::hypot(dx, dy) < static_cast<float>(tolerance)
+            ? BT::NodeStatus::SUCCESS
+            : BT::NodeStatus::FAILURE;
+    }
+
+private:
+    std::shared_ptr<AppContext> context_;
+};
+
 static void registerNodes(BT::BehaviorTreeFactory& factory, const std::shared_ptr<AppContext>& context)
 {
     factory.registerBuilder<MoveForward>(
@@ -983,6 +1407,54 @@ static void registerNodes(BT::BehaviorTreeFactory& factory, const std::shared_pt
         "MoveToLocationL",
         [context](const std::string& name, const BT::NodeConfig& config) {
             return std::make_unique<MoveToLocationL>(name, config, context);
+        });
+
+    factory.registerBuilder<MoveToLocationUPL>(
+        "MoveToLocationUPL",
+        [context](const std::string& name, const BT::NodeConfig& config) {
+            return std::make_unique<MoveToLocationUPL>(name, config, context);
+        });
+
+    factory.registerBuilder<MoveToLocationDOWNL>(
+        "MoveToLocationDOWNL",
+        [context](const std::string& name, const BT::NodeConfig& config) {
+            return std::make_unique<MoveToLocationDOWNL>(name, config, context);
+        });
+
+    factory.registerBuilder<AdjustPosition>(
+        "AdjustPosition",
+        [context](const std::string& name, const BT::NodeConfig& config) {
+            return std::make_unique<AdjustPosition>(name, config, context);
+        });
+
+    factory.registerBuilder<CloseVision>(
+        "CloseVision",
+        [context](const std::string& name, const BT::NodeConfig& config) {
+            return std::make_unique<CloseVision>(name, config, context);
+        });
+
+    factory.registerBuilder<Observe>(
+        "Observe",
+        [context](const std::string& name, const BT::NodeConfig& config) {
+            return std::make_unique<Observe>(name, config, context);
+        });
+
+    factory.registerBuilder<GrabKFS>(
+        "GrabKFS",
+        [context](const std::string& name, const BT::NodeConfig& config) {
+            return std::make_unique<GrabKFS>(name, config, context);
+        });
+
+    factory.registerBuilder<CheckAvoid>(
+        "CheckAvoid",
+        [context](const std::string& name, const BT::NodeConfig& config) {
+            return std::make_unique<CheckAvoid>(name, config, context);
+        });
+
+    factory.registerBuilder<IsAtTarget>(
+        "IsAtTarget",
+        [context](const std::string& name, const BT::NodeConfig& config) {
+            return std::make_unique<IsAtTarget>(name, config, context);
         });
 
 
