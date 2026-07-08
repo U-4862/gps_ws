@@ -1,6 +1,7 @@
 #include <unordered_map>
 #include <cstdint>
 #include <string>
+#include <vector>
 /**
  * @brief Parameter enum
  * 
@@ -30,6 +31,18 @@ enum up_signal{
 // };
 
 
+/**
+ * @brief The Basic Signal Params
+ * 
+ */
+
+struct Signal2D
+{
+    uint8_t header {0x0E};
+    uint8_t is_linked {0};
+    uint8_t status {0};
+    
+};
 
 
 /**
@@ -53,6 +66,7 @@ struct Location
 {
     float x{0.0f};
     float y{0.0f};
+    
 };
 
 
@@ -70,25 +84,20 @@ struct Location
     
     {"test2" , {2.4f , 1.3f}},
     
-    {"M2" ,{4.6f , 1.3f}},
-   
-
-    {"R3" , {4.6f, -2.7f}},
-    
 
     {"R6" , {4.8f, -2.7f}},
 
     {"R9" , {6.0f, -2.7f}},
 
     {"R12" , {7.2f -2.7f}},
-
-    {"tran1" , {0.69f, 0.65f}},
+                                                                                                                                                          
+    {"tran1" , {0.69f, 1.20f}},
     {"TGRA" ,{0.69F,0.65F}},
     {"tran2", {0.69f , 0.0f }},
-    {"grab_pos1" , {1.0f , 0.0f}},
-    {"grab_pos2" , {1.0f , -1.2f}},
-    {"grab_pos3" , {1.0f , -2.4f}},
-
+    {"grab_pos1" , {2.0f , 0.2f}},
+    {"grab_pos2" , {2.0f , -1.4f}},
+    {"grab_pos3" , {2.0f , -2.4f}},
+ 
     {"L1" , {2.2f,  0.0f}},
     {"L2" , {3.4f,  0.0f}},
     {"L3" , {4.6f,  0.0f}},
@@ -108,4 +117,14 @@ struct Location
     {"tran4" , {2.2f,0.0f}},
     {"tran5" , {3.0f , 0.0f}}
 };
+
+struct GraphEdge
+{
+    std::string to;
+    float weight {0.0f};
+};
+
+extern std::unordered_map<std::string, std::vector<GraphEdge>> point_graph;
+
+void buildPointGraph();
 

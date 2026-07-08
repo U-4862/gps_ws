@@ -22,7 +22,7 @@ find_package(behaviortree_cpp REQUIRED)
 
 
 # 执行文件编译
-add_executable(gps_node src/gps_node.cpp)
+add_executable(gps_node src/gps_node.cpp src/map/map.cpp)
 ament_target_dependencies(gps_node
   rclcpp
   nav_msgs

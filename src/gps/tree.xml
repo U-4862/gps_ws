@@ -9,6 +9,32 @@
             <MoveBackward duration_ms="700"/>
             <MoveToLocationL name = "loc2" location = "tran2" duration_ms =  "1314"/>
             
+            <!-- L1 observe -->
+            <MoveToLocationL name = "Ob1" location = "grab_pos1"/>
+           
+            <Fallback>
+                <CheckIsGripped />
+                <GrabKFS duration_ms = "2000" />
+            </Fallback>
+
+            
+            <!-- L2 observe -->
+            <MoveToLocationHorizontal name = "ob2" location = "grab_pos2" />
+            
+            <Fallback>
+                <CheckIsGripped />
+                <GrabKFS duration_ms = "2000" />
+            </Fallback>
+
+            <!-- L3 observe -->
+            <MoveToLocationHorizontal name = "ob3" location = "grab_pos3" />
+            <Observe />
+            <Fallback>
+                <CheckIsGripped />
+                <GrabKFS duration_ms = "2000" />
+            </Fallback>            
+
+
             <!--<MoveToLocation  name = "loc3" location = "tran2"  duration_ms = "23121"/>
             <MoveToLocation  name = "loc4" location = "tran4"  duration_ms = "321231"/>
             <MoveToLocation  name =  "loc5"  location = "tran5" duration_ms = "321123"/>  -->
