@@ -1,0 +1,18 @@
+[0.011s] Invoking command in '/home/w/projects/projects/gps_ws/build/gps': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/w/projects/projects/gps_ws/install/vision:/opt/ros/humble /usr/bin/cmake --build /home/w/projects/projects/gps_ws/build/gps -- -j16 -l16
+[0.071s] [ 40%] Built target SerialPort
+[0.086s] [ 60%] Building CXX object CMakeFiles/gps_node.dir/src/gps_node.cpp.o
+[0.087s] [ 80%] Building CXX object CMakeFiles/gps_node.dir/src/map/map.cpp.o
+[2.370s] /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:166:1: error: expected unqualified-id before ‘}’ token
+[2.370s]   166 | };
+[2.370s]       | ^
+[2.466s] /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp: In static member function ‘static BT::PortsList ReadAction::providedPorts()’:
+[2.467s] /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:1862:9: error: ‘retiurn’ was not declared in this scope
+[2.467s]  1862 |         retiurn {
+[2.467s]       |         ^~~~~~~
+[2.467s] /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:1868:5: warning: no return statement in function returning non-void [-Wreturn-type]
+[2.467s]  1868 |     }
+[2.467s]       |     ^
+[5.883s] gmake[2]: *** [CMakeFiles/gps_node.dir/build.make:79: CMakeFiles/gps_node.dir/src/gps_node.cpp.o] Error 1
+[5.883s] gmake[1]: *** [CMakeFiles/Makefile2:188: CMakeFiles/gps_node.dir/all] Error 2
+[5.883s] gmake: *** [Makefile:146: all] Error 2
+[5.885s] Invoked command in '/home/w/projects/projects/gps_ws/build/gps' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/w/projects/projects/gps_ws/install/vision:/opt/ros/humble /usr/bin/cmake --build /home/w/projects/projects/gps_ws/build/gps -- -j16 -l16

@@ -1,0 +1,29 @@
+[ 50%] Built target SerialPort
+[ 75%] Building CXX object CMakeFiles/gps_node.dir/src/gps_node.cpp.o
+/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp: In member function ‘virtual BT::NodeStatus MoveToLocationHorizontal::onRunning()’:
+/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:752:18: warning: variable ‘Pose’ set but not used [-Wunused-but-set-variable]
+  752 |         PoseData Pose = context_->sensor_node->poseData();
+      |                  ^~~~
+[100%] Linking CXX executable gps_node
+[100%] Built target gps_node
+-- Install configuration: ""
+-- Installing: /home/w/projects/projects/gps_ws/install/gps/lib/gps/gps_node
+-- Set non-toolchain portion of runtime path of "/home/w/projects/projects/gps_ws/install/gps/lib/gps/gps_node" to ""
+-- Installing: /home/w/projects/projects/gps_ws/install/gps/share/gps/tree.xml
+-- Installing: /home/w/projects/projects/gps_ws/install/gps/share/gps/launch
+-- Installing: /home/w/projects/projects/gps_ws/install/gps/share/gps/launch/camera.launch.py
+-- Installing: /home/w/projects/projects/gps_ws/install/gps/share/ament_index/resource_index/package_run_dependencies/gps
+-- Installing: /home/w/projects/projects/gps_ws/install/gps/share/ament_index/resource_index/parent_prefix_path/gps
+-- Installing: /home/w/projects/projects/gps_ws/install/gps/share/gps/environment/ament_prefix_path.sh
+-- Installing: /home/w/projects/projects/gps_ws/install/gps/share/gps/environment/ament_prefix_path.dsv
+-- Installing: /home/w/projects/projects/gps_ws/install/gps/share/gps/environment/path.sh
+-- Installing: /home/w/projects/projects/gps_ws/install/gps/share/gps/environment/path.dsv
+-- Installing: /home/w/projects/projects/gps_ws/install/gps/share/gps/local_setup.bash
+-- Installing: /home/w/projects/projects/gps_ws/install/gps/share/gps/local_setup.sh
+-- Installing: /home/w/projects/projects/gps_ws/install/gps/share/gps/local_setup.zsh
+-- Installing: /home/w/projects/projects/gps_ws/install/gps/share/gps/local_setup.dsv
+-- Installing: /home/w/projects/projects/gps_ws/install/gps/share/gps/package.dsv
+-- Installing: /home/w/projects/projects/gps_ws/install/gps/share/ament_index/resource_index/packages/gps
+-- Installing: /home/w/projects/projects/gps_ws/install/gps/share/gps/cmake/gpsConfig.cmake
+-- Installing: /home/w/projects/projects/gps_ws/install/gps/share/gps/cmake/gpsConfig-version.cmake
+-- Installing: /home/w/projects/projects/gps_ws/install/gps/share/gps/package.xml

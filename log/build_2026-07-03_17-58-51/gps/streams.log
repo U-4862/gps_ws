@@ -1,0 +1,33 @@
+[0.009s] Invoking command in '/home/w/projects/projects/gps_ws/build/gps': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/w/projects/projects/gps_ws/build/gps -- -j16 -l16
+[0.038s] [ 50%] Built target SerialPort
+[0.067s] [ 75%] Building CXX object CMakeFiles/gps_node.dir/src/gps_node.cpp.o
+[2.483s] /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp: In member function ‘virtual BT::NodeStatus MoveToLocationHorizontal::onRunning()’:
+[2.483s] /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:752:18: warning: variable ‘Pose’ set but not used [-Wunused-but-set-variable]
+[2.483s]   752 |         PoseData Pose = context_->sensor_node->poseData();
+[2.483s]       |                  ^~~~
+[9.510s] [100%] Linking CXX executable gps_node
+[9.977s] [100%] Built target gps_node
+[9.981s] Invoked command in '/home/w/projects/projects/gps_ws/build/gps' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/w/projects/projects/gps_ws/build/gps -- -j16 -l16
+[9.985s] Invoking command in '/home/w/projects/projects/gps_ws/build/gps': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/w/projects/projects/gps_ws/build/gps
+[9.987s] -- Install configuration: ""
+[9.987s] -- Installing: /home/w/projects/projects/gps_ws/install/gps/lib/gps/gps_node
+[9.990s] -- Set non-toolchain portion of runtime path of "/home/w/projects/projects/gps_ws/install/gps/lib/gps/gps_node" to ""
+[9.990s] -- Installing: /home/w/projects/projects/gps_ws/install/gps/share/gps/tree.xml
+[9.990s] -- Installing: /home/w/projects/projects/gps_ws/install/gps/share/gps/launch
+[9.990s] -- Installing: /home/w/projects/projects/gps_ws/install/gps/share/gps/launch/camera.launch.py
+[9.990s] -- Installing: /home/w/projects/projects/gps_ws/install/gps/share/ament_index/resource_index/package_run_dependencies/gps
+[9.991s] -- Installing: /home/w/projects/projects/gps_ws/install/gps/share/ament_index/resource_index/parent_prefix_path/gps
+[9.991s] -- Installing: /home/w/projects/projects/gps_ws/install/gps/share/gps/environment/ament_prefix_path.sh
+[9.991s] -- Installing: /home/w/projects/projects/gps_ws/install/gps/share/gps/environment/ament_prefix_path.dsv
+[9.992s] -- Installing: /home/w/projects/projects/gps_ws/install/gps/share/gps/environment/path.sh
+[9.992s] -- Installing: /home/w/projects/projects/gps_ws/install/gps/share/gps/environment/path.dsv
+[9.992s] -- Installing: /home/w/projects/projects/gps_ws/install/gps/share/gps/local_setup.bash
+[9.992s] -- Installing: /home/w/projects/projects/gps_ws/install/gps/share/gps/local_setup.sh
+[9.992s] -- Installing: /home/w/projects/projects/gps_ws/install/gps/share/gps/local_setup.zsh
+[9.992s] -- Installing: /home/w/projects/projects/gps_ws/install/gps/share/gps/local_setup.dsv
+[9.992s] -- Installing: /home/w/projects/projects/gps_ws/install/gps/share/gps/package.dsv
+[9.992s] -- Installing: /home/w/projects/projects/gps_ws/install/gps/share/ament_index/resource_index/packages/gps
+[9.992s] -- Installing: /home/w/projects/projects/gps_ws/install/gps/share/gps/cmake/gpsConfig.cmake
+[9.992s] -- Installing: /home/w/projects/projects/gps_ws/install/gps/share/gps/cmake/gpsConfig-version.cmake
+[9.992s] -- Installing: /home/w/projects/projects/gps_ws/install/gps/share/gps/package.xml
+[9.993s] Invoked command in '/home/w/projects/projects/gps_ws/build/gps' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/w/projects/projects/gps_ws/build/gps

@@ -1,0 +1,47 @@
+[ 40%] Built target SerialPort
+[ 60%] [32mBuilding CXX object CMakeFiles/gps_node.dir/src/gps_node.cpp.o[0m
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:[m[K In constructor ‘[01m[KMoveUP::MoveUP(const string&, const BT::NodeConfig&, std::shared_ptr<AppContext>)[m[K’:
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:348:37:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kcontext[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+  348 |         [01;35m[Kstd::shared_ptr<AppContext> context[m[K
+      |         [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~[m[K
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:[m[K In constructor ‘[01m[KMoveDOWN::MoveDOWN(const string&, const BT::NodeConfig&, std::shared_ptr<AppContext>)[m[K’:
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:359:37:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kcontext[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+  359 |         [01;35m[Kstd::shared_ptr<AppContext> context[m[K
+      |         [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~[m[K
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:[m[K In constructor ‘[01m[KMoveToLocation::MoveToLocation(const string&, const BT::NodeConfig&, std::shared_ptr<AppContext>)[m[K’:
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:370:37:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kcontext[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+  370 |         [01;35m[Kstd::shared_ptr<AppContext> context[m[K )
+      |         [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~[m[K
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:[m[K At global scope:
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:1895:45:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K)[m[K’ before ‘[01m[K:[m[K’ token
+ 1895 |         std::shared_ptr<AppContext> context)[01;31m[K [m[K[32m[K:[m[K BT::ConditionNode(name, config), context_(std::move(context_))
+      |                                             [01;31m[K^[m[K[32m[K~[m[K
+      |                                             [32m[K)[m[K
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:1891:8:[m[K [01;36m[Knote: [m[Kto match this ‘[01m[K([m[K’
+ 1891 | public:[01;36m[K([m[K
+      |        [01;36m[K^[m[K
+In file included from [01m[K/usr/include/c++/11/memory:76[m[K,
+                 from [01m[K/opt/ros/humble/include/behaviortree_cpp/contrib/expected.hpp:259[m[K,
+                 from [01m[K/opt/ros/humble/include/behaviortree_cpp/basic_types.h:3[m[K,
+                 from [01m[K/opt/ros/humble/include/behaviortree_cpp/tree_node.h:16[m[K,
+                 from [01m[K/opt/ros/humble/include/behaviortree_cpp/leaf_node.h:17[m[K,
+                 from [01m[K/opt/ros/humble/include/behaviortree_cpp/action_node.h:17[m[K,
+                 from [01m[K/opt/ros/humble/include/behaviortree_cpp/behavior_tree.h:16[m[K,
+                 from [01m[K/opt/ros/humble/include/behaviortree_cpp/bt_factory.h:17[m[K,
+                 from [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:1[m[K:
+/usr/include/c++/11/bits/unique_ptr.h: In instantiation of ‘[01m[Ktypename std::_MakeUniq<_Tp>::__single_object std::make_unique(_Args&& ...) [with _Tp = IsAtLine1; _Args = {const std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&, const BT::NodeConfig&, const std::shared_ptr<AppContext>&}; typename std::_MakeUniq<_Tp>::__single_object = std::unique_ptr<IsAtLine1, std::default_delete<IsAtLine1> >][m[K’:
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:2369:47:[m[K   required from here
+[01m[K/usr/include/c++/11/bits/unique_ptr.h:962:30:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[KIsAtLine1::IsAtLine1(const std::__cxx11::basic_string<char>&, const BT::NodeConfig&, const std::shared_ptr<AppContext>&)[m[K’
+  962 |     { return unique_ptr<_Tp>([01;31m[Knew _Tp(std::forward<_Args>(__args)...)[m[K); }
+      |                              [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:1889:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[KIsAtLine1::IsAtLine1()[m[K’ (deleted)
+ 1889 | class [01;36m[KIsAtLine1[m[K final : public BT::ConditionNode
+      |       [01;36m[K^~~~~~~~~[m[K
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:1889:7:[m[K [01;36m[Knote: [m[K  candidate expects 0 arguments, 3 provided
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:1889:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[KIsAtLine1::IsAtLine1(const IsAtLine1&)[m[K’ (deleted)
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:1889:7:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 3 provided
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:1889:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[KIsAtLine1::IsAtLine1(IsAtLine1&&)[m[K’ (deleted)
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:1889:7:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 3 provided
+gmake[2]: *** [CMakeFiles/gps_node.dir/build.make:79: CMakeFiles/gps_node.dir/src/gps_node.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:188: CMakeFiles/gps_node.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

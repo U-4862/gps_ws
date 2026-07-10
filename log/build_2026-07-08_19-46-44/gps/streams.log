@@ -1,0 +1,160 @@
+[0.017s] Invoking command in '/home/w/projects/projects/gps_ws/build/gps': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/w/projects/projects/gps_ws/install/vision:/opt/ros/humble /usr/bin/cmake --build /home/w/projects/projects/gps_ws/build/gps -- -j16 -l16
+[0.050s] [ 40%] Built target SerialPort
+[0.076s] [ 80%] [32mBuilding CXX object CMakeFiles/gps_node.dir/src/gps_node.cpp.o[0m
+[0.076s] [ 80%] [32mBuilding CXX object CMakeFiles/gps_node.dir/src/map/map.cpp.o[0m
+[0.420s] In file included from [01m[K/home/w/projects/projects/gps_ws/src/gps/src/map/map.cpp:1[m[K:
+[0.420s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/map/map.h:108:5:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K}[m[K’ before ‘[01m[K{[m[K’ token
+[0.420s]   108 |     [01;31m[K{[m[K"M1" , {3.2f, -1.2f}},
+[0.420s]       |     [01;31m[K^[m[K
+[0.420s] In file included from [01m[K/home/w/projects/projects/gps_ws/src/gps/src/map/map.cpp:1[m[K:
+[0.420s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/map/map.h:79:1:[m[K [01;36m[Knote: [m[Kto match this ‘[01m[K{[m[K’
+[0.421s]    79 | [01;36m[K{[m[K
+[0.421s]       | [01;36m[K^[m[K
+[0.438s] In file included from [01m[K/home/w/projects/projects/gps_ws/src/gps/src/map/map.cpp:1[m[K:
+[0.439s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/map/map.h:108:5:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K,[m[K’ or ‘[01m[K;[m[K’ before ‘[01m[K{[m[K’ token
+[0.439s]   108 |     [01;31m[K{[m[K"M1" , {3.2f, -1.2f}},
+[0.439s]       |     [01;31m[K^[m[K
+[0.439s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/map/map.h:108:27:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K,[m[K’ token
+[0.439s]   108 |     {"M1" , {3.2f, -1.2f}}[01;31m[K,[m[K
+[0.439s]       |                           [01;31m[K^[m[K
+[0.439s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/map/map.h:109:5:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K{[m[K’ token
+[0.439s]   109 |     [01;31m[K{[m[K"M2" , {4.4f, -1.2f}},
+[0.439s]       |     [01;31m[K^[m[K
+[0.439s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/map/map.h:109:27:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K,[m[K’ token
+[0.439s]   109 |     {"M2" , {4.4f, -1.2f}}[01;31m[K,[m[K
+[0.439s]       |                           [01;31m[K^[m[K
+[0.439s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/map/map.h:110:5:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K{[m[K’ token
+[0.439s]   110 |     [01;31m[K{[m[K"M3" , {5.6f, -1.2f}},
+[0.439s]       |     [01;31m[K^[m[K
+[0.439s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/map/map.h:110:27:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K,[m[K’ token
+[0.439s]   110 |     {"M3" , {5.6f, -1.2f}}[01;31m[K,[m[K
+[0.440s]       |                           [01;31m[K^[m[K
+[0.440s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/map/map.h:111:5:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K{[m[K’ token
+[0.440s]   111 |     [01;31m[K{[m[K"M4" , {6.8f, -1.2f}},
+[0.440s]       |     [01;31m[K^[m[K
+[0.440s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/map/map.h:111:27:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K,[m[K’ token
+[0.440s]   111 |     {"M4" , {6.8f, -1.2f}}[01;31m[K,[m[K
+[0.440s]       |                           [01;31m[K^[m[K
+[0.440s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/map/map.h:113:5:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K{[m[K’ token
+[0.440s]   113 |     [01;31m[K{[m[K"R1" , {3.2f, -2.4f}},
+[0.440s]       |     [01;31m[K^[m[K
+[0.440s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/map/map.h:113:27:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K,[m[K’ token
+[0.440s]   113 |     {"R1" , {3.2f, -2.4f}}[01;31m[K,[m[K
+[0.440s]       |                           [01;31m[K^[m[K
+[0.440s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/map/map.h:114:5:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K{[m[K’ token
+[0.440s]   114 |     [01;31m[K{[m[K"R2" , {4.4f, -2.4f}},
+[0.440s]       |     [01;31m[K^[m[K
+[0.440s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/map/map.h:114:27:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K,[m[K’ token
+[0.441s]   114 |     {"R2" , {4.4f, -2.4f}}[01;31m[K,[m[K
+[0.441s]       |                           [01;31m[K^[m[K
+[0.441s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/map/map.h:115:5:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K{[m[K’ token
+[0.441s]   115 |     [01;31m[K{[m[K"R3" , {5.6f, -2.4f}},
+[0.441s]       |     [01;31m[K^[m[K
+[0.441s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/map/map.h:115:27:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K,[m[K’ token
+[0.441s]   115 |     {"R3" , {5.6f, -2.4f}}[01;31m[K,[m[K
+[0.441s]       |                           [01;31m[K^[m[K
+[0.441s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/map/map.h:116:5:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K{[m[K’ token
+[0.441s]   116 |     [01;31m[K{[m[K"R4" , {6.8f, -2.4f}},
+[0.441s]       |     [01;31m[K^[m[K
+[0.441s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/map/map.h:116:27:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K,[m[K’ token
+[0.441s]   116 |     {"R4" , {6.8f, -2.4f}}[01;31m[K,[m[K
+[0.441s]       |                           [01;31m[K^[m[K
+[0.441s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/map/map.h:118:5:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K{[m[K’ token
+[0.442s]   118 |     [01;31m[K{[m[K"tran3" , {1.0f , 0.0f}},
+[0.442s]       |     [01;31m[K^[m[K
+[0.442s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/map/map.h:118:30:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K,[m[K’ token
+[0.442s]   118 |     {"tran3" , {1.0f , 0.0f}}[01;31m[K,[m[K
+[0.442s]       |                              [01;31m[K^[m[K
+[0.442s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/map/map.h:119:5:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K{[m[K’ token
+[0.442s]   119 |     [01;31m[K{[m[K"tran4" , {2.2f,0.0f}},
+[0.442s]       |     [01;31m[K^[m[K
+[0.442s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/map/map.h:119:28:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K,[m[K’ token
+[0.442s]   119 |     {"tran4" , {2.2f,0.0f}}[01;31m[K,[m[K
+[0.442s]       |                            [01;31m[K^[m[K
+[0.442s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/map/map.h:120:5:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K{[m[K’ token
+[0.442s]   120 |     [01;31m[K{[m[K"tran5" , {3.0f , 0.0f}}
+[0.442s]       |     [01;31m[K^[m[K
+[0.442s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/map/map.h:121:1:[m[K [01;31m[Kerror: [m[Kexpected declaration before ‘[01m[K}[m[K’ token
+[0.442s]   121 | [01;31m[K}[m[K;
+[0.443s]       | [01;31m[K^[m[K
+[0.590s] gmake[2]: *** [CMakeFiles/gps_node.dir/build.make:93: CMakeFiles/gps_node.dir/src/map/map.cpp.o] Error 1
+[0.590s] gmake[2]: *** Waiting for unfinished jobs....
+[2.771s] In file included from [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:8[m[K:
+[2.772s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/map/map.h:108:5:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K}[m[K’ before ‘[01m[K{[m[K’ token
+[2.772s]   108 |     [01;31m[K{[m[K"M1" , {3.2f, -1.2f}},
+[2.772s]       |     [01;31m[K^[m[K
+[2.772s] In file included from [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:8[m[K:
+[2.772s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/map/map.h:79:1:[m[K [01;36m[Knote: [m[Kto match this ‘[01m[K{[m[K’
+[2.772s]    79 | [01;36m[K{[m[K
+[2.772s]       | [01;36m[K^[m[K
+[2.786s] In file included from [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:8[m[K:
+[2.786s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/map/map.h:108:5:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K,[m[K’ or ‘[01m[K;[m[K’ before ‘[01m[K{[m[K’ token
+[2.786s]   108 |     [01;31m[K{[m[K"M1" , {3.2f, -1.2f}},
+[2.786s]       |     [01;31m[K^[m[K
+[2.786s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/map/map.h:108:27:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K,[m[K’ token
+[2.787s]   108 |     {"M1" , {3.2f, -1.2f}}[01;31m[K,[m[K
+[2.787s]       |                           [01;31m[K^[m[K
+[2.787s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/map/map.h:109:5:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K{[m[K’ token
+[2.787s]   109 |     [01;31m[K{[m[K"M2" , {4.4f, -1.2f}},
+[2.787s]       |     [01;31m[K^[m[K
+[2.787s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/map/map.h:109:27:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K,[m[K’ token
+[2.787s]   109 |     {"M2" , {4.4f, -1.2f}}[01;31m[K,[m[K
+[2.787s]       |                           [01;31m[K^[m[K
+[2.787s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/map/map.h:110:5:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K{[m[K’ token
+[2.787s]   110 |     [01;31m[K{[m[K"M3" , {5.6f, -1.2f}},
+[2.787s]       |     [01;31m[K^[m[K
+[2.787s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/map/map.h:110:27:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K,[m[K’ token
+[2.788s]   110 |     {"M3" , {5.6f, -1.2f}}[01;31m[K,[m[K
+[2.788s]       |                           [01;31m[K^[m[K
+[2.788s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/map/map.h:111:5:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K{[m[K’ token
+[2.788s]   111 |     [01;31m[K{[m[K"M4" , {6.8f, -1.2f}},
+[2.788s]       |     [01;31m[K^[m[K
+[2.788s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/map/map.h:111:27:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K,[m[K’ token
+[2.788s]   111 |     {"M4" , {6.8f, -1.2f}}[01;31m[K,[m[K
+[2.788s]       |                           [01;31m[K^[m[K
+[2.788s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/map/map.h:113:5:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K{[m[K’ token
+[2.788s]   113 |     [01;31m[K{[m[K"R1" , {3.2f, -2.4f}},
+[2.788s]       |     [01;31m[K^[m[K
+[2.788s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/map/map.h:113:27:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K,[m[K’ token
+[2.788s]   113 |     {"R1" , {3.2f, -2.4f}}[01;31m[K,[m[K
+[2.789s]       |                           [01;31m[K^[m[K
+[2.789s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/map/map.h:114:5:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K{[m[K’ token
+[2.789s]   114 |     [01;31m[K{[m[K"R2" , {4.4f, -2.4f}},
+[2.789s]       |     [01;31m[K^[m[K
+[2.789s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/map/map.h:114:27:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K,[m[K’ token
+[2.789s]   114 |     {"R2" , {4.4f, -2.4f}}[01;31m[K,[m[K
+[2.789s]       |                           [01;31m[K^[m[K
+[2.789s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/map/map.h:115:5:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K{[m[K’ token
+[2.789s]   115 |     [01;31m[K{[m[K"R3" , {5.6f, -2.4f}},
+[2.789s]       |     [01;31m[K^[m[K
+[2.789s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/map/map.h:115:27:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K,[m[K’ token
+[2.789s]   115 |     {"R3" , {5.6f, -2.4f}}[01;31m[K,[m[K
+[2.789s]       |                           [01;31m[K^[m[K
+[2.790s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/map/map.h:116:5:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K{[m[K’ token
+[2.790s]   116 |     [01;31m[K{[m[K"R4" , {6.8f, -2.4f}},
+[2.790s]       |     [01;31m[K^[m[K
+[2.790s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/map/map.h:116:27:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K,[m[K’ token
+[2.790s]   116 |     {"R4" , {6.8f, -2.4f}}[01;31m[K,[m[K
+[2.790s]       |                           [01;31m[K^[m[K
+[2.790s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/map/map.h:118:5:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K{[m[K’ token
+[2.790s]   118 |     [01;31m[K{[m[K"tran3" , {1.0f , 0.0f}},
+[2.790s]       |     [01;31m[K^[m[K
+[2.790s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/map/map.h:118:30:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K,[m[K’ token
+[2.790s]   118 |     {"tran3" , {1.0f , 0.0f}}[01;31m[K,[m[K
+[2.790s]       |                              [01;31m[K^[m[K
+[2.791s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/map/map.h:119:5:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K{[m[K’ token
+[2.791s]   119 |     [01;31m[K{[m[K"tran4" , {2.2f,0.0f}},
+[2.791s]       |     [01;31m[K^[m[K
+[2.791s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/map/map.h:119:28:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K,[m[K’ token
+[2.791s]   119 |     {"tran4" , {2.2f,0.0f}}[01;31m[K,[m[K
+[2.791s]       |                            [01;31m[K^[m[K
+[2.791s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/map/map.h:120:5:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K{[m[K’ token
+[2.791s]   120 |     [01;31m[K{[m[K"tran5" , {3.0f , 0.0f}}
+[2.791s]       |     [01;31m[K^[m[K
+[2.791s] [01m[K/home/w/projects/projects/gps_ws/src/gps/src/map/map.h:121:1:[m[K [01;31m[Kerror: [m[Kexpected declaration before ‘[01m[K}[m[K’ token
+[2.791s]   121 | [01;31m[K}[m[K;
+[2.791s]       | [01;31m[K^[m[K
+[6.596s] gmake[2]: *** [CMakeFiles/gps_node.dir/build.make:79: CMakeFiles/gps_node.dir/src/gps_node.cpp.o] Error 1
+[6.596s] gmake[1]: *** [CMakeFiles/Makefile2:188: CMakeFiles/gps_node.dir/all] Error 2
+[6.596s] gmake: *** [Makefile:146: all] Error 2
+[6.598s] Invoked command in '/home/w/projects/projects/gps_ws/build/gps' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/w/projects/projects/gps_ws/install/vision:/opt/ros/humble /usr/bin/cmake --build /home/w/projects/projects/gps_ws/build/gps -- -j16 -l16

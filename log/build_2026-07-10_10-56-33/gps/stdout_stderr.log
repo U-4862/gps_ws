@@ -1,0 +1,45 @@
+[ 40%] Built target SerialPort
+[ 60%] [32mBuilding CXX object CMakeFiles/gps_node.dir/src/map/map.cpp.o[0m
+[ 80%] [32mBuilding CXX object CMakeFiles/gps_node.dir/src/gps_node.cpp.o[0m
+In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+                 from [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3[m[K:
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:[m[K In member function ‘[01m[Kvirtual BT::NodeStatus ReadAction::onRunning()[m[K’:
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:2111:32:[m[K [01;31m[Kerror: [m[K‘[01m[Kstruct Signal2D[m[K’ has no member named ‘[01m[Kstatus[m[K’
+ 2111 |             pkt.is_linked, pkt.[01;31m[Kstatus[m[K);
+      |                                [01;31m[K^~~~~~[m[K
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:2117:57:[m[K [01;31m[Kerror: [m[K‘[01m[Kstruct Signal2D[m[K’ has no member named ‘[01m[Kstatus[m[K’
+ 2117 |         setOutput("out_status",    static_cast<int>(pkt.[01;31m[Kstatus[m[K));
+      |                                                         [01;31m[K^~~~~~[m[K
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:2119:42:[m[K [01;31m[Kerror: [m[K‘[01m[Kstruct Signal2D[m[K’ has no member named ‘[01m[Kstatus[m[K’
+ 2119 |         if (expected_status_ >= 0 && pkt.[01;31m[Kstatus[m[K != static_cast<uint8_t>(expected_status_))
+      |                                          [01;31m[K^~~~~~[m[K
+In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+                 from [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:3[m[K:
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:[m[K In member function ‘[01m[Kvirtual BT::NodeStatus WaitTillLinked::onRunning()[m[K’:
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:2208:75:[m[K [01;31m[Kerror: [m[K‘[01m[Kstruct Signal2D[m[K’ has no member named ‘[01m[Kstatus[m[K’
+ 2208 | aitTillLinked] is_linked=%d status=%d", pkt.is_linked, pkt.[01;31m[Kstatus[m[K);
+      |                                                            [01;31m[K^~~~~~[m[K
+
+gmake[2]: *** [CMakeFiles/gps_node.dir/build.make:79: CMakeFiles/gps_node.dir/src/gps_node.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:188: CMakeFiles/gps_node.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

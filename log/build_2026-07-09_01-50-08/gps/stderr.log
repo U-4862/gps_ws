@@ -1,0 +1,67 @@
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:[m[K In member function ‘[01m[Kvirtual BT::NodeStatus MoveToLocationA::onRunning()[m[K’:
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:552:33:[m[K [01;31m[Kerror: [m[Kcannot convert ‘[01m[KBT::NodeStatus[m[K’ to ‘[01m[KMoveToLocation::Phase[m[K’ in initialization
+  552 |         Phase phase = [01;31m[KturnToFace(M_PI ,yaw , Phase::DONE )[m[K;
+      |                       [01;31m[K~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+      |                                 [01;31m[K|[m[K
+      |                                 [01;31m[KBT::NodeStatus[m[K
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:548:15:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kdistance_x[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+  548 |         float [01;35m[Kdistance_x[m[K = dest_location_.x - current_location.x;
+      |               [01;35m[K^~~~~~~~~~[m[K
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:549:15:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kdistance_y[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+  549 |         float [01;35m[Kdistance_y[m[K = dest_location_.y - current_location.y;
+      |               [01;35m[K^~~~~~~~~~[m[K
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:[m[K In member function ‘[01m[Kvirtual BT::NodeStatus MoveToLocationB::onRunning()[m[K’:
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:587:33:[m[K [01;31m[Kerror: [m[Kcannot convert ‘[01m[KBT::NodeStatus[m[K’ to ‘[01m[KMoveToLocation::Phase[m[K’ in initialization
+  587 |         Phase phase = [01;31m[KturnToFace(M_PI_2  ,yaw , Phase::DONE )[m[K;
+      |                       [01;31m[K~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+      |                                 [01;31m[K|[m[K
+      |                                 [01;31m[KBT::NodeStatus[m[K
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:583:15:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kdistance_x[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+  583 |         float [01;35m[Kdistance_x[m[K = dest_location_.x - current_location.x;
+      |               [01;35m[K^~~~~~~~~~[m[K
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:584:15:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kdistance_y[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+  584 |         float [01;35m[Kdistance_y[m[K = dest_location_.y - current_location.y;
+      |               [01;35m[K^~~~~~~~~~[m[K
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:[m[K In member function ‘[01m[Kvirtual BT::NodeStatus MoveToLocationC::onRunning()[m[K’:
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:622:33:[m[K [01;31m[Kerror: [m[Kcannot convert ‘[01m[KBT::NodeStatus[m[K’ to ‘[01m[KMoveToLocation::Phase[m[K’ in initialization
+  622 |         Phase phase = [01;31m[KturnToFace(-M_PI_2  ,yaw , Phase::DONE )[m[K;
+      |                       [01;31m[K~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+      |                                 [01;31m[K|[m[K
+      |                                 [01;31m[KBT::NodeStatus[m[K
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:618:15:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kdistance_x[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+  618 |         float [01;35m[Kdistance_x[m[K = dest_location_.x - current_location.x;
+      |               [01;35m[K^~~~~~~~~~[m[K
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:619:15:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kdistance_y[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+  619 |         float [01;35m[Kdistance_y[m[K = dest_location_.y - current_location.y;
+      |               [01;35m[K^~~~~~~~~~[m[K
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:[m[K In member function ‘[01m[Kvirtual BT::NodeStatus MoveToLocationD::onRunning()[m[K’:
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:658:33:[m[K [01;31m[Kerror: [m[Kcannot convert ‘[01m[KBT::NodeStatus[m[K’ to ‘[01m[KMoveToLocation::Phase[m[K’ in initialization
+  658 |         Phase phase = [01;31m[KturnToFace(-M_PI  ,yaw , Phase::DONE )[m[K;
+      |                       [01;31m[K~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+      |                                 [01;31m[K|[m[K
+      |                                 [01;31m[KBT::NodeStatus[m[K
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:654:15:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kdistance_x[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+  654 |         float [01;35m[Kdistance_x[m[K = dest_location_.x - current_location.x;
+      |               [01;35m[K^~~~~~~~~~[m[K
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:655:15:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kdistance_y[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+  655 |         float [01;35m[Kdistance_y[m[K = dest_location_.y - current_location.y;
+      |               [01;35m[K^~~~~~~~~~[m[K
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:[m[K In member function ‘[01m[Kvirtual BT::NodeStatus MoveToLocationA::onRunning()[m[K’:
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:558:5:[m[K [01;35m[Kwarning: [m[Kcontrol reaches end of non-void function [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreturn-type-Wreturn-type]8;;[m[K]
+  558 |     [01;35m[K}[m[K
+      |     [01;35m[K^[m[K
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:[m[K In member function ‘[01m[Kvirtual BT::NodeStatus MoveToLocationB::onRunning()[m[K’:
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:593:5:[m[K [01;35m[Kwarning: [m[Kcontrol reaches end of non-void function [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreturn-type-Wreturn-type]8;;[m[K]
+  593 |     [01;35m[K}[m[K
+      |     [01;35m[K^[m[K
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:[m[K In member function ‘[01m[Kvirtual BT::NodeStatus MoveToLocationC::onRunning()[m[K’:
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:628:5:[m[K [01;35m[Kwarning: [m[Kcontrol reaches end of non-void function [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreturn-type-Wreturn-type]8;;[m[K]
+  628 |     [01;35m[K}[m[K
+      |     [01;35m[K^[m[K
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:[m[K In member function ‘[01m[Kvirtual BT::NodeStatus MoveToLocationD::onRunning()[m[K’:
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:664:5:[m[K [01;35m[Kwarning: [m[Kcontrol reaches end of non-void function [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreturn-type-Wreturn-type]8;;[m[K]
+  664 |     [01;35m[K}[m[K
+      |     [01;35m[K^[m[K
+gmake[2]: *** [CMakeFiles/gps_node.dir/build.make:79: CMakeFiles/gps_node.dir/src/gps_node.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:188: CMakeFiles/gps_node.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

@@ -1,0 +1,14 @@
+[0.007s] Invoking command in '/home/w/projects/projects/gps_ws/build/gps': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/w/projects/projects/gps_ws/build/gps -- -j16 -l16
+[0.030s] [ 50%] Built target SerialPort
+[0.051s] [ 75%] Building CXX object CMakeFiles/gps_node.dir/src/gps_node.cpp.o
+[2.232s] In file included from /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:8:
+[2.232s] /home/w/projects/projects/gps_ws/src/gps/src/map/map.h:25:14: error: ‘NORMAL’ conflicts with a previous declaration
+[2.232s]    25 |     NORMAL = 0,
+[2.232s]       |              ^
+[2.232s] /home/w/projects/projects/gps_ws/src/gps/src/map/map.h:19:5: note: previous declaration ‘up_signal NORMAL’
+[2.232s]    19 |     NORMAL = 0,
+[2.232s]       |     ^~~~~~
+[5.417s] gmake[2]: *** [CMakeFiles/gps_node.dir/build.make:79: CMakeFiles/gps_node.dir/src/gps_node.cpp.o] Error 1
+[5.417s] gmake[1]: *** [CMakeFiles/Makefile2:188: CMakeFiles/gps_node.dir/all] Error 2
+[5.417s] gmake: *** [Makefile:146: all] Error 2
+[5.419s] Invoked command in '/home/w/projects/projects/gps_ws/build/gps' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/w/projects/projects/gps_ws/build/gps -- -j16 -l16

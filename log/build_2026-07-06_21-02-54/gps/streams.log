@@ -1,0 +1,66 @@
+[0.019s] Invoking command in '/home/w/projects/projects/gps_ws/build/gps': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/w/projects/projects/gps_ws/install/vision:/opt/ros/humble /usr/bin/cmake --build /home/w/projects/projects/gps_ws/build/gps -- -j8 -l8
+[0.118s] [ 50%] Built target SerialPort
+[0.161s] [ 75%] Building CXX object CMakeFiles/gps_node.dir/src/gps_node.cpp.o
+[4.857s] In file included from /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:8:
+[4.859s] /home/w/projects/projects/gps_ws/src/gps/src/map/map.h:52:24: error: expected ‘;’ at end of member declaration
+[4.859s]    52 |     uint8_t up_signal{0}
+[4.859s]       |                        ^
+[4.860s]       |                         ;
+[4.880s] /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:23:119: error: too many initializers for ‘const Pose2D’
+[4.881s]    23 | inline constexpr Pose2D kLeft{0x0f, 0, 1, 0, pn_signal::POS, grip_signal::LOOSE, up_signal::NORMAL , up_signal::NORMAL};
+[4.881s]       |                                                                                                                       ^
+[4.881s] /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:24:119: error: too many initializers for ‘const Pose2D’
+[4.881s]    24 | inline constexpr Pose2D kStop{0x0f, 0, 0, 0, pn_signal::POS, grip_signal::LOOSE, up_signal::NORMAL , up_signal::NORMAL};
+[4.882s]       |                                                                                                                       ^
+[4.882s] /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:25:121: error: too many initializers for ‘const Pose2D’
+[4.882s]    25 | inline constexpr Pose2D kForward{0x0f, 1, 0, 0, pn_signal::POS, grip_signal::LOOSE, up_signal::NORMAL, up_signal::NORMAL};
+[4.882s]       |                                                                                                                         ^
+[4.882s] /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:26:118: error: too many initializers for ‘const Pose2D’
+[4.882s]    26 | inline constexpr Pose2D kBack{0x0f, 1, 0, 0, pn_signal::NEG, grip_signal::LOOSE, up_signal::NORMAL, up_signal::NORMAL};
+[4.882s]       |                                                                                                                      ^
+[4.882s] /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:27:122: error: too many initializers for ‘const Pose2D’
+[4.883s]    27 | inline constexpr Pose2D kTurnLeft{0x0f, 0, 0, 1, pn_signal::POS, grip_signal::LOOSE, up_signal::NORMAL ,up_signal::NORMAL};
+[4.883s]       |                                                                                                                          ^
+[4.883s] /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:28:123: error: too many initializers for ‘const Pose2D’
+[4.883s]    28 | inline constexpr Pose2D kTurnRight{0x0f, 0, 0, 1, pn_signal::NEG, grip_signal::LOOSE, up_signal::NORMAL ,up_signal::NORMAL};
+[4.883s]       |                                                                                                                           ^
+[4.883s] /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:29:117: error: too many initializers for ‘const Pose2D’
+[4.883s]    29 | inline constexpr Pose2D kGrip{0x0f, 0, 0, 0, pn_signal::POS, grip_signal::GRIP, up_signal::NORMAL,up_signal::NORMAL };
+[4.883s]       |                                                                                                                     ^
+[4.883s] /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:30:116: error: too many initializers for ‘const Pose2D’
+[4.883s]    30 | inline constexpr Pose2D kLoose{0x0f, 0,0,0 ,pn_signal::POS,grip_signal::LOOSE,up_signal::NORMAL , up_signal::NORMAL};
+[4.883s]       |                                                                                                                    ^
+[4.884s] /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:31:123: error: too many initializers for ‘const Pose2D’
+[4.884s]    31 | inline constexpr Pose2D kTurn90Left{0x0f, 0, 0, 0, pn_signal::POS, grip_signal::LOOSE, up_signal::NORMAL,up_signal::NORMAL};
+[4.884s]       |                                                                                                                           ^
+[4.884s] /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:32:125: error: too many initializers for ‘const Pose2D’
+[4.884s]    32 | inline constexpr Pose2D kTurn90Right{0x0f, 0, 0, 0, pn_signal::NEG, grip_signal::LOOSE, up_signal::NORMAL ,up_signal::NORMAL};
+[4.884s]       |                                                                                                                             ^
+[4.884s] /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:33:119: error: too many initializers for ‘const Pose2D’
+[4.884s]    33 | inline constexpr Pose2D kGrab{0x0f, 0, 0, 0, pn_signal::POS, grip_signal::LOOSE, up_signal::NORMAL , grab_signal::GRAB};
+[4.884s]       |                                                                                                                       ^
+[5.050s] /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp: In member function ‘virtual BT::NodeStatus MoveToLocation::driveToTarget(float, MoveToLocation::Phase)’:
+[5.050s] /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:533:123: error: too many initializers for ‘Pose2D’
+[5.050s]   533 |             Pose2D cmd{0x0f, (uint8_t)speed, 0, 0, pn_signal::POS,grip_signal::LOOSE, up_signal::NORMAL, up_signal::NORMAL};
+[5.050s]       |                                                                                                                           ^
+[5.050s] /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:538:128: error: too many initializers for ‘Pose2D’
+[5.051s]   538 |             Pose2D cmd{0x0f, (uint8_t)(-speed), 0, 0, pn_signal::POS, grip_signal::LOOSE , up_signal::NORMAL ,up_signal::NORMAL};
+[5.051s]       |                                                                                                                                ^
+[5.051s] /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp: In member function ‘virtual BT::NodeStatus MoveToLocationUP::driveToTarget(float, MoveToLocation::Phase)’:
+[5.051s] /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:609:120: error: too many initializers for ‘Pose2D’
+[5.051s]   609 |             Pose2D cmd{0x0f, (uint8_t)speed, 0, 0, pn_signal::NEG, grip_signal::LOOSE, up_signal::UP, up_signal::NORMAL};
+[5.052s]       |                                                                                                                        ^
+[5.052s] /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:614:123: error: too many initializers for ‘Pose2D’
+[5.052s]   614 |             Pose2D cmd{0x0f, (uint8_t)(-speed), 0, 0, pn_signal::NEG, grip_signal::LOOSE, up_signal::UP, up_signal::NORMAL};
+[5.052s]       |                                                                                                                           ^
+[5.052s] /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp: In member function ‘virtual BT::NodeStatus MoveToLocationDOWN::driveToTarget(float, MoveToLocation::Phase)’:
+[5.052s] /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:646:122: error: too many initializers for ‘Pose2D’
+[5.052s]   646 |             Pose2D cmd{0x0f, (uint8_t)speed, 0, 0, pn_signal::POS, grip_signal::LOOSE, up_signal::DOWN, up_signal::NORMAL};
+[5.053s]       |                                                                                                                          ^
+[5.053s] /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:651:125: error: too many initializers for ‘Pose2D’
+[5.053s]   651 |             Pose2D cmd{0x0f, (uint8_t)(-speed), 0, 0, pn_signal::POS, grip_signal::LOOSE, up_signal::DOWN, up_signal::NORMAL};
+[5.053s]       |                                                                                                                             ^
+[5.056s] /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp: In member function ‘BT::NodeStatus MoveToLocationHorizontal::driveToTargetWithVxVy(float, float, MoveToLocation::Phase)’:
+[5.056s] /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:787:118: error: too many initializers for ‘Pose2D’
+[5.057s]   787 |         Pose2D cmd{0x0f, abs_speed_x, abs_speed_y, 0, x_dir, grip_signal::LOOSE, up_signal::NORMAL, up_signal::NORMAL};
+[5.057s]       |                                                                                                                      ^

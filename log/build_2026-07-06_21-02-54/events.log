@@ -1,0 +1,536 @@
+[0.000000] (-) TimerEvent: {}
+[0.000246] (-) JobUnselected: {'identifier': 'vision'}
+[0.000807] (gps) JobQueued: {'identifier': 'gps', 'dependencies': OrderedDict()}
+[0.001033] (gps) JobStarted: {'identifier': 'gps'}
+[0.015560] (gps) JobProgress: {'identifier': 'gps', 'progress': 'cmake'}
+[0.016844] (gps) JobProgress: {'identifier': 'gps', 'progress': 'build'}
+[0.018822] (gps) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/w/projects/projects/gps_ws/build/gps', '--', '-j8', '-l8'], 'cwd': '/home/w/projects/projects/gps_ws/build/gps', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('PYTHON_BASIC_REPL', '1'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('AI_AGENT', 'claude-code_2-1-149_agent'), ('LANGUAGE', 'en_US:en'), ('USER', 'w'), ('CLAUDE_CODE_ENTRYPOINT', 'cli'), ('LC_TIME', 'zh_CN.UTF-8'), ('GIT_EDITOR', 'true'), ('XDG_SESSION_TYPE', 'x11'), ('GIT_ASKPASS', '/usr/share/code/resources/app/extensions/git/dist/askpass.sh'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/w/fastlio/install/fast_lio/lib:/home/w/ws_livox/install/livox_ros_driver2/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/w'), ('CHROME_DESKTOP', 'code.desktop'), ('CONDA_SHLVL', '0'), ('TERM_PROGRAM_VERSION', '1.120.0'), ('DESKTOP_SESSION', 'ubuntu-xorg'), ('GIO_LAUNCHED_DESKTOP_FILE', '/usr/share/applications/code.desktop'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('XDG_SEAT_PATH', '/org/freedesktop/DisplayManager/Seat0'), ('VSCODE_GIT_ASKPASS_MAIN', '/usr/share/code/resources/app/extensions/git/dist/askpass-main.js'), ('LC_MONETARY', 'zh_CN.UTF-8'), ('VSCODE_GIT_ASKPASS_NODE', '/usr/share/code/code'), ('MANAGERPID', '1919'), ('PYDEVD_DISABLE_FILE_VALIDATION', '1'), ('SYSTEMD_EXEC_PID', '2375'), ('BUNDLED_DEBUGPY_PATH', '/home/w/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/libs/debugpy'), ('VSCODE_PYTHON_AUTOACTIVATE_GUARD', '1'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('_CE_M', ''), ('_CONDA_ROOT', '/home/w/anaconda3'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '4748'), ('COLCON_PREFIX_PATH', '/home/w/slam_ws/install:/home/w/projects/projects/gps_ws/install:/home/w/ws_livox/install:/home/w/fastlio/install'), ('AM_HOME', '/home/w/projects/ics2025/abstract-machine'), ('ROS_DISTRO', 'humble'), ('GTK_IM_MODULE', 'ibus'), ('LOGNAME', 'w'), ('JOURNAL_STREAM', '8:17547'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('CLAUDE_CODE_SSE_PORT', '35972'), ('XDG_SESSION_CLASS', 'user'), ('ANTHROPIC_BASE_URL', 'https://modelgate.top'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('_CE_CONDA', ''), ('FC_FONTATIONS', '1'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/home/w/.config/Code/User/globalStorage/github.copilot-chat/debugCommand:/home/w/.config/Code/User/globalStorage/github.copilot-chat/copilotCli:/home/w/.local/bin:/home/w/anaconda3/condabin:/opt/ros/humble/bin:/home/w/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/w/.fishros/bin/:/home/w/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts:/home/w/.fishros/bin/'), ('SESSION_MANAGER', 'local/FA608PM:@/tmp/.ICE-unix/2307,unix/FA608PM:/tmp/.ICE-unix/2307'), ('GDM_LANG', 'en_US'), ('INVOCATION_ID', 'f8110f76e95341dc8454cb83595b562e'), ('PAPERSIZE', 'a4'), ('COREPACK_ENABLE_AUTO_PIN', '0'), ('XDG_SESSION_PATH', '/org/freedesktop/DisplayManager/Session0'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'zh_CN.UTF-8'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('GDK_BACKEND', 'x11'), ('CLAUDE_EFFORT', 'xhigh'), ('DISPLAY', ':0'), ('VSCODE_DEBUGPY_ADAPTER_ENDPOINTS', '/home/w/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/.noConfigDebugAdapterEndpoints/endpoint-19992ed2d4ca597d.txt'), ('NoDefaultCurrentDirectoryInExePath', '1'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('PYTHONSTARTUP', '/home/w/.config/Code/User/workspaceStorage/a2ad95b9f6dfb62897a05935310ba1b5/ms-python.python/pythonrc.py'), ('LC_TELEPHONE', 'zh_CN.UTF-8'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu-xorg'), ('XAUTHORITY', '/home/w/.Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1000/vscode-git-d2c6b87941.sock'), ('TERM_PROGRAM', 'vscode'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('XDG_GREETER_DATA_DIR', '/var/lib/lightdm-data/w'), ('AMENT_PREFIX_PATH', '/home/w/projects/projects/gps_ws/install/vision:/home/w/projects/projects/gps_ws/install/gps:/home/w/slam_ws/install/slam_bridge:/home/w/fastlio/install/fast_lio:/home/w/ws_livox/install/livox_ros_driver2:/opt/ros/humble'), ('CONDA_PYTHON_EXE', '/home/w/anaconda3/bin/python'), ('SHELL', '/bin/bash'), ('LC_NAME', 'zh_CN.UTF-8'), ('ANTHROPIC_AUTH_TOKEN', 'sk-dcfe6467e3dc4bb4d78446c470e464cd7f9ded03ba7aef3fad5d1f87ef09c87f'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu-xorg'), ('CLAUDE_CODE_SESSION_ID', '4bad931e-92be-42fd-b874-71a550d52028'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('CLAUDECODE', '1'), ('LC_MEASUREMENT', 'zh_CN.UTF-8'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('_CONDA_EXE', '/home/w/anaconda3/bin/conda'), ('LC_IDENTIFICATION', 'zh_CN.UTF-8'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('QT_IM_MODULE', 'ibus'), ('CLAUDE_CODE_ATTRIBUTION_HEADER', '0'), ('PWD', '/home/w/projects/projects/gps_ws/build/gps'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu-xorg:/etc/xdg'), ('CONDA_EXE', '/home/w/anaconda3/bin/conda'), ('XDG_DATA_DIRS', '/usr/share/ubuntu-xorg:/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('CLAUDE_CODE_EXECPATH', '/usr/bin/claude'), ('CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC', '1'), ('PYTHONPATH', '/home/w/projects/projects/gps_ws/install/vision/lib/python3.10/site-packages:/home/w/fastlio/install/fast_lio/local/lib/python3.10/dist-packages:/home/w/ws_livox/install/livox_ros_driver2/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'zh_CN.UTF-8'), ('LC_PAPER', 'zh_CN.UTF-8'), ('COLCON', '1'), ('NEMU_HOME', '/home/w/projects/ics2025/nemu'), ('CMAKE_PREFIX_PATH', '/home/w/projects/projects/gps_ws/install/gps:/home/w/slam_ws/install/slam_bridge:/home/w/fastlio/install/fast_lio:/home/w/ws_livox/install/livox_ros_driver2:/home/w/projects/projects/gps_ws/install/vision:/opt/ros/humble')]), 'shell': False}
+[0.099659] (-) TimerEvent: {}
+[0.118630] (gps) StdoutLine: {'line': b'[ 50%] Built target SerialPort\n'}
+[0.161561] (gps) StdoutLine: {'line': b'[ 75%] Building CXX object CMakeFiles/gps_node.dir/src/gps_node.cpp.o\n'}
+[0.199799] (-) TimerEvent: {}
+[0.299972] (-) TimerEvent: {}
+[0.400186] (-) TimerEvent: {}
+[0.500416] (-) TimerEvent: {}
+[0.600602] (-) TimerEvent: {}
+[0.700813] (-) TimerEvent: {}
+[0.801028] (-) TimerEvent: {}
+[0.901245] (-) TimerEvent: {}
+[1.001511] (-) TimerEvent: {}
+[1.101712] (-) TimerEvent: {}
+[1.201869] (-) TimerEvent: {}
+[1.302094] (-) TimerEvent: {}
+[1.402276] (-) TimerEvent: {}
+[1.502561] (-) TimerEvent: {}
+[1.602789] (-) TimerEvent: {}
+[1.702979] (-) TimerEvent: {}
+[1.803205] (-) TimerEvent: {}
+[1.903492] (-) TimerEvent: {}
+[2.004902] (-) TimerEvent: {}
+[2.105141] (-) TimerEvent: {}
+[2.206498] (-) TimerEvent: {}
+[2.306739] (-) TimerEvent: {}
+[2.407033] (-) TimerEvent: {}
+[2.507271] (-) TimerEvent: {}
+[2.607585] (-) TimerEvent: {}
+[2.707873] (-) TimerEvent: {}
+[2.808105] (-) TimerEvent: {}
+[2.908317] (-) TimerEvent: {}
+[3.008525] (-) TimerEvent: {}
+[3.108772] (-) TimerEvent: {}
+[3.209060] (-) TimerEvent: {}
+[3.309308] (-) TimerEvent: {}
+[3.409545] (-) TimerEvent: {}
+[3.509821] (-) TimerEvent: {}
+[3.610113] (-) TimerEvent: {}
+[3.710362] (-) TimerEvent: {}
+[3.810599] (-) TimerEvent: {}
+[3.910881] (-) TimerEvent: {}
+[4.011160] (-) TimerEvent: {}
+[4.111403] (-) TimerEvent: {}
+[4.211659] (-) TimerEvent: {}
+[4.311870] (-) TimerEvent: {}
+[4.412128] (-) TimerEvent: {}
+[4.512378] (-) TimerEvent: {}
+[4.612594] (-) TimerEvent: {}
+[4.712820] (-) TimerEvent: {}
+[4.813024] (-) TimerEvent: {}
+[4.857724] (gps) StderrLine: {'line': b'In file included from /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:8:\n'}
+[4.859951] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/map/map.h:52:24: error: expected \xe2\x80\x98;\xe2\x80\x99 at end of member declaration\n'}
+[4.860248] (gps) StderrLine: {'line': b'   52 |     uint8_t up_signal{0}\n'}
+[4.860434] (gps) StderrLine: {'line': b'      |                        ^\n'}
+[4.860605] (gps) StderrLine: {'line': b'      |                         ;\n'}
+[4.880946] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:23:119: error: too many initializers for \xe2\x80\x98const Pose2D\xe2\x80\x99\n'}
+[4.881249] (gps) StderrLine: {'line': b'   23 | inline constexpr Pose2D kLeft{0x0f, 0, 1, 0, pn_signal::POS, grip_signal::LOOSE, up_signal::NORMAL , up_signal::NORMAL};\n'}
+[4.881902] (gps) StderrLine: {'line': b'      |                                                                                                                       ^\n'}
+[4.882127] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:24:119: error: too many initializers for \xe2\x80\x98const Pose2D\xe2\x80\x99\n'}
+[4.882356] (gps) StderrLine: {'line': b'   24 | inline constexpr Pose2D kStop{0x0f, 0, 0, 0, pn_signal::POS, grip_signal::LOOSE, up_signal::NORMAL , up_signal::NORMAL};\n'}
+[4.882577] (gps) StderrLine: {'line': b'      |                                                                                                                       ^\n'}
+[4.882731] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:25:121: error: too many initializers for \xe2\x80\x98const Pose2D\xe2\x80\x99\n'}
+[4.882841] (gps) StderrLine: {'line': b'   25 | inline constexpr Pose2D kForward{0x0f, 1, 0, 0, pn_signal::POS, grip_signal::LOOSE, up_signal::NORMAL, up_signal::NORMAL};\n'}
+[4.882957] (gps) StderrLine: {'line': b'      |                                                                                                                         ^\n'}
+[4.883066] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:26:118: error: too many initializers for \xe2\x80\x98const Pose2D\xe2\x80\x99\n'}
+[4.883200] (gps) StderrLine: {'line': b'   26 | inline constexpr Pose2D kBack{0x0f, 1, 0, 0, pn_signal::NEG, grip_signal::LOOSE, up_signal::NORMAL, up_signal::NORMAL};\n'}
+[4.883305] (gps) StderrLine: {'line': b'      |                                                                                                                      ^\n'}
+[4.883421] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:27:122: error: too many initializers for \xe2\x80\x98const Pose2D\xe2\x80\x99\n'}
+[4.883525] (gps) StderrLine: {'line': b'   27 | inline constexpr Pose2D kTurnLeft{0x0f, 0, 0, 1, pn_signal::POS, grip_signal::LOOSE, up_signal::NORMAL ,up_signal::NORMAL};\n'}
+[4.883630] (gps) StderrLine: {'line': b'      |                                                                                                                          ^\n'}
+[4.883734] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:28:123: error: too many initializers for \xe2\x80\x98const Pose2D\xe2\x80\x99\n'}
+[4.883860] (gps) StderrLine: {'line': b'   28 | inline constexpr Pose2D kTurnRight{0x0f, 0, 0, 1, pn_signal::NEG, grip_signal::LOOSE, up_signal::NORMAL ,up_signal::NORMAL};\n'}
+[4.883976] (gps) StderrLine: {'line': b'      |                                                                                                                           ^\n'}
+[4.884086] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:29:117: error: too many initializers for \xe2\x80\x98const Pose2D\xe2\x80\x99\n'}
+[4.884179] (gps) StderrLine: {'line': b'   29 | inline constexpr Pose2D kGrip{0x0f, 0, 0, 0, pn_signal::POS, grip_signal::GRIP, up_signal::NORMAL,up_signal::NORMAL };\n'}
+[4.884262] (gps) StderrLine: {'line': b'      |                                                                                                                     ^\n'}
+[4.884341] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:30:116: error: too many initializers for \xe2\x80\x98const Pose2D\xe2\x80\x99\n'}
+[4.884423] (gps) StderrLine: {'line': b'   30 | inline constexpr Pose2D kLoose{0x0f, 0,0,0 ,pn_signal::POS,grip_signal::LOOSE,up_signal::NORMAL , up_signal::NORMAL};\n'}
+[4.884506] (gps) StderrLine: {'line': b'      |                                                                                                                    ^\n'}
+[4.884590] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:31:123: error: too many initializers for \xe2\x80\x98const Pose2D\xe2\x80\x99\n'}
+[4.884672] (gps) StderrLine: {'line': b'   31 | inline constexpr Pose2D kTurn90Left{0x0f, 0, 0, 0, pn_signal::POS, grip_signal::LOOSE, up_signal::NORMAL,up_signal::NORMAL};\n'}
+[4.884763] (gps) StderrLine: {'line': b'      |                                                                                                                           ^\n'}
+[4.884868] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:32:125: error: too many initializers for \xe2\x80\x98const Pose2D\xe2\x80\x99\n'}
+[4.884966] (gps) StderrLine: {'line': b'   32 | inline constexpr Pose2D kTurn90Right{0x0f, 0, 0, 0, pn_signal::NEG, grip_signal::LOOSE, up_signal::NORMAL ,up_signal::NORMAL};\n'}
+[4.885061] (gps) StderrLine: {'line': b'      |                                                                                                                             ^\n'}
+[4.885185] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:33:119: error: too many initializers for \xe2\x80\x98const Pose2D\xe2\x80\x99\n'}
+[4.885299] (gps) StderrLine: {'line': b'   33 | inline constexpr Pose2D kGrab{0x0f, 0, 0, 0, pn_signal::POS, grip_signal::LOOSE, up_signal::NORMAL , grab_signal::GRAB};\n'}
+[4.885411] (gps) StderrLine: {'line': b'      |                                                                                                                       ^\n'}
+[4.913127] (-) TimerEvent: {}
+[5.013357] (-) TimerEvent: {}
+[5.050479] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp: In member function \xe2\x80\x98virtual BT::NodeStatus MoveToLocation::driveToTarget(float, MoveToLocation::Phase)\xe2\x80\x99:\n'}
+[5.050719] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:533:123: error: too many initializers for \xe2\x80\x98Pose2D\xe2\x80\x99\n'}
+[5.050914] (gps) StderrLine: {'line': b'  533 |             Pose2D cmd{0x0f, (uint8_t)speed, 0, 0, pn_signal::POS,grip_signal::LOOSE, up_signal::NORMAL, up_signal::NORMAL};\n'}
+[5.051090] (gps) StderrLine: {'line': b'      |                                                                                                                           ^\n'}
+[5.051265] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:538:128: error: too many initializers for \xe2\x80\x98Pose2D\xe2\x80\x99\n'}
+[5.051373] (gps) StderrLine: {'line': b'  538 |             Pose2D cmd{0x0f, (uint8_t)(-speed), 0, 0, pn_signal::POS, grip_signal::LOOSE , up_signal::NORMAL ,up_signal::NORMAL};\n'}
+[5.051691] (gps) StderrLine: {'line': b'      |                                                                                                                                ^\n'}
+[5.051828] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp: In member function \xe2\x80\x98virtual BT::NodeStatus MoveToLocationUP::driveToTarget(float, MoveToLocation::Phase)\xe2\x80\x99:\n'}
+[5.052011] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:609:120: error: too many initializers for \xe2\x80\x98Pose2D\xe2\x80\x99\n'}
+[5.052162] (gps) StderrLine: {'line': b'  609 |             Pose2D cmd{0x0f, (uint8_t)speed, 0, 0, pn_signal::NEG, grip_signal::LOOSE, up_signal::UP, up_signal::NORMAL};\n'}
+[5.052296] (gps) StderrLine: {'line': b'      |                                                                                                                        ^\n'}
+[5.052687] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:614:123: error: too many initializers for \xe2\x80\x98Pose2D\xe2\x80\x99\n'}
+[5.052894] (gps) StderrLine: {'line': b'  614 |             Pose2D cmd{0x0f, (uint8_t)(-speed), 0, 0, pn_signal::NEG, grip_signal::LOOSE, up_signal::UP, up_signal::NORMAL};\n'}
+[5.053088] (gps) StderrLine: {'line': b'      |                                                                                                                           ^\n'}
+[5.053201] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp: In member function \xe2\x80\x98virtual BT::NodeStatus MoveToLocationDOWN::driveToTarget(float, MoveToLocation::Phase)\xe2\x80\x99:\n'}
+[5.053318] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:646:122: error: too many initializers for \xe2\x80\x98Pose2D\xe2\x80\x99\n'}
+[5.053421] (gps) StderrLine: {'line': b'  646 |             Pose2D cmd{0x0f, (uint8_t)speed, 0, 0, pn_signal::POS, grip_signal::LOOSE, up_signal::DOWN, up_signal::NORMAL};\n'}
+[5.053534] (gps) StderrLine: {'line': b'      |                                                                                                                          ^\n'}
+[5.053644] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:651:125: error: too many initializers for \xe2\x80\x98Pose2D\xe2\x80\x99\n'}
+[5.053753] (gps) StderrLine: {'line': b'  651 |             Pose2D cmd{0x0f, (uint8_t)(-speed), 0, 0, pn_signal::POS, grip_signal::LOOSE, up_signal::DOWN, up_signal::NORMAL};\n'}
+[5.053885] (gps) StderrLine: {'line': b'      |                                                                                                                             ^\n'}
+[5.056938] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp: In member function \xe2\x80\x98BT::NodeStatus MoveToLocationHorizontal::driveToTargetWithVxVy(float, float, MoveToLocation::Phase)\xe2\x80\x99:\n'}
+[5.057276] (gps) StderrLine: {'line': b'/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:787:118: error: too many initializers for \xe2\x80\x98Pose2D\xe2\x80\x99\n'}
+[5.057470] (gps) StderrLine: {'line': b'  787 |         Pose2D cmd{0x0f, abs_speed_x, abs_speed_y, 0, x_dir, grip_signal::LOOSE, up_signal::NORMAL, up_signal::NORMAL};\n'}
+[5.057629] (gps) StderrLine: {'line': b'      |                                                                                                                      ^\n'}
+[5.113467] (-) TimerEvent: {}
+[5.213737] (-) TimerEvent: {}
+[5.313983] (-) TimerEvent: {}
+[5.414197] (-) TimerEvent: {}
+[5.514427] (-) TimerEvent: {}
+[5.614639] (-) TimerEvent: {}
+[5.714854] (-) TimerEvent: {}
+[5.815083] (-) TimerEvent: {}
+[5.915322] (-) TimerEvent: {}
+[6.015554] (-) TimerEvent: {}
+[6.115783] (-) TimerEvent: {}
+[6.216073] (-) TimerEvent: {}
+[6.316319] (-) TimerEvent: {}
+[6.416542] (-) TimerEvent: {}
+[6.516759] (-) TimerEvent: {}
+[6.617012] (-) TimerEvent: {}
+[6.717264] (-) TimerEvent: {}
+[6.817514] (-) TimerEvent: {}
+[6.917726] (-) TimerEvent: {}
+[7.017949] (-) TimerEvent: {}
+[7.118226] (-) TimerEvent: {}
+[7.218696] (-) TimerEvent: {}
+[7.319033] (-) TimerEvent: {}
+[7.419360] (-) TimerEvent: {}
+[7.519609] (-) TimerEvent: {}
+[7.619874] (-) TimerEvent: {}
+[7.720174] (-) TimerEvent: {}
+[7.820457] (-) TimerEvent: {}
+[7.922709] (-) TimerEvent: {}
+[8.023956] (-) TimerEvent: {}
+[8.124484] (-) TimerEvent: {}
+[8.232449] (-) TimerEvent: {}
+[8.341669] (-) TimerEvent: {}
+[8.446027] (-) TimerEvent: {}
+[8.547570] (-) TimerEvent: {}
+[8.647828] (-) TimerEvent: {}
+[8.748297] (-) TimerEvent: {}
+[8.848511] (-) TimerEvent: {}
+[8.948781] (-) TimerEvent: {}
+[9.049034] (-) TimerEvent: {}
+[9.149576] (-) TimerEvent: {}
+[9.255842] (-) TimerEvent: {}
+[9.359760] (-) TimerEvent: {}
+[9.459983] (-) TimerEvent: {}
+[9.560229] (-) TimerEvent: {}
+[9.660502] (-) TimerEvent: {}
+[9.766109] (-) TimerEvent: {}
+[9.868678] (-) TimerEvent: {}
+[9.969018] (-) TimerEvent: {}
+[10.069338] (-) TimerEvent: {}
+[10.169833] (-) TimerEvent: {}
+[10.280489] (-) TimerEvent: {}
+[10.392404] (-) TimerEvent: {}
+[10.505526] (-) TimerEvent: {}
+[10.616164] (-) TimerEvent: {}
+[10.733372] (-) TimerEvent: {}
+[10.846966] (-) TimerEvent: {}
+[10.950081] (-) TimerEvent: {}
+[11.057193] (-) TimerEvent: {}
+[11.167241] (-) TimerEvent: {}
+[11.276157] (-) TimerEvent: {}
+[11.388242] (-) TimerEvent: {}
+[11.495875] (-) TimerEvent: {}
+[11.607233] (-) TimerEvent: {}
+[11.721389] (-) TimerEvent: {}
+[11.841147] (-) TimerEvent: {}
+[11.965379] (-) TimerEvent: {}
+[12.086949] (-) TimerEvent: {}
+[12.209995] (-) TimerEvent: {}
+[12.338308] (-) TimerEvent: {}
+[12.461846] (-) TimerEvent: {}
+[12.581084] (-) TimerEvent: {}
+[12.709420] (-) TimerEvent: {}
+[12.844695] (-) TimerEvent: {}
+[12.977049] (-) TimerEvent: {}
+[13.122282] (-) TimerEvent: {}
+[13.269366] (-) TimerEvent: {}
+[13.414626] (-) TimerEvent: {}
+[13.542626] (-) TimerEvent: {}
+[13.672992] (-) TimerEvent: {}
+[13.805300] (-) TimerEvent: {}
+[13.928326] (-) TimerEvent: {}
+[14.056521] (-) TimerEvent: {}
+[14.182753] (-) TimerEvent: {}
+[14.310239] (-) TimerEvent: {}
+[14.456562] (-) TimerEvent: {}
+[14.604237] (-) TimerEvent: {}
+[14.764462] (-) TimerEvent: {}
+[14.919481] (-) TimerEvent: {}
+[15.072276] (-) TimerEvent: {}
+[15.290059] (-) TimerEvent: {}
+[15.490836] (-) TimerEvent: {}
+[15.688590] (-) TimerEvent: {}
+[15.836397] (-) TimerEvent: {}
+[15.977251] (-) TimerEvent: {}
+[16.107896] (-) TimerEvent: {}
+[16.219971] (-) TimerEvent: {}
+[16.335182] (-) TimerEvent: {}
+[16.440294] (-) TimerEvent: {}
+[16.543837] (-) TimerEvent: {}
+[16.652123] (-) TimerEvent: {}
+[16.764544] (-) TimerEvent: {}
+[16.875532] (-) TimerEvent: {}
+[16.984803] (-) TimerEvent: {}
+[17.100429] (-) TimerEvent: {}
+[17.208946] (-) TimerEvent: {}
+[17.331990] (-) TimerEvent: {}
+[17.447366] (-) TimerEvent: {}
+[17.561557] (-) TimerEvent: {}
+[17.687870] (-) TimerEvent: {}
+[17.810413] (-) TimerEvent: {}
+[17.930534] (-) TimerEvent: {}
+[18.047199] (-) TimerEvent: {}
+[18.167166] (-) TimerEvent: {}
+[18.291809] (-) TimerEvent: {}
+[18.410835] (-) TimerEvent: {}
+[18.529907] (-) TimerEvent: {}
+[18.651052] (-) TimerEvent: {}
+[18.769100] (-) TimerEvent: {}
+[18.889438] (-) TimerEvent: {}
+[19.009172] (-) TimerEvent: {}
+[19.131638] (-) TimerEvent: {}
+[19.261624] (-) TimerEvent: {}
+[19.386403] (-) TimerEvent: {}
+[19.521057] (-) TimerEvent: {}
+[19.675484] (-) TimerEvent: {}
+[19.827664] (-) TimerEvent: {}
+[19.954857] (-) TimerEvent: {}
+[20.081185] (-) TimerEvent: {}
+[20.208752] (-) TimerEvent: {}
+[20.347041] (-) TimerEvent: {}
+[20.505175] (-) TimerEvent: {}
+[20.652029] (-) TimerEvent: {}
+[20.795543] (-) TimerEvent: {}
+[20.949168] (-) TimerEvent: {}
+[21.092254] (-) TimerEvent: {}
+[21.246085] (-) TimerEvent: {}
+[21.404050] (-) TimerEvent: {}
+[21.589856] (-) TimerEvent: {}
+[21.729383] (-) TimerEvent: {}
+[21.910546] (-) TimerEvent: {}
+[22.108138] (-) TimerEvent: {}
+[22.278390] (-) TimerEvent: {}
+[22.446339] (-) TimerEvent: {}
+[22.625383] (-) TimerEvent: {}
+[22.785269] (-) TimerEvent: {}
+[22.934688] (-) TimerEvent: {}
+[23.064509] (-) TimerEvent: {}
+[23.187559] (-) TimerEvent: {}
+[23.328645] (-) TimerEvent: {}
+[23.461175] (-) TimerEvent: {}
+[23.613645] (-) TimerEvent: {}
+[23.740698] (-) TimerEvent: {}
+[23.866110] (-) TimerEvent: {}
+[23.989601] (-) TimerEvent: {}
+[24.110143] (-) TimerEvent: {}
+[24.230840] (-) TimerEvent: {}
+[24.353388] (-) TimerEvent: {}
+[24.471996] (-) TimerEvent: {}
+[24.595503] (-) TimerEvent: {}
+[24.740214] (-) TimerEvent: {}
+[24.858812] (-) TimerEvent: {}
+[24.973806] (-) TimerEvent: {}
+[25.087630] (-) TimerEvent: {}
+[25.205474] (-) TimerEvent: {}
+[25.337679] (-) TimerEvent: {}
+[25.480392] (-) TimerEvent: {}
+[25.598824] (-) TimerEvent: {}
+[25.729999] (-) TimerEvent: {}
+[25.875626] (-) TimerEvent: {}
+[25.994059] (-) TimerEvent: {}
+[26.111491] (-) TimerEvent: {}
+[26.231288] (-) TimerEvent: {}
+[26.345594] (-) TimerEvent: {}
+[26.460310] (-) TimerEvent: {}
+[26.579731] (-) TimerEvent: {}
+[26.690559] (-) TimerEvent: {}
+[26.797517] (-) TimerEvent: {}
+[26.908616] (-) TimerEvent: {}
+[27.040937] (-) TimerEvent: {}
+[27.158086] (-) TimerEvent: {}
+[27.277102] (-) TimerEvent: {}
+[27.403788] (-) TimerEvent: {}
+[27.534561] (-) TimerEvent: {}
+[27.688329] (-) TimerEvent: {}
+[27.843001] (-) TimerEvent: {}
+[27.985305] (-) TimerEvent: {}
+[28.166038] (-) TimerEvent: {}
+[28.369758] (-) TimerEvent: {}
+[28.503551] (-) TimerEvent: {}
+[28.666595] (-) TimerEvent: {}
+[28.829936] (-) TimerEvent: {}
+[29.004349] (-) TimerEvent: {}
+[29.218127] (-) TimerEvent: {}
+[29.522633] (-) TimerEvent: {}
+[29.726481] (-) TimerEvent: {}
+[29.944626] (-) TimerEvent: {}
+[30.298742] (-) TimerEvent: {}
+[30.765426] (-) TimerEvent: {}
+[30.950778] (-) TimerEvent: {}
+[31.143183] (-) TimerEvent: {}
+[31.303513] (-) TimerEvent: {}
+[31.568620] (-) TimerEvent: {}
+[31.768253] (-) TimerEvent: {}
+[31.930750] (-) TimerEvent: {}
+[32.055729] (-) TimerEvent: {}
+[32.194261] (-) TimerEvent: {}
+[32.337089] (-) TimerEvent: {}
+[32.498676] (-) TimerEvent: {}
+[32.651489] (-) TimerEvent: {}
+[32.795102] (-) TimerEvent: {}
+[32.923588] (-) TimerEvent: {}
+[33.051466] (-) TimerEvent: {}
+[33.180884] (-) TimerEvent: {}
+[33.317434] (-) TimerEvent: {}
+[33.451576] (-) TimerEvent: {}
+[33.588119] (-) TimerEvent: {}
+[33.728504] (-) TimerEvent: {}
+[33.909908] (-) TimerEvent: {}
+[34.047578] (-) TimerEvent: {}
+[34.184485] (-) TimerEvent: {}
+[34.314259] (-) TimerEvent: {}
+[34.446698] (-) TimerEvent: {}
+[34.595785] (-) TimerEvent: {}
+[34.792700] (-) TimerEvent: {}
+[34.929441] (-) TimerEvent: {}
+[35.059764] (-) TimerEvent: {}
+[35.191363] (-) TimerEvent: {}
+[35.332561] (-) TimerEvent: {}
+[35.469161] (-) TimerEvent: {}
+[35.605120] (-) TimerEvent: {}
+[35.758969] (-) TimerEvent: {}
+[35.942857] (-) TimerEvent: {}
+[36.068150] (-) TimerEvent: {}
+[36.194519] (-) TimerEvent: {}
+[36.329665] (-) TimerEvent: {}
+[36.461636] (-) TimerEvent: {}
+[36.598116] (-) TimerEvent: {}
+[36.742203] (-) TimerEvent: {}
+[36.890962] (-) TimerEvent: {}
+[37.048754] (-) TimerEvent: {}
+[37.223555] (-) TimerEvent: {}
+[37.365167] (-) TimerEvent: {}
+[37.481921] (-) TimerEvent: {}
+[37.611156] (-) TimerEvent: {}
+[37.729399] (-) TimerEvent: {}
+[37.861407] (-) TimerEvent: {}
+[37.988540] (-) TimerEvent: {}
+[38.114494] (-) TimerEvent: {}
+[38.240519] (-) TimerEvent: {}
+[38.363035] (-) TimerEvent: {}
+[38.479288] (-) TimerEvent: {}
+[38.604420] (-) TimerEvent: {}
+[38.723682] (-) TimerEvent: {}
+[38.839470] (-) TimerEvent: {}
+[38.959211] (-) TimerEvent: {}
+[39.075385] (-) TimerEvent: {}
+[39.215138] (-) TimerEvent: {}
+[39.348952] (-) TimerEvent: {}
+[39.499204] (-) TimerEvent: {}
+[39.609977] (-) TimerEvent: {}
+[39.738516] (-) TimerEvent: {}
+[39.863783] (-) TimerEvent: {}
+[39.982329] (-) TimerEvent: {}
+[40.101270] (-) TimerEvent: {}
+[40.223179] (-) TimerEvent: {}
+[40.346521] (-) TimerEvent: {}
+[40.465120] (-) TimerEvent: {}
+[40.589857] (-) TimerEvent: {}
+[40.705968] (-) TimerEvent: {}
+[40.831872] (-) TimerEvent: {}
+[40.951582] (-) TimerEvent: {}
+[41.058201] (-) TimerEvent: {}
+[41.182046] (-) TimerEvent: {}
+[41.298739] (-) TimerEvent: {}
+[41.468822] (-) TimerEvent: {}
+[41.592770] (-) TimerEvent: {}
+[41.718458] (-) TimerEvent: {}
+[41.851840] (-) TimerEvent: {}
+[41.983446] (-) TimerEvent: {}
+[42.104124] (-) TimerEvent: {}
+[42.227352] (-) TimerEvent: {}
+[42.349321] (-) TimerEvent: {}
+[42.499563] (-) TimerEvent: {}
+[42.618567] (-) TimerEvent: {}
+[42.742828] (-) TimerEvent: {}
+[42.876431] (-) TimerEvent: {}
+[43.007389] (-) TimerEvent: {}
+[43.173465] (-) TimerEvent: {}
+[43.312593] (-) TimerEvent: {}
+[43.425599] (-) TimerEvent: {}
+[43.578151] (-) TimerEvent: {}
+[43.760357] (-) TimerEvent: {}
+[43.890525] (-) TimerEvent: {}
+[44.028759] (-) TimerEvent: {}
+[44.202436] (-) TimerEvent: {}
+[44.352000] (-) TimerEvent: {}
+[44.481298] (-) TimerEvent: {}
+[44.612187] (-) TimerEvent: {}
+[44.742835] (-) TimerEvent: {}
+[44.909430] (-) TimerEvent: {}
+[45.080198] (-) TimerEvent: {}
+[45.248859] (-) TimerEvent: {}
+[45.462145] (-) TimerEvent: {}
+[45.656576] (-) TimerEvent: {}
+[45.844395] (-) TimerEvent: {}
+[46.044628] (-) TimerEvent: {}
+[46.224911] (-) TimerEvent: {}
+[46.410240] (-) TimerEvent: {}
+[46.553992] (-) TimerEvent: {}
+[46.688935] (-) TimerEvent: {}
+[46.866770] (-) TimerEvent: {}
+[47.021761] (-) TimerEvent: {}
+[47.181179] (-) TimerEvent: {}
+[47.350822] (-) TimerEvent: {}
+[47.506406] (-) TimerEvent: {}
+[47.679042] (-) TimerEvent: {}
+[47.840361] (-) TimerEvent: {}
+[48.074807] (-) TimerEvent: {}
+[48.312746] (-) TimerEvent: {}
+[48.474747] (-) TimerEvent: {}
+[48.629641] (-) TimerEvent: {}
+[48.761834] (-) TimerEvent: {}
+[48.923508] (-) TimerEvent: {}
+[49.087427] (-) TimerEvent: {}
+[49.247117] (-) TimerEvent: {}
+[49.394845] (-) TimerEvent: {}
+[49.538025] (-) TimerEvent: {}
+[49.693457] (-) TimerEvent: {}
+[49.833862] (-) TimerEvent: {}
+[49.995611] (-) TimerEvent: {}
+[50.182819] (-) TimerEvent: {}
+[50.360402] (-) TimerEvent: {}
+[50.526522] (-) TimerEvent: {}
+[50.718109] (-) TimerEvent: {}
+[50.883446] (-) TimerEvent: {}
+[51.059371] (-) TimerEvent: {}
+[51.202240] (-) TimerEvent: {}
+[51.356900] (-) TimerEvent: {}
+[51.483701] (-) TimerEvent: {}
+[51.613640] (-) TimerEvent: {}
+[51.743686] (-) TimerEvent: {}
+[51.872281] (-) TimerEvent: {}
+[52.008264] (-) TimerEvent: {}
+[52.154515] (-) TimerEvent: {}
+[52.300328] (-) TimerEvent: {}
+[52.487486] (-) TimerEvent: {}
+[52.657683] (-) TimerEvent: {}
+[52.840774] (-) TimerEvent: {}
+[53.005648] (-) TimerEvent: {}
+[53.153137] (-) TimerEvent: {}
+[53.304672] (-) TimerEvent: {}
+[53.468763] (-) TimerEvent: {}
+[53.649311] (-) TimerEvent: {}
+[53.797239] (-) TimerEvent: {}
+[54.060349] (-) TimerEvent: {}
+[54.243595] (-) TimerEvent: {}
+[54.393519] (-) TimerEvent: {}
+[54.551367] (-) TimerEvent: {}
+[54.706209] (-) TimerEvent: {}
+[54.881706] (-) TimerEvent: {}
+[55.039889] (-) TimerEvent: {}
+[55.224084] (-) TimerEvent: {}
+[55.413218] (-) TimerEvent: {}
+[55.560893] (-) TimerEvent: {}
+[55.731498] (-) TimerEvent: {}
+[55.885800] (-) TimerEvent: {}
+[56.079483] (-) TimerEvent: {}
+[56.246595] (-) TimerEvent: {}
+[56.489282] (-) TimerEvent: {}
+[56.707148] (-) TimerEvent: {}
+[57.008037] (-) TimerEvent: {}
+[57.308657] (-) TimerEvent: {}
+[57.649999] (-) TimerEvent: {}
+[57.876101] (-) TimerEvent: {}
+[58.094958] (-) TimerEvent: {}
+[58.401546] (-) TimerEvent: {}
+[58.716394] (-) TimerEvent: {}
+[58.942086] (-) TimerEvent: {}
+[59.238683] (-) TimerEvent: {}
+[59.564810] (-) TimerEvent: {}
+[59.911604] (-) TimerEvent: {}
+[60.310177] (-) TimerEvent: {}
+[60.602813] (-) TimerEvent: {}
+[60.900754] (-) TimerEvent: {}
+[61.344238] (-) TimerEvent: {}
+[61.968354] (-) TimerEvent: {}
+[62.470812] (-) TimerEvent: {}
+[63.307970] (-) TimerEvent: {}
+[64.011017] (-) TimerEvent: {}
+[64.862394] (-) TimerEvent: {}
+[65.701753] (-) TimerEvent: {}
+[66.465346] (-) TimerEvent: {}
+[67.602767] (-) TimerEvent: {}
+[69.406707] (-) TimerEvent: {}
+[71.009768] (-) TimerEvent: {}
+[72.073755] (-) TimerEvent: {}
+[73.323379] (-) TimerEvent: {}
+[74.478711] (-) TimerEvent: {}
+[75.484417] (-) TimerEvent: {}
+[76.543765] (-) TimerEvent: {}
+[78.002068] (-) TimerEvent: {}
+[79.478524] (-) TimerEvent: {}
+[80.580812] (-) TimerEvent: {}
+[88.604353] (-) TimerEvent: {}
+[90.227091] (-) TimerEvent: {}
+[91.961702] (-) TimerEvent: {}
+[96.693467] (-) TimerEvent: {}
+[100.433126] (-) TimerEvent: {}
+[101.886511] (-) TimerEvent: {}
+[103.395735] (-) TimerEvent: {}
+[104.398456] (-) TimerEvent: {}
+[105.477129] (-) TimerEvent: {}
+[106.585468] (-) TimerEvent: {}

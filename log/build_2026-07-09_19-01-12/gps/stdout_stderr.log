@@ -1,0 +1,117 @@
+[ 20%] [32mBuilding CXX object CMakeFiles/SerialPort.dir/src/SerialPort/usart.cpp.o[0m
+[ 40%] [1m[32mLinking CXX static library libSerialPort.a[0m
+[ 40%] Built target SerialPort
+[ 60%] [32mBuilding CXX object CMakeFiles/gps_node.dir/src/gps_node.cpp.o[0m
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:348:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kstd::share_ptr[m[K’ has not been declared
+  348 |         [01;31m[Kstd[m[K::share_ptr<AppContext> context
+      |         [01;31m[K^~~[m[K
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:348:23:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K,[m[K’ or ‘[01m[K...[m[K’ before ‘[01m[K<[m[K’ token
+  348 |         std::share_ptr[01;31m[K<[m[KAppContext> context
+      |                       [01;31m[K^[m[K
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:[m[K In constructor ‘[01m[KMoveUP::MoveUP(const string&, const BT::NodeConfig&, int)[m[K’:
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:349:53:[m[K [01;31m[Kerror: [m[K‘[01m[Kcontext[m[K’ was not declared in this scope; did you mean ‘[01m[Kcontext_[m[K’?
+  349 |     ) : TimedVelocityAction(name, config, std::move([01;31m[Kcontext[m[K), kTurn90Left)
+      |                                                     [01;31m[K^~~~~~~[m[K
+      |                                                     [32m[Kcontext_[m[K
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:[m[K At global scope:
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:359:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kstd::share_ptr[m[K’ has not been declared
+  359 |         [01;31m[Kstd[m[K::share_ptr<AppContext> context
+      |         [01;31m[K^~~[m[K
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:359:23:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K,[m[K’ or ‘[01m[K...[m[K’ before ‘[01m[K<[m[K’ token
+  359 |         std::share_ptr[01;31m[K<[m[KAppContext> context
+      |                       [01;31m[K^[m[K
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:[m[K In constructor ‘[01m[KMoveDOWN::MoveDOWN(const string&, const BT::NodeConfig&, int)[m[K’:
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:360:53:[m[K [01;31m[Kerror: [m[K‘[01m[Kcontext[m[K’ was not declared in this scope; did you mean ‘[01m[Kcontext_[m[K’?
+  360 |     ) : TimedVelocityAction(name, config, std::move([01;31m[Kcontext[m[K), kDown)
+      |                                                     [01;31m[K^~~~~~~[m[K
+      |                                                     [32m[Kcontext_[m[K
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:[m[K In member function ‘[01m[Kvirtual BT::NodeStatus MoveToLocationUP::onRunning()[m[K’:
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:716:42:[m[K [01;31m[Kerror: [m[K‘[01m[Kflo[m[K’ does not name a type; did you mean ‘[01m[Kflock[m[K’?
+  716 |         current_location.y = static_cast<[01;31m[Kflo[m[K>(context_->sensor_node->currentY());
+      |                                          [01;31m[K^~~[m[K
+      |                                          [32m[Kflock[m[K
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:[m[K At global scope:
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:1895:45:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K)[m[K’ before ‘[01m[K:[m[K’ token
+ 1895 |         std::shared_ptr<AppContext> context)
+      |                                             [01;31m[K^[m[K
+      |                                             [32m[K)[m[K
+ 1896 |         [32m[K:[m[K BT::ConditionNode(name, config), context_(std::move(context))
+      |         [32m[K~[m[K                                    
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:1891:8:[m[K [01;36m[Knote: [m[Kto match this ‘[01m[K([m[K’
+ 1891 | public:[01;36m[K([m[K
+      |        [01;36m[K^[m[K
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:1904:24:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ at end of member declaration
+ 1904 |         BT::NodeStatus [01;31m[Ktick[m[K) override
+      |                        [01;31m[K^~~~[m[K
+      |                            [32m[K;[m[K
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:1904:28:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K)[m[K’ token
+ 1904 |         BT::NodeStatus tick[01;31m[K)[m[K override
+      |                            [01;31m[K^[m[K
+In file included from [01m[K/usr/include/c++/11/memory:76[m[K,
+                 from [01m[K/opt/ros/humble/include/behaviortree_cpp/contrib/expected.hpp:259[m[K,
+                 from [01m[K/opt/ros/humble/include/behaviortree_cpp/basic_types.h:3[m[K,
+                 from [01m[K/opt/ros/humble/include/behaviortree_cpp/tree_node.h:16[m[K,
+                 from [01m[K/opt/ros/humble/include/behaviortree_cpp/leaf_node.h:17[m[K,
+                 from [01m[K/opt/ros/humble/include/behaviortree_cpp/action_node.h:17[m[K,
+                 from [01m[K/opt/ros/humble/include/behaviortree_cpp/behavior_tree.h:16[m[K,
+                 from [01m[K/opt/ros/humble/include/behaviortree_cpp/bt_factory.h:17[m[K,
+                 from [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:1[m[K:
+/usr/include/c++/11/bits/unique_ptr.h: In instantiation of ‘[01m[Ktypename std::_MakeUniq<_Tp>::__single_object std::make_unique(_Args&& ...) [with _Tp = MoveUP; _Args = {const std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&, const BT::NodeConfig&, const std::shared_ptr<AppContext>&}; typename std::_MakeUniq<_Tp>::__single_object = std::unique_ptr<MoveUP, std::default_delete<MoveUP> >][m[K’:
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:2316:44:[m[K   required from here
+[01m[K/usr/include/c++/11/bits/unique_ptr.h:962:30:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[KMoveUP::MoveUP(const std::__cxx11::basic_string<char>&, const BT::NodeConfig&, const std::shared_ptr<AppContext>&)[m[K’
+  962 |     { return unique_ptr<_Tp>([01;31m[Knew _Tp(std::forward<_Args>(__args)...)[m[K); }
+      |                              [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:345:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[KMoveUP::MoveUP(const string&, const BT::NodeConfig&, int)[m[K’
+  345 |     [01;36m[KMoveUP[m[K(
+      |     [01;36m[K^~~~~~[m[K
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:348:9:[m[K [01;36m[Knote: [m[K  no known conversion for argument 3 from ‘[01m[Kconst std::shared_ptr<AppContext>[m[K’ to ‘[01m[Kint[m[K’
+  348 |         [01;36m[Kstd::share_ptr[m[K<AppContext> context
+      |         [01;36m[K^~~~~~~~~~~~~~[m[K
+In file included from [01m[K/usr/include/c++/11/memory:76[m[K,
+                 from [01m[K/opt/ros/humble/include/behaviortree_cpp/contrib/expected.hpp:259[m[K,
+                 from [01m[K/opt/ros/humble/include/behaviortree_cpp/basic_types.h:3[m[K,
+                 from [01m[K/opt/ros/humble/include/behaviortree_cpp/tree_node.h:16[m[K,
+                 from [01m[K/opt/ros/humble/include/behaviortree_cpp/leaf_node.h:17[m[K,
+                 from [01m[K/opt/ros/humble/include/behaviortree_cpp/action_node.h:17[m[K,
+                 from [01m[K/opt/ros/humble/include/behaviortree_cpp/behavior_tree.h:16[m[K,
+                 from [01m[K/opt/ros/humble/include/behaviortree_cpp/bt_factory.h:17[m[K,
+                 from [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:1[m[K:
+/usr/include/c++/11/bits/unique_ptr.h: In instantiation of ‘[01m[Ktypename std::_MakeUniq<_Tp>::__single_object std::make_unique(_Args&& ...) [with _Tp = MoveDOWN; _Args = {const std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&, const BT::NodeConfig&, const std::shared_ptr<AppContext>&}; typename std::_MakeUniq<_Tp>::__single_object = std::unique_ptr<MoveDOWN, std::default_delete<MoveDOWN> >][m[K’:
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:2322:46:[m[K   required from here
+[01m[K/usr/include/c++/11/bits/unique_ptr.h:962:30:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[KMoveDOWN::MoveDOWN(const std::__cxx11::basic_string<char>&, const BT::NodeConfig&, const std::shared_ptr<AppContext>&)[m[K’
+  962 |     { return unique_ptr<_Tp>([01;31m[Knew _Tp(std::forward<_Args>(__args)...)[m[K); }
+      |                              [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:356:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[KMoveDOWN::MoveDOWN(const string&, const BT::NodeConfig&, int)[m[K’
+  356 |     [01;36m[KMoveDOWN[m[K(
+      |     [01;36m[K^~~~~~~~[m[K
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:359:9:[m[K [01;36m[Knote: [m[K  no known conversion for argument 3 from ‘[01m[Kconst std::shared_ptr<AppContext>[m[K’ to ‘[01m[Kint[m[K’
+  359 |         [01;36m[Kstd::share_ptr[m[K<AppContext> context
+      |         [01;36m[K^~~~~~~~~~~~~~[m[K
+In file included from [01m[K/usr/include/c++/11/memory:76[m[K,
+                 from [01m[K/opt/ros/humble/include/behaviortree_cpp/contrib/expected.hpp:259[m[K,
+                 from [01m[K/opt/ros/humble/include/behaviortree_cpp/basic_types.h:3[m[K,
+                 from [01m[K/opt/ros/humble/include/behaviortree_cpp/tree_node.h:16[m[K,
+                 from [01m[K/opt/ros/humble/include/behaviortree_cpp/leaf_node.h:17[m[K,
+                 from [01m[K/opt/ros/humble/include/behaviortree_cpp/action_node.h:17[m[K,
+                 from [01m[K/opt/ros/humble/include/behaviortree_cpp/behavior_tree.h:16[m[K,
+                 from [01m[K/opt/ros/humble/include/behaviortree_cpp/bt_factory.h:17[m[K,
+                 from [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:1[m[K:
+/usr/include/c++/11/bits/unique_ptr.h: In instantiation of ‘[01m[Ktypename std::_MakeUniq<_Tp>::__single_object std::make_unique(_Args&& ...) [with _Tp = IsAtLine1; _Args = {const std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&, const BT::NodeConfig&, const std::shared_ptr<AppContext>&}; typename std::_MakeUniq<_Tp>::__single_object = std::unique_ptr<IsAtLine1, std::default_delete<IsAtLine1> >][m[K’:
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:2370:47:[m[K   required from here
+[01m[K/usr/include/c++/11/bits/unique_ptr.h:962:30:[m[K [01;31m[Kerror: [m[Kinvalid new-expression of abstract class type ‘[01m[KIsAtLine1[m[K’
+  962 |     { return unique_ptr<_Tp>([01;31m[Knew _Tp(std::forward<_Args>(__args)...)[m[K); }
+      |                              [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:1889:7:[m[K [01;36m[Knote: [m[K  because the following virtual functions are pure within ‘[01m[KIsAtLine1[m[K’:
+ 1889 | class [01;36m[KIsAtLine1[m[K final : public BT::ConditionNode
+      |       [01;36m[K^~~~~~~~~[m[K
+In file included from [01m[K/opt/ros/humble/include/behaviortree_cpp/leaf_node.h:17[m[K,
+                 from [01m[K/opt/ros/humble/include/behaviortree_cpp/action_node.h:17[m[K,
+                 from [01m[K/opt/ros/humble/include/behaviortree_cpp/behavior_tree.h:16[m[K,
+                 from [01m[K/opt/ros/humble/include/behaviortree_cpp/bt_factory.h:17[m[K,
+                 from [01m[K/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:1[m[K:
+[01m[K/opt/ros/humble/include/behaviortree_cpp/tree_node.h:410:26:[m[K [01;36m[Knote: [m[K    ‘[01m[Kvirtual BT::NodeStatus BT::TreeNode::tick()[m[K’
+  410 |   virtual BT::NodeStatus [01;36m[Ktick[m[K() = 0;
+      |                          [01;36m[K^~~~[m[K
+gmake[2]: *** [CMakeFiles/gps_node.dir/build.make:79: CMakeFiles/gps_node.dir/src/gps_node.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:188: CMakeFiles/gps_node.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

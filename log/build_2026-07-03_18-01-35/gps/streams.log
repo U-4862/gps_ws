@@ -1,0 +1,33 @@
+[0.008s] Invoking command in '/home/w/projects/projects/gps_ws/build/gps': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/w/projects/projects/gps_ws/build/gps -- -j16 -l16
+[0.047s] [ 50%] Built target SerialPort
+[0.078s] [ 75%] Building CXX object CMakeFiles/gps_node.dir/src/gps_node.cpp.o
+[2.297s] /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:805:1: error: multiple types in one declaration
+[2.297s]   805 | class Observe
+[2.298s]       | ^~~~~
+[2.299s] /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:933:7: error: redefinition of ‘class CloseVision’
+[2.299s]   933 | class CloseVision final : public BT::SyncActionNode
+[2.299s]       |       ^~~~~~~~~~~
+[2.299s] /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:364:7: note: previous definition of ‘class CloseVision’
+[2.299s]   364 | class CloseVision : public TimedVelocityAction
+[2.299s]       |       ^~~~~~~~~~~
+[2.584s] In file included from /usr/include/c++/11/memory:76,
+[2.584s]                  from /opt/ros/humble/include/behaviortree_cpp/contrib/expected.hpp:259,
+[2.584s]                  from /opt/ros/humble/include/behaviortree_cpp/basic_types.h:3,
+[2.584s]                  from /opt/ros/humble/include/behaviortree_cpp/tree_node.h:16,
+[2.584s]                  from /opt/ros/humble/include/behaviortree_cpp/leaf_node.h:17,
+[2.584s]                  from /opt/ros/humble/include/behaviortree_cpp/action_node.h:17,
+[2.584s]                  from /opt/ros/humble/include/behaviortree_cpp/behavior_tree.h:16,
+[2.584s]                  from /opt/ros/humble/include/behaviortree_cpp/bt_factory.h:17,
+[2.584s]                  from /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:1:
+[2.584s] /usr/include/c++/11/bits/unique_ptr.h: In instantiation of ‘typename std::_MakeUniq<_Tp>::__single_object std::make_unique(_Args&& ...) [with _Tp = CloseVision; _Args = {const std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&, const BT::NodeConfig&, const std::shared_ptr<AppContext>&}; typename std::_MakeUniq<_Tp>::__single_object = std::unique_ptr<CloseVision, std::default_delete<CloseVision> >]’:
+[2.584s] /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:1268:49:   required from here
+[2.585s] /usr/include/c++/11/bits/unique_ptr.h:962:30: error: ‘CloseVision::CloseVision(const string&, const BT::NodeConfig&, std::shared_ptr<AppContext>)’ is private within this context
+[2.585s]   962 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+[2.585s]       |                              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[2.585s] /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:366:5: note: declared private here
+[2.585s]   366 |     CloseVision(
+[2.585s]       |     ^~~~~~~~~~~
+[5.302s] gmake[2]: *** [CMakeFiles/gps_node.dir/build.make:79: CMakeFiles/gps_node.dir/src/gps_node.cpp.o] Error 1
+[5.302s] gmake[1]: *** [CMakeFiles/Makefile2:188: CMakeFiles/gps_node.dir/all] Error 2
+[5.302s] gmake: *** [Makefile:146: all] Error 2
+[5.304s] Invoked command in '/home/w/projects/projects/gps_ws/build/gps' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/w/projects/projects/gps_ws/build/gps -- -j16 -l16

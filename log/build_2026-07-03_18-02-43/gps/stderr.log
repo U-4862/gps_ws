@@ -1,0 +1,6 @@
+/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:793:1: error: multiple types in one declaration
+  793 | class Observe
+      | ^~~~~
+gmake[2]: *** [CMakeFiles/gps_node.dir/build.make:79: CMakeFiles/gps_node.dir/src/gps_node.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:188: CMakeFiles/gps_node.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

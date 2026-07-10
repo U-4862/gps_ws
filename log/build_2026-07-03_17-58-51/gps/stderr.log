@@ -1,0 +1,4 @@
+/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp: In member function ‘virtual BT::NodeStatus MoveToLocationHorizontal::onRunning()’:
+/home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:752:18: warning: variable ‘Pose’ set but not used [-Wunused-but-set-variable]
+  752 |         PoseData Pose = context_->sensor_node->poseData();
+      |                  ^~~~

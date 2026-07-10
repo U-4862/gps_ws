@@ -1,0 +1,12 @@
+[ 50%] Built target SerialPort
+[ 75%] Building CXX object CMakeFiles/gps_node.dir/src/gps_node.cpp.o
+In file included from /home/w/projects/projects/gps_ws/src/gps/src/gps_node.cpp:8:
+/home/w/projects/projects/gps_ws/src/gps/src/map/map.h:25:14: error: ‘NORMAL’ conflicts with a previous declaration
+   25 |     NORMAL = 0,
+      |              ^
+/home/w/projects/projects/gps_ws/src/gps/src/map/map.h:19:5: note: previous declaration ‘up_signal NORMAL’
+   19 |     NORMAL = 0,
+      |     ^~~~~~
+gmake[2]: *** [CMakeFiles/gps_node.dir/build.make:79: CMakeFiles/gps_node.dir/src/gps_node.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:188: CMakeFiles/gps_node.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

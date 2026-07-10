@@ -1,0 +1,3 @@
+[ 40%] Built target SerialPort
+[ 60%] Building CXX object CMakeFiles/gps_node.dir/src/gps_node.cpp.o
+[ 80%] Building CXX object CMakeFiles/gps_node.dir/src/map/map.cpp.o
