@@ -78,6 +78,8 @@ uint8_t down_signal   // 下降信号
 - **`MoveToLocation`** — 继承 `TimedVelocityAction`，通过 `location` 端口接收目标点位名称，从 `point_map` 查找坐标，使用五阶段导航（TURN_X → DRIVE_X → TURN_Y → DRIVE_Y → DONE），包含 25 秒全局超时
 - **`TurnLeft`** — 继承 `MoveToLocation`，重写 `onRunning()` 使用 `turnToFace()` 转向 M_PI_2（90° 左转）
 - **`TurnRight`** — 继承 `MoveToLocation`，重写 `onRunning()` 使用 `turnToFace()` 转向 -M_PI_2（90° 右转）
+- **`AdjustPosition`** — 独立节点（非 `TimedVelocityAction` 子类），将机器人旋转至绝对偏航角目标。端口：`target_yaw`（弧度，默认0.0）、`timeout_ms`（默认5000）。使用 PD 控制器：P 项基于 Odometry 偏航角误差，D 项通过 IMU `ang_vel_z` 阻尼，速度钳位：z ∈ [1, 20]，角度容差 0.1 rad。
+  - 当前注意事项：`target_yaw_` 是成员变量，读取端口失败时可能残留上次目标；到达判据只看角度、不看角速度，可能在高速穿过目标时提前 SUCCESS；最小转速固定为 1，可能在容差边界抖振；Odometry yaw 与 IMU `ang_vel_z` 的坐标系/符号必须确认一致，否则 D 项会变成正反馈。
 
 每个节点通过 `duration_ms` 端口控制执行时长（默认 260ms）。
 
