@@ -64,7 +64,6 @@ class VisionNode(Node):
         self.declare_parameter('START_VISION', True)
         self.declare_parameter('KFS_Status', 'ACTIVE')
         self.declare_parameter('IS_GRIPPED', 'NOT_GRIPPED')
-        self.declare_parameter('Avoid', False)
 
         # ---- 初始化双路日志系统 ----
         logging.basicConfig(
@@ -115,7 +114,6 @@ class VisionNode(Node):
         self.grip_waiting = False          # 当前是否因已锁定目标而等待夹爪抓取
         self.locked_target_coords = None   # 锁定目标的 3D 坐标
         self.locked_target_name = ""       # 锁定目标的名称
-        self.grip_completed = False        # 一次性锁存：完成过一次抓取后不再触发锁定
 
         # ---- 创建定时器驱动主循环 (~30 Hz) ----
         self.timer = self.create_timer(1.0 / 30.0, self.tick)
@@ -180,7 +178,6 @@ class VisionNode(Node):
             # 仅处理夹爪反馈（保持状态机连通）
             if self.grip_waiting and is_gripped == "GRIPPED":
                 self.grip_waiting = False
-                self.grip_completed = True
                 self.locked_target_coords = None
                 self.locked_target_name = ""
                 self.set_parameters(
@@ -188,7 +185,7 @@ class VisionNode(Node):
                         rclpy.parameter.Parameter.Type.STRING, 'NOT_GRIPPED')]
                 )
                 self.get_logger().info(
-                    "======> [夹爪反馈] IS_GRIPPED=GRIPPED，抓取完成（视觉已暂停），本次任务结束")
+                    "======> [夹爪反馈] IS_GRIPPED=GRIPPED，抓取完成（视觉已暂停）")
             return  # 跳过推理和渲染
 
         # ---------------------------------------------------------
@@ -198,7 +195,6 @@ class VisionNode(Node):
         # ---------------------------------------------------------
         if self.grip_waiting and is_gripped == "GRIPPED":
             self.grip_waiting = False
-            self.grip_completed = True
             self.locked_target_coords = None
             self.locked_target_name = ""
             # 重置参数，等待下次外部写入
@@ -207,7 +203,7 @@ class VisionNode(Node):
                     rclpy.parameter.Parameter.Type.STRING, 'NOT_GRIPPED')]
             )
             self.get_logger().info(
-                "======> [夹爪反馈] IS_GRIPPED=GRIPPED，抓取完成，本次任务结束，不再锁定新目标")
+                "======> [夹爪反馈] IS_GRIPPED=GRIPPED，抓取完成，解除等待锁，继续搜索下一个目标")
 
         # ---------------------------------------------------------
         # 2. 异步处理 STM32 的反馈 (已禁用)
@@ -235,13 +231,6 @@ class VisionNode(Node):
 
         best_target_coords = None
         best_target_name = "1"
-
-        # 更新 Avoid 参数：只要有任何 KFS 检测到就设为 True
-        any_detected = len(results.boxes) > 0
-        self.set_parameters([
-            rclpy.parameter.Parameter('Avoid',
-                rclpy.parameter.Parameter.Type.BOOL, any_detected)
-        ])
 
         # 遍历画面中的检测框
         for box in results.boxes:
@@ -293,12 +282,8 @@ class VisionNode(Node):
 
                 # ---------------------------------------------------------
                 # 4. 筛选真实目标 — 锁定第一个真秘籍并进入等待夹爪状态
-                #    grip_completed=True 时永久跳过锁定
                 # ---------------------------------------------------------
-                if (is_real
-                        and best_target_coords is None
-                        and not self.grip_waiting
-                        and not self.grip_completed):
+                if is_real and best_target_coords is None and not self.grip_waiting:
                     best_target_coords = (X_center, Y_center, Z_center)
                     best_target_name = target_name
 
@@ -306,9 +291,7 @@ class VisionNode(Node):
         # 5. 目标锁定与等待逻辑
         #    发现真目标 → 锁定坐标 → 设置 grip_waiting → 等待外部设 IS_GRIPPED="GRIPPED"
         # ---------------------------------------------------------
-        if (best_target_coords is not None
-                and not self.grip_waiting
-                and not self.grip_completed):
+        if best_target_coords is not None and not self.grip_waiting:
             x_mm, y_mm, z_mm = best_target_coords
 
             # ★★★ 这里需要根据你的实际情况添加手眼标定平移量 ★★★
@@ -330,13 +313,8 @@ class VisionNode(Node):
         cv2.putText(color_image, f"KFS: {kfs_status}", (10, 30),
                     cv2.FONT_HERSHEY_SIMPLEX, 0.8, (0, 255, 255), 2)
         # 第二行: IS_GRIPPED 状态
-        if self.grip_completed:
-            grip_color = (128, 128, 128)
-            grip_txt = f"GRIP: DONE (one-shot)"
-        else:
-            grip_color = (0, 255, 0) if not self.grip_waiting else (0, 165, 255)
-            grip_txt = f"GRIP: {is_gripped}{' (waiting...)' if self.grip_waiting else ''}"
-        cv2.putText(color_image, grip_txt,
+        grip_color = (0, 255, 0) if not self.grip_waiting else (0, 165, 255)
+        cv2.putText(color_image, f"GRIP: {is_gripped}{' (waiting...)' if self.grip_waiting else ''}",
                     (10, 60), cv2.FONT_HERSHEY_SIMPLEX, 0.7, grip_color, 2)
         # 第三行: 锁定目标信息
         if self.grip_waiting and self.locked_target_coords is not None:
