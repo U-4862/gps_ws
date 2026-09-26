@@ -5,15 +5,6 @@ if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   add_compile_options(-Wall -Wextra -Wpedantic)
 endif()
 
-#本地库文件
-add_library(SerialPort STATIC
-src/SerialPort/usart.cpp
-)
-target_include_directories(SerialPort PUBLIC 
-src/SerialPort
-)
-
-# find dependencies
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(nav_msgs REQUIRED)
@@ -22,12 +13,21 @@ find_package(behaviortree_cpp REQUIRED)
 
 
 # 执行文件编译
-add_executable(gps_node src/gps_node.cpp src/map/map.cpp)
+add_executable(gps_node src/gps_node.cpp src/map/map.cpp src/Nav/PurePursuit.cpp)
 ament_target_dependencies(gps_node
   rclcpp
   nav_msgs
   sensor_msgs
   behaviortree_cpp
+)
+
+#本地库文件
+add_library(SerialPort STATIC
+src/SerialPort/usart.cpp
+)
+target_include_directories(SerialPort PUBLIC
+src
+src/SerialPort
 )
 
 target_link_libraries(gps_node behaviortree_cpp SerialPort)

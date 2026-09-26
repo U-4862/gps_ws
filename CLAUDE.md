@@ -119,3 +119,11 @@ uint8_t down_signal   // 下降信号
 - **雷达 IMU 数据** — `ImuData` 结构体包含完整的姿态四元数 `(ori_x, ori_y, ori_z, ori_w)`、角速度 `(ang_vel_x/y/z)` 和线加速度 `(lin_acc_x/y/z)`，通过 `imuData()` 获取副本
 - Odometry 与 IMU 各自持有独立的 mutex，互不阻塞
 
+## 待办
+
+- **下位机串口改为变长帧 + CRC 解析**（当前 `LinkMonitor::run()` 是定长 `Signal2D`(2字节) 按位读取）
+  - 目标：同步 header → 按 header 查帧长 → 收满整帧 → 校验 CRC → 提取字段，校验失败丢 1 字节重同步
+  - 已确认：按 header 区分帧长；当前只有 `0x0E` 心跳帧；帧尾带 CRC-16/MODBUS（初值 0xFFFF，多项式 0xA001，右移反射）
+  - 待商量：0x0E 帧除 `is_linked` 外的完整 payload 字段、CRC 在帧内的字节序（低字节前/高字节前）、CRC 覆盖范围、是否会新增其它 header
+  - 实现时涉及：`SerialPort/crc16.hpp`(新增)、`map/map.h` 的 `Signal2D`、`gps_node.cpp` 的 `LinkMonitor::run()`
+

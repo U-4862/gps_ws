@@ -13,8 +13,18 @@
         "/opt/ros/humble/lib/python3.10/site-packages",
         "/opt/ros/humble/local/lib/python3.10/dist-packages"
     ],
-    "C_Cpp.errorSquiggles": "disabled"
+    "C_Cpp.errorSquiggles": "disabled",
 
     "gitlens.currentLine.enabled": false,
-    "gitlens.codeLens.enabled": false
+    "gitlens.codeLens.enabled": false,
+    
+    
+    // Key Bindings Contrast Handle
+    "vim.handleKeys": {
+    "<C-j>": false,
+    "<C-e>": false,
+    "<C-alt-=>":false
+    },
+    "cmake.sourceDirectory": "/home/w/Projects/gps_ws/src/gps"
+    
 }

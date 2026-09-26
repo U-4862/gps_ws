@@ -12,6 +12,7 @@ SerialPort::SerialPort(std::string device, speed_t baud_rate,
 
 SerialPort::~SerialPort(){
     closePort();
+
 }
 
 bool SerialPort::openPort()
@@ -74,7 +75,6 @@ bool SerialPort::openPort()
         last_error_.clear();
         return true;
 }
-
 
 void SerialPort::closePort()
     {

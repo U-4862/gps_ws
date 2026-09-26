@@ -285,7 +285,7 @@ private:
 struct AppContext
 {
     rclcpp::Logger logger {rclcpp::get_logger("gps_bt_app")};
-    std::shared_ptr<SerialPort> motion_port;
+    std::shared_ptr<SerialPort>   motion_port;
     std::shared_ptr<SensorNode> sensor_node;
     std::shared_ptr<LinkMonitor> link_monitor;
 

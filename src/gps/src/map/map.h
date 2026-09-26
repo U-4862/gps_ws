@@ -121,13 +121,5 @@ struct Location
     {"tran5" , {3.0f , 0.0f}}
 };
 
-struct GraphEdge
-{
-    std::string to;
-    float weight {0.0f};
-};
 
 extern std::unordered_map<std::string, std::vector<GraphEdge>> point_graph;
-
-void buildPointGraph();
-
