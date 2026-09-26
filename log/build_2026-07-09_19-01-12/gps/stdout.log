@@ -1,4 +1,0 @@
-[ 20%] [32mBuilding CXX object CMakeFiles/SerialPort.dir/src/SerialPort/usart.cpp.o[0m
-[ 40%] [1m[32mLinking CXX static library libSerialPort.a[0m
-[ 40%] Built target SerialPort
-[ 60%] [32mBuilding CXX object CMakeFiles/gps_node.dir/src/gps_node.cpp.o[0m
