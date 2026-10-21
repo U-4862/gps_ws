@@ -35,6 +35,22 @@ install(TARGETS
   gps_node
   DESTINATION lib/${PROJECT_NAME}
 )
+
+# ---- 测试底盘：用 radar_msg + 30 字节协议与下位机通信 ----------------------
+# 独立可执行文件，离线自测不需要硬件；不影响 gps_node
+add_executable(test_chassis
+  src/Test/test.cpp
+  src/Test/TestChassis.cpp
+)
+target_include_directories(test_chassis PRIVATE
+  src
+  src/Test
+)
+target_link_libraries(test_chassis SerialPort)
+install(TARGETS
+  test_chassis
+  DESTINATION lib/${PROJECT_NAME}
+)
 # Install behavior tree XML
 install(
   FILES tree.xml

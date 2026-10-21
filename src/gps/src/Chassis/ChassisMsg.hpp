@@ -15,7 +15,7 @@ struct Wheel_Speed_Command{
     float vy;
     float vw;
     uint16_t crc;
-}; #_Pragma()
+}; 
 struct Wheel_Speed{
     float vx;
     float vy;
@@ -40,6 +40,12 @@ enum Chassis_Mode_Enum
     low_speed,
     mid_speed
 
+};
+
+
+struct Chassis_Motor{
+    float wheel_speed[4];
+    float wheel_angle[4];
 };
 
 struct Chassis_Data{
@@ -79,12 +85,33 @@ struct Chassis_Data{
 }; 
 
 
-struct Chassis_Motor{
-    float wheel_speed[4];
-    float wheel_angle[4];
+
+
+
+struct radar_msg
+{
+    float x;
+    float y;
+    float z;
+
+    float translation_distance;                     //当前对接差的距离 单位m
+    float high_err;                                 //对接高度误差
+    float front_err;                                //对接前后误差
+
+    uint8_t error_flag;                                //错误标志位
+    uint8_t route_flag;                                 //路径标志位
+    uint8_t transmit_block_flag;                      //递块标志位
+
+    uint8_t data_flag;                              //数据是否丢失标志位  串口一直收不到则置1
+    uint8_t nuc_flag;                   //是否给小电脑发送数据标志位
 };
 
 
-void coordinate_transform_world_to_robot(Velocity_Data *world_data, Velocity_Data *robot_data, float yaw);
- 
-
+// inline: 这个函数体定义在头文件里，不加 inline 的话
+// 每个 include 它的 .cpp 都会生成一份符号，链接时报 multiple definition
+inline void coordinate_transform_world_to_robot(Velocity_Data *world_data, Velocity_Data *robot_data, float yaw)
+{
+    (void)world_data;
+    (void)robot_data;
+    (void)yaw;
+}
