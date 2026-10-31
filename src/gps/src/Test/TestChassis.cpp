@@ -11,6 +11,31 @@ namespace test_chassis {
 
 namespace {
 
+// ---------------------------------------------------------------------------
+// 30 字节帧的字节偏移表（协议来源：Docs/xcom_测试报文.txt）
+//
+// 纯编码细节，不往头文件放：外部只关心"给我一帧字节"，不关心字段落在第几位。
+// 和下面的 encode() 一一对应，改协议只改这一张表。
+// ---------------------------------------------------------------------------
+namespace off {
+constexpr std::size_t kHead          = 0;    // 0xFF
+constexpr std::size_t kX             = 1;    // float 小端，摇杆量 ±150
+constexpr std::size_t kY             = 5;
+constexpr std::size_t kZ             = 9;
+constexpr std::size_t kTransDist     = 13;   // mm
+constexpr std::size_t kHighErr       = 17;   // mm
+constexpr std::size_t kFrontErr      = 21;   // mm
+constexpr std::size_t kRouteFlag     = 25;   // 注意：协议顺序与结构体不同
+constexpr std::size_t kTransmitBlock = 26;
+constexpr std::size_t kErrorFlag     = 27;
+constexpr std::size_t kChecksum      = 28;   // Σ[1..27] & 0xFF
+constexpr std::size_t kTail          = 29;   // 0xFE
+}  // namespace off
+
+// 校验覆盖范围：[1, 27]，不含帧头，也不含校验位自己
+constexpr std::size_t kChecksumFirst = 1;
+constexpr std::size_t kChecksumLast  = 27;
+
 /// 写 4 字节小端 float —— 不依赖主机字节序，ARM/x86 都能对上电控
 void put_le_f32(std::uint8_t* dst, float value)
 {

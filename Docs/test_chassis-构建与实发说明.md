@@ -277,8 +277,8 @@ $ ./scripts/build-test.sh --live              # 忘了用 -- 分隔
 
 | 文件 | 作用 |
 |---|---|
-| `src/gps/src/Test/TestChassis.hpp` | 协议常量、偏移表、`radar_msg` → 帧 的接口声明 |
-| `src/gps/src/Test/TestChassis.cpp` | `encode()` / `checksum_of()` / `frame_valid()` / 串口发送 |
+| `src/gps/src/Test/TestChassis.hpp` | 公开接口：帧长/帧头帧尾、量纲换算、`radar_msg` → 帧 的函数声明 |
+| `src/gps/src/Test/TestChassis.cpp` | 字节偏移表（匿名 namespace，编码细节）、`encode()` / `checksum_of()` / `frame_valid()` / 串口发送 |
 | `src/gps/src/Test/test.cpp` | 自测 + 实发模式入口 |
 | `src/gps/src/Test/test.h` | Test 目录统一入口头文件 |
 | `src/gps/src/Chassis/ChassisMsg.hpp` | 新增 `radar_msg` 结构体（32 字节，注意不是帧长） |

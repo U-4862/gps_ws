@@ -1,0 +1,87 @@
+#!/usr/bin/env bash
+# ============================================================================
+# rosenv —— 在隔离的子 shell 里执行 ROS 命令（bash / zsh 双支持）
+#
+# 核心特性：零残留。命令跑完（或退出交互式 shell）后，你当前的终端环境
+#           一个字都没变。这是"不污染环境"最彻底的做法。
+#
+# 用法：
+#     scripts/rosenv                                  # 进加载好环境的子 shell
+#     scripts/rosenv ros2 launch gps counter.launch.py
+#     scripts/rosenv colcon build --packages-select gps
+#     scripts/rosenv bash -c 'echo $AMENT_PREFIX_PATH | tr : "\n"'
+#
+# 选哪个 shell：
+#     默认跟随 $SHELL（你是 zsh，所以默认 zsh）
+#     想强制指定：ROSENV_SHELL=bash scripts/rosenv <命令>
+#     或者在子 shell 里直接敲 bash / zsh 切换
+# ============================================================================
+set -uo pipefail
+
+HERE="$(cd -- "$(dirname -- "$(readlink -f -- "${BASH_SOURCE[0]}")")" && pwd)"
+ENV_SH="$HERE/env.sh"
+
+if [ ! -f "$ENV_SH" ]; then
+    echo "rosenv: 找不到环境脚本 $ENV_SH" >&2
+    exit 1
+fi
+
+if [ "${1:-}" = "--help" ] || [ "${1:-}" = "-h" ]; then
+    sed -n '2,20p' "$0" | sed 's/^# \{0,1\}//'
+    exit 0
+fi
+
+# --- 选目标 shell -----------------------------------------------------------
+_TARGET="${ROSENV_SHELL:-$(basename "${SHELL:-bash}")}"
+case "$_TARGET" in
+    zsh) ;;
+    *)   _TARGET=bash ;;
+esac
+command -v "$_TARGET" >/dev/null 2>&1 || _TARGET=bash
+
+# ---------------------------------------------------------------------------
+# 模式 1：无参数 -> 进入交互式子 shell
+# ---------------------------------------------------------------------------
+if [ $# -eq 0 ]; then
+    if [ "$_TARGET" = "zsh" ]; then
+        # /etc/zsh/zshenv 会无条件用 $XDG_CONFIG_HOME/zsh 覆盖 ZDOTDIR，
+        # 所以这里把 XDG_CONFIG_HOME 指到临时目录，塞一个只加载 env.sh 的 rc
+        _tmp="$(mktemp -d)"
+        mkdir -p "$_tmp/zsh"
+        cat >"$_tmp/zsh/.zshrc" <<EOF
+# rosenv: 隔离 shell，退出即清理
+source "$ENV_SH" --quiet 2>/dev/null
+PS1='%F{cyan}[rosenv]%f %F{green}%~%f%# '
+TRAPEXIT() { rm -rf "$_tmp" }
+EOF
+        exec env XDG_CONFIG_HOME="$_tmp" zsh -i
+    fi
+
+    _init="$(mktemp)"
+    trap 'rm -f "$_init"' EXIT
+    cat >"$_init" <<EOF
+if [ -f "$ENV_SH" ]; then source "$ENV_SH" --quiet >/dev/null 2>&1; fi
+PS1='\[\e[1;36m\][rosenv]\[\e[0m\] \[\e[1;32m\]\w\[\e[0m\]\$ '
+export PS1
+echo -e '\e[1;36m[rosenv]\e[0m 已进入隔离 bash。\e[1;33mexit\e[0m 退出后本终端环境零残留。'
+EOF
+    exec bash --noprofile --norc --init-file "$_init" -i
+fi
+
+# ---------------------------------------------------------------------------
+# 模式 2：带命令 -> 执行完就退出
+# ---------------------------------------------------------------------------
+# exec 让被执行的进程成为唯一前台进程，Ctrl-C 能正确传递
+if [ "$_TARGET" = "zsh" ]; then
+    exec zsh -f -c '
+        _env="$1"; shift
+        [ -f "$_env" ] && . "$_env" --quiet >/dev/null 2>&1
+        exec "$@"
+    ' _ "$ENV_SH" "$@"
+fi
+
+exec bash --noprofile --norc -c '
+    _env="$1"; shift
+    [ -f "$_env" ] && source "$_env" --quiet >/dev/null 2>&1
+    exec "$@"
+' _ "$ENV_SH" "$@"

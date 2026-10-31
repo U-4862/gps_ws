@@ -1,0 +1,32 @@
+--- a/home/w/.bashrc
++++ b/home/w/.bashrc
+@@ -117,12 +117,23 @@
+ fi
+ 
+ # init my wonder
+-source /opt/ros/humble/setup.bash
+-source /opt/ros/humble/setup.bash
+-source /home/w/counter/con_ws/install/setup.bash
+-source ~/ws_livox/install/setup.bash
+-source ~/projects/projects/gps_ws/install/setup.bash
+-source ~/slam_ws/install/setup.bash
++# --- ROS 基础环境 ----------------------------------------------------
++# 只加载 humble 自身（它没有父链，不会牵连任何工作空间）。
++# 以前这里还直接 source 了 con_ws / ws_livox / gps_ws / slam_ws，
++# 导致每个新终端都被 SLAM 栈污染，且 con_ws 的 setup.sh 会把
++# /home/w/fastlio 的重复 fast_lio 一起拖进来。已改为按需激活。
++if [ -f /opt/ros/humble/setup.bash ]; then
++    source /opt/ros/humble/setup.bash
++fi
++
++# --- 项目环境按需激活 ------------------------------------------------
++# gpsenv           加载 gps 项目全套（幂等）
++# gpsenv --check   只体检，不加载
++gpsenv() { source /home/w/projects/projects/gps_ws/scripts/env.sh "$@"; }
++
++# 需要零残留的干净环境时，用子 shell 执行器：
++#     /home/w/projects/projects/gps_ws/scripts/rosenv <命令>
++# ---------------------------------------------------------------------
+ # init my lidar
+ 
+ 

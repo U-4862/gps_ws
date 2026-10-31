@@ -25,6 +25,6 @@
     "<C-e>": false,
     "<C-alt-=>":false
     },
-    "cmake.sourceDirectory": "/home/w/Projects/gps_ws/src/gps"
+    "cmake.sourceDirectory": "/home/w/projects/projects/gps_ws/src/gps"
     
 }

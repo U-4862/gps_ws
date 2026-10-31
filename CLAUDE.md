@@ -5,6 +5,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 # explain
 使用中文解释
 
+任何我提出的想法先按第一性原理给我判断，再查找best practice
 user memory means 
 
 ## 相关工作空间
@@ -39,6 +40,34 @@ ros2 run gps gps_node --ros-args \
 # 只做编译检查不完整构建
 colcon build --packages-select gps --cmake-args -DCMAKE_CXX_COMPILE_COMMANDS=ON
 ```
+
+### 先验地图保存（FAST_LIO → PCD）
+
+```bash
+# 用本仓库的配置覆盖 map_file_path（默认写 /home/w/slam_ws/maps/prior_map.pcd）
+ros2 launch fast_lio mapping.launch.py \
+  config_path:=$HOME/projects/projects/gps_ws/config \
+  config_file:=fastlio_mid360.yaml
+
+# 建完图后保存（会校验文件并打印点数）
+scripts/save-map.sh
+scripts/save-map.sh --dry-run   # 只看会存到哪
+```
+
+关键事实（踩过的坑）：
+
+- **Ctrl-C 不会保存地图**：`FAST_LIO_ROS2/src/laserMapping.cpp` 里累积
+  `pcl_wait_save` 的整段代码被注释掉了，`main()` 退出时
+  `if (pcl_wait_save->size() > 0 && pcd_save_en)` 永远不成立。
+  上游 README 说会生成 `PCD/scans.pcd`，这份代码不是。
+- 唯一落盘入口是 **`/map_save` 服务**（`std_srvs/srv/Trigger`）→
+  `save_to_pcd()` → 写参数 `map_file_path`。
+- `map_file_path` **必须绝对路径**。默认 `"./test.pcd"` 相对的是
+  节点进程的当前目录（`ros2 launch` 时 = 你敲命令的目录）。
+- 服务**不检查** `writeBinary` 返回值，写失败照样回 `success=True,
+  message='Map saved.'`（静默失败），所以要用 `scripts/save-map.sh` 复核文件。
+- 存的是 `pcl_wait_pub`，仅在 `map_en: true` 时按 1Hz 累积；且
+  `dense_publish_en: false` 时存下来的是 0.5m 体素降采样图（更稀但更小）。
 
 ## 项目架构
 

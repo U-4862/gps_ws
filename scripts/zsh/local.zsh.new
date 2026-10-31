@@ -1,0 +1,17 @@
+# ~/.config/zsh/local.zsh
+# 本机私有配置 —— 由 .zshrc 末尾自动 source（dotfiles 更新不会覆盖此文件）
+# 注意：ZDOTDIR 被 /etc/zsh/zshenv 设为 ~/.config/zsh，
+#       所以 ~/.zshrc 不会被加载，配置必须放这里或 ZDOTDIR 下的其它文件。
+
+#-- dsh shortcuts --
+# 裸跑 dsh 默认进 TUI profile（真二进制在 nvm 的 bin 下）
+
+#-- pi: ModelGate 凭据 --
+# 密钥本体在 0600 权限的独立文件里，不落到 shell 配置中
+[ -f "$HOME/.pi/agent/modelgate.env" ] && . "$HOME/.pi/agent/modelgate.env"
+
+#-- ROS: gps 竞速车项目环境（按需激活，默认终端保持干净） --
+# 完整加载：gpsenv
+# 只体检  ：gpsenv --check
+# 零残留跑：~/projects/projects/gps_ws/scripts/rosenv <命令>
+gpsenv() { source "$HOME/projects/projects/gps_ws/scripts/env.sh" "$@"; }

@@ -1,0 +1,12 @@
+--- a/home/w/.config/zsh/local.zsh
++++ b/home/w/.config/zsh/local.zsh
+@@ -9,3 +9,9 @@
+ #-- pi: ModelGate 凭据 --
+ # 密钥本体在 0600 权限的独立文件里，不落到 shell 配置中
+ [ -f "$HOME/.pi/agent/modelgate.env" ] && . "$HOME/.pi/agent/modelgate.env"
++
++#-- ROS: gps 竞速车项目环境（按需激活，默认终端保持干净） --
++# 完整加载：gpsenv
++# 只体检  ：gpsenv --check
++# 零残留跑：~/projects/projects/gps_ws/scripts/rosenv <命令>
++gpsenv() { source "$HOME/projects/projects/gps_ws/scripts/env.sh" "$@"; }

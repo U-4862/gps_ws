@@ -41,25 +41,10 @@ inline constexpr std::size_t kRadarFrameLen  = 30;
 inline constexpr std::uint8_t kRadarFrameHead = 0xFF;
 inline constexpr std::uint8_t kRadarFrameTail = 0xFE;
 
-// 协议标注的字节偏移，和 encode() 一一对应，改协议时只改这里
-namespace off {
-inline constexpr std::size_t kHead          = 0;
-inline constexpr std::size_t kX             = 1;
-inline constexpr std::size_t kY             = 5;
-inline constexpr std::size_t kZ             = 9;
-inline constexpr std::size_t kTransDist     = 13;
-inline constexpr std::size_t kHighErr       = 17;
-inline constexpr std::size_t kFrontErr      = 21;
-inline constexpr std::size_t kRouteFlag     = 25;
-inline constexpr std::size_t kTransmitBlock = 26;
-inline constexpr std::size_t kErrorFlag     = 27;
-inline constexpr std::size_t kChecksum      = 28;
-inline constexpr std::size_t kTail          = 29;
-}  // namespace off
-
-// 校验覆盖范围：[1, 27]（不含帧头）
-inline constexpr std::size_t kChecksumFirst = 1;
-inline constexpr std::size_t kChecksumLast  = 27;
+// 各字段的字节偏移、校验覆盖范围都是**编码细节**，只在 TestChassis.cpp 内部用，
+// 因此放在那边的匿名 namespace 里，不在这里公开：
+//   header 只承诺"给我一帧字节"，不承诺谁在第几位。
+// 要改协议，只改 TestChassis.cpp 顶部的那张偏移表。
 
 // ---- 量纲换算 --------------------------------------------------------------
 // 协议：x/y/z 是"摇杆量"，满量程 ±150 对应目标世界速度 ±3.75
@@ -133,8 +118,8 @@ public:
     /// 最近一次发出的帧（未发出成功时为空）
     const test_chassis::Frame& last_frame() const { return last_frame_; }
     bool is_open() const { return serial_.isOpen(); }
-    std::string last_error() const { return serial_.lastError(); }
-
+    
+std::string last_error() const { return serial_.lastError(); }
 private:
     /// 编码 + 写串口 + 记下最后一帧
     bool send(const radar_msg& msg);
