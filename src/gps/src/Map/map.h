@@ -1,7 +1,11 @@
-#include <unordered_map>
+#pragma once
+
+#include <cmath>
 #include <cstdint>
 #include <string>
+#include <unordered_map>
 #include <vector>
+
 /**
  * @brief Parameter enum
  * 
@@ -65,7 +69,13 @@ struct Location
 {
     float x{0.0f};
     float y{0.0f};
-    
+};
+
+/// 点位图的一条有向边：to 为邻接点名，cost 为欧氏距离（米）
+struct GraphEdge
+{
+    std::string to;
+    double cost{0.0};
 };
 
 
@@ -88,7 +98,7 @@ struct Location
 
     {"R9" , {6.0f, -2.7f}},
 
-    {"R12" , {7.2f -2.7f}},
+    {"R12" , {7.2f, -2.7f}},
                                                                                                                                                           
     {"tran1" , {0.72f, 1.22f}},
     {"tran12" , {0.61f, 1.22f}},
@@ -122,4 +132,51 @@ struct Location
 };
 
 
-extern std::unordered_map<std::string, std::vector<GraphEdge>> point_graph;
+/// 邻接表；改为头文件内联定义（C++17 inline variable），不再需要 map.cpp
+inline std::unordered_map<std::string, std::vector<GraphEdge>> point_graph;
+
+namespace map_detail {
+
+inline void addEdge(const std::string& from, const std::string& to)
+{
+    const auto a = point_map.find(from);
+    const auto b = point_map.find(to);
+    if (a == point_map.end() || b == point_map.end()) {
+        return;
+    }
+
+    const double dx = static_cast<double>(a->second.x) - b->second.x;
+    const double dy = static_cast<double>(a->second.y) - b->second.y;
+    const double cost = std::hypot(dx, dy);
+
+    point_graph[from].push_back({to, cost});
+    point_graph[to].push_back({from, cost});
+}
+
+}  // namespace map_detail
+
+/// 由 point_map 构建网格邻接表（L/M/R 三行 + 横向/纵向连接）
+inline void buildPointGraph()
+{
+    point_graph.clear();
+
+    static const char* const rows[3][4] = {
+        {"L1", "L2", "L3", "L4"},
+        {"M1", "M2", "M3", "M4"},
+        {"R1", "R2", "R3", "R4"},
+    };
+
+    for (const auto& row : rows) {
+        for (int i = 0; i < 3; ++i) {
+            map_detail::addEdge(row[i], row[i + 1]);
+        }
+    }
+
+    for (int col = 0; col < 4; ++col) {
+        map_detail::addEdge(rows[0][col], rows[1][col]);
+        map_detail::addEdge(rows[1][col], rows[2][col]);
+    }
+
+    // 入口点接到网格左端，保证从 tran5 能进入避障图
+    map_detail::addEdge("tran5", "L1");
+}

@@ -1,6 +1,9 @@
 cmake_minimum_required(VERSION 3.10)
 project(gps)
 
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
 if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   add_compile_options(-Wall -Wextra -Wpedantic)
 endif()
@@ -10,15 +13,21 @@ find_package(rclcpp REQUIRED)
 find_package(nav_msgs REQUIRED)
 find_package(sensor_msgs REQUIRED)
 find_package(behaviortree_cpp REQUIRED)
+find_package(ament_index_cpp REQUIRED)
 
 
 # 执行文件编译
-add_executable(gps_node src/gps_node.cpp src/map/map.cpp src/Nav/PurePursuit.cpp)
+add_executable(gps_node
+  src/gps_node.cpp
+  src/Nav/PurePursuit.cpp
+  src/Sensor/Sensor.cpp
+)
 ament_target_dependencies(gps_node
   rclcpp
   nav_msgs
   sensor_msgs
   behaviortree_cpp
+  ament_index_cpp
 )
 
 #本地库文件

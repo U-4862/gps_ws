@@ -4,6 +4,10 @@
 #include <utility>
 #include <rclcpp/logger.hpp>
 
+
+
+
+
 /**
  * @brief 行为树的依赖注入载体（骨架，当前尚未接入 CMake / gps_node）
  * @purpose 把 BT 节点需要的共享依赖聚成一处，用构造函数注入；
@@ -18,7 +22,7 @@ class Sensor;
 struct RunConfig
 {
     int line {1};
-    int kfs_loc {1};
+    int block_loc {1};
 };
 
 class BtContext
@@ -41,3 +45,4 @@ private:
     std::shared_ptr<Sensor> sensor_;
     RunConfig cfg_;
 };
+
