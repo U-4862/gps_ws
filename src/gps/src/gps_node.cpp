@@ -2514,7 +2514,7 @@ int main(int argc, char** argv)
     const auto kfs_loc = app_node->get_parameter("KFSloc").as_int();
 
     auto sensor_node = std::make_shared<SensorNode>(odom_topic, imu_topic);
-    auto motion_port = std::make_shared<SerialPort>(motion_port_path, B115200, 0, 2);
+    auto motion_port = std::make_shared<SerialPort>(motion_port_path, B115200, 0, 0);
     
 
     buildPointGraph();

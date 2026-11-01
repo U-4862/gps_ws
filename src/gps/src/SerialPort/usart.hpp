@@ -13,7 +13,7 @@ class SerialPort
 {
 public:
     SerialPort(std::string device, speed_t baud_rate = B115200,
-               int vmin = 0, int vtime_ds = 2);
+               int vmin = 0, int vtime_ds = 0);
     ~SerialPort();
 
     //禁止拷贝
@@ -39,7 +39,7 @@ private:
     std::string device_;
     speed_t baud_rate_ {B115200};
     int vmin_ {0};
-    int vtime_ds_ {2};
+    int vtime_ds_ {0};
 
     mutable std::mutex mutex_;
     int fd_ {-1};

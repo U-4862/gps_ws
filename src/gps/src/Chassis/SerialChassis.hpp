@@ -9,7 +9,7 @@
 #include "ChassisMsg.hpp"
 #include "IChassis.hpp"
 
-namesapce chassis_protocol{
+namespace chassis_protocol{
     inline constexpr std::size_t kRadarFrameLen = 30;
     inline constexpr std::uint8_t  kRadarFrameHead = 0xFF;
     inline constexpr std::uint8_t kRadarFrameTail = 0xfe;
@@ -49,7 +49,7 @@ namesapce chassis_protocol{
 
 
 
-    using Frame = std::array< std::uint8_t ,kRadarFrameLen >
+    using Frame = std::array< std::uint8_t ,kRadarFrameLen >;
     
     Frame encode(const radar_msg& radar_msg);
 

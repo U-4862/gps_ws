@@ -12,7 +12,7 @@ sudo apt install qtbase5-dev cmake g++     # 本机已装好
 
 ```bash
 cd ~/projects/projects/gps_ws/examples/qt_basics
-cmake -S . -B build
+   cmake -S . -B build
 cmake --build build -j4
 ```
 

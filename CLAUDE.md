@@ -77,27 +77,44 @@ scripts/save-map.sh --dry-run   # 只看会存到哪
 
 - **`gps_node.cpp`** — 主程序入口。初始化 ROS 节点、串口、`SensorNode`（Odometry+IMU），注册行为树节点，进入 `tickOnce()` 主循环
 - **`usart.hpp/usart.cpp`** — 串口封装库 (`SerialPort`)，提供 `writeExact()` 和 `readSome()` 两个核心接口，自带互斥锁线程安全
-- **`map/map.h`** — 地图数据结构，包含通信协议枚举、`Pose2D` 结构体、`Location` 结构体和 `point_map` 点位地图
+- **`Map/map.h`** — 地图数据结构，包含通信协议枚举、`Location` 结构体和 `point_map` 点位地图（`Pose2D` 仅存历史，协议已弃用）
 - **`tree.xml`** — 行为树定义文件，运行时从包的 share 目录加载
 
 ### 通信协议
 
-运动指令通过 `Pose2D` 结构体经串口发送（8 字节打包）：
+> **Pose2D 协议已完全弃用。** 8 字节 `Pose2D`（header `0x0F` + x/y/z/pn/grip/up/down）
+> 是旧下位机的运动帧，**不再是目标协议**：不要按它新增任何代码、行为树节点或
+> 指令常量。`gps_node.cpp` 里存量的 `writeExact(&Pose2D)` 调用点属待迁移债务，
+> 迁移方向见下面的新协议。
+
+当前目标协议：**30 字节定长帧 `radar_msg`**（`Chassis/ChassisMsg.hpp` 定义结构体，
+`Chassis/SerialChassis.hpp` 的 `chassis_protocol` 负责编解码）：
+
 ```
-uint8_t header        // 0x0F
-uint8_t x             // 前进/后退线速度
-uint8_t y             // (未使用)
-uint8_t z             // 左转/右转角速度(正=左转,负=右转)
-uint8_t pn            // 正负号信号 (POS=0, NEG=1)
-uint8_t grip_signal   // 抓取信号 (LOOSE=0, GRIPPED=1)
-uint8_t up_signal     // 上升信号
-uint8_t down_signal   // 下降信号
+[0]      0xFF                帧头
+[1..4]   x   (float 小端)     摇杆量，满量程 ±150 ↔ ±3.75 m/s
+[5..8]   y   (float 小端)
+[9..12]  z   (float 小端)
+[13..16] translation_distance (float 小端, mm)
+[17..20] high_err             (float 小端, mm)
+[21..24] front_err            (float 小端, mm)
+[25]     route_flag
+[26]     transmit_block_flag
+[27]     error_flag
+[28]     校验和 = (Σ[1..27]) & 0xFF
+[29]     0xFE                帧尾
 ```
 
-预定义的运动指令常量（定义在 `gps_node.cpp` 顶部）：
-- `kStop` / `kForward` / `kTurnLeft` / `kTurnRight`
-- `kGrip` — 抓取指令
-- `kTurn90Left` / `kTurn90Right` — 90度旋转指令
+坑：`radar_msg` 结构体 32 字节 ≠ 帧 30 字节；三个标志位在结构体里的顺序
+（error / route / transmit）和协议顺序（route / transmit / error）**不同**，
+禁止 `memcpy(&msg)` 直发；校验是**累加和**，不是 CRC-16。量纲换算用
+`world_vel_to_stick()` / `stick_to_world_vel()`。
+
+**下行只有「发」这一条通路，下位机串口回传（上行帧）尚未实现**，见「待办」。
+
+`kStop` / `kForward` / `kTurnLeft` / `kTurnRight` / `kGrip` / `kTurn90Left` /
+`kTurn90Right` 这些 `Pose2D` 常量（`gps_node.cpp` 顶部）属于已弃用协议，
+只在存量代码里存在，新代码不要引用。
 
 ### 行为树节点
 
@@ -126,7 +143,7 @@ uint8_t down_signal   // 下降信号
 - `turnToFace(target_yaw, current_yaw, next_phase)` — 控制转向，容差 0.1 rad
 - `driveToTarget(distance, next_phase)` — 比例控制驱动（P=10），速度钳位 ±20，容差 0.15m
 
-### 地图 (map/map.h)
+### 地图 (Map/map.h)
 
 `point_map` 是一个 `std::unordered_map<std::string, Location>`，存储命名点位及其 (x, y) 坐标：
 - `restart_point` (0.0, 0.0)
@@ -137,7 +154,10 @@ uint8_t down_signal   // 下降信号
 
 ### AppContext
 
-`AppContext` 结构体聚合全局共享资源（串口指针、SensorNode、logger），通过 `BT::Blackboard` 注入行为树上下文。
+`AppContext` 结构体聚合全局共享资源（`motion_port` 串口指针、`sensor_node`、`link_monitor`、
+`logger`、`line`/`kfs_loc` 配置）。实际注入方式是**构造函数注入**：`registerNodes()` 里每个
+`registerBuilder` 用 lambda 捕获 context 再传给节点构造函数（BehaviorTree.CPP 官方推荐做法）。
+`main()` 里的 `blackboard->set("app_context", context)` 是死代码，无人读取。
 
 ### SensorNode（Odometry + IMU）
 
@@ -150,9 +170,27 @@ uint8_t down_signal   // 下降信号
 
 ## 待办
 
-- **下位机串口改为变长帧 + CRC 解析**（当前 `LinkMonitor::run()` 是定长 `Signal2D`(2字节) 按位读取）
+- **新协议下位机串口回传待实现（当前阻塞项）**
+  - 现状：新协议（30 字节 `radar_msg`）**只有下行**。`SerialChassis::get_wheel_speed()`
+    恒返回 0；链路健康（`is_linked`）也没有新协议的上行帧承载。
+  - 待定（必须先和下位机对齐）：上行帧 header、帧长、payload 字段、CRC 位置与字节序、
+    CRC 覆盖范围、心跳/回传周期。
+  - 影响：`is_linked` 判定、轮速反馈、急停确认都无法闭环。这几项定下来之前，
+    不要按旧 `0x0E` / `Signal2D` 的形状硬编码新的解析逻辑。
+  - 归属约定：串口读写由 `SerialChassis` 独占（一条 tty 只能有一个读者），对外以
+    `ILinkStatus`（`isLinked()` / `lastRecvNs()` / `lastIsLinked()`）暴露；BT 节点
+    不直接持有串口或具体底盘类。`motion_port` 与 `LinkMonitor` 随 Pose2D 一起退场。
+
+- **`SerialPort` 读写锁要分离**：`readSome` 与 `writeExact` 共用同一把 `mutex_`，
+  且 `VTIME=2` 时一次读最多持锁阻塞 200ms，而 tick 是 50ms → 读线程会拖慢运动指令。
+  修法：读改非阻塞（`VMIN=0,VTIME=0` + `poll()`）或读写分锁。
+
+- **下位机串口改为变长帧 + CRC 解析**（`LinkMonitor::run()` 现在是定长 `Signal2D`(2字节)
+  按位读取，属旧协议）
   - 目标：同步 header → 按 header 查帧长 → 收满整帧 → 校验 CRC → 提取字段，校验失败丢 1 字节重同步
-  - 已确认：按 header 区分帧长；当前只有 `0x0E` 心跳帧；帧尾带 CRC-16/MODBUS（初值 0xFFFF，多项式 0xA001，右移反射）
+  - 已确认：按 header 区分帧长；旧协议只有 `0x0E` 心跳帧；新协议上行帧待定（见上一条）
   - 待商量：0x0E 帧除 `is_linked` 外的完整 payload 字段、CRC 在帧内的字节序（低字节前/高字节前）、CRC 覆盖范围、是否会新增其它 header
-  - 实现时涉及：`SerialPort/crc16.hpp`(新增)、`map/map.h` 的 `Signal2D`、`gps_node.cpp` 的 `LinkMonitor::run()`
+  - 实现时涉及：`Map/map.h` 的 `Signal2D`、`gps_node.cpp` 的 `LinkMonitor::run()`；
+    CRC-16/MODBUS 已内联在 `Chassis/SerialChassis.hpp` 的 `chassis_protocol::crc16()`
+    （`SerialPort/crc16.hpp` 已移除）
 

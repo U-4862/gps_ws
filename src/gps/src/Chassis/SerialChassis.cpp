@@ -94,9 +94,8 @@ namespace chassis_protocol{
 }
 
 SerialChassis::SerialChassis(const std::string& port,
-                         speed_t baud_rate,
-                         int vmin, int vtime_ds)
-    : serial_(port, baud_rate, vmin, vtime_ds)
+                         unsigned int baudrate)
+    : serial_(port, baudrate)
 {
     serial_.openPort();
 }
