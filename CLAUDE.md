@@ -2,6 +2,10 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+
+***不要修改我的Gps_node.cpp!!!!!!!!! ***
+
+
 # explain
 使用中文解释
 
@@ -40,6 +44,16 @@ ros2 run gps gps_node --ros-args \
 # 只做编译检查不完整构建
 colcon build --packages-select gps --cmake-args -DCMAKE_CXX_COMPILE_COMMANDS=ON
 ```
+
+### Xbox 手柄监控（示例）
+
+- 低延迟启动：`ros2 launch examples/xbox_joy_demo/joy_demo.launch.py`；GUI：`python3 examples/xbox_joy_demo/example.py`，按 `q` 退出。
+- 需要 teleop 时用 `examples/xbox_joy_demo/teleop_xbox.launch.py`；不要和系统 `teleop_twist_joy` launch 同时跑，避免 `/joy` 双发布者。
+- 硬件：Xbox Series X Controller（蓝牙，USB ID `045E:0B13`，`/dev/input/js0`，input name `bluez-hog-device`，uniq `ac:8e:bd:3c:ef:fc`）。
+- `/joy`：8 轴（`jstest` 名称 `X,Y,Z,Rz,Gas,Brake,Hat0X,Hat0Y`）、15 键（`BtnA,B,C,X,Y,Z,TL,TR,TL2,TR2,Select,Start,Mode,ThumbL,ThumbR`）。
+- `joy_node`：`device_id=0`、`deadzone=0.05`、`autorepeat_rate=100.0`、`coalesce_interval_ms=1`；实测约 54 Hz，间隔 10–21 ms。
+- `teleop_xbox.launch.py` 用 `teleop_twist_joy/config/xbox.config.yaml`：`axis_linear.x=1`、`axis_angular.yaw=0`，scale 0.7/0.4，turbo 1.5，`enable_button=2`，`enable_turbo_button=5`，`publish_stamped_twist=False`。
+- GUI 方向：`STICK_X_SIGN=-1.0`、`STICK_Y_SIGN=-1.0`；60 FPS，按 `q` 退出。
 
 ### 先验地图保存（FAST_LIO → PCD）
 

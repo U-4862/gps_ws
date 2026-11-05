@@ -60,6 +60,32 @@ install(TARGETS
   test_chassis
   DESTINATION lib/${PROJECT_NAME}
 )
+
+# ---- Gps_node.cpp：Pure Pursuit 最简测试（独立 main，不影响上面的 gps_node）----
+# 用法：ros2 run gps gps_pp_test
+# 只依赖 rclcpp / nav_msgs / sensor_msgs，不拉 behaviortree
+add_executable(gps_pp_test
+  src/Gps_node.cpp
+  src/Nav/PurePursuit.cpp
+  src/Sensor/Sensor.cpp
+  src/Chassis/SerialChassis.cpp
+)
+target_include_directories(gps_pp_test PRIVATE
+  src
+  src/Chassis          # SerialChassis.hpp 里用的是 "ChassisMsg.hpp" 这种相对 include
+)
+ament_target_dependencies(gps_pp_test
+  rclcpp
+  nav_msgs
+  sensor_msgs
+)
+target_link_libraries(gps_pp_test SerialPort)
+
+install(TARGETS
+  gps_pp_test
+  DESTINATION lib/${PROJECT_NAME}
+)
+
 # Install behavior tree XML
 install(
   FILES tree.xml

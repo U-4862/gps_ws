@@ -36,7 +36,7 @@ namespace chassis_protocol{
         }
 
 
-        Frame encode(const radar_msg& msg)
+        Frame encode_impl(const radar_msg& msg)
         {
             Frame f{};
 
@@ -87,7 +87,13 @@ namespace chassis_protocol{
             return frame[off::kChecksum] == checksum_of(frame);
         }
 
-    }  
+    }  // 匿名 namespace 结束
+
+    // 桥接：头文件里声明的是外部链接的 chassis_protocol::encode / check_sum_of，
+    // 而上面两份实现是匿名 namespace 里的（内部链接），不桥接会 undefined reference。
+    Frame encode(const radar_msg& msg) { return encode_impl(msg); }
+    std::uint8_t check_sum_of(const Frame& frame) { return checksum_of(frame); }
+
     
     
     // namespace chassis_protocol
@@ -133,7 +139,9 @@ void SerialChassis::emergency_stop()
 
 bool SerialChassis::send(const radar_msg& msg)
 {
-    const auto frame = test_chassis::encode(msg);
+    // 用本文件内的 chassis_protocol::encode（与 Test/TestChassis.cpp 的实现逐行一致）。
+    // 若将来改协议，两处必须同步——或干脆把编解码抽成公共头。
+    const auto frame = chassis_protocol::encode(msg);
     last_frame_ = frame;
 
     if (!serial_.isOpen())

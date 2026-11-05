@@ -9,6 +9,8 @@
 #include "ChassisMsg.hpp"
 #include "IChassis.hpp"
 
+
+
 namespace chassis_protocol{
     inline constexpr std::size_t kRadarFrameLen = 30;
     inline constexpr std::uint8_t  kRadarFrameHead = 0xFF;
@@ -72,11 +74,11 @@ public:
 
     Wheel_Speed get_wheel_speed() override;
 
-    chassis_protocol::Frame lastFrame() { return last_frame_};
+    chassis_protocol::Frame lastFrame() { return last_frame_; }
 
-    std::string lastError() {return serial_.lastError()};
+    std::string lastError() {return serial_.lastError(); }
 
-    bool isOpen() {return serial_.isOpen()};
+    bool isOpen() {return serial_.isOpen(); }
 
 
 private:

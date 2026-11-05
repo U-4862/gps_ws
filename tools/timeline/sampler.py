@@ -1,0 +1,105 @@
+#!/usr/bin/env python3
+"""前台窗口采样器：每 N 秒记一次「当前活动窗口」，落成 jsonl。
+
+只做一件事——把 X11 的 _NET_ACTIVE_WINDOW 读出来存下：
+  {"t": 毫秒时间戳, "app": WM_CLASS 类名, "title": 窗口标题}
+同一 (app,title) 连续时不重复写，另每 HEARTBEAT 秒补一行心跳，方便推区间。
+
+用法：嵌套在 setsid/nohup 里跑；SAMPLE_SEC / HEARTBEAT 环境变量可调。
+"""
+import os
+import re
+import sys
+import json
+import time
+import fcntl
+import subprocess
+
+OUT = os.path.expanduser("~/.dsh/user-activity/foreground.jsonl")
+SAMPLE = float(os.environ.get("SAMPLE_SEC", "2"))
+HEARTBEAT = float(os.environ.get("HEARTBEAT", "60"))
+os.makedirs(os.path.dirname(OUT), exist_ok=True)
+
+RE_WIN = re.compile(r"window id # (0x[0-9a-fA-F]+)")
+RE_CLS = re.compile(r'=\s*"([^"]*)",\s*"([^"]*)"')
+RE_NAME = re.compile(r'=\s*"(.*)"\s*$', re.S)
+
+
+def xprop(*args):
+    try:
+        r = subprocess.run(["xprop", *args], capture_output=True, text=True, timeout=4,
+                           env={**os.environ, "DISPLAY": os.environ.get("DISPLAY", ":0")})
+        return r.stdout
+    except Exception:
+        return ""
+
+
+def current():
+    m = RE_WIN.search(xprop("-root", "_NET_ACTIVE_WINDOW"))
+    if not m:
+        return None, None
+    wid = m.group(1)
+    cls = xprop("-id", wid, "WM_CLASS")
+    mc = RE_CLS.search(cls)
+    app = (mc.group(2) or mc.group(1)).strip() if mc else ""
+    name = xprop("-id", wid, "_NET_WM_NAME")
+    mn = RE_NAME.search(name)
+    title = mn.group(1).strip() if mn else ""
+    if not app:
+        app = xprop("-id", wid, "WM_NAME").split("=", 1)[-1].strip().strip('"')
+    return app or "?", title
+
+
+def acquire_lock():
+    """单实例锁：两个采样器同时写一个 jsonl 会让区间推算出错（重复/交错样本）。"""
+    fh = open(OUT + ".lock", "w")
+    try:
+        fcntl.flock(fh.fileno(), fcntl.LOCK_EX | fcntl.LOCK_NB)
+    except BlockingIOError:
+        fh.close()
+        return None
+    fh.write(str(os.getpid()))
+    fh.flush()
+    return fh
+
+
+def main():
+    lock = acquire_lock()
+    if lock is None:
+        print(f"另一个采样器已持有 {OUT}.lock，退出", file=sys.stderr)
+        return 1
+    last = None
+    last_written = 0.0
+    f = open(OUT, "a", buffering=1, encoding="utf-8")
+    n = 0
+    try:
+        while True:
+            n += 1
+            if n % 150 == 0:
+                try:   # 文件被外部 rm/替换时，别继续写那个已删除的 inode
+                    if os.fstat(f.fileno()).st_ino != os.stat(OUT).st_ino:
+                        f.close()
+                        f = open(OUT, "a", buffering=1, encoding="utf-8")
+                        last = None
+                except FileNotFoundError:
+                    f.close()
+                    f = open(OUT, "a", buffering=1, encoding="utf-8")
+                    last = None
+            try:
+                app, title = current()
+                now = time.time()
+                rec = {"t": int(now * 1000), "app": app, "title": title[:200]}
+                key = (app, title)
+                if key != last or now - last_written > HEARTBEAT:
+                    f.write(json.dumps(rec, ensure_ascii=False) + "\n")
+                    last, last_written = key, now
+            except Exception as e:
+                f.write(json.dumps({"t": int(time.time() * 1000), "app": "!err",
+                                    "title": str(e)[:120]}, ensure_ascii=False) + "\n")
+            time.sleep(SAMPLE)
+    finally:
+        f.close()
+
+
+if __name__ == "__main__":
+    sys.exit(main() or 0)

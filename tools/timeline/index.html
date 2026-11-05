@@ -1,0 +1,477 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>活动时间线</title>
+<style>
+  :root{
+    --bg:#0d1117; --panel:#151b23; --line:#232c38; --fg:#c9d4e3; --dim:#7d8b9e;
+    --user:#4ea1ff; --reply:#8b9bb4; --say:#ff9d3d; --frame:#b06cff;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%;background:var(--bg);color:var(--fg);overflow:hidden;
+    font:13px/1.5 -apple-system,"Segoe UI","Noto Sans CJK SC",system-ui,sans-serif}
+  header{display:flex;align-items:center;gap:12px;padding:8px 14px;border-bottom:1px solid var(--line);
+    background:var(--panel);flex-wrap:wrap}
+  h1{font-size:13.5px;font-weight:600;margin:0;letter-spacing:.4px}
+  .stat{color:var(--dim);font-variant-numeric:tabular-nums}
+  .spacer{flex:1}
+  button{background:#1e2731;color:var(--fg);border:1px solid var(--line);border-radius:6px;
+    padding:3px 9px;cursor:pointer;font:inherit;font-size:12px}
+  button:hover{background:#26313d}
+  button.on{background:#2b6cb0;border-color:#3b82f6;color:#fff}
+  #wrap{display:flex;height:calc(100vh - 92px)}
+  #left{flex:1;position:relative;overflow:hidden;min-width:0}
+  #cv{display:block;width:100%;height:100%;cursor:crosshair}
+  #detail{width:330px;flex:none;border-left:1px solid var(--line);background:var(--panel);padding:12px;
+    overflow:auto;font-size:12px}
+  #detail h3{margin:0 0 8px;font-size:12px;color:var(--dim);font-weight:500}
+  .kv{display:flex;gap:8px;margin:3px 0}
+  .kv b{color:var(--dim);font-weight:400;min-width:52px}
+  pre{white-space:pre-wrap;word-break:break-word;background:#0a0f15;border:1px solid var(--line);
+    border-radius:6px;padding:8px;margin:7px 0;max-height:38vh;overflow:auto;font-size:11.5px;color:#a9b7c9}
+  #tip{position:fixed;pointer-events:none;background:#080c11f2;border:1px solid #33404f;border-radius:6px;
+    padding:6px 9px;font-size:11.5px;max-width:430px;display:none;z-index:20;box-shadow:0 6px 20px #000a}
+  #strip{display:flex;gap:3px;padding:6px 10px;overflow-x:auto;border-top:1px solid var(--line);
+    background:#0a0e14;height:92px;align-items:center}
+  #strip img{height:78px;border-radius:4px;border:1px solid #2a3441;cursor:pointer;flex:none}
+  #strip img:hover{outline:2px solid var(--frame)}
+  .lg{display:flex;gap:9px;align-items:center;color:var(--dim);font-size:12px;user-select:none}
+  .lg i{display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:4px;vertical-align:-1px}
+  .lg span{cursor:pointer}
+</style>
+</head>
+<body>
+<header>
+  <h1>活动时间线</h1>
+  <span class="stat" id="stats">载入中…</span>
+  <div class="lg" id="legend"></div>
+  <div class="spacer"></div>
+  <button data-span="1">1h</button>
+  <button data-span="6">6h</button>
+  <button data-span="24">24h</button>
+  <button data-span="72">3d</button>
+  <button data-span="0" class="on">全部</button>
+  <button id="expandAll" style="display:none">展开全部</button>
+  <button id="reload">重扫</button>
+</header>
+<div id="wrap">
+  <div id="left"><canvas id="cv"></canvas></div>
+  <aside id="detail"><h3>选中事件</h3><div id="dbody" class="stat">点一个点或一根条</div></aside>
+</div>
+<div id="strip"></div>
+<div id="tip"></div>
+
+<script>
+const KIND_COLOR = {user:"#4ea1ff", assistant:"#8b9bb4", turn:"#2f3a48", say:"#ff9d3d", meta:"#5c6a7c",
+  frame:"#b06cff", fg:"#43d17a", web:"#a78bfa", open:"#39c6d6", file:"#e0b341"};
+const TOOL_COLOR = {bash:"#43d17a", read:"#39c6d6", write:"#e0b341", edit:"#e0b341", grep:"#a78bfa",
+  glob:"#a78bfa", see_now:"#ff7a45", compress:"#6b7f99", task:"#f472b6", skill:"#22d3ee",
+  web_search:"#60a5fa", web_fetch:"#60a5fa", spawn_teammate:"#f59e0b"};
+const LABEL_W = 178, TOP = 30, BOT_PAD = 10;
+
+let data = null, t0 = 0, t1 = 0, hover = null;
+const hidden = new Set();
+const hiddenLane = new Set();
+
+const cv = document.getElementById("cv"), ctx = cv.getContext("2d");
+const detail = document.getElementById("dbody"), tip = document.getElementById("tip");
+
+const fmt = ms => new Date(ms).toTimeString().slice(0,8);
+const fmtDay = ms => { const d = new Date(ms); return `${d.getMonth()+1}/${d.getDate()}`; };
+const esc = s => (s||"").replace(/[&<>]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;"}[c]));
+const colorOf = e => e.kind === "tool" ? (TOOL_COLOR[e.name] || "#7c8fa6") : (KIND_COLOR[e.kind] || "#556");
+
+function byApp(segs){
+  const m = new Map();
+  for (const e of segs){ if (!m.has(e.name)) m.set(e.name, []); m.get(e.name).push(e); }
+  return [...m.entries()].sort((a,b) => b[1].length - a[1].length);
+}
+
+function lanes(){
+  const out = [];
+  const G = name => out.push({key:"#g#"+name, group:true, label:name, sub:"", events:[]});
+  const U = data.user || {web:[], opens:[], files:[], fg:[]};
+
+  if (U.fg.length || U.web.length || U.opens.length || U.files.length){
+    G("我 · 前台窗口");
+    for (const [app, evs] of byApp(U.fg).slice(0, 8)){
+      const mins = evs.reduce((a,e) => a + (e.t1 - e.t), 0) / 60000;
+      out.push({key:"fg:"+app, label:app, sub:`${evs.length} 段 · ${mins.toFixed(0)} 分`, events:evs});
+    }
+    if ((data.fgGuess || []).length){
+      const gs = data.fgGuess;
+      out.push({key:"fgx", label:"推测前台", sub:`${gs.length} 段 · 由 Chrome 访问推断`, events:gs});
+    }
+    G("我 · 浏览与文件");
+    if (U.web.length) out.push({key:"web", label:"浏览器访问", sub:`${U.web.length} 次 · ${new Set(U.web.map(e=>e.host)).size} 个站点`, events:U.web});
+    if (U.opens.length) out.push({key:"opens", label:"打开应用/文件", sub:"KDE Activity Manager", events:U.opens});
+    if (U.files.length) out.push({key:"files", label:"最近使用文件", sub:"recently-used.xbel", events:U.files});
+  }
+
+  G("AI 工作");
+  for (const s of data.sessions) out.push({
+    key: s.id, label: s.title || s.id.slice(0,10),
+    sub: (s.cwd || s.ws || "").split("/").filter(Boolean).slice(-1)[0] || "",
+    events: s.events
+  });
+  out.push({key:"__say", label:"see-now 看屏发言", sub:"chat.jsonl", events:data.seenow});
+
+  G("看屏帧");
+  out.push({key:"frames", label:"抓屏帧", sub:"attachments/objects", events:data.frames});
+
+  return out.filter(l => l.group || !hiddenLane.has(l.key));
+}
+
+// 布局：泳道自适应高度，余下全给密度图；有推测层时在两者之间留一条 14px 的带
+function geom(){
+  const W = cv.clientWidth, H = cv.clientHeight;
+  const L = lanes();
+  const avail = H - TOP - BOT_PAD;
+  const laneH = Math.max(18, Math.min(42, (avail * 0.55) / Math.max(1, L.length)));
+  const lanesBottom = TOP + L.length * laneH;
+  const plotW = W - LABEL_W - 14;
+  const xOf = t => LABEL_W + (t - t0) / Math.max(1, (t1 - t0)) * plotW;
+  const hasCoarse = !!(data.coarse && data.coarse.length);
+  const coarseH = hasCoarse ? 14 : 0;
+  const coarseTop = lanesBottom + 6;
+  const densTop = lanesBottom + 6 + coarseH + (hasCoarse ? 10 : 8);
+  return {W, H, L, laneH, lanesBottom, plotW, xOf, coarseTop, coarseH, hasCoarse,
+          densTop,
+          densH: Math.max(20, Math.min(230, H - BOT_PAD - densTop))};
+}
+
+function computeRange(spanHours){
+  const all = [];
+  for (const s of data.sessions) all.push(s.start, s.end);
+  for (const e of data.seenow) all.push(e.t);
+  for (const e of data.frames) all.push(e.t);
+  const U = data.user || {};
+  for (const key of ["web","opens","files","fg"]) for (const e of (U[key]||[])) all.push(e.t + (e.t1? 0 : 0));
+  const now = Date.now();
+  const mn = Math.min(...all, now - 3600e3), mx = Math.max(...all, now);
+  if (!spanHours || spanHours >= 1000) { t0 = mn - 30e3; t1 = mx + 30e3; }
+  else { t1 = mx + 30e3; t0 = Math.max(mn - 30e3, t1 - spanHours*3600e3); }
+}
+
+function draw(){
+  const dpr = devicePixelRatio || 1;
+  const W = cv.clientWidth, H = cv.clientHeight;
+  if (cv.width !== W*dpr || cv.height !== H*dpr){ cv.width = W*dpr; cv.height = H*dpr; }
+  ctx.setTransform(dpr,0,0,dpr,0,0);
+  ctx.clearRect(0,0,W,H);
+  const g = geom();
+
+  // 时间轴
+  const span = t1 - t0;
+  const steps = [60e3,2*60e3,5*60e3,10*60e3,15*60e3,30*60e3,3600e3,2*3600e3,3*3600e3,
+                 6*3600e3,12*3600e3,86400e3,2*86400e3,7*86400e3];
+  const step = steps.find(s => span/s < 13) || 7*86400e3;
+  ctx.font = "10.5px ui-monospace,monospace";
+  for (let t = Math.ceil(t0/step)*step; t <= t1; t += step){
+    const x = g.xOf(t);
+    if (x < LABEL_W - 1) continue;
+    ctx.strokeStyle = "#1b232e"; ctx.beginPath();
+    ctx.moveTo(x, TOP - 8); ctx.lineTo(x, g.lanesBottom); ctx.stroke();
+    ctx.fillStyle = "#7d8b9e";
+    const lab = step >= 86400e3 ? fmtDay(t)
+              : (span > 30*3600e3 ? fmtDay(t) + " " + fmt(t).slice(0,5) : fmt(t).slice(0,5));
+    ctx.fillText(lab, x + 3, TOP - 13);
+  }
+
+  // 泳道
+  g.L.forEach((lane, i) => {
+    const y = TOP + i*g.laneH;
+    if (lane.group){                                  // 区域标题（不属于任何泳道）
+      ctx.fillStyle = "#0a0f15"; ctx.fillRect(0, y, W, g.laneH - 1);
+      ctx.fillStyle = "#6f8ba8"; ctx.font = "bold 11.5px system-ui";
+      ctx.fillText(lane.label, 10, y + g.laneH/2 + 4);
+      ctx.strokeStyle = "#1d2733"; ctx.beginPath();
+      ctx.moveTo(0, y + g.laneH - 1); ctx.lineTo(W, y + g.laneH - 1); ctx.stroke();
+      return;
+    }
+    ctx.fillStyle = i%2 ? "#12171f" : "#0f141a";
+    ctx.fillRect(LABEL_W, y, W - LABEL_W, g.laneH - 1);
+
+    // 左侧标签
+    ctx.fillStyle = "#5c6a7c"; ctx.fillRect(6, y + 4, 3, g.laneH - 10);
+    ctx.fillStyle = "#c9d4e3";
+    if (g.laneH >= 30){
+      ctx.font = "12px system-ui";
+      ctx.fillText(lane.label.slice(0,16), 14, y + 14);
+      ctx.fillStyle = "#4d596b"; ctx.font = "9.5px ui-monospace,monospace";
+      ctx.fillText(lane.sub.slice(0,24), 14, y + g.laneH - 5);
+    } else {
+      ctx.font = "11px system-ui";
+      ctx.fillText(lane.label.slice(0,17), 14, y + g.laneH/2 + 3.5);
+    }
+
+    for (const e of lane.events){
+      const k = e.kind === "tool" ? "tool" : e.kind;
+      if (hidden.has(k)) continue;
+      if (e.t < t0 || e.t > t1) continue;
+      const x = g.xOf(e.t), col = colorOf(e);
+      const cy = y + g.laneH/2;
+      const eEnd = e.t1 || (e.t + (e.dur || 0));
+      if (e.kind === "fgx"){                          // 推测前台：斜纹，绝不与真实采样同款
+        const w = Math.max(2, g.xOf(eEnd) - x);
+        ctx.save();
+        ctx.globalAlpha = .45; ctx.fillStyle = "#43d17a";
+        ctx.fillRect(x, cy - 4, w, 8);
+        ctx.globalAlpha = .95; ctx.strokeStyle = "#0d1319"; ctx.lineWidth = 1;
+        for (let sx = x; sx < x + w; sx += 5){
+          ctx.beginPath(); ctx.moveTo(sx, cy + 4); ctx.lineTo(sx + 4, cy - 4); ctx.stroke();
+        }
+        ctx.restore();
+        continue;
+      }
+      if (eEnd - e.t > 400){                          // 有一段持续时间的：画成条
+        const w = Math.max(2.5, g.xOf(eEnd) - x);
+        ctx.fillStyle = col + "cc";
+        ctx.fillRect(x, cy - 5, w, 10);
+        // 前台窗口的条上直接写标题——这正是「哪段时间在哪个窗口」的答案，
+        // 只在条够宽时写，窄条交给 hover。
+        if (e.kind === "fg" && w > 44){
+          const txt = (e.text || e.name || "").replace(/\s*-\s*Google Chrome$/, "")
+                                             .replace(/—\s*DeepSeek Harness$/, "");
+          ctx.save();
+          ctx.beginPath(); ctx.rect(x + 3, cy - 10, w - 6, 20); ctx.clip();
+          ctx.fillStyle = "#04120b"; ctx.font = "9.5px system-ui"; ctx.textBaseline = "middle";
+          ctx.fillText(txt, x + 5, cy + .5);
+          ctx.restore();
+        }
+      } else {
+        const r = e.kind === "user" ? 4 : 3;
+        ctx.fillStyle = col;
+        ctx.beginPath(); ctx.arc(x, cy, r, 0, 6.284); ctx.fill();
+        if (e.kind === "assistant"){ ctx.globalAlpha = .30; ctx.fillRect(x - .5, y + 3, 1, g.laneH - 7); ctx.globalAlpha = 1; }
+      }
+    }
+  });
+
+  if (!g.L.length){
+    ctx.fillStyle = "#7d8b9e"; ctx.font = "13px system-ui";
+    ctx.fillText("泳道都收起了 —— 点右侧「展开全部」，或点这块空白处", LABEL_W + 20, TOP + 40);
+  }
+
+  // 推测层：没有前台采样的时段，用日志旁证（Chrome/KDE/dsh/journal）画一条灰带。
+  // 深度 = 证据强度，不是“屏幕被占用”的强度——它只能说明那几分钟这台机器在被用。
+  if (g.hasCoarse){
+    const y = g.coarseTop;
+    ctx.fillStyle = "#10161e";
+    ctx.fillRect(LABEL_W, y, g.plotW, g.coarseH);
+    ctx.strokeStyle = "#1b2431"; ctx.lineWidth = 1;
+    ctx.strokeRect(LABEL_W + .5, y + .5, g.plotW - 1, g.coarseH - 1);
+    for (const b of data.coarse){
+      const x0 = g.xOf(b.t), x1 = g.xOf(b.t + (b.dur || 0));
+      if (x1 < LABEL_W || x0 > g.W) continue;
+      const w = Math.max(2, x1 - x0);
+      const a = 0.16 + 0.62 * (b.strength ?? 0.4);
+      ctx.fillStyle = `rgba(148,163,184,${a.toFixed(2)})`;
+      ctx.fillRect(x0, y + 2, w, g.coarseH - 4);
+      ctx.fillStyle = "rgba(203,213,225,.85)";      // 顶线：全览尺度下也能看见
+      ctx.fillRect(x0, y + 2, w, 2);
+    }
+    ctx.fillStyle = "#6b7a8d"; ctx.font = "9.5px system-ui";
+    ctx.fillText("推测", 10, y + g.coarseH - 4);
+  }
+
+  // 密度图：按区域分三层堆叠
+  const nB = Math.max(60, Math.floor(g.plotW / 6));
+  const bands = {me: new Array(nB).fill(0), ai: new Array(nB).fill(0), cam: new Array(nB).fill(0)};
+  const addTo = (arr, t) => {
+    if (t < t0 || t > t1) return;
+    const b = Math.floor((t - t0) / (t1 - t0) * nB);
+    if (b >= 0 && b < nB) arr[b]++;
+  };
+  const UU = data.user || {};
+  for (const key of ["web","opens","files","fg"]) for (const e of (UU[key]||[])) addTo(bands.me, e.t);
+  for (const s of data.sessions) for (const e of s.events) addTo(bands.ai, e.t);
+  for (const e of data.seenow) addTo(bands.cam, e.t);
+  for (const e of data.frames) addTo(bands.cam, e.t);
+  const mx = Math.max(1, ...bands.me.map((v,i) => v + bands.ai[i] + bands.cam[i]));
+  const bw = g.plotW / nB;
+  const COL = [["me", "#3b82f6"], ["ai", "#8b9bb4"], ["cam", "#b06cff"]];
+  for (let i = 0; i < nB; i++){
+    let base = g.densTop + g.densH;
+    for (const [k, c] of COL){
+      const v = bands[k][i]; if (!v) continue;
+      const h = v / mx * g.densH;
+      ctx.fillStyle = c;
+      ctx.fillRect(LABEL_W + i*bw, base - h, Math.max(1, bw - 1), h);
+      base -= h;
+    }
+  }
+  ctx.fillStyle = "#5c6a7c"; ctx.font = "10px ui-monospace,monospace";
+  ctx.fillText("密度", 10, g.densTop + 10);
+  ctx.fillStyle = "#3b82f6"; ctx.fillText("▮ 我", 10, g.densTop + 24);
+  ctx.fillStyle = "#8b9bb4"; ctx.fillText("▮ AI", 10, g.densTop + 38);
+  ctx.fillStyle = "#b06cff"; ctx.fillText("▮ 看屏", 10, g.densTop + 52);
+  ctx.fillStyle = "#5c6a7c"; ctx.fillText(String(mx), 10, g.densTop + 68);
+}
+
+function hitTest(px, py){
+  const g = geom();
+  if (px < LABEL_W) return null;
+  if (g.hasCoarse && py >= g.coarseTop && py <= g.coarseTop + g.coarseH){
+    for (const b of data.coarse){
+      const x0 = g.xOf(b.t), x1 = g.xOf(b.t + (b.dur || 0));
+      if (px >= x0 && px <= x1)
+        return {kind: "coarse", t: b.t, t1: b.t + (b.dur || 0), _b: b};
+    }
+    return null;
+  }
+  const i = Math.floor((py - TOP) / g.laneH);
+  if (i < 0 || i >= g.L.length) return null;
+  if (g.L[i].group) return null;
+  let best = null, bd = 1e9;
+  for (const e of g.L[i].events){
+    const k = e.kind === "tool" ? "tool" : e.kind;
+    if (hidden.has(k)) continue;
+    const x = g.xOf(e.t), x2 = g.xOf(e.t1 || (e.t + (e.dur||0)));
+    const w = Math.max(4, x2 - x);
+    if (px >= x - 4 && px <= x + w + 4 && Math.abs(x - px) < bd){ bd = Math.abs(x - px); best = e; }
+  }
+  return best;
+}
+
+function showDetail(e){
+  if (!e){ detail.textContent = "点一个点或一根条"; return; }
+  if (e.kind === "coarse"){
+    const b = e._b;
+    const kv = [["时段", `${fmt(b.t)} – ${fmt(b.t1)}`],
+                ["判断", b.verdict || ""],
+                ["网页", (b.web || []).join("、") || "—"],
+                ["打开", (b.opens || []).join("、") || "—"],
+                ["agent", `${b.dsh || 0} 次工具调用`],
+                ["证据量", `${b.n || 0} 条旁证`]];
+    detail.innerHTML = kv.map(([k,v]) => `<div class="kv"><b>${k}</b><span>${esc(String(v))}</span></div>`).join("")
+      + `<p style="color:#7d8b9e;font-size:12px;line-height:1.6">这一段没有前台采样记录。上面是从 Chrome History / KDE Activity / dsh 事件流 / journalctl 里拼出来的旁证，只能说明「这几分钟机器被用在哪」，不代表屏幕内容。</p>`;
+    return;
+  }
+  const rows = [["时间", `${fmt(e.t)}  ${fmtDay(e.t)}`],
+                ["类别", e.kind + (e.kind === "tool" ? " / " + e.name : "")]];
+  if (e.dur) rows.push(["耗时", (e.dur/1000).toFixed(2) + " s"]);
+  if (e.size) rows.push(["输出", (e.size/1024).toFixed(1) + " KB"]);
+  let html = rows.map(([k,v]) => `<div class="kv"><b>${k}</b><span>${esc(v)}</span></div>`).join("");
+  if (e.text) html += `<pre>${esc(e.text)}</pre>`;
+  if (e.out) html += `<pre>${esc(e.out)}</pre>`;
+  if (e.obj) html += `<img src="${e.obj}" style="width:100%;border-radius:6px;border:1px solid #2a3441">`;
+  detail.innerHTML = html;
+}
+
+// ---- 交互 ----
+let dragX = null;
+cv.addEventListener("mousemove", ev => {
+  const r = cv.getBoundingClientRect(), px = ev.clientX - r.left, py = ev.clientY - r.top;
+  if (dragX !== null){
+    const g = geom();
+    const dt = (dragX - px) / g.plotW * (t1 - t0);
+    t0 += dt; t1 += dt; dragX = px; draw(); return;
+  }
+  hover = hitTest(px, py);
+  if (hover){
+    tip.style.display = "block";
+    tip.style.left = Math.min(ev.clientX + 14, innerWidth - 450) + "px";
+    tip.style.top = (ev.clientY + 16) + "px";
+    tip.innerHTML = `<b>${fmt(hover.t)}</b> · ${hover.kind}${hover.kind==="tool"?" / "+hover.name:""}`
+      + (hover.dur ? ` · ${(hover.dur/1000).toFixed(2)}s` : "")
+      + `<br><span style="color:#9fb0c4">${esc((hover.text||"").slice(0,190))}</span>`;
+  } else tip.style.display = "none";
+});
+cv.addEventListener("mouseleave", () => { tip.style.display = "none"; dragX = null; });
+cv.addEventListener("mousedown", ev => { dragX = ev.clientX - cv.getBoundingClientRect().left; });
+cv.addEventListener("mouseup", () => { dragX = null; });
+cv.addEventListener("click", ev => {
+  const r = cv.getBoundingClientRect();
+  const px = ev.clientX - r.left, py = ev.clientY - r.top;
+  if (px < LABEL_W){                       // 点标签 = 收起该泳道
+    const g = geom(), i = Math.floor((py - TOP) / g.laneH);
+    const lv = g.L[i];
+    if (lv && !lv.group){ hiddenLane.has(lv.key) ? hiddenLane.delete(lv.key) : hiddenLane.add(lv.key); }
+    else if (!lv) hiddenLane.clear();
+    else hiddenLane.clear();                    // 点标签区空白 = 全部展开
+    syncExpand(); draw();
+    return;
+  }
+  showDetail(hitTest(px, py));
+});
+cv.addEventListener("wheel", ev => {
+  ev.preventDefault();
+  const r = cv.getBoundingClientRect(), g = geom();
+  const f = Math.max(0, Math.min(1, (ev.clientX - r.left - LABEL_W) / g.plotW));
+  const k = ev.deltaY > 0 ? 1.3 : 0.77;
+  const c = t0 + (t1 - t0) * f;
+  t0 = c - (c - t0) * k; t1 = c + (t1 - c) * k;
+  draw();
+}, {passive:false});
+
+document.querySelectorAll("[data-span]").forEach(b => b.onclick = () => {
+  document.querySelectorAll("[data-span]").forEach(x => x.classList.remove("on"));
+  b.classList.add("on"); computeRange(+b.dataset.span); draw();
+});
+document.getElementById("reload").onclick = async () => {
+  const b = document.getElementById("reload");
+  b.textContent = "扫描中…"; b.disabled = true;
+  try { await fetch("/rescan", {method:"POST"}); } catch(e){}
+  location.reload();
+};
+
+function syncExpand(){
+  const b = document.getElementById("expandAll");
+  b.style.display = hiddenLane.size ? "" : "none";
+  b.textContent = `展开全部 (${hiddenLane.size})`;
+}
+document.getElementById("expandAll").onclick = () => { hiddenLane.clear(); syncExpand(); draw(); };
+
+const legend = document.getElementById("legend");
+[["user","用户"],["assistant","回复"],["tool","工具"],["say","看屏发言"],["frame","抓屏帧"],
+ ["fg","前台"],["fgx","前台(推测)"],["web","浏览"],["open","打开"],["file","文件"]].forEach(([k,label]) => {
+  const el = document.createElement("span");
+  el.innerHTML = `<i style="background:${KIND_COLOR[k]||'#7c8fa6'}"></i>${label}`;
+  el.onclick = () => {
+    hidden.has(k) ? hidden.delete(k) : hidden.add(k);
+    el.style.opacity = hidden.has(k) ? .35 : 1; draw();
+  };
+  legend.appendChild(el);
+});
+
+// 推测层：不可过滤，只作说明（它不是一类事件，是缺失时段的旁证）。
+// 必须等 timeline.json 到货后再加——顶层执行时 data 还是 null。
+function addCoarseLegend(){
+  if (!data || !data.coarse || !data.coarse.length) return;
+  const el = document.createElement("span");
+  el.style.cursor = "default";
+  el.innerHTML = `<i style="background:#94a3b8;opacity:.75"></i>推测层 ${data.coarse.length}`;
+  el.title = "没有前台采样的时段，用 Chrome/KDE/dsh/journal 旁证拼出的粗粒度活动（点那条灰带看详情）";
+  legend.appendChild(el);
+}
+
+function strip(){
+  const s = document.getElementById("strip");
+  const fr = [...data.frames].sort((a,b) => b.t - a.t).slice(0, 90);
+  s.innerHTML = fr.map(f => `<img src="${f.obj}" title="${fmt(f.t)}"
+    onerror="this.style.background='repeating-linear-gradient(45deg,#1b232e,#1b232e 6px,#151b23 6px,#151b23 12px)';this.title='图片载入失败：'+this.src">`).join("");
+  setTimeout(() => {   // 一次兜底重试：服务刚重启时第一批可能 404
+    s.querySelectorAll("img").forEach(im => { if (!im.naturalWidth) im.src = im.src.split("?")[0] + "?t=" + Date.now(); });
+  }, 1500);
+}
+addEventListener("resize", () => draw());
+
+fetch("timeline.json").then(r => r.json()).then(d => {
+  data = d;
+  const n = data.sessions.reduce((a,s) => a + s.events.length, 0);
+  const U = data.user || {};
+  document.getElementById("stats").textContent =
+    `我：${(U.web||[]).length} 次浏览 · ${(U.opens||[]).length} 次打开 · ${(U.fg||[]).length} 段前台`
+    + ` ‖ AI：${data.sessions.length} 会话 · ${n} 事件 · ${data.frames.length} 帧 · ${fmt(d.generatedAt)}`;
+  computeRange(0);
+  // 允许用 URL 固定视窗，便于截图/复现某一段：?from=2026-11-03T19:00&to=2026-11-03T21:00
+  const _q = new URLSearchParams(location.search);
+  if (_q.get("from")) { const v = Date.parse(_q.get("from")); if (!isNaN(v)) t0 = v; }
+  if (_q.get("to"))   { const v = Date.parse(_q.get("to"));   if (!isNaN(v)) t1 = v; }
+  draw(); strip(); addCoarseLegend();
+});
+</script>
+</body>
+</html>
